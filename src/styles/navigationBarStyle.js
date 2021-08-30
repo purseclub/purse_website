@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 const NavigationBarStyle = styled.div`
     background-color: none;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding-top: 60px;
-    padding-right: 120px;
+    padding-top: 80px;
     padding-left: 120px;
-    z-index: 1000;
     position: absolute;
+    z-index: 1000;
+
+    @media only screen and (max-width: 425px){
+        padding-left: 32px;
+    }
 `;
 
 const NavigationStyle = {

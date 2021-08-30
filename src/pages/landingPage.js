@@ -1,28 +1,36 @@
 import * as React from "react";
 import LandingStyle from "../styles/landingPageStyle";
-import HeroImage from "../images/hero-image.png";
+import NavigationBar from "../components/navigationBar";
+import HeroImage from "../images/iphone-12--black-shadow.png";
+import HeroText from "../images/hero-text.svg";
 
 const LandingPage = () => {
   return (
+    <>
+    <NavigationBar />
     <LandingStyle.OverallStyle>
-      <LandingStyle.LandingPageStyle>
-        <LandingStyle.ParagraphStyle>
-          new ways of
-          <br />
-          storing cards,
-          <br />
-          that matter to
-          <br />
-          you
-        </LandingStyle.ParagraphStyle>
-        <LandingStyle.LandingButton>
-          Download Purse Club
-        </LandingStyle.LandingButton>
-      </LandingStyle.LandingPageStyle>
-      <LandingStyle.LandingImage>
-        <img src={HeroImage} alt="mobile-preview" height="100%" width="100%" object-fit= "fill"/>
-      </LandingStyle.LandingImage>
+        <LandingStyle.LandingPageLeft>
+          <LandingStyle.ParagraphStyle>
+            new ways of
+            <br />
+            storing cards,
+            <br />
+            that matter to
+            <br />
+            you
+          </LandingStyle.ParagraphStyle>
+          <LandingStyle.LandingButton>
+            Download Purse Club
+          </LandingStyle.LandingButton>
+        </LandingStyle.LandingPageLeft>
+        <LandingStyle.LandingPageRight>
+          <LandingStyle.RightSection>
+              <img src={HeroImage} alt="iphone"/>
+              <img src={HeroText} alt="text"/>
+          </LandingStyle.RightSection>
+        </LandingStyle.LandingPageRight>
     </LandingStyle.OverallStyle>
+    </>
   );
 };
 

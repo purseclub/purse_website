@@ -1,5 +1,4 @@
 import * as React from "react"
-import NavigationBar from "../components/navigationBar"
 import GlobalStyle from "../styles/globalStyle"
 import LandingPage from "./landingPage"
 
@@ -9,7 +8,7 @@ const IndexPage = () => {
   return (
     <>
     <GlobalStyle/>
-    <NavigationBar/>
+   
     <LandingPage/>
     </>
   )
