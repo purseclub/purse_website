@@ -1,19 +1,30 @@
-import styled from "styled-components"; 
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
-const NavigationBarStyle = styled.div`
-    background-color: none;
-    padding-top: 80px;
-    padding-left: 120px;
-    position: absolute;
-    z-index: 1000;
-
-    @media only screen and (max-width: 425px){
-        padding-left: 32px;
-    }
+const MasternNav = styled(motion.header)`
+  min-width: 100vw;
+  min-height: 5rem;
+  z-index: 100;
 `;
 
-const NavigationStyle = {
-    NavigationBarStyle
-}
+const NavContainer = styled.div`
+padding: var(--mobile-margin);
+  height: 100%;
+  width: 100%;
+`;
 
-export default NavigationStyle;
+const Button = styled.button`
+  width: 40px;
+  height: 38px;
+  border: none;
+  background: none;
+  z-index: 101;
+`;
+
+const Nav = {
+  MasternNav,
+  NavContainer,
+  Button,
+};
+
+export default Nav;
