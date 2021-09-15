@@ -66,11 +66,10 @@ const Title = styled.div`
 `;
 
 const H1 = styled(motion.h1)`
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-main-Bold);
   font-size: 28px;
   letter-spacing: -0.56px;
   line-height: 27px;
-  font-weight: 700;
   color: var(--white);
   text-align: center;
 
@@ -111,8 +110,7 @@ const PremiumButton = styled(motion.button)`
   height: 100%;
   width: 100%;
   border: none;
-  font-family: var(--font-family-main);
-  font-weight: 400;
+  font-family: var(--font-family-main-SemiBold);
   letter-spacing: 0px;
   line-height: 36px;
   font-size: 12px;

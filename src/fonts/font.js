@@ -10,22 +10,22 @@ import RobotoMonoBold from "../fonts/RobotoMono-Bold.ttf";
 const GlobalFont = createGlobalStyle`
     @font-face {
         font-family: 'CaustenBold';
-        src: local('CaustenBold'), url(${CaustenBold}) format(otf),;
+        src: local('CaustenBold'), url(${CaustenBold}) format('opentype');
         font-weight: 700;
     }
     @font-face {
         font-family: 'CaustenRegular';
-        src: local('CaustenRegular'), url(${CaustenRegular}) format(otf),;
+        src: local('CaustenRegular'), url(${CaustenRegular}) format('opentype');
         font-weight: 400;
     }
     @font-face {
         font-family: 'CaustenMedium';
-        src: local('CaustenBoldMedium'), url(${CaustenMedium}) format(otf),;
+        src: local('CaustenMedium'), url(${CaustenMedium}) format('opentype');
         font-weight: 500;
     }
     @font-face {
-        font-family: 'CaustenSemiBolc';
-        src: local('CaustenSemiBold'), url(${CaustenSemiBold}) format(otf),;
+        font-family: 'CaustenSemiBold';
+        src: local('CaustenSemiBold'), url(${CaustenSemiBold}) format('opentype');
         font-weight: 600;
     }
     @font-face {
@@ -40,7 +40,7 @@ const GlobalFont = createGlobalStyle`
     }
     @font-face {
         font-family: 'RobotoMonoBold';
-        src: local('RobotoMonoBold'), url(${RobotoMonoBold}) format('truetype'),;
+        src: local('RobotoMonoBold'), url(${RobotoMonoBold}) format('truetype');
         font-weight: 700;
     }
 `;

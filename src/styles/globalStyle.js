@@ -33,7 +33,10 @@ const GlobalStyle = createGlobalStyle`
         --s-laptop: 64rem;
         --l-laptop: 90rem;
         --xl-laptop: 160rem;
-        --font-family-main: 'Causten', sans-serif;
+        --font-family-main-Regular: 'CaustenRegular', sans-serif;
+        --font-family-main-Medium: 'CaustenMedium', sans-serif;
+        --font-family-main-SemiBold: 'CaustenSemiBold', sans-serif;
+        --font-family-main-Bold: 'CaustenBold', sans-serif;
         --font-family-secondary: 'CormorantGaramond', Monospace;
         background-color: var(--black);;
         color: var(--brown);
