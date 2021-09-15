@@ -6,19 +6,25 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+
+    html {
+        height: 100vh;
+    }
+
     body {
         overscroll-behavior-y: none;
-        background-color: var(--black);
+        height: 200vh;
     }
 
     :root {
         --camel: #F5E4BC;
-        --black: #121212;
+        --black: #000000;
         --brown: #292823;
-        --white: #FBFBFB;
+        --white: #EBEBEB;
         --beige: #F5E4D0;
         --green: #5E7361;
         --desktop-margin: 7.5rem;
+        --tablet-margin: 4rem;
         --mobile-margin: 2rem;
         --xxs-screen: 20rem;
         --xs-screen: 23.4375rem;
@@ -28,7 +34,8 @@ const GlobalStyle = createGlobalStyle`
         --l-laptop: 90rem;
         --xl-laptop: 160rem;
         --font-family-main: 'Causten', sans-serif;
-        --font-family-secondary: 'RobotoMonoRegular', Monospace;
+        --font-family-secondary: 'CormorantGaramond', Monospace;
+        background-color: var(--black);;
         color: var(--brown);
     }
 `;

@@ -29,8 +29,8 @@ const GlobalFont = createGlobalStyle`
         font-weight: 600;
     }
     @font-face {
-        font-family: 'Cormorant Garamond';
-        src: url(${CormorantGaramond}) format('ttf'),;
+        font-family: 'CormorantGaramond';
+        src: local('CormorantGaramond'), url(${CormorantGaramond}) format('truetype');
         font-weight: 600;
     }
     @font-face {

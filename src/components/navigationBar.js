@@ -1,10 +1,10 @@
 import React from "react";
 import PurseWhiteLogo from "../images/purse_white_logo.svg";
-import Nav from "../styles/navigationBarStyle";
+import { MasternNav, NavContainer, Logo } from "../styles/navigationBarStyle";
 
 const NavigationBar = () => {
   return (
-    <Nav.MasternNav
+    <MasternNav
       initial={{
         opacity: 0,
       }}
@@ -17,14 +17,10 @@ const NavigationBar = () => {
         },
       }}
     >
-      <Nav.NavContainer>
-        <img
-          style={{ width: 72 }}
-          src={PurseWhiteLogo}
-          alt="white-purse-logo"
-        />
-      </Nav.NavContainer>
-    </Nav.MasternNav>
+      <NavContainer>
+        <Logo src={PurseWhiteLogo} alt="white-purse-logo" />
+      </NavContainer>
+    </MasternNav>
   );
 };
 

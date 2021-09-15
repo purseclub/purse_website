@@ -35,7 +35,7 @@ const SmoothScroll = ({ children }) => {
   //Set the height of the body to the height of the scrolling div
   const setBodyHeight = () => {
     document.body.style.height = `${
-      scrollContainer.current.getBoundingClientRect().height
+      scrollContainer.current.getBoundingClientRect().height * 2
     }px`;
   };
 

@@ -14,30 +14,64 @@ import InfoPage from "./infoPage";
 import LandingPage from "./landingPage";
 import Banner from "../components/banner";
 import SmoothScroll from "../components/smoothScroll";
+import { useState } from "react";
+
+const titles = [
+  "Throw your purse away Throw your purse away",
+  "REWARDS REWARDS REWARDS",
+];
 
 // markup
 const IndexPage = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [bannerTitle, setBannerTitle] = useState(titles[0]);
   const { scrollYProgress } = useViewportScroll();
-  const rotate = useTransform(scrollYProgress, [0, 1], [12, 90]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, 650]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [75, 90]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 74]);
   const x = useTransform(scrollYProgress, [0, 1], [0, 26]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-
-  useEffect(() => {}, [scrollYProgress]);
+  const opacityRev = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const landingRef = useRef(null);
   const infoRef = useRef(null);
+
+  // useEffect(() => {
+  //   scrollYProgress.onChange((x) => {
+  //     if (x == 1) {
+  //       setScrolled(true);
+  //       setBannerTitle(titles[1]);
+  //     }
+  //     if (x === 0) {
+  //       setScrolled(false);
+  //       setBannerTitle(titles[0]);
+  //     }
+  //   });
+
+  //   if (scrolled) {
+  //     landingRef.current.style.visibility = "hidden";
+  //     infoRef.current.style.visibility = "visible";
+  //   } else {
+  //     landingRef.current.style.visibility = "visible";
+  //     infoRef.current.style.visibility = "hidden";
+  //   }
+  // }, [scrollYProgress, scrolled]);
 
   return (
     <>
       <GlobalFont />
       <GlobalStyle />
       <App>
-        <SmoothScroll>
-          <Banner position="upwards" rotate={rotate} y={y} x={x} />
-          <LandingPage opacity={opacity} y={y} />
-          <LandingPage landingRef={landingRef} />
-        </SmoothScroll>
+        <>
+          {/* <Banner
+            setScrolled={setScrolled}
+            position="upwards"
+            rotate={rotate}
+            x={x}
+            title={bannerTitle}
+          /> */}
+          <LandingPage opacity={opacity} reference={landingRef} />
+          {/* <InfoPage reference={infoRef} opacity={opacityRev} /> */}
+        </>
       </App>
     </>
   );

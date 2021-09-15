@@ -3,24 +3,53 @@ import styled from "styled-components";
 
 const MasterContainer = styled(motion.section)`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   background-color: var(--black);
-  position: relative;
-  z-index: 9;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const ImageContainer = styled(motion.div)`
+  margin-top: -40px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media only screen and (min-width: 375px) {
+    margin-top: -80px;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 80%;
+  }
+`;
+
+const CardImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const ContentBox = styled(motion.div)`
-  margin-top: 46vh;
+  z-index: 8;
+  margin-top: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: var(--mobile-margin);
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start; */
+
+  @media only screen and (min-width: 768px) {
+    margin-top: 80px;
+    padding: var(--tablet-margin);
+  }
 `;
 
 const BannerBox = styled.div`
@@ -32,16 +61,28 @@ const BannerBox = styled.div`
 
 const Title = styled.div`
   overflow: hidden;
+  padding-bottom: 5px;
   /* height: 20vh; */
 `;
 
 const H1 = styled(motion.h1)`
-  font-family: var(--font-family-secondary);
-  font-size: 20px;
-  letter-spacing: -6%;
-  line-height: 26px;
-  font-weight: 400;
+  font-family: var(--font-family-main);
+  font-size: 28px;
+  letter-spacing: -0.56px;
+  line-height: 27px;
+  font-weight: 700;
   color: var(--white);
+  text-align: center;
+
+  @media only screen and (min-width: 375px) {
+    font-size: 32px;
+    line-height: 34px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 64px;
+    line-height: 62px;
+    letter-spacing: -1.28px;
+  }
 `;
 
 const Highlight = styled(motion.div)`
@@ -51,47 +92,19 @@ const Highlight = styled(motion.div)`
   color: var(--black);
 `;
 
-// const Second = styled(motion.span)`
-//   overflow: hidden;
-//   margin-top: -8px;
-// `;
-
-// const Letter = styled(motion.span)`
-//   display: inline-block;
-//   font-family: "Causten", sans-serif;
-//   font-size: 28px;
-//   letter-spacing: -1.12px;
-//   font-weight: 700;
-// `;
-
-// const Card = styled(motion.div)`
-//   padding-top: 4vh;
-//   display: block;
-// `;
-
-// const Body = styled(motion.div)`
-//   width: 100%;
-//   margin-top: 10vh;
-// `;
-
-// const P = styled.p`
-//   display: inline-block;
-//   font-family: "Causten", sans-serif;
-//   font-size: 28px;
-//   letter-spacing: -0.28px;
-//   line-height: 30px;
-//   font-weight: 400;
-
-//   @media only screen and (max-width: 320px) {
-//     font-size: 28px;
-//     letter-spacing: -0.28px;
-//     line-height: 28px;
-//   }
-// `;
-
 const ButtonContainer = styled.div`
-  height: 40px;
+  height: 36px;
+  width: 130px;
   margin-top: 24px;
+
+  @media only screen and (min-width: 375px) {
+    height: 44px;
+    width: 170px;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 60px;
+    width: 260px;
+  }
 `;
 
 const PremiumButton = styled(motion.button)`
@@ -101,16 +114,28 @@ const PremiumButton = styled(motion.button)`
   font-family: var(--font-family-main);
   font-weight: 400;
   letter-spacing: 0px;
-  font-size: 14px;
-  padding: 0 32px;
+  line-height: 36px;
+  font-size: 12px;
+  padding: 0 16px;
   background-color: var(--white);
   text-align: center;
   color: var(--black);
+
+  @media only screen and (min-width: 375px) {
+    font-size: 14px;
+    line-height: 40px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 52px;
+  }
 `;
 
 export {
   MasterContainer,
   ContentBox,
+  ImageContainer,
+  CardImage,
   BannerBox,
   Title,
   H1,

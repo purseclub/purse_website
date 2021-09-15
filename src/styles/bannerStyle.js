@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 
 const Wrapper = styled(motion.div)`
   border: 1px solid black;
-  width: 180vw;
+  width: 200vw;
   height: 4.5rem;
-  background-color: var(--white);
+  background-color: #f2c14e;
   position: absolute;
-  top: ${(props) => (props.top === "upwards" ? "30vh" : "28vh")};
-  left: ${(props) => (props.top === "upwards" ? "-30px" : "-60px")};
+  top: ${(props) => (props.top === "upwards" ? "43vh" : "23vh")};
+  left: ${(props) => (props.top === "upwards" ? "-60px" : "-60px")};
   right: 0;
   transform: ${(props) =>
-    props.position === "upwards" ? "rotate(12deg)" : "rotate(-30deg)"};
+    props.position === "upwards" ? "rotate(75deg)" : "rotate(-15deg)"};
   overflow: hidden;
   z-index: 10;
 `;
@@ -37,8 +37,8 @@ const H3 = styled.h2`
   display: inline-block;
   text-align: center;
   flex: 1;
-  font-family: var(--font-family-secondary);
-  color: var(--black);
+  font-family: var(--font-family-main);
+  color: #121212;
   letter-spacing: -4%;
   font-weight: 700;
   overflow: hidden;

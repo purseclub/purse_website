@@ -2,6 +2,7 @@ import React from "react";
 
 import NavigationBar from "../components/navigationBar";
 import Banner from "../components/banner";
+import CardMockup from "../images/card-mockups.png";
 import {
   MasterContainer,
   ContentBox,
@@ -11,6 +12,8 @@ import {
   PremiumButton,
   ButtonContainer,
   BannerBox,
+  ImageContainer,
+  CardImage,
 } from "../styles/landingPageStyle";
 
 // const datas = [
@@ -52,75 +55,63 @@ import {
 //   },
 // ];
 
-const transiton = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+const transiton = { duration: 3.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
-const textVariants = {
+const containerVariants = {
+  hidden: {
+    opacity: 1,
+  },
   animate: {
+    opacity: 1,
     transition: {
-      delayChildren: 0.6,
-      staggerChildren: 0.04,
+      staggerChildren: 0.6,
     },
   },
 };
 
-const letter = {
+const imageVariants = {
   hidden: {
-    y: 400,
+    opacity: 0,
   },
   animate: {
-    y: 0,
+    opacity: 1,
     transition: {
-      duration: 1.4,
       ...transiton,
     },
   },
 };
 
-const LandingPage = ({ opacity, y }) => {
+const contentVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      delay: 1.0,
+      ...transiton,
+    },
+  },
+};
+
+const LandingPage = ({ opacity, reference }) => {
   return (
     <MasterContainer
-      style={{
-        y: y,
-      }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="animate"
     >
       <NavigationBar />
-      <Banner position="downwards" />
-      <ContentBox
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-          transition: {
-            delay: 0.6,
-            ...transiton,
-          },
-        }}
-        style={{
-          opacity: opacity,
-        }}
-      >
+      {/* <Banner
+        position="downwards"
+        title={"Throw your purse away Throw your purse away"}
+      /> */}
+      <ImageContainer variants={imageVariants}>
+        <CardImage src={CardMockup} alt="card-mockup" />
+      </ImageContainer>
+      <ContentBox variants={contentVariants}>
         <Title>
-          <H1>
-            <Highlight
-              initial={{
-                width: "0px",
-              }}
-              animate={{
-                width: "75px",
-                transition: {
-                  delay: 0.6,
-                  ...transiton,
-                },
-              }}
-            >
-              {" "}
-              Modern
-            </Highlight>{" "}
-            way of
-            <br /> storing and <br />
-            managing your cards.
-          </H1>
+          <H1>Modern way of storing and managing your cards.</H1>
         </Title>
         <ButtonContainer>
           <PremiumButton>Experience Here</PremiumButton>
