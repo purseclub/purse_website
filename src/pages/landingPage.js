@@ -106,16 +106,20 @@ const LandingPage = ({ opacity, reference }) => {
         position="downwards"
         title={"Throw your purse away Throw your purse away"}
       /> */}
-      <ImageContainer variants={imageVariants}>
+      {/* <ImageContainer variants={imageVariants}>
         <CardImage src={CardMockup} alt="card-mockup" />
-      </ImageContainer>
-      <ContentBox variants={contentVariants}>
+      </ImageContainer> */}
+      <ContentBox>
         <Title>
-          <H1>Modern way of storing and managing your cards.</H1>
+          <H1>
+            future is
+            <br />
+            here.
+          </H1>
         </Title>
-        <ButtonContainer>
+        {/* <ButtonContainer>
           <PremiumButton>Experience Here</PremiumButton>
-        </ButtonContainer>
+        </ButtonContainer> */}
       </ContentBox>
     </MasterContainer>
   );

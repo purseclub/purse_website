@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
         --white: #EBEBEB;
         --beige: #F5E4D0;
         --green: #5E7361;
+        --lightBlue: #4D6890;
         --desktop-margin: 7.5rem;
         --tablet-margin: 4rem;
         --mobile-margin: 2rem;
@@ -38,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
         --font-family-main-SemiBold: 'CaustenSemiBold', sans-serif;
         --font-family-main-Bold: 'CaustenBold', sans-serif;
         --font-family-secondary: 'CormorantGaramond', Monospace;
-        background-color: var(--black);;
+        background-color: var(--lightBlue);;
         color: var(--brown);
     }
 `;

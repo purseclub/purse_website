@@ -15,6 +15,7 @@ import LandingPage from "./landingPage";
 import Banner from "../components/banner";
 import SmoothScroll from "../components/smoothScroll";
 import { useState } from "react";
+import Card from "../components/card";
 
 const titles = [
   "Throw your purse away Throw your purse away",
@@ -71,6 +72,7 @@ const IndexPage = () => {
           /> */}
           <LandingPage opacity={opacity} reference={landingRef} />
           {/* <InfoPage reference={infoRef} opacity={opacityRev} /> */}
+          <Card />
         </>
       </App>
     </>

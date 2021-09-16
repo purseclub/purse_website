@@ -5,7 +5,6 @@ const MasterContainer = styled(motion.section)`
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: var(--black);
   position: absolute;
   top: 0;
   left: 0;
@@ -42,13 +41,15 @@ const ContentBox = styled(motion.div)`
   transform: translate(-50%, -50%);
   width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: var(--mobile-margin);
 
   @media only screen and (min-width: 768px) {
     margin-top: 80px;
     padding: var(--tablet-margin);
+
+    width: 80%;
   }
 `;
 
@@ -66,21 +67,20 @@ const Title = styled.div`
 `;
 
 const H1 = styled(motion.h1)`
-  font-family: var(--font-family-main-Bold);
+  font-family: var(--font-family-main-SemiBold);
   font-size: 28px;
   letter-spacing: -0.56px;
   line-height: 27px;
   color: var(--white);
-  text-align: center;
 
   @media only screen and (min-width: 375px) {
     font-size: 32px;
     line-height: 34px;
   }
   @media only screen and (min-width: 768px) {
-    font-size: 64px;
-    line-height: 62px;
-    letter-spacing: -1.28px;
+    font-size: 136px;
+    line-height: 106px;
+    letter-spacing: -5.44px;
   }
 `;
 

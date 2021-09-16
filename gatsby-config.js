@@ -11,6 +11,8 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    `gatsby-plugin-glslify`,
+    `gatsby-plugin-polyfill-io`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
