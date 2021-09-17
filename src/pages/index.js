@@ -9,6 +9,8 @@ import {
   AppBackground,
   AppContainer,
   AppSection,
+  MobileImg,
+  MobileImgContainer,
 } from "../styles/indexStyle";
 import InfoPage from "./infoPage";
 import LandingPage from "./landingPage";
@@ -16,6 +18,8 @@ import Banner from "../components/banner";
 import SmoothScroll from "../components/smoothScroll";
 import { useState } from "react";
 import Card from "../components/card";
+import useWindowSize from "../components/useWindowSize";
+import conniCard from "../images/card-mockups.png";
 
 const titles = [
   "Throw your purse away Throw your purse away",
@@ -35,6 +39,17 @@ const IndexPage = () => {
 
   const landingRef = useRef(null);
   const infoRef = useRef(null);
+
+  const [isMobile, setIsMobile] = useState(false);
+  const size = useWindowSize();
+
+  useEffect(() => {
+    if (size.width < 425) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [size]);
 
   // useEffect(() => {
   //   scrollYProgress.onChange((x) => {
@@ -63,16 +78,15 @@ const IndexPage = () => {
       <GlobalStyle />
       <App>
         <>
-          {/* <Banner
-            setScrolled={setScrolled}
-            position="upwards"
-            rotate={rotate}
-            x={x}
-            title={bannerTitle}
-          /> */}
           <LandingPage opacity={opacity} reference={landingRef} />
           {/* <InfoPage reference={infoRef} opacity={opacityRev} /> */}
-          <Card />
+          {isMobile ? (
+            <MobileImgContainer>
+              <MobileImg src={conniCard} alt="conni-card" />
+            </MobileImgContainer>
+          ) : (
+            <Card />
+          )}
         </>
       </App>
     </>

@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         overscroll-behavior-y: none;
-        height: 200vh;
+        /* height: 200vh; */
     }
 
     :root {

@@ -86,7 +86,7 @@ const Card = () => {
   return (
     <>
       <div style={{ width: "100vw", height: "100vh", zIndex: 10 }}>
-        <Canvas camera={{ fov: 12, position: [0, 0, 5] }}>
+        <Canvas camera={{ fov: 11, position: [0, 0, 5] }}>
           <Suspense fallback={null}>
             <Conni />
           </Suspense>

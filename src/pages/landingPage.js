@@ -14,7 +14,18 @@ import {
   BannerBox,
   ImageContainer,
   CardImage,
+  PBox,
+  P,
+  TextBox,
+  NumBox,
+  Num,
+  Left,
+  Right,
 } from "../styles/landingPageStyle";
+import ArrowSvg from "../components/arrow";
+import { useState } from "react";
+import useWindowSize from "../components/useWindowSize";
+import { useEffect } from "react";
 
 // const datas = [
 //   {
@@ -102,24 +113,30 @@ const LandingPage = ({ opacity, reference }) => {
       animate="animate"
     >
       <NavigationBar />
-      {/* <Banner
-        position="downwards"
-        title={"Throw your purse away Throw your purse away"}
-      /> */}
-      {/* <ImageContainer variants={imageVariants}>
-        <CardImage src={CardMockup} alt="card-mockup" />
-      </ImageContainer> */}
       <ContentBox>
-        <Title>
-          <H1>
-            future is
-            <br />
-            here.
-          </H1>
-        </Title>
-        {/* <ButtonContainer>
-          <PremiumButton>Experience Here</PremiumButton>
-        </ButtonContainer> */}
+        <Left>
+          <NumBox>
+            <Num>01</Num>
+          </NumBox>
+          <TextBox>
+            <Title>
+              <H1>
+                future is
+                <br />
+                here.
+              </H1>
+            </Title>
+            <PBox>
+              <P>modern way of storing and managing your cards.</P>
+            </PBox>
+          </TextBox>
+        </Left>
+        <Right>
+          <ButtonContainer>
+            <PremiumButton>experience here</PremiumButton>
+            <ArrowSvg />
+          </ButtonContainer>
+        </Right>
       </ContentBox>
     </MasterContainer>
   );
