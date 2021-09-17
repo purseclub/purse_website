@@ -7,7 +7,6 @@ import {
   MasterContainer,
   ContentBox,
   Title,
-  H1,
   Highlight,
   PremiumButton,
   ButtonContainer,
@@ -21,6 +20,10 @@ import {
   Num,
   Left,
   Right,
+  TitleParagraph,
+  TitleContainer,
+  TitleTop,
+  TitleBottom,
 } from "../styles/landingPageStyle";
 import ArrowSvg from "../components/arrow";
 import { useState } from "react";
@@ -66,7 +69,7 @@ import { useEffect } from "react";
 //   },
 // ];
 
-const transiton = { duration: 3.4, ease: [0.6, 0.01, -0.05, 0.9] };
+const transiton = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
 const containerVariants = {
   hidden: {
@@ -75,24 +78,12 @@ const containerVariants = {
   animate: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.6,
+      staggerChildren: 0.04,
     },
   },
 };
 
-const imageVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      ...transiton,
-    },
-  },
-};
-
-const contentVariants = {
+const numParaButtonVariant = {
   hidden: {
     opacity: 0,
   },
@@ -100,6 +91,18 @@ const contentVariants = {
     opacity: 1,
     transition: {
       delay: 1.0,
+      ...transiton,
+    },
+  },
+};
+
+const contentVariants = {
+  hidden: {
+    y: "100%",
+  },
+  animate: {
+    y: 0,
+    transition: {
       ...transiton,
     },
   },
@@ -115,24 +118,43 @@ const LandingPage = ({ opacity, reference }) => {
       <NavigationBar />
       <ContentBox>
         <Left>
-          <NumBox>
+          <NumBox variants={numParaButtonVariant}>
             <Num>01</Num>
           </NumBox>
           <TextBox>
             <Title>
-              <H1>
-                future is
-                <br />
-                here.
-              </H1>
+              <TitleTop>
+                <TitleContainer>
+                  <TitleParagraph variants={contentVariants}>f</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>u</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>t</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>u</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>r</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>e</TitleParagraph>
+                </TitleContainer>
+                <TitleContainer left={12}>
+                  <TitleParagraph variants={contentVariants}>i</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>s</TitleParagraph>
+                </TitleContainer>
+              </TitleTop>
+              <TitleBottom>
+                <TitleContainer>
+                  <TitleParagraph variants={contentVariants}>h</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>e</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>r</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>e.</TitleParagraph>
+                </TitleContainer>
+              </TitleBottom>
             </Title>
             <PBox>
-              <P>modern way of storing and managing your cards.</P>
+              <P variants={numParaButtonVariant}>
+                modern way of storing and managing your cards.
+              </P>
             </PBox>
           </TextBox>
         </Left>
         <Right>
-          <ButtonContainer>
+          <ButtonContainer variants={numParaButtonVariant}>
             <PremiumButton>experience here</PremiumButton>
             <ArrowSvg />
           </ButtonContainer>

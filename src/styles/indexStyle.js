@@ -24,8 +24,8 @@ const MobileImgContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 75%;
-  height: 60vh;
+  width: 70%;
+  height: 50vh;
 `;
 
 const MobileImg = styled.img`

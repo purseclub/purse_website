@@ -18,7 +18,7 @@ const ImageContainer = styled(motion.div)`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  @media only screen and (min-width: 375px) {
+  @media only screen and (min-width: 360px) {
     margin-top: -80px;
   }
   @media only screen and (min-width: 768px) {
@@ -34,7 +34,6 @@ const CardImage = styled.img`
 
 const ContentBox = styled(motion.div)`
   z-index: 8;
-  margin-top: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -44,7 +43,6 @@ const ContentBox = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding: var(--mobile-margin);
 
   @media only screen and (min-width: 768px) {
@@ -62,21 +60,31 @@ const Left = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   height: 100%;
-  flex: 3;
+  flex: 6;
 `;
 
 const TextBox = styled.div`
   overflow: hidden;
+
+  @media only screen and (min-width: 360px) {
+    /* margin-bottom: 14px; */
+  }
 
   @media only screen and (min-width: 768px) {
     margin-bottom: 48px;
   }
 `;
 
-const NumBox = styled.div`
+const NumBox = styled(motion.div)`
   overflow: hidden;
+  width: 100%;
+  margin-top: 52px;
 
+  @media only screen and (min-width: 360px) {
+    margin-top: 72px;
+  }
   @media only screen and (min-width: 768px) {
+    margin-top: 0px;
     padding-bottom: 8px;
   }
 `;
@@ -88,9 +96,15 @@ const Num = styled.h1`
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--white);
 
-  font-size: 72px;
-  line-height: 63px;
+  font-size: 48px;
+  line-height: 48px;
   letter-spacing: -3.6px;
+
+  @media only screen and (min-width: 360px) {
+    font-size: 64px;
+    line-height: 63px;
+    letter-spacing: -3.6px;
+  }
 
   @media only screen and (min-width: 768px) {
     font-size: 136px;
@@ -99,28 +113,52 @@ const Num = styled.h1`
   }
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
   overflow: hidden;
-  padding-bottom: 5px;
   /* height: 20vh; */
 `;
 
 const PBox = styled.div`
-  margin-top: 16px;
   overflow: hidden;
   width: 65%;
+
+  @media only screen and (min-width: 360px) {
+    /* width: 80%; */
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-top: 16px;
+  }
 `;
 
-const H1 = styled(motion.h1)`
+const TitleTop = styled.div`
+  width: 100%;
+  overflow: hidden;
+`;
+
+const TitleBottom = styled.div`
+  width: 100%;
+  overflow: hidden;
+  margin-top: -12px;
+`;
+
+const TitleContainer = styled.p`
+  display: inline-block;
+  overflow: hidden;
+  margin-left: ${(props) => props.left}px;
+`;
+
+const TitleParagraph = styled(motion.span)`
   font-family: var(--font-family-main-SemiBold);
-  font-size: 72px;
-  letter-spacing: -3.6px;
-  line-height: 63px;
+  display: inline-block;
+  font-size: 52px;
+  letter-spacing: -1.9px;
+  line-height: 52px;
   color: #9db1ce;
 
-  @media only screen and (min-width: 375px) {
-    font-size: 32px;
-    line-height: 34px;
+  @media only screen and (min-width: 360px) {
+    font-size: 64px;
+    line-height: 63px;
   }
   @media only screen and (min-width: 768px) {
     font-size: 136px;
@@ -129,12 +167,17 @@ const H1 = styled(motion.h1)`
   }
 `;
 
-const P = styled.p`
+const P = styled(motion.p)`
   font-family: var(--font-family-main-Regular);
   color: var(--white);
-  font-size: 14px;
+  font-size: 12px;
   line-height: 14px;
-  letter-spacing: -0.7px;
+  letter-spacing: 0.1px;
+
+  @media only screen and (min-width: 360px) {
+    font-size: 14px;
+    line-height: 14px;
+  }
 
   @media only screen and (min-width: 768px) {
     font-size: 18px;
@@ -159,35 +202,34 @@ const Right = styled.div`
   flex: 1;
 `;
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled(motion.div)`
   height: 36px;
-  margin-bottom: 48px;
-  margin-right: 100px;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  @media only screen and (min-width: 375px) {
+  @media only screen and (min-width: 360px) {
     height: 44px;
     width: 170px;
   }
   @media only screen and (min-width: 768px) {
     height: 60px;
     width: 260px;
+    margin-bottom: 48px;
+    margin-right: 100px;
   }
 `;
 
 const PremiumButton = styled(motion.h3)`
   border: none;
   font-family: var(--font-family-main-SemiBold);
-  letter-spacing: 0px;
+  letter-spacing: 0.2px;
   line-height: 36px;
-  font-size: 12px;
+  font-size: 14px;
   background-color: transparent;
   color: var(--white);
   text-decoration-line: underline;
 
-  @media only screen and (min-width: 375px) {
-    font-size: 14px;
+  @media only screen and (min-width: 360px) {
+    font-size: 18px;
     line-height: 40px;
   }
   @media only screen and (min-width: 768px) {
@@ -205,11 +247,14 @@ export {
   CardImage,
   TextBox,
   Title,
+  TitleContainer,
+  TitleTop,
+  TitleBottom,
   P,
   PBox,
   Num,
   NumBox,
-  H1,
+  TitleParagraph,
   Highlight,
   ButtonContainer,
   PremiumButton,

@@ -1,24 +1,34 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+const Svg = styled(motion.svg)`
+  width: 24px;
+  margin-left: 4px;
+  @media screen and (min-width: 360px) {
+    width: 32px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 72px;
+  }
+`;
+
+const variants = {
+  animate: {
+    x: [0, 3, -3, 0],
+    transition: {
+      duration: 1.4,
+      ease: "easeInOut",
+      repeat: Infinity,
+    },
+  },
+};
 
 const ArrowSvg = () => {
-  const Svg = styled.svg`
-    width: 16px;
-    height: 18px;
-    margin-bottom: -4px;
-
-    @media screen and (min-width: 375px) {
-      width: 18px;
-      height: 19px;
-    }
-    @media screen and (min-width: 768px) {
-      width: 72px;
-      height: 72px;
-    }
-  `;
-
   return (
     <Svg
+      variants={variants}
+      animate="animate"
       width="76"
       height="76"
       viewBox="0 0 76 76"
