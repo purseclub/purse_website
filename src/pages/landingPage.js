@@ -1,6 +1,5 @@
 import React from "react";
 
-import NavigationBar from "../components/navigationBar";
 import Banner from "../components/banner";
 import CardMockup from "../images/card-mockups.png";
 import {
@@ -115,7 +114,6 @@ const LandingPage = ({ opacity, reference }) => {
       initial="hidden"
       animate="animate"
     >
-      <NavigationBar />
       <ContentBox>
         <Left>
           <NumBox variants={numParaButtonVariant}>

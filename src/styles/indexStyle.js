@@ -26,6 +26,7 @@ const MobileImgContainer = styled.div`
   transform: translate(-50%, -50%);
   width: 70%;
   height: 50vh;
+  z-index: 1;
 `;
 
 const MobileImg = styled.img`

@@ -10,10 +10,10 @@ const NavigationBar = () => {
   useEffect(() => {
     function handleResize() {
       const width = window.innerWidth;
-      if (width > 360) {
+      if (width >= 360) {
         setLogoSize("83");
       }
-      if (width > 768) {
+      if (width >= 768) {
         setLogoSize("85.43");
       }
     }

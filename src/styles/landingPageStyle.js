@@ -8,49 +8,43 @@ const MasterContainer = styled(motion.section)`
   position: absolute;
   top: 0;
   left: 0;
-`;
+  padding: var(--mobile-margin);
+  z-index: 10;
 
-const ImageContainer = styled(motion.div)`
-  margin-top: -40px;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  @media only screen and (min-width: 360px) {
-    margin-top: -80px;
-  }
   @media only screen and (min-width: 768px) {
-    width: 80%;
+    padding: var(--tablet-margin);
   }
-`;
-
-const CardImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  @media only screen and (min-width: 1024px) {
+    padding: var(--desktop-margin);
+  }
 `;
 
 const ContentBox = styled(motion.div)`
-  z-index: 8;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--mobile-margin);
+  /* padding: var(--mobile-margin); */
 
-  @media only screen and (min-width: 768px) {
-    margin-top: 0px;
-    padding: var(--tablet-margin);
-    height: 80%;
-    width: 78%;
+  @media all and (min-width: 768px) and (orientation: portrait) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    /* padding: var(--tablet-margin); */
     flex-direction: row;
+    /* height: 80%; */
+  }
+
+  @media all and (min-width: 768px) and (orientation: landscape) {
+    padding: 0;
+    margin-top: 0px;
+    /* padding: var(--tablet-margin); */
+    flex-direction: row;
+    /* height: 80%; */
+  }
+
+  @media all and (min-width: 1440px) {
+    padding: 24px 85px;
   }
 `;
 
@@ -65,8 +59,11 @@ const Left = styled.div`
   @media only screen and (min-width: 360px) {
     flex: 5;
   }
-
   @media only screen and (min-width: 768px) {
+    padding-left: 0px;
+  }
+
+  @media only screen and (min-width: 1024px) {
     padding-left: 24px;
   }
 `;
@@ -77,8 +74,11 @@ const TextBox = styled.div`
   @media only screen and (min-width: 360px) {
     /* margin-bottom: 14px; */
   }
-
   @media only screen and (min-width: 768px) {
+    padding-bottom: 0px;
+  }
+
+  @media only screen and (min-width: 1024px) {
     padding-bottom: 48px;
   }
 `;
@@ -115,6 +115,12 @@ const Num = styled.h1`
   }
 
   @media only screen and (min-width: 768px) {
+    font-size: 116px;
+    line-height: 116px;
+    /* letter-spacing: -5.44px; */
+  }
+
+  @media only screen and (min-width: 1024px) {
     font-size: 136px;
     line-height: 136px;
     /* letter-spacing: -5.44px; */
@@ -170,6 +176,10 @@ const TitleParagraph = styled(motion.span)`
     line-height: 63px;
   }
   @media only screen and (min-width: 768px) {
+    font-size: 116px;
+    line-height: 116px;
+  }
+  @media only screen and (min-width: 1024px) {
     font-size: 136px;
     line-height: 136px;
   }
@@ -221,6 +231,10 @@ const ButtonContainer = styled(motion.div)`
   @media only screen and (min-width: 768px) {
     height: 60px;
     width: 260px;
+  }
+  @media only screen and (min-width: 1024px) {
+    height: 60px;
+    width: 260px;
     margin-bottom: 48px;
     margin-right: 60px;
   }
@@ -251,8 +265,6 @@ export {
   ContentBox,
   Left,
   Right,
-  ImageContainer,
-  CardImage,
   TextBox,
   Title,
   TitleContainer,

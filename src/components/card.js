@@ -5,6 +5,7 @@ import { useRef, useState, Suspense } from "react";
 import glsl from "babel-plugin-glsl/macro";
 import * as THREE from "three";
 import conniCard from "../images/card-mockups.png";
+import styled from "styled-components";
 
 const WaveShaderMaterial = shaderMaterial(
   //uniform
@@ -74,24 +75,31 @@ const Conni = () => {
   );
 };
 
-const Light = () => {
-  return (
-    <>
-      <pointLight position={[10, 10, 10]} />
-    </>
-  );
-};
+const ThreeContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media only screen and (max-width: 1024px) {
+    width: 80%;
+    height: 80%;
+  }
+`;
 
 const Card = () => {
   return (
     <>
-      <div style={{ width: "100vw", height: "100vh", zIndex: 10 }}>
+      <ThreeContainer>
         <Canvas camera={{ fov: 11, position: [0, 0, 5] }}>
           <Suspense fallback={null}>
             <Conni />
           </Suspense>
         </Canvas>
-      </div>
+      </ThreeContainer>
     </>
   );
 };

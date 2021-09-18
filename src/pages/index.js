@@ -20,6 +20,7 @@ import { useState } from "react";
 import Card from "../components/card";
 import useWindowSize from "../components/useWindowSize";
 import conniCard from "../images/card-mockups.png";
+import NavigationBar from "../components/navigationBar";
 
 const titles = [
   "Throw your purse away Throw your purse away",
@@ -78,6 +79,7 @@ const IndexPage = () => {
       <GlobalStyle />
       <App>
         <>
+          <NavigationBar />
           <LandingPage opacity={opacity} reference={landingRef} />
           {/* <InfoPage reference={infoRef} opacity={opacityRev} /> */}
           {isMobile ? (
