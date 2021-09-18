@@ -129,6 +129,7 @@ const Title = styled(motion.div)`
 const PBox = styled.div`
   overflow: hidden;
   width: 65%;
+  padding-bottom: 8px;
 
   @media only screen and (min-width: 360px) {
     /* width: 80%; */
@@ -237,11 +238,11 @@ const PremiumButton = styled(motion.h3)`
 
   @media only screen and (min-width: 360px) {
     font-size: 18px;
-    line-height: 40px;
+    line-height: 44px;
   }
   @media only screen and (min-width: 768px) {
     font-size: 18px;
-    line-height: 52px;
+    line-height: 60px;
   }
 `;
 

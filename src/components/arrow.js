@@ -29,8 +29,6 @@ const ArrowSvg = () => {
     <Svg
       variants={variants}
       animate="animate"
-      width="76"
-      height="76"
       viewBox="0 0 76 76"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
