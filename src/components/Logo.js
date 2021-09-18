@@ -2,17 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Svg = styled.svg`
-  width: ${(props) => props.width}px;
+  width: min(25%, 5.375rem);
 `;
 
-const WhiteLogo = ({ width }) => {
+const WhiteLogo = () => {
   return (
-    <Svg
-      width={width}
-      viewBox="0 0 102 52"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <Svg viewBox="0 0 102 52" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M8.16016 1.80003C8.16016 1.22327 8.69157 0.793108 9.25568 0.913246L30.109 5.35439C30.5276 5.44353 30.8268 5.81321 30.8268 6.24117V44.8541C30.8268 45.4433 30.2736 45.876 29.7018 45.734L8.84842 40.5583C8.44407 40.4579 8.16016 40.0949 8.16016 39.6783V1.80003Z"
         fill="url(#paint0_linear)"
@@ -53,14 +48,9 @@ const WhiteLogo = ({ width }) => {
   );
 };
 
-const BlackLogo = ({ width }) => {
+const BlackLogo = () => {
   return (
-    <Svg
-      width={width}
-      viewBox="0 0 84 42"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <Svg viewBox="0 0 84 42" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M6.73242 0.924081C6.73242 0.448254 7.17084 0.0933708 7.63623 0.192485L24.8403 3.85644C25.1856 3.92998 25.4325 4.23497 25.4325 4.58804V36.4438C25.4325 36.9299 24.9761 37.2869 24.5043 37.1698L7.30024 32.8997C6.96665 32.8169 6.73242 32.5175 6.73242 32.1738V0.924081Z"
         fill="url(#paint0_linear)"
@@ -101,16 +91,8 @@ const BlackLogo = ({ width }) => {
   );
 };
 
-const Logo = ({ color, width }) => {
-  return (
-    <>
-      {color === "white" ? (
-        <WhiteLogo width={width} />
-      ) : (
-        <BlackLogo width={width} />
-      )}
-    </>
-  );
+const Logo = ({ color }) => {
+  return <>{color === "white" ? <WhiteLogo /> : <BlackLogo />}</>;
 };
 
 export default Logo;

@@ -3,18 +3,15 @@ import styled from "styled-components";
 
 const MasternNav = styled(motion.header)`
   width: 100%;
-  height: 5rem;
-  z-index: 100;
-  padding: var(--mobile-margin);
-
-  @media only screen and (min-width: 768px) {
-    padding: var(--tablet-margin);
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 `;
 
 const NavContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  max-width: 80%;
+  margin: 3rem auto;
 `;
 
 export { MasternNav, NavContainer };

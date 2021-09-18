@@ -8,8 +8,11 @@ const Svg = styled(motion.svg)`
   @media screen and (min-width: 360px) {
     width: 32px;
   }
+  @media screen and (min-width: 425px) {
+    width: 44px;
+  }
   @media screen and (min-width: 768px) {
-    width: 72px;
+    width: 52px;
   }
 `;
 

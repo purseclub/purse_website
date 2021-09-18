@@ -27,6 +27,7 @@ const MobileImgContainer = styled(motion.div)`
   height: 50vh;
   z-index: 1;
   transform-origin: right;
+  margin-top: 3rem;
 `;
 
 const MobileImg = styled.img`

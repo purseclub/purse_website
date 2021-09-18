@@ -2,20 +2,20 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const MasterContainer = styled(motion.section)`
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 94%;
   overflow: hidden;
   position: absolute;
-  top: 0;
-  left: 0;
-  padding: var(--mobile-margin);
-  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
 
-  @media only screen and (min-width: 768px) {
-    padding: var(--tablet-margin);
+  @media all and (min-width: 425px) {
+    max-height: 70%;
   }
-  @media only screen and (min-width: 1024px) {
-    padding: var(--desktop-margin);
+  @media all and (min-width: 1024px) {
+    max-width: 68%;
   }
 `;
 
@@ -24,76 +24,45 @@ const ContentBox = styled(motion.div)`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
+  flex-basis: 100%;
   /* padding: var(--mobile-margin); */
 
-  @media all and (min-width: 768px) and (orientation: portrait) {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    /* padding: var(--tablet-margin); */
+  @media all and (min-width: 425px) {
     flex-direction: row;
-    /* height: 80%; */
-  }
-
-  @media all and (min-width: 768px) and (orientation: landscape) {
-    padding: 0;
-    margin-top: 0px;
-    /* padding: var(--tablet-margin); */
-    flex-direction: row;
-    /* height: 80%; */
-  }
-
-  @media all and (min-width: 1440px) {
-    padding: 24px 85px;
+    align-items: flex-end;
   }
 `;
 
 const Left = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-start;
-  height: 100%;
-  flex: 6;
-
-  @media only screen and (min-width: 360px) {
-    flex: 5;
-  }
-  @media only screen and (min-width: 768px) {
-    padding-left: 0px;
-  }
-
-  @media only screen and (min-width: 1024px) {
-    padding-left: 24px;
-  }
+  flex: 2;
+  flex-basis: 100%;
 `;
 
 const TextBox = styled.div`
   overflow: hidden;
+  flex: 1;
 
-  @media only screen and (min-width: 360px) {
-    /* margin-bottom: 14px; */
-  }
-  @media only screen and (min-width: 768px) {
-    padding-bottom: 0px;
-  }
-
-  @media only screen and (min-width: 1024px) {
-    padding-bottom: 48px;
+  @media all and (min-width: 1024px) {
+    padding-bottom: 8rem;
   }
 `;
 
 const NumBox = styled(motion.div)`
-  overflow: hidden;
-  width: 100%;
-  padding-top: 64px;
   flex: 1;
+  padding-top: 7.8rem;
+  overflow: hidden;
+  align-items: center;
 
-  @media only screen and (min-width: 360px) {
-  }
-  @media only screen and (min-width: 768px) {
+  @media all and (min-width: 425px) {
     padding-top: 0;
-    padding-bottom: 24px;
   }
 `;
 
@@ -104,26 +73,17 @@ const Num = styled.h1`
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--white);
 
-  font-size: 48px;
-  line-height: 48px;
+  font-size: 3rem;
+  line-height: 3rem;
   /* letter-spacing: -3.6px; */
 
-  @media only screen and (min-width: 360px) {
-    font-size: 64px;
-    line-height: 63px;
-    /* letter-spacing: -3.6px; */
+  @media all and (min-width: 22.5rem) {
+    font-size: 5rem;
+    line-height: 5rem;
   }
-
-  @media only screen and (min-width: 768px) {
-    font-size: 116px;
-    line-height: 116px;
-    /* letter-spacing: -5.44px; */
-  }
-
-  @media only screen and (min-width: 1024px) {
-    font-size: 136px;
-    line-height: 136px;
-    /* letter-spacing: -5.44px; */
+  @media all and (min-width: 48rem) {
+    font-size: 8rem;
+    line-height: 8rem;
   }
 `;
 
@@ -142,7 +102,6 @@ const PBox = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    /* margin-top: 16px; */
   }
 `;
 
@@ -166,78 +125,62 @@ const TitleContainer = styled.p`
 const TitleParagraph = styled(motion.span)`
   font-family: var(--font-family-secondary-bold);
   display: inline-block;
-  font-size: 52px;
+  font-size: 3.25rem;
   letter-spacing: 0px;
-  line-height: 52px;
+  line-height: 3.25rem;
   color: var(--white);
 
   @media only screen and (min-width: 360px) {
-    font-size: 64px;
-    line-height: 63px;
+    font-size: 4rem;
+    line-height: 4rem;
   }
-  @media only screen and (min-width: 768px) {
-    font-size: 116px;
-    line-height: 116px;
+  @media only screen and (min-width: 425px) {
+    font-size: 7.25rem;
+    line-height: 7.25rem;
   }
-  @media only screen and (min-width: 1024px) {
-    font-size: 136px;
-    line-height: 136px;
-  }
+  /* @media only screen and (min-width: 1024px) {
+    font-size: 8.5rem;
+    line-height: 8.5rem;
+  } */
 `;
 
 const P = styled(motion.p)`
   font-family: var(--font-family-main-SemiBold);
   color: var(--white);
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
   letter-spacing: 0.1px;
 
   @media only screen and (min-width: 360px) {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 0.875rem;
+    line-height: 0.875rem;
   }
 
   @media only screen and (min-width: 768px) {
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.125rem;
+    line-height: 1.125rem;
     letter-spacing: 0px;
   }
-`;
-
-const Highlight = styled(motion.div)`
-  display: inline-block;
-  width: 75px;
-  background-color: var(--white);
-  color: var(--black);
 `;
 
 const Right = styled.div`
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  flex: 1;
+  align-items: flex-end;
+  flex: 2;
 `;
 
 const ButtonContainer = styled(motion.div)`
-  height: 36px;
+  height: 2.25rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  @media only screen and (min-width: 360px) {
-    height: 44px;
-    width: 170px;
-  }
-  @media only screen and (min-width: 768px) {
-    height: 60px;
-    width: 260px;
-  }
-  @media only screen and (min-width: 1024px) {
-    height: 60px;
-    width: 260px;
-    margin-bottom: 48px;
-    margin-right: 60px;
+  justify-content: space-around;
+
+  @media all and (min-width: 425px) {
+    height: 3.25rem;
+    width: 13rem;
+    margin-bottom: 4.5rem;
+    margin-left: 2rem;
   }
 `;
 
@@ -245,19 +188,19 @@ const PremiumButton = styled(motion.h3)`
   border: none;
   font-family: var(--font-family-main-SemiBold);
   letter-spacing: 0.2px;
-  line-height: 36px;
-  font-size: 14px;
+  line-height: 2.25rem;
+  font-size: 0.875rem;
   background-color: transparent;
   color: var(--white);
   text-decoration-line: underline;
 
   @media only screen and (min-width: 360px) {
     font-size: 18px;
-    line-height: 44px;
+    line-height: 18px;
   }
   @media only screen and (min-width: 768px) {
     font-size: 18px;
-    line-height: 60px;
+    line-height: 18px;
   }
 `;
 
@@ -276,7 +219,6 @@ export {
   Num,
   NumBox,
   TitleParagraph,
-  Highlight,
   ButtonContainer,
   PremiumButton,
 };
