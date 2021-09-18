@@ -4,8 +4,10 @@ import CaustenMedium from "../fonts/Causten-Medium.otf";
 import CaustenRegular from "../fonts/Causten-Regular.otf";
 import CaustenSemiBold from "../fonts/Causten-SemiBold.otf";
 import CormorantGaramond from "../fonts/CormorantGaramond-Bold.ttf";
-import RobotoMonoRegular from "../fonts/RobotoMono-Regular.ttf";
-import RobotoMonoBold from "../fonts/RobotoMono-Bold.ttf";
+import ThunderExtraBoldItalic from "../fonts/Thunder-ExtraBoldLCItalic.ttf";
+import ThunderExtraBold from "../fonts/Thunder-ExtraBoldLC.ttf";
+import ThunderThin from "../fonts/Thunder-ThinLC.ttf";
+import ThunderBold from "../fonts/Thunder-BoldLC.ttf";
 
 const GlobalFont = createGlobalStyle`
     @font-face {
@@ -34,14 +36,23 @@ const GlobalFont = createGlobalStyle`
         font-weight: 600;
     }
     @font-face {
-        font-family: 'RobotoMonoRegular';
-        src: local('RobotoMonoRegular'), url(${RobotoMonoRegular}) format('truetype');
-        font-weight: 400;
+        font-family: 'ThunderExtraBoldItalic';
+        src: local('ThunderExtraBoldItalic'), url(${ThunderExtraBoldItalic}) format('truetype');
     }
     @font-face {
-        font-family: 'RobotoMonoBold';
-        src: local('RobotoMonoBold'), url(${RobotoMonoBold}) format('truetype');
-        font-weight: 700;
+        font-family: 'ThunderExtraBold';
+        src: local('ThunderExtraBold'), url(${ThunderExtraBold}) format('truetype');
+        
+    }
+    @font-face {
+        font-family: 'ThunderThin';
+        src: local('ThunderThin'), url(${ThunderThin}) format('truetype');
+        
+    }
+    @font-face {
+        font-family: 'ThunderBold';
+        src: local('ThunderBold'), url(${ThunderBold}) format('truetype');
+        
     }
 `;
 

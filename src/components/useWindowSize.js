@@ -4,13 +4,6 @@ const isBrowser = typeof window !== "undefined";
 
 export default function useWindowSize() {
   if (isBrowser) {
-    function getSize() {
-      return {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    }
-
     const [windowSize, setWindowSize] = useState(getSize);
 
     useEffect(() => {
@@ -22,6 +15,12 @@ export default function useWindowSize() {
       return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    function getSize() {
+      return {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    }
     return windowSize;
   }
 }

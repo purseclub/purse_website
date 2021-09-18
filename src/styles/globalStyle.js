@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
         --camel: #F5E4BC;
         --black: #000000;
         --brown: #292823;
-        --white: #EBEBEB;
+        --white: #FFFFFF;
         --beige: #F5E4D0;
         --green: #5E7361;
         --lightBlue: #4D6890;
@@ -38,9 +38,10 @@ const GlobalStyle = createGlobalStyle`
         --font-family-main-Medium: 'CaustenMedium', sans-serif;
         --font-family-main-SemiBold: 'CaustenSemiBold', sans-serif;
         --font-family-main-Bold: 'CaustenBold', sans-serif;
-        --font-family-secondary: 'CormorantGaramond', Monospace;
-        background-color: var(--lightBlue);;
-        color: var(--brown);
+        --font-family-secondary: 'ThunderExtraBold', Monospace;
+        --font-family-secondary-bold: 'ThunderBold', Monospace;
+        --font-family-secondary-thin: 'ThunderThin', Monospace;
+        background-color: var(--lightBlue);
     }
 `;
 

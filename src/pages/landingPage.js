@@ -132,7 +132,7 @@ const LandingPage = ({ opacity, reference }) => {
                   <TitleParagraph variants={contentVariants}>r</TitleParagraph>
                   <TitleParagraph variants={contentVariants}>e</TitleParagraph>
                 </TitleContainer>
-                <TitleContainer left={12}>
+                <TitleContainer left={16}>
                   <TitleParagraph variants={contentVariants}>i</TitleParagraph>
                   <TitleParagraph variants={contentVariants}>s</TitleParagraph>
                 </TitleContainer>

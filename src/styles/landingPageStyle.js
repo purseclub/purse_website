@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const MasterContainer = styled(motion.section)`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -57,10 +57,18 @@ const ContentBox = styled(motion.div)`
 const Left = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-start;
   height: 100%;
   flex: 6;
+
+  @media only screen and (min-width: 360px) {
+    flex: 5;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-left: 24px;
+  }
 `;
 
 const TextBox = styled.div`
@@ -71,45 +79,45 @@ const TextBox = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    margin-bottom: 48px;
+    padding-bottom: 48px;
   }
 `;
 
 const NumBox = styled(motion.div)`
   overflow: hidden;
   width: 100%;
-  margin-top: 52px;
+  padding-top: 64px;
+  flex: 1;
 
   @media only screen and (min-width: 360px) {
-    margin-top: 72px;
   }
   @media only screen and (min-width: 768px) {
-    margin-top: 0px;
-    padding-bottom: 8px;
+    padding-top: 0;
+    padding-bottom: 24px;
   }
 `;
 
 const Num = styled.h1`
-  font-family: var(--font-family-main-SemiBold);
-  color: var(--lightblue);
+  font-family: var(--font-family-secondary-bold);
+  color: var(--lightBlue);
   -webkit-text-fill-color: var(--lightBlue);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--white);
 
   font-size: 48px;
   line-height: 48px;
-  letter-spacing: -3.6px;
+  /* letter-spacing: -3.6px; */
 
   @media only screen and (min-width: 360px) {
     font-size: 64px;
     line-height: 63px;
-    letter-spacing: -3.6px;
+    /* letter-spacing: -3.6px; */
   }
 
   @media only screen and (min-width: 768px) {
     font-size: 136px;
-    line-height: 106px;
-    letter-spacing: -5.44px;
+    line-height: 136px;
+    /* letter-spacing: -5.44px; */
   }
 `;
 
@@ -127,7 +135,7 @@ const PBox = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    margin-top: 16px;
+    /* margin-top: 16px; */
   }
 `;
 
@@ -149,12 +157,12 @@ const TitleContainer = styled.p`
 `;
 
 const TitleParagraph = styled(motion.span)`
-  font-family: var(--font-family-main-SemiBold);
+  font-family: var(--font-family-secondary-bold);
   display: inline-block;
   font-size: 52px;
-  letter-spacing: -1.9px;
+  letter-spacing: 0px;
   line-height: 52px;
-  color: #9db1ce;
+  color: var(--white);
 
   @media only screen and (min-width: 360px) {
     font-size: 64px;
@@ -162,8 +170,7 @@ const TitleParagraph = styled(motion.span)`
   }
   @media only screen and (min-width: 768px) {
     font-size: 136px;
-    line-height: 106px;
-    letter-spacing: -5.44px;
+    line-height: 136px;
   }
 `;
 
@@ -214,7 +221,7 @@ const ButtonContainer = styled(motion.div)`
     height: 60px;
     width: 260px;
     margin-bottom: 48px;
-    margin-right: 100px;
+    margin-right: 60px;
   }
 `;
 
