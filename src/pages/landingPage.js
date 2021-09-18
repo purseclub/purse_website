@@ -155,7 +155,7 @@ const LandingPage = ({ opacity, reference }) => {
         </Left>
         <Right>
           <ButtonContainer variants={numParaButtonVariant}>
-            <PremiumButton>experience here</PremiumButton>
+            <PremiumButton>Experience Now</PremiumButton>
             <ArrowSvg />
           </ButtonContainer>
         </Right>

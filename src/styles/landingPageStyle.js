@@ -176,7 +176,7 @@ const TitleParagraph = styled(motion.span)`
 `;
 
 const P = styled(motion.p)`
-  font-family: var(--font-family-main-Regular);
+  font-family: var(--font-family-main-SemiBold);
   color: var(--white);
   font-size: 12px;
   line-height: 14px;

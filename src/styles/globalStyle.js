@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
         --white: #FFFFFF;
         --beige: #F5E4D0;
         --green: #5E7361;
-        --lightBlue: #4D6890;
+        --lightBlue:#A62525;
         --desktop-margin: 7.5rem;
         --tablet-margin: 4rem;
         --mobile-margin: 2rem;
