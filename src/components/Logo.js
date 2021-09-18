@@ -34,8 +34,8 @@ const WhiteLogo = ({ width }) => {
           y2="40.3082"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="#C2C2C2" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="#C2C2C2" />
         </linearGradient>
         <linearGradient
           id="paint1_linear"
@@ -45,8 +45,8 @@ const WhiteLogo = ({ width }) => {
           y2="43.8979"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="#C2C2C2" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="#C2C2C2" />
         </linearGradient>
       </defs>
     </Svg>
@@ -82,7 +82,7 @@ const BlackLogo = ({ width }) => {
           y2="32.6934"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#474747" />
+          <stop stopColor="#474747" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -93,7 +93,7 @@ const BlackLogo = ({ width }) => {
           y2="35.6553"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#474747" />
+          <stop stopColor="#474747" />
           <stop offset="1" />
         </linearGradient>
       </defs>

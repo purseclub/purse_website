@@ -107,7 +107,7 @@ const contentVariants = {
   },
 };
 
-const LandingPage = ({ opacity, reference }) => {
+const LandingPage = ({ reference }) => {
   return (
     <MasterContainer
       variants={containerVariants}

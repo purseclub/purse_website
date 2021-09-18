@@ -224,6 +224,7 @@ const ButtonContainer = styled(motion.div)`
   height: 36px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   @media only screen and (min-width: 360px) {
     height: 44px;
     width: 170px;

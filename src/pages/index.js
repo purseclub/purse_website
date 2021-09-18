@@ -27,16 +27,26 @@ const titles = [
   "REWARDS REWARDS REWARDS",
 ];
 
+//transition value
+const transiton = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+
+//top variants
+const ImageVariant = {
+  hidden: {
+    width: "0%",
+    originX: 0.5,
+  },
+  animate: {
+    width: "70%",
+    transition: {
+      ...transiton,
+    },
+  },
+};
+
 // markup
 const IndexPage = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [bannerTitle, setBannerTitle] = useState(titles[0]);
   const { scrollYProgress } = useViewportScroll();
-  const rotate = useTransform(scrollYProgress, [0, 1], [75, 90]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, 74]);
-  const x = useTransform(scrollYProgress, [0, 1], [0, 26]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const opacityRev = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const landingRef = useRef(null);
   const infoRef = useRef(null);
@@ -45,33 +55,12 @@ const IndexPage = () => {
   const size = useWindowSize();
 
   useEffect(() => {
-    if (size.width < 425) {
+    if (size.width <= 768) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
     }
   }, [size]);
-
-  // useEffect(() => {
-  //   scrollYProgress.onChange((x) => {
-  //     if (x == 1) {
-  //       setScrolled(true);
-  //       setBannerTitle(titles[1]);
-  //     }
-  //     if (x === 0) {
-  //       setScrolled(false);
-  //       setBannerTitle(titles[0]);
-  //     }
-  //   });
-
-  //   if (scrolled) {
-  //     landingRef.current.style.visibility = "hidden";
-  //     infoRef.current.style.visibility = "visible";
-  //   } else {
-  //     landingRef.current.style.visibility = "visible";
-  //     infoRef.current.style.visibility = "hidden";
-  //   }
-  // }, [scrollYProgress, scrolled]);
 
   return (
     <>
@@ -80,10 +69,14 @@ const IndexPage = () => {
       <App>
         <>
           <NavigationBar />
-          <LandingPage opacity={opacity} reference={landingRef} />
+          <LandingPage reference={landingRef} />
           {/* <InfoPage reference={infoRef} opacity={opacityRev} /> */}
           {isMobile ? (
-            <MobileImgContainer>
+            <MobileImgContainer
+              variants={ImageVariant}
+              initial="hidden"
+              animate="animate"
+            >
               <MobileImg src={conniCard} alt="conni-card" />
             </MobileImgContainer>
           ) : (

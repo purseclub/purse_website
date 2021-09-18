@@ -19,14 +19,14 @@ const AppSection = styled.section`
   overflow: hidden;
 `;
 
-const MobileImgContainer = styled.div`
+const MobileImgContainer = styled(motion.div)`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
   height: 50vh;
   z-index: 1;
+  transform-origin: right;
 `;
 
 const MobileImg = styled.img`
