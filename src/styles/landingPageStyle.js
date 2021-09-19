@@ -2,64 +2,70 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const MasterContainer = styled(motion.section)`
+  height: 100%;
   width: 80%;
-  height: 94%;
   overflow: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   z-index: 9;
+  margin: 0 auto;
 
-  @media all and (min-width: 425px) {
+  /* @media all and (min-width: 425px) {
     max-height: 70%;
   }
   @media all and (min-width: 1024px) {
     max-width: 68%;
-  }
+  } */
 `;
 
 const ContentBox = styled(motion.div)`
-  height: 100%;
-  width: 100%;
+  min-width: 80%;
+  height: 90%;
   display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-start;
   flex-basis: 100%;
   /* padding: var(--mobile-margin); */
 
   @media all and (min-width: 425px) {
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
   }
 `;
 
 const Left = styled.div`
-  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
-  flex: 2;
-  flex-basis: 100%;
+  flex: 1 1 90%;
+  /* gap: 16rem; */
+  /* flex-basis: 100%; */
 `;
 
 const TextBox = styled.div`
   overflow: hidden;
-  flex: 1;
+  /* flex: 1; */
+  /* margin-bottom: -6rem; */
+  /* flex-basis: 100%; */
+  margin-bottom: -3.6rem;
 
   @media all and (min-width: 1024px) {
-    padding-bottom: 8rem;
+    /* padding-bottom: 8rem; */
   }
 `;
 
 const NumBox = styled(motion.div)`
-  flex: 1;
-  padding-top: 7.8rem;
+  /* flex: 4; */
+  padding-top: 2.8rem;
   overflow: hidden;
   align-items: center;
+  /* flex-basis: 100%; */
 
   @media all and (min-width: 425px) {
     padding-top: 0;
@@ -78,8 +84,8 @@ const Num = styled.h1`
   /* letter-spacing: -3.6px; */
 
   @media all and (min-width: 22.5rem) {
-    font-size: 5rem;
-    line-height: 5rem;
+    font-size: 4rem;
+    line-height: 4rem;
   }
   @media all and (min-width: 48rem) {
     font-size: 8rem;
@@ -135,6 +141,10 @@ const TitleParagraph = styled(motion.span)`
     line-height: 4rem;
   }
   @media only screen and (min-width: 425px) {
+    font-size: 5.25rem;
+    line-height: 5.25rem;
+  }
+  @media all and (min-width: 768px) {
     font-size: 7.25rem;
     line-height: 7.25rem;
   }
@@ -164,10 +174,10 @@ const P = styled(motion.p)`
 `;
 
 const Right = styled.div`
-  height: 100%;
   display: flex;
   align-items: flex-end;
-  flex: 2;
+  flex: 1 1 10%;
+  /* flex-basis: 100%; */
 `;
 
 const ButtonContainer = styled(motion.div)`
