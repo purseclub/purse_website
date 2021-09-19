@@ -20,10 +20,10 @@ const GlobalStyle = createGlobalStyle`
         --camel: #F5E4BC;
         --black: #000000;
         --brown: #292823;
-        --white: #FFFFFF;
+        --white: #F5E4D0;
         --beige: #F5E4D0;
         --green: #5E7361;
-        --lightBlue:#A62525;
+        --lightBlue:#466365;
         --desktop-margin: 7.5rem;
         --tablet-margin: 4rem;
         --mobile-margin: 2rem;

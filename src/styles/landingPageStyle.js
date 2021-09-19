@@ -18,7 +18,7 @@ const MasterContainer = styled(motion.section)`
 `;
 
 const ContentBox = styled(motion.div)`
-  min-width: 80%;
+  min-width: 100%;
   height: 90%;
   display: flex;
   position: absolute;
@@ -31,9 +31,11 @@ const ContentBox = styled(motion.div)`
   flex-basis: 100%;
   /* padding: var(--mobile-margin); */
 
-  @media all and (min-width: 425px) {
+  @media all and (min-width: 64rem) {
     flex-direction: row;
+    min-width: 80%;
     align-items: center;
+    max-height: 50%;
   }
 `;
 
@@ -56,13 +58,13 @@ const TextBox = styled.div`
   margin-bottom: -3.6rem;
 
   @media all and (min-width: 1024px) {
-    /* padding-bottom: 8rem; */
+    margin-bottom: 0;
   }
 `;
 
 const NumBox = styled(motion.div)`
   /* flex: 4; */
-  padding-top: 2.8rem;
+  /* padding-top: 2.8rem; */
   overflow: hidden;
   align-items: center;
   /* flex-basis: 100%; */
@@ -88,8 +90,8 @@ const Num = styled.h1`
     line-height: 4rem;
   }
   @media all and (min-width: 48rem) {
-    font-size: 8rem;
-    line-height: 8rem;
+    font-size: 6rem;
+    line-height: 6rem;
   }
 `;
 
@@ -174,6 +176,7 @@ const P = styled(motion.p)`
 `;
 
 const Right = styled.div`
+  height: 100%;
   display: flex;
   align-items: flex-end;
   flex: 1 1 10%;
@@ -187,10 +190,12 @@ const ButtonContainer = styled(motion.div)`
   justify-content: space-around;
 
   @media all and (min-width: 425px) {
-    height: 3.25rem;
-    width: 13rem;
-    margin-bottom: 4.5rem;
-    margin-left: 2rem;
+    width: 12rem;
+  }
+
+  @media all and (min-width: 1024px) {
+    margin-bottom: max(1.7rem, 25%);
+    margin-right: 4.5rem;
   }
 `;
 

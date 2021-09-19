@@ -123,7 +123,7 @@ const LandingPage = ({ reference }) => {
             <Title>
               <TitleTop>
                 <TitleContainer>
-                  <TitleParagraph variants={contentVariants}>f</TitleParagraph>
+                  <TitleParagraph variants={contentVariants}>F</TitleParagraph>
                   <TitleParagraph variants={contentVariants}>u</TitleParagraph>
                   <TitleParagraph variants={contentVariants}>t</TitleParagraph>
                   <TitleParagraph variants={contentVariants}>u</TitleParagraph>
@@ -146,7 +146,7 @@ const LandingPage = ({ reference }) => {
             </Title>
             <PBox>
               <P variants={numParaButtonVariant}>
-                modern way of storing and managing your cards.
+                Modern way of storing and managing your cards.
               </P>
             </PBox>
           </TextBox>
