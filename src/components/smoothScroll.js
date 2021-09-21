@@ -3,11 +3,12 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import useWindowSize from "../components/useWindowSize";
 
+//scroll-container style
+const ScrollContainer = styled(motion.div)`
+  width: 100%;
+`;
+
 const SmoothScroll = ({ children }) => {
-  //scroll-container style
-  const ScrollContainer = styled(motion.div)`
-    width: 100%;
-  `;
   //Hook to grab window size
   const size = useWindowSize();
 

@@ -22,6 +22,11 @@ export default function useWindowSize() {
       };
     }
     return windowSize;
+  } else {
+    return {
+      width: 1920,
+      height: 1080,
+    };
   }
 
   // const [windowSize, setWindowSize] = useState(getSize);
