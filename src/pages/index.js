@@ -17,14 +17,14 @@ const IndexPage = () => {
     <>
       <GlobalFont />
       <GlobalStyle />
-      <App>
+      <>
         <SmoothScroll>
           <NavigationBar />
           <Landing />
           <WhatWeOffer />
           <Intro />
         </SmoothScroll>
-      </App>
+      </>
     </>
   );
 };

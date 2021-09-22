@@ -9,7 +9,7 @@ const App = styled.main`
   left: 0;
   bottom: 0;
   overflow: hidden;
-  pointer-events: none;
+  /* pointer-events: none; */
 `;
 
 const AppSection = styled.section`

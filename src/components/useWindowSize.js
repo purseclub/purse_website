@@ -3,48 +3,48 @@ import { useState, useEffect } from "react";
 const isBrowser = typeof window !== "undefined";
 
 export default function useWindowSize() {
-  if (isBrowser) {
-    const [windowSize, setWindowSize] = useState(getSize);
+  // if (isBrowser) {
+  //   const [windowSize, setWindowSize] = useState(getSize);
 
-    useEffect(() => {
-      function handleResize() {
-        setWindowSize(getSize());
-      }
+  //   useEffect(() => {
+  //     function handleResize() {
+  //       setWindowSize(getSize());
+  //     }
 
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+  //     window.addEventListener("resize", handleResize);
+  //     return () => window.removeEventListener("resize", handleResize);
+  //   }, []);
 
-    function getSize() {
-      return {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    }
-    return windowSize;
-  } else {
-    return {
-      width: 1920,
-      height: 1080,
-    };
-  }
-
-  // const [windowSize, setWindowSize] = useState(getSize);
-
-  // useEffect(() => {
-  //   function handleResize() {
-  //     setWindowSize(getSize());
+  //   function getSize() {
+  //     return {
+  //       width: window.innerWidth,
+  //       height: window.innerHeight,
+  //     };
   //   }
-
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
-
-  // function getSize() {
+  //   return windowSize;
+  // } else {
   //   return {
-  //     width: window.innerWidth,
-  //     height: window.innerHeight,
+  //     width: 1920,
+  //     height: 1080,
   //   };
   // }
-  // return windowSize;
+
+  const [windowSize, setWindowSize] = useState(getSize);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize(getSize());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  function getSize() {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  }
+  return windowSize;
 }
