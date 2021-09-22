@@ -4,7 +4,7 @@ import styled from "styled-components";
 import useWindowSize from "../components/useWindowSize";
 
 //scroll-container style
-const ScrollContainer = styled(motion.div)`
+const ScrollContainer = styled.div`
   width: 100%;
 `;
 
@@ -36,7 +36,7 @@ const SmoothScroll = ({ children }) => {
   //Set the height of the body to the height of the scrolling div
   const setBodyHeight = () => {
     document.body.style.height = `${
-      scrollContainer.current.getBoundingClientRect().height * 2
+      scrollContainer.current.getBoundingClientRect().height
     }px`;
   };
 

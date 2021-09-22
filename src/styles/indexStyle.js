@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const App = styled(motion.main)`
+const App = styled.main`
   width: 100%;
   height: 100%;
-  height: -webkit-fill-available;
   position: fixed;
   top: 0;
   left: 0;
   overflow: hidden;
+  pointer-events: none;
 `;
 
 const AppSection = styled.section`
