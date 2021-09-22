@@ -10,10 +10,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html {
-        height: 100%;
+        /* height: 100%; */
+        
     }
 
     body {
+       
         overscroll-behavior-y: none;
     }
 
