@@ -31,7 +31,7 @@ const SmoothScroll = ({ children }) => {
   //set the height of the body.
   useEffect(() => {
     setBodyHeight();
-  }, [size.height]);
+  }, []);
 
   //Set the height of the body to the height of the scrolling div
   const setBodyHeight = () => {
