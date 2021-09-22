@@ -24,7 +24,7 @@ export const Title = styled.h1`
   letter-spacing: -0.03em;
   line-height: 4rem;
   color: var(--white);
-  /* font-weight: 400; */
+  font-weight: 400;
 
   @media all and (min-width: 991px) {
     font-size: 6rem;
@@ -35,7 +35,7 @@ export const Title = styled.h1`
 export const Strong = styled.span`
   font-family: var(--font-family-main-SemiBold);
   color: var(--orange);
-  /* font-weight: 700; */
+  font-weight: 600;
 `;
 
 export const ParaContainer = styled.div`
@@ -76,7 +76,7 @@ export const Para = styled.p`
   line-height: 1.5rem;
   letter-spacing: 0.03em;
   color: var(--white);
-  /* font-weight: 400; */
+  font-weight: 400;
 
   @media all and (min-width: 991px) {
     font-size: 1.5rem;

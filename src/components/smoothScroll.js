@@ -6,6 +6,7 @@ import useWindowSize from "../components/useWindowSize";
 //scroll-container style
 const ScrollContainer = styled.div`
   width: 100%;
+  will-change: transform;
 `;
 
 const SmoothScroll = ({ children }) => {
