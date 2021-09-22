@@ -41,6 +41,11 @@ export const Divider = styled.div`
   width: 100%;
   height: 1px;
   background-color: var(--black);
+
+  @media all and (min-width: 991px) {
+    max-width: ${(props) => props.width ?? "100%"};
+    margin-left: auto;
+  }
 `;
 
 export const ContentBox = styled.div`

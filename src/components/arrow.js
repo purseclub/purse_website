@@ -1,12 +1,11 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
-const Svg = styled.svg`
+const Svg = styled(motion.svg)`
   width: 5.08rem;
   height: 5.17rem;
-  transform: ${(props) => props.rotate ?? "rotate(30deg)"};
   margin-top: -1.5rem;
-  fill: ${(props) => props.fill ?? "none"};
 
   @media all and (min-width: 991px) {
     width: 6.23rem;
@@ -14,12 +13,35 @@ const Svg = styled.svg`
   }
 `;
 
-const ArrowSvg = ({ fill, rotate }) => {
+const transiton = { duration: 1.0, ease: [0.22, 1, 0.36, 1] };
+
+const arrowVariant = {
+  initial: {
+    fill: "none",
+    transform: "rotate(0deg)",
+    originX: 0.2,
+    originY: 0.2,
+  },
+  animate: {
+    originX: 0.2,
+    originY: 0.2,
+    fill: "var(--black)",
+    transform: "rotate(195deg)",
+
+    transition: {
+      ...transiton,
+    },
+  },
+};
+
+const ArrowSvg = ({ selectedNo, index }) => {
   return (
     <Svg
-      fill={fill}
-      rotate={rotate}
-      viewBox="0 0 100 102"
+      variants={arrowVariant}
+      initial={selectedNo === index ? "initial" : "animate"}
+      animate={selectedNo === index ? "animate" : "initial"}
+      key="arrow"
+      viewBox="0 0 120 120"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

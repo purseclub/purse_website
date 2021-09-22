@@ -10,6 +10,10 @@ export const FContainer = styled.div`
   max-width: 90%;
   margin: 0 auto;
   padding: 4.5rem 0;
+
+  @media all and (min-width: 991px) {
+    padding: 10rem 0;
+  }
 `;
 
 export const FHeading = styled.h1`
@@ -20,6 +24,13 @@ export const FHeading = styled.h1`
   letter-spacing: -0.02em;
   color: var(--black);
   padding-bottom: 4rem;
+
+  @media all and (min-width: 991px) {
+    font-size: 7.875rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.03em;
+    padding-bottom: 7.25rem;
+  }
 `;
 
 export const QuestionContainer = styled(motion.div)`
@@ -27,6 +38,7 @@ export const QuestionContainer = styled(motion.div)`
   position: relative;
   margin-top: 1rem;
   /* padding-bottom: 1.5rem; */
+  cursor: pointer;
 
   ::after {
     content: "";
@@ -37,6 +49,11 @@ export const QuestionContainer = styled(motion.div)`
     height: 1px;
     background-color: var(--black);
   }
+
+  @media all and (min-width: 991px) {
+    max-width: 70%;
+    margin-left: auto;
+  }
 `;
 
 export const QcHead = styled.div`
@@ -45,7 +62,7 @@ export const QcHead = styled.div`
   align-items: center;
 `;
 
-export const Question = styled.h2`
+export const Question = styled(motion.h2)`
   max-width: 80%;
   font-family: var(--font-family-main-Bold);
   font-weight: 700;
@@ -53,6 +70,12 @@ export const Question = styled.h2`
   letter-spacing: -0.03em;
   line-height: 1.5rem;
   color: var(--black);
+
+  @media all and (min-width: 991px) {
+    font-size: 2.5rem;
+
+    line-height: 3rem;
+  }
 `;
 
 export const Arrow = styled.div`
@@ -71,4 +94,10 @@ export const Answer = styled.p`
   letter-spacing: 0.03em;
   line-height: 1.5rem;
   color: var(--black);
+
+  @media all and (min-width: 991px) {
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    line-height: 2rem;
+  }
 `;

@@ -4,7 +4,7 @@ import {
   ButtonText,
   ButtonWrapper,
 } from "../../styles/circleButton";
-import ArrowSvg from "../arrow";
+import NonAnimatedArrow from "../NonAnimatedArrow";
 
 const transiton = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
 
@@ -30,7 +30,7 @@ const CircleButton = () => {
         initial="initial"
         whileHover="final"
       >
-        <ArrowSvg />
+        <NonAnimatedArrow />
         <ButtonText>Experience the app</ButtonText>
       </ButtonContainer>
     </ButtonWrapper>

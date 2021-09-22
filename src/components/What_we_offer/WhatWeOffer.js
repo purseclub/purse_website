@@ -12,7 +12,7 @@ import {
   WwoHeading,
   WwoWrapper,
 } from "../../styles/whatWeOffer";
-import ArrowSvg from "../arrow";
+import NonAnimatedArrow from "../NonAnimatedArrow";
 
 const datas = [
   {
@@ -48,7 +48,10 @@ const WhatWeOffer = () => {
             <ContentBox key={index}>
               <ContentHead>
                 <ContentHeadTitle>{data.title}</ContentHeadTitle>
-                <ArrowSvg fill={"var(--black)"} rotate={"rotate(195deg)"} />
+                <NonAnimatedArrow
+                  fill={"var(--black)"}
+                  rotate={"rotate(195deg)"}
+                />
               </ContentHead>
               <ContentBody>
                 <ContentPara>{data.body}</ContentPara>

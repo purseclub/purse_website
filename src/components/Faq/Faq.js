@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
@@ -29,23 +30,58 @@ const questionAnswers = [
   },
 ];
 
-const variants = {
-  hidden: {
-    opacity: 0,
-    display: "none",
+const transiton = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
+
+const textVariant = {
+  initial: {
+    fontFamily: "var(--font-family-main-Regular)",
+    fontWeight: 400,
   },
   animate: {
-    opacity: 1,
+    fontFamily: "var(--font-family-main-Bold)",
+    fontWeight: 700,
+    transiton: {
+      ...transiton,
+    },
+  },
+};
+
+const variants = {
+  hidden: {
+    height: "0",
+    display: "block",
+  },
+  animate: {
+    height: "auto",
     display: "block",
     transition: {
-      duration: 1.6,
-      ease: "easeOut",
+      ...transiton,
+    },
+  },
+  exit: {
+    height: "0",
+    display: "block",
+    transition: {
+      ...transiton,
+    },
+  },
+};
+
+const arrowVariant = {
+  initial: {
+    fill: "none",
+    // transform: "rotate(-30deg)",
+  },
+  animate: {
+    fill: "var(--black)",
+    // transform: "rotate(195deg)",
+    transition: {
+      ...transiton,
     },
   },
 };
 
 const Faq = () => {
-  const [isActive, setIsActive] = useState(true);
   const [selectedNo, setSelectedNo] = useState(0);
 
   const refs = useRef([useRef(), useRef()]);
@@ -54,36 +90,52 @@ const Faq = () => {
     setSelectedNo(index);
   };
 
-  useEffect(() => {}, [selectedNo]);
-
   return (
     <FWrapper>
       <FContainer>
         <FHeading>FAQ</FHeading>
-        <Divider />
-        {questionAnswers.map((qa, index) => {
-          return (
-            <QuestionContainer onTap={() => getTappedIndex(index)} key={index}>
-              <QcHead>
-                <Question>{qa.question}</Question>
-                <Arrow>
-                  <ArrowSvg fill={"var(--black)"} rotate={"rotate(195deg)"} />
-                </Arrow>
-              </QcHead>
-              {selectedNo === index ? (
-                <AnswerContainer
-                  variants={variants}
-                  initial="hidden"
-                  animate="animate"
-                >
-                  <Answer>{qa.answer}</Answer>
-                </AnswerContainer>
-              ) : (
-                <></>
-              )}
-            </QuestionContainer>
-          );
-        })}
+        <Divider width="70%" />
+        <AnimatePresence>
+          {questionAnswers.map((qa, index) => {
+            return (
+              <QuestionContainer
+                onTap={() => getTappedIndex(index)}
+                key={index}
+              >
+                <QcHead>
+                  <Question
+                    key="question"
+                    variants={textVariant}
+                    initial={selectedNo === index ? "initial" : "animate"}
+                    animate={selectedNo === index ? "animate" : "initial"}
+                  >
+                    {qa.question}
+                  </Question>
+                  <Arrow>
+                    <ArrowSvg
+                      rotate={"rotate(195deg)"}
+                      selectedNo={selectedNo}
+                      index={index}
+                    />
+                  </Arrow>
+                </QcHead>
+                {selectedNo === index ? (
+                  <AnswerContainer
+                    key="answer"
+                    variants={variants}
+                    initial="hidden"
+                    animate="animate"
+                    exit="exit"
+                  >
+                    <Answer>{qa.answer}</Answer>
+                  </AnswerContainer>
+                ) : (
+                  <></>
+                )}
+              </QuestionContainer>
+            );
+          })}
+        </AnimatePresence>
       </FContainer>
     </FWrapper>
   );
