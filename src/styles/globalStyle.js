@@ -10,9 +10,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html {
-        height: 100%;
-        width: 100%;
-        
+       
     }
 
     body {

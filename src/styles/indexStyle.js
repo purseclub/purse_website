@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const App = styled.main`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
   overflow: hidden;
   pointer-events: none;
 `;
