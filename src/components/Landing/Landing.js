@@ -10,6 +10,22 @@ import {
 } from "../../styles/landing";
 import CircleButton from "../CircleButton/CircleButton";
 
+const transiton = { duration: 0.6, ease: [0.25, 1, 0.5, 1] };
+
+const ButtonVariant = {
+  initial: {
+    backgroundColor: "var(--white)",
+    transform: "rotate(-30deg)",
+  },
+  animate: {
+    backgroundColor: "var(--orange)",
+    transform: "rotate(0deg)",
+    transition: {
+      ...transiton,
+    },
+  },
+};
+
 export const Landing = () => {
   return (
     <LandingWrapper>
@@ -26,7 +42,13 @@ export const Landing = () => {
             <Strong> Downloading the app.</Strong>
           </Para>
         </ParaContainer>
-        <CircleButton />
+        <CircleButton
+          textColor={"var(--black)"}
+          arrowStrokeColor={"var(--black)"}
+          buttonText={"Experience the app"}
+          variants={ButtonVariant}
+          size={"13rem"}
+        />
       </LandingContainer>
     </LandingWrapper>
   );

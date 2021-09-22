@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const ButtonWrapper = styled.div`
+export const ButtonWrapper = styled(motion.div)`
   height: 10rem;
   width: 10rem;
   position: relative;
@@ -10,13 +10,13 @@ export const ButtonWrapper = styled.div`
   cursor: pointer;
 
   @media all and (min-width: 991px) {
-    height: 13rem;
-    width: 13rem;
+    height: ${(props) => props.size};
+    width: ${(props) => props.size};
+    left: ${(props) => props.left};
   }
 `;
 
 export const ButtonContainer = styled(motion.div)`
-  background-color: var(--white);
   border-radius: 50%;
   width: 100%;
   height: 100%;
@@ -33,7 +33,7 @@ export const ButtonText = styled.h4`
   letter-spacing: -0.02em;
   line-height: 0.5rem;
   font-size: 0.875rem;
-  color: var(--black);
+  color: ${(props) => props.textColor};
 
   @media all and (min-width: 991px) {
     font-size: 1.125rem;

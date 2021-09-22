@@ -13,31 +13,10 @@ const Svg = styled(motion.svg)`
   }
 `;
 
-const transiton = { duration: 1.0, ease: [0.22, 1, 0.36, 1] };
-
-const arrowVariant = {
-  initial: {
-    fill: "none",
-    transform: "rotate(0deg)",
-    originX: 0.2,
-    originY: 0.2,
-  },
-  animate: {
-    originX: 0.2,
-    originY: 0.2,
-    fill: "var(--black)",
-    transform: "rotate(195deg)",
-
-    transition: {
-      ...transiton,
-    },
-  },
-};
-
-const ArrowSvg = ({ selectedNo, index }) => {
+const ArrowSvg = ({ selectedNo, index, variants }) => {
   return (
     <Svg
-      variants={arrowVariant}
+      variants={variants}
       initial={selectedNo === index ? "initial" : "animate"}
       animate={selectedNo === index ? "animate" : "initial"}
       key="arrow"

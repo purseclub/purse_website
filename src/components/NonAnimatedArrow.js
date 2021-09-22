@@ -15,7 +15,7 @@ const Svg = styled.svg`
   }
 `;
 
-const NonAnimatedArrow = ({ fill, rotate }) => {
+const NonAnimatedArrow = ({ fill, rotate, arrowStrokeColor }) => {
   return (
     <Svg
       fill={fill}
@@ -26,7 +26,7 @@ const NonAnimatedArrow = ({ fill, rotate }) => {
     >
       <path
         d="M41.4227 81.4583L29.8927 74.2145L48.465 40.587L29.8927 45.4434L26.8082 34.2038L65.2794 24.144L75.803 62.491L64.5269 65.4395L59.9002 48.5801L41.4227 81.4583Z"
-        stroke="#292A2B"
+        stroke={arrowStrokeColor}
       />
     </Svg>
   );

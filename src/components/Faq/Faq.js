@@ -1,7 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { useRef } from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 import {
   Answer,
@@ -70,11 +69,16 @@ const variants = {
 const arrowVariant = {
   initial: {
     fill: "none",
-    // transform: "rotate(-30deg)",
+    transform: "rotate(0deg)",
+    originX: 0.2,
+    originY: 0.2,
   },
   animate: {
+    originX: 0.2,
+    originY: 0.2,
     fill: "var(--black)",
-    // transform: "rotate(195deg)",
+    transform: "rotate(195deg)",
+
     transition: {
       ...transiton,
     },
@@ -113,7 +117,7 @@ const Faq = () => {
                   </Question>
                   <Arrow>
                     <ArrowSvg
-                      rotate={"rotate(195deg)"}
+                      variants={arrowVariant}
                       selectedNo={selectedNo}
                       index={index}
                     />

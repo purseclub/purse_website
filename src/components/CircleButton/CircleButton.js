@@ -6,32 +6,25 @@ import {
 } from "../../styles/circleButton";
 import NonAnimatedArrow from "../NonAnimatedArrow";
 
-const transiton = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
-
-const ButtonVariant = {
-  initial: {
-    backgroundColor: "var(--white)",
-    transform: "rotate(-30deg)",
-  },
-  final: {
-    backgroundColor: "var(--orange)",
-    transform: "rotate(0deg)",
-    transition: {
-      ...transiton,
-    },
-  },
-};
-
-const CircleButton = () => {
+const CircleButton = ({
+  arrowStrokeColor,
+  textColor,
+  variants,
+  buttonText,
+  left,
+  size,
+}) => {
   return (
-    <ButtonWrapper>
-      <ButtonContainer
-        variants={ButtonVariant}
-        initial="initial"
-        whileHover="final"
-      >
-        <NonAnimatedArrow />
-        <ButtonText>Experience the app</ButtonText>
+    <ButtonWrapper
+      whileHover="animate"
+      initial="initial"
+      animate="initial"
+      left={left}
+      size={size}
+    >
+      <ButtonContainer variants={variants}>
+        <NonAnimatedArrow arrowStrokeColor={arrowStrokeColor} />
+        <ButtonText textColor={textColor}>{buttonText}</ButtonText>
       </ButtonContainer>
     </ButtonWrapper>
   );

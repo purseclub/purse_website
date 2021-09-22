@@ -8,6 +8,10 @@ export const IntroContainer = styled.div`
   max-width: 90%;
   margin: 0 auto;
   padding: 4.5rem 0;
+
+  @media all and (min-width: 991px) {
+    padding: 10rem 0;
+  }
 `;
 
 export const IntroHeading = styled.p`
