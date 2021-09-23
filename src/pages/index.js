@@ -10,10 +10,11 @@ import Intro from "../components/Intro/Intro";
 import Faq from "../components/Faq/Faq";
 import Discord from "../components/Discord/Discord";
 import Legals from "../components/Legals/Legals";
-import Modal from "../components/modal/modal";
+import Modal from "../components/modal/Modal";
 
 //transition value
 const transiton = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+const isBrowser = typeof window !== "undefined";
 
 // markup
 const IndexPage = () => {
@@ -22,10 +23,9 @@ const IndexPage = () => {
   const showModal = () => setIsActive(true);
   const hideModal = () => setIsActive(false);
 
-  const body = document.body;
-  const style = body.style;
-
   useEffect(() => {
+    const body = document.body;
+    const style = body.style;
     if (isActive) {
       // ref.current.style.display = "block";
       style.overflow = "hidden";
@@ -34,7 +34,7 @@ const IndexPage = () => {
       style.overflow = "visible";
       // ref.current.style.display = "none";
     }
-  }, [isActive, style]);
+  }, [isActive]);
 
   return (
     <>
