@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
         
         --black: #292A2B;
         --white: #E0DFDB;
-        --orange: #ED5D40;
+        --orange: #eb4c2c;
         --desktop-margin: 7.5rem;
         --tablet-margin: 4rem;
         --mobile-margin: 2rem;
@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
         --font-family-secondary: 'ThunderExtraBold', Monospace;
         --font-family-secondary-bold: 'ThunderBold', Monospace;
         --font-family-secondary-thin: 'ThunderThin', Monospace;
-        background-color: var(--black);
+        background-color: var(--white);
     }
 `;
 

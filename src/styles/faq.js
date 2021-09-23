@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const FWrapper = styled.section`
   width: 100%;
-  background-color: var(--white);
+  background-color: var(--black);
 `;
 
 export const FContainer = styled.div`
@@ -22,7 +22,7 @@ export const FHeading = styled.h1`
   font-size: 3rem;
   line-height: 3rem;
   letter-spacing: -0.02em;
-  color: var(--black);
+  color: var(--white);
   padding-bottom: 4rem;
 
   @media all and (min-width: 991px) {
@@ -47,7 +47,7 @@ export const QuestionContainer = styled(motion.div)`
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--black);
+    background-color: var(--white);
   }
 
   @media all and (min-width: 991px) {
@@ -69,7 +69,7 @@ export const Question = styled(motion.h2)`
   font-size: 1.5rem;
   letter-spacing: -0.03em;
   line-height: 1.5rem;
-  color: var(--black);
+  color: var(--white);
 
   @media all and (min-width: 991px) {
     font-size: 2.5rem;
@@ -93,7 +93,7 @@ export const Answer = styled.p`
   font-size: 0.875rem;
   letter-spacing: 0.03em;
   line-height: 1.5rem;
-  color: var(--black);
+  color: var(--white);
 
   @media all and (min-width: 991px) {
     font-size: 1.5rem;

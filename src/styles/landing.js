@@ -23,7 +23,7 @@ export const Title = styled.h1`
   font-size: 4.375rem;
   letter-spacing: -0.03em;
   line-height: 4rem;
-  color: var(--white);
+  color: var(--black);
   font-weight: 400;
 
   @media all and (min-width: 991px) {
@@ -51,7 +51,7 @@ export const ParaContainer = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: #747474;
+    background-color: var(--black);
   }
 
   ::before {
@@ -61,7 +61,7 @@ export const ParaContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #747474;
+    background-color: var(--black);
   }
 
   @media all and (min-width: 991px) {
@@ -75,7 +75,7 @@ export const Para = styled.p`
   font-size: 1.25rem;
   line-height: 1.5rem;
   letter-spacing: 0.03em;
-  color: var(--white);
+  color: var(--black);
   font-weight: 400;
 
   @media all and (min-width: 991px) {

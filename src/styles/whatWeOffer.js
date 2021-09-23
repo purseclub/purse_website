@@ -40,7 +40,7 @@ export const WwoHeading = styled.h4`
 export const Divider = styled.div`
   width: 100%;
   height: 1px;
-  background-color: var(--black);
+  background-color: ${(props) => props.color};
 
   @media all and (min-width: 991px) {
     max-width: ${(props) => props.width ?? "100%"};

@@ -42,7 +42,7 @@ const WhatWeOffer = () => {
     <WwoWrapper>
       <WwoContainer>
         <WwoHeading>What we offer ?</WwoHeading>
-        <Divider />
+        <Divider color={"var(--black)"} />
         {datas.map((data, index) => {
           return (
             <ContentBox key={index}>

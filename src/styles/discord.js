@@ -25,7 +25,7 @@ export const DiscordTitle = styled.p`
   font-size: 4rem;
   letter-spacing: -0.05em;
   line-height: 4rem;
-  color: var(--white);
+  color: var(--black);
   margin-bottom: 2.5rem;
 
   @media all and (min-width: 991px) {

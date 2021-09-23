@@ -43,8 +43,8 @@ export const Landing = () => {
           </Para>
         </ParaContainer>
         <CircleButton
-          textColor={"var(--black)"}
-          arrowStrokeColor={"var(--black)"}
+          textColor={"var(--white)"}
+          arrowStrokeColor={"var(--white)"}
           buttonText={"Experience the app"}
           variants={ButtonVariant}
           size={"13rem"}

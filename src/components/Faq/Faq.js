@@ -76,7 +76,7 @@ const arrowVariant = {
   animate: {
     originX: 0.2,
     originY: 0.2,
-    fill: "var(--black)",
+    fill: "var(--white)",
     transform: "rotate(195deg)",
 
     transition: {
@@ -98,7 +98,7 @@ const Faq = () => {
     <FWrapper>
       <FContainer>
         <FHeading>FAQ</FHeading>
-        <Divider width="70%" />
+        <Divider width="70%" color={"var(--white)"} />
         <AnimatePresence>
           {questionAnswers.map((qa, index) => {
             return (

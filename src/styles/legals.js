@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const LegalWrapper = styled.section`
   width: 100%;
-  background-color: var(--white);
+  background-color: var(--black);
 `;
 
 export const LegalContainer = styled.div`
@@ -21,7 +21,7 @@ export const LegalHeading = styled.h1`
   font-size: 3rem;
   line-height: 3rem;
   letter-spacing: -0.02em;
-  color: var(--black);
+  color: var(--white);
   padding-bottom: 4rem;
 
   @media all and (min-width: 991px) {
@@ -66,7 +66,7 @@ export const SocialLink = styled.a`
   font-size: 1.25rem;
   letter-spacing: 0px;
   line-height: 1.3125rem;
-  color: var(--black);
+  color: var(--white);
 
   @media all and (min-width: 991px) {
     font-size: 1.5rem;
@@ -82,4 +82,5 @@ export const Trademark = styled.h6`
   letter-spacing: 0.005em;
   line-height: 0.5rem;
   text-align: center;
+  color: var(--white);
 `;

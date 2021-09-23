@@ -17,7 +17,7 @@ const transitionTwo = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
 
 const buttonMotion = {
   initial: {
-    backgroundColor: "var(--black)",
+    backgroundColor: "var(--white)",
     transform: "rotate(-30deg)",
   },
   animate: {
@@ -35,7 +35,7 @@ const arrowMotion = {
     transform: "rotate(15deg)",
   },
   animate: {
-    fill: "var(--black)",
+    fill: "var(--white)",
     transform: "rotate(60deg)",
     transition: {
       ...transitionTwo,
@@ -49,12 +49,12 @@ const Legals = () => {
   return (
     <LegalWrapper>
       <LegalContainer>
-        <LegalHeading>Legals</LegalHeading>
+        <LegalHeading>LEGALS</LegalHeading>
         <ActionContainer>
           <CircleButton
             variants={buttonMotion}
-            textColor={"var(--white)"}
-            arrowStrokeColor={"var(--white)"}
+            textColor={"var(--black)"}
+            arrowStrokeColor={"var(--black)"}
             buttonText={"Contact Us"}
             left={"30%"}
             size={"18.25rem"}
@@ -64,11 +64,11 @@ const Legals = () => {
               return (
                 <OutlineButton
                   key={index}
-                  arrowStrokeColor={"var(--black)"}
-                  bgColor={"var(--white)"}
+                  arrowStrokeColor={"var(--white)"}
+                  bgColor={"var(--black)"}
                   buttonText={buttonText}
-                  lineColor={"var(--black)"}
-                  textColor={"var(--black)"}
+                  lineColor={"var(--white)"}
+                  textColor={"var(--white)"}
                   variants={arrowMotion}
                   left={0}
                   right={"auto"}

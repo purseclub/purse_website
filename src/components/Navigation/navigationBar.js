@@ -7,7 +7,7 @@ const NavigationBar = () => {
   return (
     <MasternNav>
       <NavContainer>
-        <Logo color="white" />
+        <Logo color="black" />
         <DownloadButton />
       </NavContainer>
     </MasternNav>

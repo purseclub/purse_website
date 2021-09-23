@@ -20,7 +20,7 @@ export const IntroHeading = styled.p`
   font-size: 4rem;
   letter-spacing: -0.05em;
   line-height: 4rem;
-  color: var(--white);
+  color: var(--black);
 
   @media all and (min-width: 991px) {
     font-size: 6.8125rem;
@@ -42,7 +42,7 @@ export const IntroPara = styled.p`
   font-size: 0.875rem;
   letter-spacing: 0.03em;
   line-height: 1.5rem;
-  color: var(--white);
+  color: var(--black);
 
   @media all and (min-width: 991px) {
     font-size: 1.5rem;
@@ -66,14 +66,14 @@ export const IntroButtonContainer = styled.div`
 export const IntroButton = styled.button`
   cursor: pointer;
   border: none;
-  background-color: var(--white);
+  background-color: var(--black);
   width: 100%;
   height: 100%;
   font-family: var(--font-family-main-SemiBold);
   font-size: 1.125rem;
   line-height: 1.375rem;
   letter-spacing: -0.01em;
-  color: var(--black);
+  color: var(--white);
 
   @media all and (min-width: 991px) {
     font-size: 2rem;
