@@ -9,10 +9,6 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    html {
-       
-    }
-
     body {
        position: relative;
         overscroll-behavior-y: none;

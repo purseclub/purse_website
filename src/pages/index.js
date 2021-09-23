@@ -25,6 +25,8 @@ const IndexPage = () => {
 
   useEffect(() => {
     const body = document.body;
+
+    console.log(document);
     const style = body.style;
     if (isActive) {
       // ref.current.style.display = "block";
