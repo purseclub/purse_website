@@ -14,7 +14,7 @@ const transiton = { duration: 0.6, ease: [0.25, 1, 0.5, 1] };
 
 const ButtonVariant = {
   initial: {
-    backgroundColor: "var(--white)",
+    backgroundColor: "var(--black)",
     transform: "rotate(-30deg)",
   },
   animate: {
