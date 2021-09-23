@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { isMobileOnly, isDesktop, is } from "react-device-detect";
+import { isMobileOnly, isDesktop } from "react-device-detect";
 
 const DownloadButtonContainer = styled.button`
   border: none;
@@ -12,7 +12,7 @@ const DownloadButtonContainer = styled.button`
 
 const Svg = styled.svg`
   padding: 0.75rem;
-  /* width: min(25%, 5.375rem); */
+  width: 100%;
 `;
 
 export const DownloadButton = ({ click }) => {
