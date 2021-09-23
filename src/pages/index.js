@@ -19,22 +19,26 @@ const isBrowser = typeof window !== "undefined";
 // markup
 const IndexPage = () => {
   const [isActive, setIsActive] = useState(false);
+  const [offset, setOffset] = useState(0);
 
   const showModal = () => setIsActive(true);
   const hideModal = () => setIsActive(false);
 
   useEffect(() => {
     const body = document.body;
+    const offsetY = window.scrollY;
 
-    console.log(document);
     const style = body.style;
     if (isActive) {
-      // ref.current.style.display = "block";
-      style.overflow = "hidden";
+      setOffset(offsetY);
+      body.setAttribute(
+        "style",
+        `position: fixed; top: -${offsetY}px; left:0; right: 0`
+      );
     }
     if (!isActive) {
-      style.overflow = "visible";
-      // ref.current.style.display = "none";
+      body.setAttribute("style", "");
+      window.scrollTo(0, offsetY);
     }
   }, [isActive]);
 
