@@ -1,39 +1,54 @@
 import React from "react";
+import { useState } from "react";
 import {
   CrossContainer,
-  Left,
   MobileInput,
   MobileInputContainer,
   ModalContainer,
   ModalSubtitle,
-  ModalSubtitleStrong,
   ModalTitle,
   ModalWrapper,
-  PreNum,
-  Right,
+  SubmitButtonContainer,
+  SubmitSvg,
 } from "../../styles/modal/modalStyle";
 
 const Modal = ({ hide }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const getInputValue = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    alert("hello" + inputValue);
+  };
+
   return (
     <ModalWrapper>
       <ModalContainer>
         <CrossContainer onClick={hide}>
           <CrossSvg />
         </CrossContainer>
-        <Left>
-          <ModalTitle>
-            enter your phone number to get the link via SMS.
-          </ModalTitle>
-          <ModalSubtitle>
-            alternatively,
-            <ModalSubtitleStrong> scan QR code</ModalSubtitleStrong>
-          </ModalSubtitle>
-          <MobileInputContainer>
-            <PreNum>+91</PreNum>
-            <MobileInput placeholder="9876543210" />
-          </MobileInputContainer>
-        </Left>
-        <Right></Right>
+        <ModalTitle>
+          Thank you for showing interest in us. We are currently open to few
+          customers only.
+        </ModalTitle>
+        <ModalSubtitle>
+          Join our premium waiting list and get a chance to win latest iphone 13
+          and macbook pro.
+        </ModalSubtitle>
+        <MobileInputContainer>
+          <MobileInput
+            placeholder="enter your email id here"
+            type="email"
+            value={inputValue}
+            onChange={getInputValue}
+            required
+          />
+          <SubmitButtonContainer onClick={handleSubmit}>
+            <SubmitButton />
+          </SubmitButtonContainer>
+        </MobileInputContainer>
       </ModalContainer>
     </ModalWrapper>
   );
@@ -69,6 +84,25 @@ const CrossSvg = () => {
         fill="#292A2B"
       />
     </svg>
+  );
+};
+
+const SubmitButton = () => {
+  return (
+    <SubmitSvg
+      viewBox="0 0 36 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="17.5748" cy="17.5748" r="17.5748" fill="#8F8D80" />
+      <path
+        d="M14.5 11.7109L20.0807 17.2917L14.5 22.8724"
+        stroke="#292A2B"
+        strokeWidth="1.44817"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </SubmitSvg>
   );
 };
 
