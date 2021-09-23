@@ -122,6 +122,7 @@ export const SubmitButtonContainer = styled.button`
   /* flex: 1 1 20%; */
   border: none;
   background-color: transparent;
+  margin-top: 0.1rem;
 `;
 
 export const SubmitSvg = styled.svg`

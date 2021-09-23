@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-       
+       position: relative;
         overscroll-behavior-y: none;
     }
 
