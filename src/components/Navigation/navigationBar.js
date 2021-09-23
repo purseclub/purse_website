@@ -3,12 +3,12 @@ import Logo from "../Logo";
 import { MasternNav, NavContainer } from "../../styles/navigationBarStyle";
 import { DownloadButton } from "../DownloadButtonCircle/DownloadButton";
 
-const NavigationBar = () => {
+const NavigationBar = ({ click }) => {
   return (
     <MasternNav>
       <NavContainer>
         <Logo color="black" />
-        <DownloadButton />
+        <DownloadButton click={click} />
       </NavContainer>
     </MasternNav>
   );

@@ -10,6 +10,8 @@ import styled from "styled-components";
 
 //scroll-container style
 const ScrollContainer = styled(motion.div)`
+  opacity: ${(props) => (props.status ? "0.4" : "1")};
+  pointer-events: ${(props) => (props.status ? "none" : "all")};
   position: fixed;
   top: 0;
   left: 0;
@@ -18,7 +20,7 @@ const ScrollContainer = styled(motion.div)`
   will-change: transform;
 `;
 
-const SmoothScroll = ({ children }) => {
+const SmoothScroll = ({ children, status }) => {
   // scroll container
   const scrollRef = useRef(null);
 
@@ -50,7 +52,7 @@ const SmoothScroll = ({ children }) => {
 
   return (
     <>
-      <ScrollContainer style={{ y: spring }} ref={scrollRef}>
+      <ScrollContainer style={{ y: spring }} ref={scrollRef} status={status}>
         {children}
       </ScrollContainer>
       <div style={{ height: pageHeight }} />
