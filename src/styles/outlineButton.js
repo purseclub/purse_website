@@ -15,7 +15,7 @@ export const OutlineButtonContainer = styled(motion.div)`
   }
 `;
 
-export const OButton = styled.button`
+export const OButton = styled.div`
   width: 100%;
   height: 100%;
   border: none;

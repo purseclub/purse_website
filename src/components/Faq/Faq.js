@@ -1,6 +1,5 @@
 import { AnimatePresence } from "framer-motion";
 import React from "react";
-import { useRef } from "react";
 import { useState } from "react";
 import {
   Answer,
@@ -69,7 +68,7 @@ const variants = {
 const arrowVariant = {
   initial: {
     fill: "none",
-    transform: "rotate(0deg)",
+    transform: "rotate(15deg)",
     originX: 0.2,
     originY: 0.2,
   },
@@ -87,8 +86,6 @@ const arrowVariant = {
 
 const Faq = () => {
   const [selectedNo, setSelectedNo] = useState(0);
-
-  const refs = useRef([useRef(), useRef()]);
 
   const getTappedIndex = (index) => {
     setSelectedNo(index);

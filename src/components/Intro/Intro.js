@@ -10,7 +10,7 @@ import {
 } from "../../styles/intro";
 import { Strong } from "../../styles/landing";
 
-const Intro = () => {
+const Intro = ({ showModal }) => {
   return (
     <IntroWrapper>
       <IntroContainer>
@@ -33,7 +33,7 @@ const Intro = () => {
           </IntroPara>
         </IntroParaContainer>
         <IntroButtonContainer>
-          <IntroButton>Download the app</IntroButton>
+          <IntroButton onClick={showModal}>Download the app</IntroButton>
         </IntroButtonContainer>
       </IntroContainer>
     </IntroWrapper>

@@ -1,4 +1,7 @@
+import { Link } from "gatsby";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import {
   OutlineButtonContainer,
   OButton,
@@ -18,6 +21,16 @@ const OutlineButton = ({
   right,
   widthPercentage,
 }) => {
+  const [path, setPath] = useState("/");
+
+  useEffect(() => {
+    if (buttonText === "Terms & Conditions") {
+      setPath("/terms_and_condition");
+    } else if (buttonText === "Privacy Policy") {
+      setPath("/privacy_policy");
+    }
+  }, [path, buttonText]);
+
   return (
     <OutlineButtonContainer
       whileHover="animate"
@@ -27,10 +40,12 @@ const OutlineButton = ({
       right={right}
       widthPercentage={widthPercentage}
     >
-      <OButton bgColor={bgColor} lineColor={lineColor}>
-        <ButtonText textColor={textColor}>{buttonText}</ButtonText>
-        <Arrow borderColor={arrowStrokeColor} variants={variants} />
-      </OButton>
+      <Link to={path}>
+        <OButton bgColor={bgColor} lineColor={lineColor}>
+          <ButtonText textColor={textColor}>{buttonText}</ButtonText>
+          <Arrow borderColor={arrowStrokeColor} variants={variants} />
+        </OButton>
+      </Link>
     </OutlineButtonContainer>
   );
 };

@@ -14,8 +14,11 @@ const GlobalStyle = createGlobalStyle`
         overscroll-behavior-y: none;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     :root {
-        
         --black: #292A2B;
         --white: #E0DFDB;
         --orange: #eb4c2c;
