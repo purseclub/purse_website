@@ -102,6 +102,7 @@ export const MobileInputContainer = styled.div`
 
 export const MobileInput = styled.input`
   width: 80%;
+  height: 100%;
   background-color: transparent;
   outline: none;
   border: none;
@@ -111,7 +112,7 @@ export const MobileInput = styled.input`
   letter-spacing: 0.001em;
   line-height: 1.5rem;
   color: var(--white);
-  /* padding-left: 0.5rem; */
+  padding-bottom: 0.5rem;
 
   @media all and (min-width: 991px) {
     font-size: 2.25rem;

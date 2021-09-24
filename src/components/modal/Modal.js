@@ -11,16 +11,23 @@ import {
   SubmitButtonContainer,
   SubmitSvg,
 } from "../../styles/modal/modalStyle";
+import CircularLoading from "./circularLoading";
+import MailSent from "./mailSent";
 
 const Modal = ({ hide }) => {
   const [inputValue, setInputValue] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isMailSent, setIsMailSent] = useState(false);
 
   const getInputValue = (e) => {
     setInputValue(e.target.value);
   };
 
   const handleSubmit = () => {
-    alert("hello" + inputValue);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsMailSent(true);
+    }, 3000);
   };
 
   return (
@@ -37,18 +44,26 @@ const Modal = ({ hide }) => {
           Join our premium waiting list and get a chance to win latest iphone 13
           and macbook pro.
         </ModalSubtitle>
-        <MobileInputContainer>
-          <MobileInput
-            placeholder="enter your email id here"
-            type="email"
-            value={inputValue}
-            onChange={getInputValue}
-            required
-          />
-          <SubmitButtonContainer onClick={handleSubmit}>
-            <SubmitButton />
-          </SubmitButtonContainer>
-        </MobileInputContainer>
+        {isMailSent ? (
+          <MailSent />
+        ) : (
+          <MobileInputContainer>
+            <MobileInput
+              placeholder="enter your email id here"
+              type="email"
+              value={inputValue}
+              onChange={getInputValue}
+              required
+            />
+            {isLoading ? (
+              <CircularLoading />
+            ) : (
+              <SubmitButtonContainer onClick={handleSubmit}>
+                <SubmitButton />
+              </SubmitButtonContainer>
+            )}
+          </MobileInputContainer>
+        )}
       </ModalContainer>
     </ModalWrapper>
   );

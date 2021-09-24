@@ -52,6 +52,7 @@ const Legals = () => {
         <LegalHeading>LEGALS</LegalHeading>
         <ActionContainer>
           <CircleButton
+            path={"/contact_us"}
             variants={buttonMotion}
             textColor={"var(--black)"}
             arrowStrokeColor={"var(--black)"}

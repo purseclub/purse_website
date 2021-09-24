@@ -27,7 +27,7 @@
     "gatsby-plugin-react-helmet": "^4.12.0",
     "gatsby-plugin-sharp": "^3.12.0",
     "gatsby-plugin-sitemap": "^4.8.0",
-    "gatsby-plugin-styled-components": "^4.12.0",
+    "gatsby-plugin-styled-components": "^4.14.0",
     "gatsby-source-filesystem": "^3.12.0",
     "gatsby-transformer-sharp": "^3.12.0",
     "glslify": "^7.1.1",
@@ -37,6 +37,8 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-intersection-observer": "^8.32.1",
+    "react-is": "^17.0.2",
+    "react-lottie": "^1.2.3",
     "resize-observer-polyfill": "^1.5.1",
     "styled-components": "^5.3.1",
     "three": "^0.132.2"

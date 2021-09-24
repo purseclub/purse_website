@@ -1,4 +1,3 @@
-import { Link } from "gatsby";
 import React from "react";
 import {
   LandingContainer,
@@ -43,15 +42,14 @@ export const Landing = () => {
             <Strong> Downloading the app.</Strong>
           </Para>
         </ParaContainer>
-        <Link to="/experience/experienceHome">
-          <CircleButton
-            textColor={"var(--white)"}
-            arrowStrokeColor={"var(--white)"}
-            buttonText={"Experience the app"}
-            variants={ButtonVariant}
-            size={"13rem"}
-          />
-        </Link>
+        <CircleButton
+          textColor={"var(--white)"}
+          arrowStrokeColor={"var(--white)"}
+          buttonText={"Experience the app"}
+          variants={ButtonVariant}
+          size={"13rem"}
+          path={"/experience/experienceHome"}
+        />
       </LandingContainer>
     </LandingWrapper>
   );

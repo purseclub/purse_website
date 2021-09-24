@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 import {
   ButtonContainer,
@@ -13,6 +14,7 @@ const CircleButton = ({
   buttonText,
   left,
   size,
+  path,
 }) => {
   return (
     <ButtonWrapper
@@ -22,10 +24,12 @@ const CircleButton = ({
       left={left}
       size={size}
     >
-      <ButtonContainer variants={variants}>
-        <NonAnimatedArrow arrowStrokeColor={arrowStrokeColor} />
-        <ButtonText textColor={textColor}>{buttonText}</ButtonText>
-      </ButtonContainer>
+      <Link to={path}>
+        <ButtonContainer variants={variants}>
+          <NonAnimatedArrow arrowStrokeColor={arrowStrokeColor} />
+          <ButtonText textColor={textColor}>{buttonText}</ButtonText>
+        </ButtonContainer>
+      </Link>
     </ButtonWrapper>
   );
 };

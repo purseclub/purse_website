@@ -4,7 +4,7 @@ module.exports = {
     title: "purse_website",
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
