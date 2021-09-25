@@ -19,22 +19,32 @@ const Modal = ({ hide }) => {
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isMailSent, setIsMailSent] = useState(false);
+  const [isEmailValid, setIsEmailValid] = useState(false);
 
   const getInputValue = (e) => {
     setInputValue(e.target.value);
+  };
+
+  const checkEmailValid = (email) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const result = re.test(email);
+
+    console.log(result);
   };
 
   const handleSubmit = () => {
     setIsLoading(true);
 
     try {
-      setWaitlistedUser({
-        userEmail: inputValue,
-      }).then(
-        setTimeout(() => {
-          setIsMailSent(true);
-        }, 3000)
-      );
+      checkEmailValid(inputValue);
+      // setWaitlistedUser({
+      //   userEmail: inputValue,
+      // }).then(
+      //   setTimeout(() => {
+      //     setIsMailSent(true);
+      //   }, 3000)
+      // );
     } catch (e) {
       console.log(e);
     }

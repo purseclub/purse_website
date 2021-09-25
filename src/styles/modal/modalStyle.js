@@ -86,7 +86,7 @@ export const MobileInputContainer = styled.div`
   border: 1px solid var(--white);
   border-radius: 50px;
   outline: none;
-  padding: 12px 1.25rem;
+  padding: 8px 1.25rem;
   padding-right: 0.375rem;
   display: flex;
   justify-content: space-between;
