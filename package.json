@@ -18,6 +18,8 @@
     "@react-three/fiber": "^7.0.6",
     "babel-plugin-glsl": "^1.0.0",
     "babel-plugin-styled-components": "^1.13.2",
+    "dotenv": "^8.6.0",
+    "firebase": "^9.1.0",
     "framer-motion": "^4.1.17",
     "gatsby": "^3.12.1",
     "gatsby-plugin-gatsby-cloud": "^3.0.0",

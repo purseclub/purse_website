@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import {
   CrossContainer,
@@ -13,6 +13,7 @@ import {
 } from "../../styles/modal/modalStyle";
 import CircularLoading from "./circularLoading";
 import MailSent from "./mailSent";
+import { setWaitlistedUser } from "../../utils/waitlisted";
 
 const Modal = ({ hide }) => {
   const [inputValue, setInputValue] = useState("");
@@ -25,9 +26,18 @@ const Modal = ({ hide }) => {
 
   const handleSubmit = () => {
     setIsLoading(true);
-    setTimeout(() => {
-      setIsMailSent(true);
-    }, 3000);
+
+    try {
+      setWaitlistedUser({
+        userEmail: inputValue,
+      }).then(
+        setTimeout(() => {
+          setIsMailSent(true);
+        }, 3000)
+      );
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
