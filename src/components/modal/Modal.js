@@ -48,6 +48,8 @@ const Modal = ({ hide }) => {
       setIsLoading(true);
       setIsEmailValid(true);
 
+      //   sendMail(trimedEmail);
+
       setWaitlistedUser({
         userEmail: inputValue,
       }).then(
