@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import {
   CrossContainer,
+  ErrorMsg,
   MobileInput,
   MobileInputContainer,
   ModalContainer,
@@ -14,6 +15,7 @@ import {
 import CircularLoading from "./circularLoading";
 import MailSent from "./mailSent";
 import { setWaitlistedUser } from "../../utils/waitlisted";
+import { AnimatePresence } from "framer-motion";
 
 const Modal = ({ hide }) => {
   const [inputValue, setInputValue] = useState("");
@@ -21,32 +23,38 @@ const Modal = ({ hide }) => {
   const [isMailSent, setIsMailSent] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
 
-  const getInputValue = (e) => {
-    setInputValue(e.target.value);
-  };
-
   const checkEmailValid = (email) => {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const result = re.test(email);
+    return re.test(email);
+  };
 
-    console.log(result);
+  const getInputValue = (e) => {
+    const email = e.target.value;
+    setInputValue(email);
+
+    if (checkEmailValid(email)) {
+      setIsEmailValid(true);
+    } else {
+      setIsEmailValid(false);
+    }
   };
 
   const handleSubmit = () => {
-    setIsLoading(true);
+    const trimedEmail = inputValue.trim();
+    const result = checkEmailValid(trimedEmail);
 
-    try {
-      checkEmailValid(inputValue);
-      // setWaitlistedUser({
-      //   userEmail: inputValue,
-      // }).then(
-      //   setTimeout(() => {
-      //     setIsMailSent(true);
-      //   }, 3000)
-      // );
-    } catch (e) {
-      console.log(e);
+    if (result) {
+      setIsLoading(true);
+      setIsEmailValid(true);
+
+      setWaitlistedUser({
+        userEmail: inputValue,
+      }).then(
+        setTimeout(() => {
+          setIsMailSent(true);
+        }, 3000)
+      );
     }
   };
 
@@ -64,6 +72,22 @@ const Modal = ({ hide }) => {
           Join our premium waiting list and get a chance to win latest iphone 13
           and macbook pro.
         </ModalSubtitle>
+
+        <AnimatePresence>
+          {inputValue.length > 0 ? (
+            !isEmailValid ? (
+              <ErrorMsg
+                key="errorMsg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                Email Id is not valid
+              </ErrorMsg>
+            ) : null
+          ) : null}
+        </AnimatePresence>
+
         {isMailSent ? (
           <MailSent />
         ) : (

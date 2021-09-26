@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const ModalWrapper = styled.div`
@@ -78,6 +79,22 @@ export const ModalSubtitle = styled.h6`
   }
 `;
 
+export const ErrorMsg = styled(motion.p)`
+  font-family: var(--font-family-main-Regular);
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 0.5rem;
+  letter-spacing: 0.001em;
+  color: var(--errorColor);
+  margin: 0.5rem 0;
+
+  @media all and (min-width: 991px) {
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0.001em;
+  }
+`;
+
 export const MobileInputContainer = styled.div`
   display: block;
   margin: 1.5rem 0;
@@ -86,7 +103,7 @@ export const MobileInputContainer = styled.div`
   border: 1px solid var(--white);
   border-radius: 50px;
   outline: none;
-  padding: 8px 1.25rem;
+  padding: 0px 1.25rem;
   padding-right: 0.375rem;
   display: flex;
   justify-content: space-between;
@@ -112,7 +129,8 @@ export const MobileInput = styled.input`
   letter-spacing: 0.001em;
   line-height: 1.5rem;
   color: var(--white);
-  padding-bottom: 0.5rem;
+  padding-bottom: 0;
+  margin: 0;
 
   @media all and (min-width: 991px) {
     font-size: 2.25rem;
