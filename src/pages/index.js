@@ -10,6 +10,7 @@ import Faq from "../components/Faq/Faq";
 import Discord from "../components/Discord/Discord";
 import Legals from "../components/Legals/Legals";
 import Modal from "../components/modal/Modal";
+import { Helmet } from "react-helmet";
 
 // markup
 const IndexPage = () => {
@@ -41,6 +42,16 @@ const IndexPage = () => {
       <GlobalFont />
       <GlobalStyle />
       <>
+        <Helmet>
+          <html lang="en" amp />
+          <title>The Purse Club</title>
+          <meta
+            name="description"
+            content="The Purse Club is a card Management and Storing app."
+          />
+          <link rel="canonical" href="http://thepurse.club" />
+          <link rel="preload" as="font" />
+        </Helmet>
         <SmoothScroll status={isActive}>
           <NavigationBar click={showModal} />
           <Landing />
