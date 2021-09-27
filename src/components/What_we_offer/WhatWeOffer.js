@@ -37,7 +37,7 @@ const datas = [
   },
 ];
 
-const WhatWeOffer = ({ showModal }) => {
+const WhatWeOffer = ({ showModal, onCursor }) => {
   return (
     <WwoWrapper>
       <WwoContainer>
@@ -57,7 +57,11 @@ const WhatWeOffer = ({ showModal }) => {
                 <ContentPara>{data.body}</ContentPara>
               </ContentBody>
               <ContentButtonContainer>
-                <ContentButton onClick={showModal}>
+                <ContentButton
+                  onClick={showModal}
+                  onMouseEnter={() => onCursor("cool")}
+                  onMouseLeave={onCursor}
+                >
                   {data.buttonText}
                 </ContentButton>
               </ContentButtonContainer>

@@ -126,7 +126,6 @@ export const ContentButtonContainer = styled.div`
 `;
 
 export const ContentButton = styled.button`
-  cursor: pointer;
   border: none;
   background-color: var(--blue);
   width: 100%;

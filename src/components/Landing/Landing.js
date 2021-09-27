@@ -26,7 +26,7 @@ const ButtonVariant = {
   },
 };
 
-export const Landing = () => {
+export const Landing = ({ onCursor, showModal }) => {
   return (
     <LandingWrapper>
       <LandingContainer>
@@ -39,10 +39,18 @@ export const Landing = () => {
         <ParaContainer>
           <Para>
             Experience the app right in the browser. Download when you feel like
-            <Strong> Downloading the app.</Strong>
+            <Strong
+              onClick={showModal}
+              onMouseEnter={() => onCursor("hovered")}
+              onMouseLeave={onCursor}
+            >
+              {" "}
+              Downloading the app.
+            </Strong>
           </Para>
         </ParaContainer>
         <CircleButton
+          onCursor={onCursor}
           textColor={"var(--white)"}
           arrowStrokeColor={"var(--white)"}
           buttonText={"Experience the app"}

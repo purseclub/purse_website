@@ -8,6 +8,7 @@ import {
 import NonAnimatedArrow from "../NonAnimatedArrow";
 
 const CircleButton = ({
+  onCursor,
   arrowStrokeColor,
   textColor,
   variants,
@@ -23,6 +24,8 @@ const CircleButton = ({
       animate="initial"
       left={left}
       size={size}
+      onMouseEnter={() => onCursor("experience")}
+      onMouseLeave={onCursor}
     >
       <Link to={path}>
         <ButtonContainer variants={variants}>

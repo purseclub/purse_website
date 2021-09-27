@@ -66,7 +66,6 @@ export const IntroButtonContainer = styled.div`
 `;
 
 export const IntroButton = styled.button`
-  cursor: pointer;
   border: none;
   background-color: var(--blue);
   width: 100%;

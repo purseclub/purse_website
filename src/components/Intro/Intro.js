@@ -10,7 +10,7 @@ import {
 } from "../../styles/intro";
 import { Strong } from "../../styles/landing";
 
-const Intro = ({ showModal }) => {
+const Intro = ({ showModal, onCursor }) => {
   return (
     <IntroWrapper>
       <IntroContainer>
@@ -33,7 +33,13 @@ const Intro = ({ showModal }) => {
           </IntroPara>
         </IntroParaContainer>
         <IntroButtonContainer>
-          <IntroButton onClick={showModal}>Download the app</IntroButton>
+          <IntroButton
+            onClick={showModal}
+            onMouseEnter={() => onCursor("hovered")}
+            onMouseLeave={onCursor}
+          >
+            Download the app
+          </IntroButton>
         </IntroButtonContainer>
       </IntroContainer>
     </IntroWrapper>

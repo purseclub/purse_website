@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-       position: relative;
+       
         overscroll-behavior-y: none;
 		font-display: swap;
 		-webkit-tap-highlight-color: transparent;

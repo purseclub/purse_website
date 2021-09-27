@@ -14,13 +14,29 @@ import { Helmet } from "react-helmet";
 import CustomCursor from "../components/customCursor/customCursor";
 import { isDesktop } from "react-device-detect";
 
+//Context
+import {
+  useGlobalDispatchContext,
+  useGlobalStateContext,
+} from "../context/globalContext";
+
 // markup
 const IndexPage = () => {
   const [isActive, setIsActive] = useState(false);
   const [offset, setOffset] = useState(0);
+  const { cursorStyles } = useGlobalStateContext();
+  const dispatch = useGlobalDispatchContext();
 
   const showModal = () => setIsActive(true);
   const hideModal = () => setIsActive(false);
+
+  const onCursor = (cursorType) => {
+    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
+    dispatch({
+      type: "CURSOR_TYPE",
+      cursorType: cursorType,
+    });
+  };
 
   useEffect(() => {
     const body = document.body;
@@ -43,7 +59,7 @@ const IndexPage = () => {
     <>
       <GlobalFont />
       <GlobalStyle />
-
+      <CustomCursor />
       <>
         <Helmet>
           <html lang="en" amp />
@@ -56,16 +72,16 @@ const IndexPage = () => {
         </Helmet>
 
         <SmoothScroll status={isActive}>
-          <NavigationBar click={showModal} />
-          <Landing />
-          <WhatWeOffer showModal={showModal} />
-          <Intro showModal={showModal} />
+          <NavigationBar click={showModal} onCursor={onCursor} />
+          <Landing onCursor={onCursor} showModal={showModal} />
+          <WhatWeOffer showModal={showModal} onCursor={onCursor} />
+          <Intro showModal={showModal} onCursor={onCursor} />
           <Faq />
           <Discord />
           <Legals />
         </SmoothScroll>
         {isActive ? <Modal hide={hideModal} /> : <></>}
-        {isDesktop ? <CustomCursor /> : null}
+        {/* {isDesktop ? <CustomCursor /> : null} */}
       </>
     </>
   );

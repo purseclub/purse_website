@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const LandingWrapper = styled.section`
@@ -14,22 +13,26 @@ export const TitleContainer = styled.div`
   max-width: 90%;
 
   @media all and (min-width: 991px) {
-    max-width: 70%;
+    max-width: 80%;
     padding-top: 5rem;
+    margin: 0 auto;
   }
 `;
 
 export const Title = styled.h1`
-  font-family: var(--font-family-main-Regular);
+  font-family: var(--font-family-main-Bold);
   font-size: 4.375rem;
   letter-spacing: -0.03em;
   line-height: 4rem;
   color: var(--white);
-  font-weight: 400;
+  font-weight: 700;
 
   @media all and (min-width: 991px) {
-    font-size: 6rem;
+    font-family: var(--font-family-main-Bold);
+    font-weight: 700;
+    font-size: 7rem;
     line-height: 6.5rem;
+    text-align: center;
   }
 `;
 
@@ -66,7 +69,7 @@ export const ParaContainer = styled.div`
   }
 
   @media all and (min-width: 991px) {
-    max-width: 45%;
+    /* max-width: 45%; */
     padding: 2.25em 0;
   }
 `;
@@ -80,6 +83,9 @@ export const Para = styled.p`
   font-weight: 400;
 
   @media all and (min-width: 991px) {
+    text-align: center;
+    max-width: 50%;
+    margin: 0 auto;
     font-size: 1.5rem;
     line-height: 2rem;
     letter-spacing: -0.01em;
