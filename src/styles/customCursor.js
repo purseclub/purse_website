@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const Cursor = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 16px;
   height: 16px;
   border-radius: 100%;
   background-color: var(--blue);
-  will-change: width, height, border, transform;
   transition-property: width, height, border;
-  transition: all 0.1 ease-in-out;
+  will-change: width, height, border, transform;
+  transition: all 0.1s ease-in-out;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 9999;
