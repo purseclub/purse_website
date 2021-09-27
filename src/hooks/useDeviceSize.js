@@ -6,15 +6,18 @@ export const useDeviceSize = () => {
   var width = null;
   var height = null;
 
-  if (isBrowser) {
-    width = window.innerWidth;
-    height = window.innerHeight;
-  }
-
   const [size, setSize] = useState({
     width: width,
     height: height,
   });
+
+  if (isBrowser) {
+    setSize({
+		...size,
+		width = window.innerWidth,
+    height = window.innerHeight,
+	})
+  }
 
   const handleResize = () => {
     setSize({

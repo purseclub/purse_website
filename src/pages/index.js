@@ -18,14 +18,13 @@ import {
   useGlobalDispatchContext,
   useGlobalStateContext,
 } from "../context/globalContext";
-import { useDeviceSize } from "../hooks/useDeviceSize";
 
 // markup
 const IndexPage = () => {
   const [isActive, setIsActive] = useState(false);
   const [offset, setOffset] = useState(0);
   //   const [width, setWidth] = useState(null);
-  const { width } = useDeviceSize();
+  //   const { width } = useDeviceSize();
 
   const dispatch = useGlobalDispatchContext();
   const state = useGlobalStateContext();
@@ -68,7 +67,7 @@ const IndexPage = () => {
     <>
       <GlobalFont />
       <GlobalStyle />
-      {width > 991 ? <CustomCursor /> : null}
+      <CustomCursor />
       <>
         <Helmet>
           <html lang="en" amp />

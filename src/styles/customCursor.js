@@ -13,6 +13,7 @@ export const Cursor = styled.div`
   will-change: width, height, border, transform;
   transition-property: width, height, border;
   pointer-events: none;
+  display: none;
   z-index: 999999;
   &.hovered {
     width: 80px;
@@ -63,5 +64,9 @@ export const Cursor = styled.div`
     font-family: var(--font-family-main-SemiBold);
     font-weight: 600;
     color: var(--blue);
+  }
+
+  @media all and (min-width: 991px) {
+    display: block;
   }
 `;
