@@ -10,8 +10,8 @@ export const Cursor = styled.div`
   transform: translate(-50%, -50%);
   background-color: var(--blue);
   transition: all 0.1s ease-Out;
-  transition-property: width, height, border;
   will-change: width, height, border, transform;
+  transition-property: width, height, border;
   pointer-events: none;
   z-index: 999999;
   &.hovered {
