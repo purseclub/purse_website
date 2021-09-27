@@ -49,7 +49,7 @@ const WhatWeOffer = ({ showModal }) => {
               <ContentHead>
                 <ContentHeadTitle>{data.title}</ContentHeadTitle>
                 <NonAnimatedArrow
-                  fill={"var(--black)"}
+                  fill={"var(--blue)"}
                   rotate={"rotate(195deg)"}
                 />
               </ContentHead>

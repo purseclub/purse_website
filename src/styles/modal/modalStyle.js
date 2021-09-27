@@ -18,7 +18,7 @@ export const ModalWrapper = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  background-color: var(--black);
+  background-color: var(--blue);
   width: 90%;
   margin: 0 auto;
   /* height: 60%; */
@@ -131,6 +131,10 @@ export const MobileInput = styled.input`
   color: var(--white);
   padding-bottom: 0;
   margin: 0;
+
+  ::placeholder {
+    color: var(--white);
+  }
 
   @media all and (min-width: 991px) {
     font-size: 2.25rem;

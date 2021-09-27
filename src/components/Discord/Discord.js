@@ -15,7 +15,7 @@ const arrowMotion = {
     transform: "rotate(15deg)",
   },
   animate: {
-    fill: "var(--black)",
+    fill: "var(--white)",
     transform: "rotate(60deg)",
     transition: {
       ...transiton,
@@ -32,11 +32,11 @@ const Discord = () => {
           <Strong> relation.</Strong>
         </DiscordTitle>
         <OutlineButton
-          arrowStrokeColor={"var(--black)"}
+          arrowStrokeColor={"var(--white)"}
           buttonText={"Join Discord Community"}
-          bgColor={"var(--white)"}
-          lineColor={"var(--black)"}
-          textColor={"var(--black)"}
+          bgColor={"var(--darkGreen)"}
+          lineColor={"var(--white)"}
+          textColor={"var(--white)"}
           variants={arrowMotion}
           left={0}
           right={"auto"}

@@ -4,10 +4,10 @@ export const WwoWrapper = styled.section`
   width: 100%;
   background-color: var(--orange);
   color: var(--white);
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 
   @media all and (min-width: 991px) {
-    margin-top: 8rem;
+    /* margin-top: 8rem; */
   }
 `;
 
@@ -128,7 +128,7 @@ export const ContentButtonContainer = styled.div`
 export const ContentButton = styled.button`
   cursor: pointer;
   border: none;
-  background-color: var(--black);
+  background-color: var(--blue);
   width: 100%;
   height: 100%;
   font-family: var(--font-family-main-SemiBold);

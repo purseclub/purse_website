@@ -3,7 +3,6 @@ import {
   MailSentContainer,
   MailSentContentBox,
   MailSentContentHeading,
-  MailSentContentSubtitle,
 } from "../../styles/modal/mailSentStyle";
 import TickBox from "./TickBox";
 
@@ -57,7 +56,6 @@ const MailSent = () => {
         <MailSentContentHeading>
           You are added to our premium waiting list.
         </MailSentContentHeading>
-        <MailSentContentSubtitle>check your inbox</MailSentContentSubtitle>
       </MailSentContentBox>
     </MailSentContainer>
   );

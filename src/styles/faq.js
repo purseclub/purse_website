@@ -3,7 +3,12 @@ import styled from "styled-components";
 
 export const FWrapper = styled.section`
   width: 100%;
-  background-color: var(--black);
+  background-color: var(--darkGreen);
+  margin-top: 5rem;
+
+  @media all and (min-width: 991px) {
+    margin-top: 8rem;
+  }
 `;
 
 export const FContainer = styled.div`

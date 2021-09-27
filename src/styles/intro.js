@@ -7,10 +7,10 @@ export const IntroWrapper = styled.section`
 export const IntroContainer = styled.div`
   max-width: 90%;
   margin: 0 auto;
-  padding: 4.5rem 0;
+  /* padding: 4.5rem 0; */
 
   @media all and (min-width: 991px) {
-    padding: 10rem 0;
+    /* padding: 10rem 0; */
   }
 `;
 
@@ -20,7 +20,8 @@ export const IntroHeading = styled.p`
   font-size: 4rem;
   letter-spacing: -0.05em;
   line-height: 4rem;
-  color: var(--black);
+  color: var(--white);
+  font-weight: 400;
 
   @media all and (min-width: 991px) {
     font-size: 6.8125rem;
@@ -42,7 +43,8 @@ export const IntroPara = styled.p`
   font-size: 0.875rem;
   letter-spacing: 0.03em;
   line-height: 1.5rem;
-  color: var(--black);
+  color: var(--white);
+  font-weight: 400;
 
   @media all and (min-width: 991px) {
     font-size: 1.5rem;
@@ -66,7 +68,7 @@ export const IntroButtonContainer = styled.div`
 export const IntroButton = styled.button`
   cursor: pointer;
   border: none;
-  background-color: var(--black);
+  background-color: var(--blue);
   width: 100%;
   height: 100%;
   font-family: var(--font-family-main-SemiBold);

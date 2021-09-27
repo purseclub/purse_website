@@ -12,12 +12,14 @@ import Legals from "../components/Legals/Legals";
 import Modal from "../components/modal/Modal";
 import { Helmet } from "react-helmet";
 import CustomCursor from "../components/customCursor/customCursor";
-import { isMobileOnly } from "react-device-detect";
+import { isDesktop } from "react-device-detect";
 
 // markup
 const IndexPage = () => {
   const [isActive, setIsActive] = useState(false);
   const [offset, setOffset] = useState(0);
+
+  console.log(isDesktop);
 
   const showModal = () => setIsActive(true);
   const hideModal = () => setIsActive(false);
@@ -43,7 +45,7 @@ const IndexPage = () => {
     <>
       <GlobalFont />
       <GlobalStyle />
-      {isMobileOnly ?? <CustomCursor />}
+      {isDesktop ? <CustomCursor /> : null}
       <>
         <Helmet>
           <html lang="en" amp />

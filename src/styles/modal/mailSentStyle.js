@@ -45,19 +45,3 @@ export const MailSentContentHeading = styled.h2`
     line-height: 2rem;
   }
 `;
-
-export const MailSentContentSubtitle = styled.h4`
-  font-family: var(--font-family-main-Regular);
-  font-weight: 400;
-  font-size: 0.75rem;
-  letter-spacing: -0.01em;
-  line-height: 0.5rem;
-  margin-top: 0.5rem;
-
-  @media all and (min-width: 991px) {
-    font-size: 0.875rem;
-    letter-spacing: -0.01em;
-    line-height: 1rem;
-    margin-top: 0;
-  }
-`;

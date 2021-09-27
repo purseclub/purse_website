@@ -12,7 +12,6 @@ export const LandingContainer = styled.div`
 
 export const TitleContainer = styled.div`
   max-width: 90%;
-  overflow: hidden;
 
   @media all and (min-width: 991px) {
     max-width: 70%;
@@ -35,9 +34,9 @@ export const Title = styled.h1`
 `;
 
 export const Strong = styled.span`
-  font-family: var(--font-family-main-Bold);
+  font-family: var(--font-family-main-semiBold);
   color: var(--blue);
-  font-weight: 700;
+  font-weight: 600;
 `;
 
 export const ParaContainer = styled.div`

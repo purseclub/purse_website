@@ -130,7 +130,7 @@ const CrossSvg = () => {
         width="24"
         height="2"
         transform="rotate(45 12 10)"
-        fill="#E0DFDB"
+        fill="var(--white)"
       />
       <rect
         x="11"
@@ -138,11 +138,11 @@ const CrossSvg = () => {
         width="24"
         height="2"
         transform="rotate(-45 11 26.9998)"
-        fill="#E0DFDB"
+        fill="var(--white)"
       />
       <path
         d="M0 0V-1H-1V0H0ZM40 0H41V-1H40V0ZM40 38V39H41V38H40ZM0 38H-1V39H0V38ZM0 1H40V-1H0V1ZM39 0V38H41V0H39ZM40 37H0V39H40V37ZM1 38V0H-1V38H1Z"
-        fill="#292A2B"
+        fill="var(--darkGreen)"
       />
     </svg>
   );

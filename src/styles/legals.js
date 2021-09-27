@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const LegalWrapper = styled.section`
   width: 100%;
-  background-color: var(--black);
+  background-color: var(--darkGreen);
 `;
 
 export const LegalContainer = styled.div`
