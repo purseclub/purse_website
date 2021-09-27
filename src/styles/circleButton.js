@@ -16,6 +16,10 @@ export const ButtonWrapper = styled(motion.div)`
   }
 `;
 
+export const Link = styled.a`
+  text-decoration: none;
+`;
+
 export const ButtonContainer = styled(motion.div)`
   border-radius: 50%;
   width: 100%;

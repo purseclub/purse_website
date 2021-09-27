@@ -45,20 +45,21 @@ const arrowMotion = {
 
 const buttonTexts = ["Terms & Conditions", "Privacy Policy", "Report Bug"];
 
-const Legals = () => {
+const Legals = ({ onCursor }) => {
   return (
     <LegalWrapper>
       <LegalContainer>
         <LegalHeading>LEGALS</LegalHeading>
         <ActionContainer>
           <CircleButton
-            path={"/contact_us"}
+            path={"mailto:support@thepurse.club"}
             variants={buttonMotion}
             textColor={"var(--white)"}
             arrowStrokeColor={"var(--white)"}
             buttonText={"Contact Us"}
             left={"30%"}
             size={"18.25rem"}
+            onCursor={onCursor}
           />
           <SmallLinkContainer>
             {buttonTexts.map((buttonText, index) => {

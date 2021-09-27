@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
         overscroll-behavior-y: none;
 		font-display: swap;
 		-webkit-tap-highlight-color: transparent;
+		-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     }
 
     a {

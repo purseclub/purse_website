@@ -3,8 +3,10 @@ require("dotenv").config({
 });
 module.exports = {
   siteMetadata: {
+    title: "The Purse Club",
     siteUrl: "https://www.thepurse.club",
     title: "purse_website",
+    author: "Purse Club",
   },
   plugins: [
     "gatsby-plugin-styled-components",

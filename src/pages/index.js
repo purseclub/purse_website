@@ -18,6 +18,7 @@ import {
   useGlobalDispatchContext,
   useGlobalStateContext,
 } from "../context/globalContext";
+import Seo from "../components/seo";
 
 // markup
 const IndexPage = () => {
@@ -70,15 +71,20 @@ const IndexPage = () => {
       <CustomCursor />
       <>
         <Helmet>
-          <html lang="en" amp />
           <title>The Purse Club</title>
-          <meta
-            name="description"
-            content="The Purse Club is a card Management and Storing app."
-          />
-          <link rel="canonical" href="www.thepurse.club" />
         </Helmet>
-
+        <Seo
+          title={"The Purse Club"}
+          description="Modern way of storing and managing you card in wallet aka purse club"
+          keywords={[
+            "purse",
+            "wallet",
+            "card",
+            "management",
+            "storing",
+            "modern",
+          ]}
+        />
         <SmoothScroll status={isActive}>
           <NavigationBar click={showModal} onCursor={onCursor} />
           <Landing onCursor={onCursor} showModal={showModal} />
@@ -86,7 +92,7 @@ const IndexPage = () => {
           <Intro showModal={showModal} onCursor={onCursor} />
           <Faq />
           <Discord />
-          <Legals />
+          <Legals onCursor={onCursor} />
         </SmoothScroll>
         {isActive ? <Modal hide={hideModal} /> : <></>}
       </>
