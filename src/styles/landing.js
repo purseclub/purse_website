@@ -34,7 +34,7 @@ export const Title = styled.h1`
 `;
 
 export const Strong = styled.span`
-  font-family: var(--font-family-main-semiBold);
+  font-family: var(--font-family-main-SemiBold);
   color: var(--blue);
   font-weight: 600;
 `;

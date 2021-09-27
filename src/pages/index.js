@@ -19,8 +19,6 @@ const IndexPage = () => {
   const [isActive, setIsActive] = useState(false);
   const [offset, setOffset] = useState(0);
 
-  console.log(isDesktop);
-
   const showModal = () => setIsActive(true);
   const hideModal = () => setIsActive(false);
 
@@ -45,7 +43,7 @@ const IndexPage = () => {
     <>
       <GlobalFont />
       <GlobalStyle />
-      {isDesktop ? <CustomCursor /> : null}
+
       <>
         <Helmet>
           <html lang="en" amp />
@@ -67,6 +65,7 @@ const IndexPage = () => {
           <Legals />
         </SmoothScroll>
         {isActive ? <Modal hide={hideModal} /> : <></>}
+        {isDesktop ? <CustomCursor /> : null}
       </>
     </>
   );
