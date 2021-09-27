@@ -23,9 +23,10 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
         --black: #292A2B;
-        --white: #EFEBDE;
-        --orange: #5E7361;
+        --darkGreen: #001514;
+        --blue: rgba(99, 32, 238, 1);
         --gray: #8F8D80;
+		--white: #F5F5F5;
         --errorColor: #D75059;
         --desktop-margin: 7.5rem;
         --tablet-margin: 4rem;
@@ -41,10 +42,7 @@ const GlobalStyle = createGlobalStyle`
         --font-family-main-Medium: 'CaustenMedium', sans-serif;
         --font-family-main-SemiBold: 'CaustenSemiBold', sans-serif;
         --font-family-main-Bold: 'CaustenBold', sans-serif;
-        --font-family-secondary: 'ThunderExtraBold', Monospace;
-        --font-family-secondary-bold: 'ThunderBold', Monospace;
-        --font-family-secondary-thin: 'ThunderThin', Monospace;
-        background-color: var(--white);
+        background-color: var(--darkGreen);
     }
 `;
 

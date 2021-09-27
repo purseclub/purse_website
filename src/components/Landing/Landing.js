@@ -14,11 +14,11 @@ const transiton = { duration: 0.6, ease: [0.25, 1, 0.5, 1] };
 
 const ButtonVariant = {
   initial: {
-    backgroundColor: "var(--black)",
+    backgroundColor: "var(--blue)",
     transform: "rotate(-30deg)",
   },
   animate: {
-    backgroundColor: "var(--orange)",
+    backgroundColor: "var(--darkGreen)",
     transform: "rotate(0deg)",
     transition: {
       ...transiton,

@@ -12,6 +12,7 @@ import Legals from "../components/Legals/Legals";
 import Modal from "../components/modal/Modal";
 import { Helmet } from "react-helmet";
 import CustomCursor from "../components/customCursor/customCursor";
+import { isMobileOnly } from "react-device-detect";
 
 // markup
 const IndexPage = () => {
@@ -42,7 +43,7 @@ const IndexPage = () => {
     <>
       <GlobalFont />
       <GlobalStyle />
-      <CustomCursor />
+      {isMobileOnly ?? <CustomCursor />}
       <>
         <Helmet>
           <html lang="en" amp />

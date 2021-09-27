@@ -28,7 +28,7 @@ export const WwoHeading = styled.h4`
   letter-spacing: -0.02em;
   line-height: 1rem;
   margin-bottom: 1rem;
-  color: var(--black);
+  color: var(--offWhite);
 
   @media all and (min-width: 991px) {
     font-size: 2.25rem;
@@ -78,7 +78,7 @@ export const ContentHeadTitle = styled.h2`
   font-size: 3rem;
   line-height: 3rem;
   letter-spacing: -0.02em;
-  color: var(--black);
+  color: var(--offWhite);
 
   @media all and (min-width: 991px) {
     max-width: 70%;
@@ -105,7 +105,7 @@ export const ContentPara = styled.p`
   font-size: 1.125rem;
   line-height: 1.5rem;
   letter-spacing: -0.01em;
-  color: var(--black);
+  color: var(--offWhite);
 
   @media all and (min-width: 991px) {
     font-size: 1.5rem;

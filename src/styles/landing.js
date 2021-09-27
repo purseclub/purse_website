@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const LandingWrapper = styled.section`
@@ -11,6 +12,7 @@ export const LandingContainer = styled.div`
 
 export const TitleContainer = styled.div`
   max-width: 90%;
+  overflow: hidden;
 
   @media all and (min-width: 991px) {
     max-width: 70%;
@@ -23,7 +25,7 @@ export const Title = styled.h1`
   font-size: 4.375rem;
   letter-spacing: -0.03em;
   line-height: 4rem;
-  color: var(--black);
+  color: var(--white);
   font-weight: 400;
 
   @media all and (min-width: 991px) {
@@ -33,9 +35,9 @@ export const Title = styled.h1`
 `;
 
 export const Strong = styled.span`
-  font-family: var(--font-family-main-SemiBold);
-  color: var(--orange);
-  font-weight: 600;
+  font-family: var(--font-family-main-Bold);
+  color: var(--blue);
+  font-weight: 700;
 `;
 
 export const ParaContainer = styled.div`
@@ -75,7 +77,7 @@ export const Para = styled.p`
   font-size: 1.25rem;
   line-height: 1.5rem;
   letter-spacing: 0.03em;
-  color: var(--black);
+  color: var(--white);
   font-weight: 400;
 
   @media all and (min-width: 991px) {
