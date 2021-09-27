@@ -18,12 +18,14 @@ import {
   useGlobalDispatchContext,
   useGlobalStateContext,
 } from "../context/globalContext";
+import { useDeviceSize } from "../hooks/useDeviceSize";
 
 // markup
 const IndexPage = () => {
   const [isActive, setIsActive] = useState(false);
   const [offset, setOffset] = useState(0);
-  const [width, setWidth] = useState(null);
+  //   const [width, setWidth] = useState(null);
+  const { width } = useDeviceSize();
 
   const dispatch = useGlobalDispatchContext();
   const state = useGlobalStateContext();
@@ -56,11 +58,11 @@ const IndexPage = () => {
       window.scrollTo(0, offset);
     }
 
-    window.addEventListener("resize", () => setWidth(window.innerWidth));
+    // window.addEventListener("resize", () => setWidth(window.innerWidth));
 
-    return () =>
-      window.removeEventListener("resize", () => setWidth(window.innerWidth));
-  }, [isActive, offset, width]);
+    // return () =>
+    //   window.removeEventListener("resize", () => setWidth(window.innerWidth));
+  }, [isActive, offset]);
 
   return (
     <>

@@ -1,9 +1,19 @@
 import { useEffect, useState } from "react";
 
+const isBrowser = typeof window !== "undefined";
+
 export const useDeviceSize = () => {
+  var width = null;
+  var height = null;
+
+  if (isBrowser) {
+    width = window.innerWidth;
+    height = window.innerHeight;
+  }
+
   const [size, setSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: width,
+    height: height,
   });
 
   const handleResize = () => {
