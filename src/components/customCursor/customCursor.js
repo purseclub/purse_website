@@ -6,6 +6,7 @@ import { Cursor } from "../../styles/customCursor";
 const CustomCursor = () => {
   const { x, y } = useMousePosition();
   const { cursorType } = useGlobalStateContext();
+
   return (
     <Cursor
       className={`${!!cursorType ? "hovered" : ""} ${cursorType}`}
