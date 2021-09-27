@@ -49,8 +49,7 @@ const IndexPage = () => {
             name="description"
             content="The Purse Club is a card Management and Storing app."
           />
-          <link rel="canonical" href="http://thepurse.club" />
-          <link rel="preload" as="font" />
+          <link rel="canonical" href="www.thepurse.club" />
         </Helmet>
         <SmoothScroll status={isActive}>
           <NavigationBar click={showModal} />

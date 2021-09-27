@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import React from "react";
 import { useState } from "react";
 import {
@@ -28,7 +28,7 @@ const questionAnswers = [
   },
 ];
 
-const transiton = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
+const transiton = { duration: 0.8, ease: [0.22, 1, 0.36, 1] };
 
 const textVariant = {
   initial: {
@@ -47,20 +47,31 @@ const textVariant = {
 const variants = {
   hidden: {
     height: "0",
-    display: "block",
+    opacity: 0,
+    // display: "none",
+    originX: 0,
+    originY: 0,
   },
   animate: {
     height: "auto",
-    display: "block",
+    opacity: 1,
+    // display: "block",
+    originX: 0,
+    originY: 0,
     transition: {
       ...transiton,
+      duration: 0.6,
     },
   },
   exit: {
     height: "0",
-    display: "block",
+    opacity: 0,
+    // display: "none",
+    originX: 0,
+    originY: 0,
     transition: {
       ...transiton,
+      duration: 0.6,
     },
   },
 };
@@ -71,13 +82,15 @@ const arrowVariant = {
     transform: "rotate(15deg)",
     originX: 0.2,
     originY: 0.2,
+    transition: {
+      ...transiton,
+    },
   },
   animate: {
     originX: 0.2,
     originY: 0.2,
     fill: "var(--white)",
     transform: "rotate(195deg)",
-
     transition: {
       ...transiton,
     },
@@ -92,16 +105,18 @@ const Faq = () => {
   };
 
   return (
-    <FWrapper>
-      <FContainer>
-        <FHeading>FAQ</FHeading>
-        <Divider width="70%" color={"var(--white)"} />
-        <AnimatePresence>
+    <AnimateSharedLayout>
+      <FWrapper>
+        <FContainer>
+          <FHeading>FAQ</FHeading>
+          <Divider width="70%" color={"var(--white)"} />
+
           {questionAnswers.map((qa, index) => {
             return (
               <QuestionContainer
-                onTap={() => getTappedIndex(index)}
+                onClick={() => getTappedIndex(index)}
                 key={index}
+                layout
               >
                 <QcHead>
                   <Question
@@ -109,6 +124,7 @@ const Faq = () => {
                     variants={textVariant}
                     initial={selectedNo === index ? "initial" : "animate"}
                     animate={selectedNo === index ? "animate" : "initial"}
+                    layout
                   >
                     {qa.question}
                   </Question>
@@ -120,25 +136,28 @@ const Faq = () => {
                     />
                   </Arrow>
                 </QcHead>
-                {selectedNo === index ? (
-                  <AnswerContainer
-                    key="answer"
-                    variants={variants}
-                    initial="hidden"
-                    animate="animate"
-                    exit="exit"
-                  >
-                    <Answer>{qa.answer}</Answer>
-                  </AnswerContainer>
-                ) : (
-                  <></>
-                )}
+                <AnimatePresence>
+                  {selectedNo === index ? (
+                    <AnswerContainer
+                      layout
+                      key="answer"
+                      variants={variants}
+                      initial="hidden"
+                      animate="animate"
+                      exit="exit"
+                    >
+                      <Answer>{qa.answer}</Answer>
+                    </AnswerContainer>
+                  ) : (
+                    <></>
+                  )}
+                </AnimatePresence>
               </QuestionContainer>
             );
           })}
-        </AnimatePresence>
-      </FContainer>
-    </FWrapper>
+        </FContainer>
+      </FWrapper>
+    </AnimateSharedLayout>
   );
 };
 

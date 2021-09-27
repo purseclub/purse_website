@@ -10,6 +10,7 @@ export const FContainer = styled.div`
   max-width: 90%;
   margin: 0 auto;
   padding: 4.5rem 0;
+  transform-origin: 0% 0% 0%;
 
   @media all and (min-width: 991px) {
     padding: 10rem 0;
@@ -37,6 +38,7 @@ export const QuestionContainer = styled(motion.div)`
   width: 100%;
   position: relative;
   margin-top: 1rem;
+
   /* padding-bottom: 1.5rem; */
   cursor: pointer;
 
@@ -84,7 +86,7 @@ export const Arrow = styled.div`
 
 export const AnswerContainer = styled(motion.div)`
   width: 100%;
-  padding-bottom: 1.5rem;
+
   height: auto;
 `;
 
@@ -94,6 +96,7 @@ export const Answer = styled.p`
   letter-spacing: 0.03em;
   line-height: 1.5rem;
   color: var(--white);
+  padding-bottom: 1.5rem;
 
   @media all and (min-width: 991px) {
     font-size: 1.5rem;

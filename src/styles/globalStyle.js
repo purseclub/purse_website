@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
        position: relative;
         overscroll-behavior-y: none;
 		font-display: swap;
+		-webkit-tap-highlight-color: transparent;
     }
 
     a {
