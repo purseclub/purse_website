@@ -11,6 +11,7 @@ import Discord from "../components/Discord/Discord";
 import Legals from "../components/Legals/Legals";
 import Modal from "../components/modal/Modal";
 import { Helmet } from "react-helmet";
+import CustomCursor from "../components/customCursor/customCursor";
 
 // markup
 const IndexPage = () => {
@@ -41,6 +42,7 @@ const IndexPage = () => {
     <>
       <GlobalFont />
       <GlobalStyle />
+      <CustomCursor />
       <>
         <Helmet>
           <html lang="en" amp />
@@ -51,6 +53,7 @@ const IndexPage = () => {
           />
           <link rel="canonical" href="www.thepurse.club" />
         </Helmet>
+
         <SmoothScroll status={isActive}>
           <NavigationBar click={showModal} />
           <Landing />

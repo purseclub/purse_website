@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+		cursor: none;
     }
 
     body {
@@ -22,8 +23,8 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
         --black: #292A2B;
-        --white: #E0DFDB;
-        --orange: #eb4c2c;
+        --white: #EFEBDE;
+        --orange: #5E7361;
         --gray: #8F8D80;
         --errorColor: #D75059;
         --desktop-margin: 7.5rem;

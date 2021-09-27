@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const WwoWrapper = styled.section`
   width: 100%;
   background-color: var(--orange);
-  color: var(--color);
+  color: var(--white);
   margin-top: 5rem;
 
   @media all and (min-width: 991px) {
