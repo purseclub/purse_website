@@ -5,7 +5,7 @@ export const IntroWrapper = styled.section`
 `;
 
 export const IntroContainer = styled.div`
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
   /* padding: 4.5rem 0; */
 

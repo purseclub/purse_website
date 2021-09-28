@@ -10,7 +10,7 @@ const MasternNav = styled(motion.header)`
 `;
 
 const NavContainer = styled.div`
-  max-width: 90%;
+  max-width: 80%;
   margin: 2rem auto;
   display: flex;
   justify-content: space-between;

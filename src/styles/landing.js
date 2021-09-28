@@ -5,7 +5,7 @@ export const LandingWrapper = styled.section`
 `;
 
 export const LandingContainer = styled.div`
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
 `;
 

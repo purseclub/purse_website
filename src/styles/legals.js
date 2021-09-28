@@ -6,7 +6,7 @@ export const LegalWrapper = styled.section`
 `;
 
 export const LegalContainer = styled.div`
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
   padding-top: 4.5rem;
   padding-bottom: 2.5rem;

@@ -12,7 +12,7 @@ export const WwoWrapper = styled.section`
 `;
 
 export const WwoContainer = styled.div`
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
   padding: 5.33rem 0;
 

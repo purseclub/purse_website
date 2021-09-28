@@ -12,7 +12,7 @@ export const FWrapper = styled.section`
 `;
 
 export const FContainer = styled.div`
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
   padding: 4.5rem 0;
   transform-origin: 0% 0% 0%;
