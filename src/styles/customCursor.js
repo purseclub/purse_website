@@ -1,20 +1,33 @@
 import styled from "styled-components";
 
 export const Cursor = styled.div`
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 16px;
-  height: 16px;
+  width: 8px;
+  height: 8px;
   border-radius: 100%;
   transform: translate(-50%, -50%);
-  background-color: var(--blue);
+  background-color: var(--black);
   transition: all 0.1s ease-Out;
   will-change: width, height, border, transform;
   transition-property: width, height, border;
   pointer-events: none;
   display: none;
   z-index: 999999;
+
+  ::after {
+    content: "";
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--black);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+  }
+
   &.hovered {
     width: 80px;
     height: 80px;

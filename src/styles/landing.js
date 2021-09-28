@@ -15,26 +15,10 @@ export const LandingContainer = styled.div`
   margin: 0 auto;
 `;
 
-export const TitleContainer = styled.div`
-  /* overflow: hidden; */
-
-  /* max-width: 90%; */
-
-  @media all and (min-width: 991px) {
-    /* max-width: 80%; */
-    /* padding-top: 5rem;
-    margin: 0 auto; */
-  }
-`;
-
-// export const TitleTopContainer = styled.div`
-//   /* width: 12.8125rem;
-//   height: 2.25rem; */
-//   overflow: hidden;
-// `;
+export const TitleContainer = styled.div``;
 
 export const TitleTopWrapper = styled.div`
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 1em;
   padding-top: 0.5em;
 `;
@@ -55,18 +39,9 @@ export const TitleTop = styled(motion.h2)`
 `;
 
 export const TitleWrapper = styled.div`
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-top: 0.25em;
   margin-top: -0.2em;
-
-  /* margin-top: -1em;
-
-  @media all and (min-width: 360px) {
-    margin-top: -0.5em;
-  }
-  @media all and (min-width: 425px) {
-    margin-top: 0em;
-  } */
 `;
 
 export const Title = styled(motion.h2)`
@@ -77,16 +52,6 @@ export const Title = styled(motion.h2)`
   color: var(--black);
   font-weight: 400;
   text-align: center;
-
-  /* padding-bottom: 0.2em; */
-
-  /* @media all and (min-width: 991px) {
-    font-family: var(--font-family-main-Bold);
-    font-weight: 700;
-    font-size: 7rem;
-    line-height: 6.5rem;
-    text-align: center;
-  } */
 `;
 
 export const Strong = styled.span`
@@ -97,18 +62,17 @@ export const Strong = styled.span`
 
 export const ParaContainer = styled.div`
   width: 100%;
-
+  margin: 1em auto;
   @media all and (min-width: 768px) {
     max-width: 70%;
-    margin: 0 auto;
   }
   @media all and (min-width: 1024px) {
     max-width: 40%;
-    margin: 0 auto;
   }
 `;
 
 export const Para = styled(motion.p)`
+  display: block;
   font-family: var(--font-family-main-SemiBold);
   font-size: 4vw;
   line-height: 6vw;
@@ -122,4 +86,23 @@ export const Para = styled(motion.p)`
     font-size: min(1.25rem, 4vw);
     line-height: min(1.5rem, 4vw);
   }
+`;
+
+export const Button = styled(motion.div)`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: min(15.75rem, 55%);
+  /* gap: 0.5em; */
+  margin: 0 auto;
+  height: 2.125rem;
+`;
+
+export const ArrowContainer = styled.div`
+  padding-top: 0.3em;
+  width: min(3.75rem, 30%);
+`;
+
+export const Arrow = styled.svg`
+  width: 100%;
 `;
