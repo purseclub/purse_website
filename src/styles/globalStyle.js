@@ -27,8 +27,8 @@ const GlobalStyle = createGlobalStyle`
         --black: #292A2B;
         --darkGreen: #001514;
         --blue: rgba(99, 32, 238, 1);
-        --gray: #8F8D80;
-		--white: #F5F5F5;
+        --gray: rgba(41, 42, 43, 0.5);
+		--white: #EAF2EF;
         --errorColor: #D75059;
         --desktop-margin: 7.5rem;
         --tablet-margin: 4rem;
@@ -40,11 +40,12 @@ const GlobalStyle = createGlobalStyle`
         --s-laptop: 64rem;
         --l-laptop: 90rem;
         --xl-laptop: 160rem;
+		--font-family-main: 'Bizantheum', serif;
         --font-family-main-Regular: 'CaustenRegular', sans-serif;
         --font-family-main-Medium: 'CaustenMedium', sans-serif;
         --font-family-main-SemiBold: 'CaustenSemiBold', sans-serif;
         --font-family-main-Bold: 'CaustenBold', sans-serif;
-        background-color: var(--darkGreen);
+        background-color: var(--white);
     }
 `;
 

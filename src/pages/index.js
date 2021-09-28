@@ -19,6 +19,7 @@ import {
   useGlobalStateContext,
 } from "../context/globalContext";
 import Seo from "../components/seo";
+import Layout from "../components/layout";
 
 // markup
 const IndexPage = () => {
@@ -66,10 +67,9 @@ const IndexPage = () => {
 
   return (
     <>
-      <GlobalFont />
+      {/* <GlobalFont />
       <GlobalStyle />
       <CustomCursor />
-      <>
         <Helmet>
           <title>The Purse Club</title>
         </Helmet>
@@ -94,8 +94,29 @@ const IndexPage = () => {
           <Discord />
           <Legals onCursor={onCursor} />
         </SmoothScroll>
-        {isActive ? <Modal hide={hideModal} /> : <></>}
-      </>
+        {isActive ? <Modal hide={hideModal} /> : <></>} */}
+
+      <Layout>
+        <Seo
+          title={"The Purse Club"}
+          description="Modern way of storing and managing you card in wallet aka purse club"
+          keywords={[
+            "purse",
+            "wallet",
+            "card",
+            "management",
+            "storing",
+            "modern",
+          ]}
+        />
+        <NavigationBar click={showModal} onCursor={onCursor} />
+        <Landing onCursor={onCursor} showModal={showModal} />
+        <WhatWeOffer showModal={showModal} onCursor={onCursor} />
+        <Intro showModal={showModal} onCursor={onCursor} />
+        <Faq />
+        <Discord />
+        <Legals onCursor={onCursor} />
+      </Layout>
     </>
   );
 };

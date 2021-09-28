@@ -15,7 +15,9 @@ const ScrollContainer = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  max-width: 80%;
+  margin: 0 auto;
   overflow: hidden;
   will-change: transform;
 `;

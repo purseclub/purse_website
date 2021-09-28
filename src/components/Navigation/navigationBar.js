@@ -1,14 +1,24 @@
 import React from "react";
 import Logo from "../Logo";
-import { MasternNav, NavContainer } from "../../styles/navigationBarStyle";
-import { DownloadButton } from "../DownloadButtonCircle/DownloadButton";
+import {
+  MasternNav,
+  NavButton,
+  NavContainer,
+} from "../../styles/navigationBarStyle";
 
 const NavigationBar = ({ click, onCursor }) => {
   return (
     <MasternNav>
       <NavContainer>
-        <Logo color="white" />
-        <DownloadButton click={click} onCursor={onCursor} />
+        <Logo color="black" />
+        <NavButton
+          click={click}
+          onMouseEnter={() => onCursor("hovered")}
+          onMouseLeave={onCursor}
+        >
+          {" "}
+          Download the app
+        </NavButton>
       </NavContainer>
     </MasternNav>
   );

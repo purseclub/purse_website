@@ -4,6 +4,7 @@ import CaustenMedium from "../fonts/Causten-Medium.otf";
 import CaustenRegular from "../fonts/Causten-Regular.otf";
 import CaustenSemiBold from "../fonts/Causten-SemiBold.otf";
 import CaustenExtraBold from "../fonts/Causten-ExtraBold.otf";
+import Bizantheum from "../fonts/bizantheum-8m2d2.otf";
 
 const GlobalFont = createGlobalStyle`
     @font-face {
@@ -34,6 +35,12 @@ const GlobalFont = createGlobalStyle`
         font-family: 'CaustenExtraBold';
         src: local('CaustenExtraBold'), url(${CaustenExtraBold}) format('opentype');
         font-weight: 800;
+        font-style: normal;
+    }
+
+	@font-face {
+        font-family: 'Bizantheum';
+        src: local('Bizantheum'), url(${Bizantheum}) format('opentype');
         font-style: normal;
     }
 `;

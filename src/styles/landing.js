@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const LandingWrapper = styled.section`
+export const LandingWrapper = styled(motion.section)`
   width: 100%;
+  margin-top: 10vh;
+
+  @media all and (min-width: 768px) {
+    margin-top: 0;
+  }
 `;
 
 export const LandingContainer = styled.div`
@@ -11,32 +16,77 @@ export const LandingContainer = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  overflow: hidden;
+  /* overflow: hidden; */
+
   /* max-width: 90%; */
 
   @media all and (min-width: 991px) {
     /* max-width: 80%; */
-    padding-top: 5rem;
-    margin: 0 auto;
+    /* padding-top: 5rem;
+    margin: 0 auto; */
   }
 `;
 
-export const Title = styled(motion.h1)`
-  font-family: var(--font-family-main-Bold);
-  font-size: 4.375rem;
-  letter-spacing: -0.05em;
-  line-height: 3.75rem;
-  color: var(--white);
-  font-weight: 700;
-  padding-bottom: 0.2em;
+// export const TitleTopContainer = styled.div`
+//   /* width: 12.8125rem;
+//   height: 2.25rem; */
+//   overflow: hidden;
+// `;
 
-  @media all and (min-width: 991px) {
+export const TitleTopWrapper = styled.div`
+  overflow: hidden;
+  margin-bottom: 1em;
+  padding-top: 0.5em;
+`;
+
+export const TitleTop = styled(motion.h2)`
+  font-family: var(--font-family-main);
+  font-size: 9vw;
+  line-height: 9vw;
+  letter-spacing: -0.01em;
+  color: var(--gray);
+  font-weight: 400;
+  text-align: center;
+
+  @media all and (min-width: 768px) {
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+`;
+
+export const TitleWrapper = styled.div`
+  overflow: hidden;
+  padding-top: 0.25em;
+  margin-top: -0.2em;
+
+  /* margin-top: -1em;
+
+  @media all and (min-width: 360px) {
+    margin-top: -0.5em;
+  }
+  @media all and (min-width: 425px) {
+    margin-top: 0em;
+  } */
+`;
+
+export const Title = styled(motion.h2)`
+  font-family: var(--font-family-main);
+  font-size: 9vw;
+  line-height: 9vw;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  font-weight: 400;
+  text-align: center;
+
+  /* padding-bottom: 0.2em; */
+
+  /* @media all and (min-width: 991px) {
     font-family: var(--font-family-main-Bold);
     font-weight: 700;
     font-size: 7rem;
     line-height: 6.5rem;
     text-align: center;
-  }
+  } */
 `;
 
 export const Strong = styled.span`
@@ -47,50 +97,29 @@ export const Strong = styled.span`
 
 export const ParaContainer = styled.div`
   width: 100%;
-  position: relative;
-  margin: 5rem 0;
-  padding: 1.5em 0;
 
-  ::after {
-    content: "";
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: var(--black);
+  @media all and (min-width: 768px) {
+    max-width: 70%;
+    margin: 0 auto;
   }
-
-  ::before {
-    content: "";
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--black);
-  }
-
-  @media all and (min-width: 991px) {
-    /* max-width: 45%; */
-    padding: 2.25em 0;
+  @media all and (min-width: 1024px) {
+    max-width: 40%;
+    margin: 0 auto;
   }
 `;
 
-export const Para = styled.p`
+export const Para = styled(motion.p)`
   font-family: var(--font-family-main-SemiBold);
-  font-size: 0.875rem;
-  line-height: 1rem;
-  letter-spacing: 0.001em;
-  color: var(--white);
+  font-size: 4vw;
+  line-height: 6vw;
+  letter-spacing: -0.005em;
+  color: var(--black);
   font-weight: 600;
+  text-align: center;
 
-  @media all and (min-width: 991px) {
-    text-align: center;
-    max-width: 50%;
-    margin: 0 auto;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    letter-spacing: -0.001em;
+  @media all and (min-width: 425px) {
+    letter-spacing: -0.015em;
+    font-size: min(1.25rem, 4vw);
+    line-height: min(1.5rem, 4vw);
   }
 `;
