@@ -31,7 +31,17 @@ export const Landing = ({ onCursor, showModal }) => {
     <LandingWrapper>
       <LandingContainer>
         <TitleContainer>
-          <Title>
+          <Title
+            initial={{ opacity: 0, y: 100 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 1,
+                ease: [0.61, 1, 0.88, 1],
+              },
+            }}
+          >
             Modern way of <Strong>storing and managing</Strong> your cards that
             matter to you.
           </Title>

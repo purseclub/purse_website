@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const LandingWrapper = styled.section`
@@ -10,22 +11,24 @@ export const LandingContainer = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  max-width: 90%;
+  overflow: hidden;
+  /* max-width: 90%; */
 
   @media all and (min-width: 991px) {
-    max-width: 80%;
+    /* max-width: 80%; */
     padding-top: 5rem;
     margin: 0 auto;
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled(motion.h1)`
   font-family: var(--font-family-main-Bold);
   font-size: 4.375rem;
   letter-spacing: -0.05em;
   line-height: 3.75rem;
   color: var(--white);
   font-weight: 700;
+  padding-bottom: 0.2em;
 
   @media all and (min-width: 991px) {
     font-family: var(--font-family-main-Bold);
@@ -75,19 +78,19 @@ export const ParaContainer = styled.div`
 `;
 
 export const Para = styled.p`
-  font-family: var(--font-family-main-Regular);
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.03em;
+  font-family: var(--font-family-main-SemiBold);
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: 0.001em;
   color: var(--white);
-  font-weight: 400;
+  font-weight: 600;
 
   @media all and (min-width: 991px) {
     text-align: center;
     max-width: 50%;
     margin: 0 auto;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    letter-spacing: -0.01em;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.001em;
   }
 `;
