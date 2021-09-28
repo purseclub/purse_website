@@ -22,8 +22,8 @@ export const TitleContainer = styled.div`
 export const Title = styled.h1`
   font-family: var(--font-family-main-Bold);
   font-size: 4.375rem;
-  letter-spacing: -0.03em;
-  line-height: 4rem;
+  letter-spacing: -0.05em;
+  line-height: 3.75rem;
   color: var(--white);
   font-weight: 700;
 
@@ -37,9 +37,9 @@ export const Title = styled.h1`
 `;
 
 export const Strong = styled.span`
-  font-family: var(--font-family-main-SemiBold);
+  font-family: var(--font-family-main-Bold);
   color: var(--blue);
-  font-weight: 600;
+  font-weight: 700;
 `;
 
 export const ParaContainer = styled.div`

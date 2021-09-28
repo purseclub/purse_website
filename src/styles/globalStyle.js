@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 		font-display: swap;
 		-webkit-tap-highlight-color: transparent;
 		-webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  		-moz-osx-font-smoothing: grayscale;
     }
 
     a {

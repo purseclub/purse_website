@@ -3,6 +3,7 @@ import CaustenBold from "../fonts/Causten-Bold.otf";
 import CaustenMedium from "../fonts/Causten-Medium.otf";
 import CaustenRegular from "../fonts/Causten-Regular.otf";
 import CaustenSemiBold from "../fonts/Causten-SemiBold.otf";
+import CaustenExtraBold from "../fonts/Causten-ExtraBold.otf";
 
 const GlobalFont = createGlobalStyle`
     @font-face {
@@ -27,6 +28,12 @@ const GlobalFont = createGlobalStyle`
         font-family: 'CaustenSemiBold';
         src: local('CaustenSemiBold'), url(${CaustenSemiBold}) format('opentype');
         font-weight: 600;
+        font-style: normal;
+    }
+	@font-face {
+        font-family: 'CaustenExtraBold';
+        src: local('CaustenExtraBold'), url(${CaustenExtraBold}) format('opentype');
+        font-weight: 800;
         font-style: normal;
     }
 `;
