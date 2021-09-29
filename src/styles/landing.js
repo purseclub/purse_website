@@ -6,7 +6,7 @@ export const LandingWrapper = styled(motion.section)`
   margin-top: 10vh;
 
   @media all and (min-width: 768px) {
-    margin-top: 0;
+    margin-top: 5vh;
   }
 `;
 
@@ -48,7 +48,7 @@ export const Title = styled(motion.h2)`
   font-family: var(--font-family-main);
   font-size: 9vw;
   line-height: 9vw;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   color: var(--black);
   font-weight: 400;
   text-align: center;
@@ -92,7 +92,7 @@ export const Button = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: min(15.75rem, 55%);
+  width: min(15.75rem, 60%);
   /* gap: 0.5em; */
   margin: 0 auto;
   height: 2.125rem;

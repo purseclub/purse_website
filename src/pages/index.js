@@ -111,8 +111,9 @@ const IndexPage = () => {
         />
         <NavigationBar click={showModal} onCursor={onCursor} />
         <Landing onCursor={onCursor} showModal={showModal} />
-        <WhatWeOffer showModal={showModal} onCursor={onCursor} />
         <Intro showModal={showModal} onCursor={onCursor} />
+        <WhatWeOffer showModal={showModal} onCursor={onCursor} />
+
         <Faq />
         <Discord />
         <Legals onCursor={onCursor} />

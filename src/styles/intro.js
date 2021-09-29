@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const IntroWrapper = styled.section`
   width: 100%;
+  margin-top: 20vh;
+  @media all and (min-width: 991px) {
+    margin-top: 25vh;
+  }
 `;
 
 export const IntroContainer = styled.div`
-  max-width: 80%;
-  margin: 0 auto;
   /* padding: 4.5rem 0; */
 
   @media all and (min-width: 991px) {
@@ -14,18 +16,19 @@ export const IntroContainer = styled.div`
   }
 `;
 
-export const IntroHeading = styled.p`
+export const IntroHeading = styled.h2`
   width: 100%;
-  font-family: var(--font-family-main-Regular);
-  font-size: 4rem;
-  letter-spacing: -0.05em;
-  line-height: 4rem;
-  color: var(--white);
+  font-family: var(--font-family-main);
+  font-size: 11vw;
+  letter-spacing: 0.01em;
+  line-height: 11vw;
+  color: var(--black);
   font-weight: 400;
+  text-align: center;
+  /* margin: 0 auto; */
 
   @media all and (min-width: 991px) {
-    font-size: 6.8125rem;
-    line-height: 7rem;
+    /* line-height: 7rem; */
   }
 `;
 
@@ -43,8 +46,9 @@ export const IntroPara = styled.p`
   font-size: 0.875rem;
   letter-spacing: 0.03em;
   line-height: 1.5rem;
-  color: var(--white);
+  color: var(--black);
   font-weight: 400;
+  text-align: center;
 
   @media all and (min-width: 991px) {
     font-size: 1.5rem;

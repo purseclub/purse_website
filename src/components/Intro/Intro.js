@@ -8,40 +8,30 @@ import {
   IntroParaContainer,
   IntroWrapper,
 } from "../../styles/intro";
-import { Strong } from "../../styles/landing";
+import { Para, ParaContainer, Strong } from "../../styles/landing";
+import MinimalButton from "../button";
 
 const Intro = ({ showModal, onCursor }) => {
   return (
     <IntroWrapper>
-      <IntroContainer>
-        <IntroHeading>
-          Why are you still carrying your wallet ? Time is flying and you are
-          still <Strong>stuck in the past.</Strong>
-        </IntroHeading>
-        <IntroParaContainer>
-          <IntroPara>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy. Various versions have evolved over the
-            years, sometimes by accident, sometimes on purpose (injected humour
-            and the like).
-          </IntroPara>
-        </IntroParaContainer>
-        <IntroButtonContainer>
-          <IntroButton
-            onClick={showModal}
-            onMouseEnter={() => onCursor("hovered")}
-            onMouseLeave={onCursor}
-          >
-            Download the app
-          </IntroButton>
-        </IntroButtonContainer>
-      </IntroContainer>
+      <IntroHeading>Step into the future.</IntroHeading>
+      <ParaContainer>
+        <Para>
+          trust as a virtue has consistently played an essential role in every
+          great human achievement. and consistently, its importance has been
+          overlooked. not just by individuals, but by entire societies. we felt
+          it was time someone gave it the spotlight it deserves. especially for
+          the ones who live by this virtue: the trustworthy. <br /> <br /> so we
+          thought of creating a system that rewards its members for doing good
+          and being trustworthy. this way, trust as a virtue becomes something
+          to aspire to, just the way it should be. then we went one step ahead:
+          we built it. we know we are on the right track because here you are.{" "}
+          <br /> <br />
+          if you make it to CRED, congratulations and welcome. we have a lot of
+          things planned for you.
+        </Para>
+      </ParaContainer>
+      <MinimalButton buttonText="Download the app" path="/" />
     </IntroWrapper>
   );
 };
