@@ -16,7 +16,7 @@ export const Cursor = styled.div`
   display: none;
   z-index: 999999;
 
-  ::after {
+  /* ::after {
     content: "";
     position: absolute;
     width: 64px;
@@ -26,12 +26,13 @@ export const Cursor = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 100%;
-  }
+  } */
 
   &.hovered {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     color: var(--white);
+    position: relative;
   }
 
   &.hovered::after {

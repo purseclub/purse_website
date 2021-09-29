@@ -83,7 +83,7 @@ export const Landing = ({ onCursor, showModal }) => {
         </TitleWrapper>
       </TitleContainer>
       <ParaContainer>
-        <Para variants={paraMotion}>
+        <Para variants={paraMotion} align="center">
           Experience the app right in the browser. Download when you feel like
           downloading the app.
         </Para>

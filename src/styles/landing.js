@@ -79,7 +79,8 @@ export const Para = styled(motion.p)`
   letter-spacing: -0.005em;
   color: var(--black);
   font-weight: 600;
-  text-align: center;
+  text-align: ${(props) => props.align};
+  text-decoration: ${(props) => (props.show ? "underline" : "none")};
 
   @media all and (min-width: 425px) {
     letter-spacing: -0.015em;
@@ -103,6 +104,6 @@ export const ArrowContainer = styled.div`
   width: min(3.75rem, 30%);
 `;
 
-export const Arrow = styled.svg`
+export const Arrow = styled(motion.svg)`
   width: 100%;
 `;

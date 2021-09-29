@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  IntroButton,
-  IntroButtonContainer,
-  IntroContainer,
-  IntroHeading,
-  IntroPara,
-  IntroParaContainer,
-  IntroWrapper,
-} from "../../styles/intro";
-import { Para, ParaContainer, Strong } from "../../styles/landing";
+import { IntroHeading, IntroWrapper } from "../../styles/intro";
+import { Para, ParaContainer } from "../../styles/landing";
 import MinimalButton from "../button";
 
 const Intro = ({ showModal, onCursor }) => {
@@ -16,7 +8,7 @@ const Intro = ({ showModal, onCursor }) => {
     <IntroWrapper>
       <IntroHeading>Step into the future.</IntroHeading>
       <ParaContainer>
-        <Para>
+        <Para align="center">
           trust as a virtue has consistently played an essential role in every
           great human achievement. and consistently, its importance has been
           overlooked. not just by individuals, but by entire societies. we felt

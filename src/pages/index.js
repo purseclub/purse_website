@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import GlobalFont from "../fonts/font";
-import GlobalStyle from "../styles/globalStyle";
-import SmoothScroll from "../components/smoothScroll";
 import NavigationBar from "../components/Navigation/navigationBar";
 import { Landing } from "../components/Landing/Landing";
 import WhatWeOffer from "../components/What_we_offer/WhatWeOffer";
@@ -10,8 +7,6 @@ import Faq from "../components/Faq/Faq";
 import Discord from "../components/Discord/Discord";
 import Legals from "../components/Legals/Legals";
 import Modal from "../components/modal/Modal";
-import { Helmet } from "react-helmet";
-import CustomCursor from "../components/customCursor/customCursor";
 
 //Context
 import {
@@ -113,7 +108,6 @@ const IndexPage = () => {
         <Landing onCursor={onCursor} showModal={showModal} />
         <Intro showModal={showModal} onCursor={onCursor} />
         <WhatWeOffer showModal={showModal} onCursor={onCursor} />
-
         <Faq />
         <Discord />
         <Legals onCursor={onCursor} />

@@ -1,15 +1,33 @@
-import { Link } from "gatsby";
 import React from "react";
 import { Arrow, ArrowContainer, Button, Para } from "../styles/landing";
+import { motion } from "framer-motion";
+
+const arrowMotion = {
+  initial: {
+    x: 0,
+  },
+  animate: {
+    x: 10,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
 
 const MinimalButton = ({ buttonText, path, variants }) => {
   return (
     <>
-      <Link to={path}>
-        <Button variants={variants}>
-          <Para>{buttonText}</Para>
+      <motion.a
+        variants={variants}
+        href={path}
+        style={{ width: "100%", display: "block" }}
+      >
+        <Button whileHover="animate" initial="initial" animate="initial">
+          <Para show={true}>{buttonText}</Para>
           <ArrowContainer>
             <Arrow
+              variants={arrowMotion}
               viewBox="0 0 48 15"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +41,7 @@ const MinimalButton = ({ buttonText, path, variants }) => {
             </Arrow>
           </ArrowContainer>
         </Button>
-      </Link>
+      </motion.a>
     </>
   );
 };
