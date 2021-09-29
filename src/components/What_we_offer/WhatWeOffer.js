@@ -1,13 +1,7 @@
-import React, { useEffect } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { IntroHeading } from "../../styles/intro";
 import {
-  ContentBody,
   ContentBox,
-  ContentButton,
-  ContentButtonContainer,
-  ContentHead,
-  ContentHeadTitle,
-  ContentPara,
   Divider,
   Heading,
   HeadingSpan,
@@ -20,35 +14,38 @@ import {
   ItemImg,
   ItemMeta,
   ItemMetaRow,
-  WwoContainer,
   WwoWrapper,
 } from "../../styles/whatWeOffer";
 
 import { Para } from "../../styles/landing";
-import NonAnimatedArrow from "../NonAnimatedArrow";
-import texture from "../../images/texture.png";
-import MinimalButton from "../button";
+import { graphql, useStaticQuery } from "gatsby";
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { motion, useAnimation } from "framer-motion";
 
 const datas = [
   {
+    id: 0,
     subtitle: "Reward",
     title: "Overloaded",
     body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
     buttonText: "Explore rewards",
   },
   {
+    id: 1,
     subtitle: "Conni",
     title: "Personal Card",
     body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
     buttonText: "Experience the upgrade",
   },
   {
+    id: 2,
     subtitle: "Share",
     title: "Smooth",
     body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
     buttonText: "Start sharing",
   },
   {
+    id: 3,
     subtitle: "Security",
     title: "Shepherd",
     body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
@@ -56,13 +53,42 @@ const datas = [
   },
 ];
 
-const Splitting = ({ copy, role }) => {
+const charVariants = {
+  initial: {
+    x: ["0%", "-103%"],
+  },
+  animate: {
+    x: ["103%", "0%"],
+    transition: {
+      duration: 8,
+    },
+  },
+};
+
+const Splitting = ({ copy, role, controls }) => {
   return (
     <HeadingSpan aria-label={copy} role={role}>
       {copy.split("").map(function (char, index) {
         return (
-          <span aria-hidden="true" key={index}>
-            {char}
+          <span
+            aria-hidden="true"
+            key={index}
+            className="char"
+            style={{
+              display: "inline-block",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            <motion.span
+              animate={controls}
+              style={{
+                display: "inline-block",
+                willChange: "transform",
+              }}
+            >
+              {char}
+            </motion.span>
           </span>
         );
       })}
@@ -70,75 +96,209 @@ const Splitting = ({ copy, role }) => {
   );
 };
 
+const imageWrpMotion = {
+  initial: {
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+  animate: {
+    scale: 0.95,
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+};
+
+const imageVariants = {
+  initial: {
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+  animate: {
+    scale: 1.1,
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+};
+
+const ImageComponent = forwardRef((props, ref) => {
+  return <GatsbyImage image={props.image} alt="texture" ref={ref} />;
+});
+
 const WhatWeOffer = ({ showModal, onCursor }) => {
+  const [hoveredEl, setHoveredEl] = useState(null);
+
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "texture.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        }
+      }
+    }
+  `);
+  const image = getImage(data.placeholderImage.childImageSharp);
+
   return (
     <WwoWrapper>
-      <>
-        <IntroHeading>Flavour of love</IntroHeading>
-        <Divider color={"var(--black)"} />
-        {datas.map((data, index) => {
-          return (
-            <ContentBox key={index}>
-              <Item className={(index + 1) % 2 == 0 ? "invert" : ""}>
-                <ImgWrp>
-                  <ItemImg texture={texture} />
-                </ImgWrp>
-                <ItemEnter className="unbutton">
-                  <ItemEnterCircle
-                    vectorEffect="non-scaling-stroke"
-                    width="800"
-                    height="800"
-                    viewBox="0 0 800 800"
-                  >
-                    <circle
-                      vectorEffect="non-scaling-stroke"
-                      cx="400"
-                      cy="400"
-                      r="150"
-                    />
-                  </ItemEnterCircle>
-                </ItemEnter>
-                <Heading>
-                  <Splitting copy={data.title} role="title" />
-                  <Splitting copy={data.subtitle} role="subtitle" />
-                </Heading>
-                <ItemMeta className={(index + 1) % 2 == 0 ? "invert-meta" : ""}>
-                  <ItemMetaRow>
-                    <span>Purse Club Rewards</span>
-                  </ItemMetaRow>
-                </ItemMeta>
-                <ItemExcerpt>
-                  <Para align="left">{data.body}</Para>
-                  <ItemExcerptLink>
-                    <span>{data.buttonText}</span>
-                  </ItemExcerptLink>
-                </ItemExcerpt>
-
-                {/* <ContentHead>
-                  <ContentHeadTitle>{data.title}</ContentHeadTitle>
-                  <NonAnimatedArrow
-                    fill={"var(--blue)"}
-                    rotate={"rotate(195deg)"}
-                  />
-                </ContentHead>
-                <ContentBody>
-                  <ContentPara>{data.body}</ContentPara>
-                </ContentBody>
-                <ContentButtonContainer>
-                  <ContentButton
-                    onClick={showModal}
-                    onMouseEnter={() => onCursor("cool")}
-                    onMouseLeave={onCursor}
-                  >
-                    {data.buttonText}
-                  </ContentButton>
-                </ContentButtonContainer> */}
-              </Item>
-            </ContentBox>
-          );
-        })}
-      </>
+      <IntroHeading>Flavour of love</IntroHeading>
+      <Divider color={"var(--black)"} />
+      {datas.map((item, index) => {
+        return (
+          <Box
+            key={index}
+            item={item}
+            image={image}
+            hoveredEl={hoveredEl}
+            setHoveredEl={setHoveredEl}
+          />
+        );
+      })}
     </WwoWrapper>
+  );
+};
+
+const Box = ({ item, image, hoveredEl, setHoveredEl }) => {
+  const isHovered = item.id === hoveredEl;
+  const controls = useAnimation();
+  const headingControls = useAnimation();
+
+  const [isInverted, setIsInverted] = useState(false);
+  const ref = useRef(null);
+
+  const sequenceForward = async () => {
+    await controls.start({
+      x: isInverted ? "103%" : "-103%",
+      transition: {
+        duration: 0.2,
+        ease: [0.11, 0, 0.5, 0],
+      },
+    });
+    headingControls.set({
+      x: isInverted ? "20" : "-20%",
+      transition: {
+        duration: 0.2,
+      },
+    });
+    controls.set({
+      x: isInverted ? "-103%" : "103%",
+      transition: {
+        duration: 0.4,
+      },
+    });
+    await controls.start({
+      x: "0%",
+      transition: {
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    });
+  };
+
+  const sequenceBackward = async () => {
+    await controls.start({
+      x: isInverted ? "-103%" : "103%",
+      transition: {
+        duration: 0.2,
+        ease: [0.11, 0, 0.5, 0],
+      },
+    });
+    headingControls.set({
+      x: "0%",
+      transition: {
+        duration: 0.2,
+      },
+    });
+    controls.set({
+      x: isInverted ? "103%" : "-103%",
+      transition: {
+        duration: 0.4,
+      },
+    });
+    await controls.start({
+      x: "0%",
+      transition: {
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    });
+  };
+  useEffect(() => {
+    const val = ref.current.className.includes("invert");
+    setIsInverted(val);
+  }, []);
+  return (
+    <ContentBox>
+      <Item ref={ref} className={(item.id + 1) % 2 === 0 ? "invert" : ""}>
+        <ImgWrp
+          variants={imageWrpMotion}
+          animate={isHovered ? "animate" : "initial"}
+          initial={isHovered ? "animate" : "initial"}
+        >
+          <ItemImg variants={imageVariants}>
+            <ImageComponent image={image} />
+          </ItemImg>
+        </ImgWrp>
+        <ItemEnter
+          className="unbutton"
+          onMouseEnter={() => {
+            setHoveredEl(item.id);
+            sequenceForward();
+          }}
+          onMouseLeave={() => {
+            setHoveredEl(null);
+            sequenceBackward();
+          }}
+        >
+          <ItemEnterCircle
+            vectorEffect="non-scaling-stroke"
+            width="800"
+            height="800"
+            viewBox="0 0 800 800"
+          >
+            <circle
+              vectorEffect="non-scaling-stroke"
+              cx="400"
+              cy="400"
+              r="150"
+            />
+          </ItemEnterCircle>
+        </ItemEnter>
+        <Heading animate={headingControls}>
+          <Splitting copy={item.title} role="title" controls={controls} />
+          <Splitting copy={item.subtitle} role="subtitle" controls={controls} />
+        </Heading>
+        <ItemMeta className={(item.id + 1) % 2 == 0 ? "invert-meta" : ""}>
+          <ItemMetaRow>
+            <span>Purse Club Rewards</span>
+          </ItemMetaRow>
+        </ItemMeta>
+        <ItemExcerpt>
+          <Para align="left">{item.body}</Para>
+          <ItemExcerptLink
+            onMouseEnter={() => {
+              setHoveredEl(item.id);
+              sequenceForward();
+            }}
+            onMouseLeave={() => {
+              setHoveredEl(null);
+              sequenceBackward();
+            }}
+          >
+            <span>{item.buttonText}</span>
+          </ItemExcerptLink>
+        </ItemExcerpt>
+      </Item>
+    </ContentBox>
   );
 };
 

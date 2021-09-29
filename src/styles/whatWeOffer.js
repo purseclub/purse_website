@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const WwoWrapper = styled.section`
@@ -27,7 +28,7 @@ export const Divider = styled.div`
   }
 `;
 
-export const ContentBox = styled.div`
+export const ContentBox = styled(motion.div)`
   width: 100%;
   margin: 15vh 0;
 
@@ -57,7 +58,7 @@ export const Item = styled.article`
   }
 `;
 
-export const ImgWrp = styled.div`
+export const ImgWrp = styled(motion.div)`
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -70,14 +71,14 @@ export const ImgWrp = styled.div`
   }
 `;
 
-export const ItemImg = styled.div`
+export const ItemImg = styled(motion.div)`
   width: 100%;
   height: 100%;
   min-height: 200px;
-  background-size: cover;
-  background-position: 50% 50%;
+  /* background-size: cover;
+  background-position: 50% 50%; */
   will-change: transform;
-  background-image: url(${(props) => props.texture});
+  /* background-image: url(${(props) => props.texture}); */
 
   @media all and (min-width: 53em) {
     width: 100%;
@@ -85,7 +86,7 @@ export const ItemImg = styled.div`
   }
 `;
 
-export const ItemEnter = styled.button`
+export const ItemEnter = styled(motion.button)`
   display: none;
   will-change: transform;
 
@@ -127,17 +128,12 @@ export const ItemEnterCircle = styled.svg`
   }
 `;
 
-export const Heading = styled.h2`
+export const Heading = styled(motion.h2)`
   font-family: var(--font-family-main);
   font-weight: 400;
   font-size: 6vw;
   font-size: clamp(2rem, 6vw, 5rem);
   line-height: 1.1;
-
-  &.heading.splitting.word,
-  .heading.splitting.char {
-    display: flex;
-  }
 
   @media all and (min-width: 53em) {
     margin: 0;
