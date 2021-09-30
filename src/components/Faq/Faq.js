@@ -1,5 +1,7 @@
+import { useAnimation } from "framer-motion";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import {
   AnswerContainer,
   Arrow,
@@ -59,11 +61,33 @@ const arrowVariant = {
 
 const Faq = ({ onCursor }) => {
   const [selectedNo, setSelectedNo] = useState(0);
+  const [headref, headInView] = useInView({
+    threshold: 0,
+  });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (headInView) {
+      controls.start({
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: "easeIn",
+        },
+      });
+
+      //   return controls.stop();
+    }
+
+    // return controls.stop();
+  }, [headInView, controls]);
 
   return (
     <>
       <FWrapper>
-        <IntroHeading>Your Majesty</IntroHeading>
+        <IntroHeading ref={headref} animate={controls}>
+          Your Majesty
+        </IntroHeading>
         <Divider color={"var(--black)"} />
         <div
           style={{

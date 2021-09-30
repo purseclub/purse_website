@@ -21,6 +21,7 @@ import { Para } from "../../styles/landing";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const datas = [
   {
@@ -124,6 +125,10 @@ const ImageComponent = forwardRef((props, ref) => {
 
 const WhatWeOffer = ({ showModal, onCursor }) => {
   const [hoveredEl, setHoveredEl] = useState(null);
+  const [headref, headInView] = useInView({
+    threshold: 0.4,
+  });
+  const controls = useAnimation();
 
   const data = useStaticQuery(graphql`
     query {
@@ -135,10 +140,27 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
     }
   `);
   const image = getImage(data.placeholderImage.childImageSharp);
+  useEffect(() => {
+    if (headInView) {
+      controls.start({
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: "easeIn",
+        },
+      });
+
+      //   return controls.stop();
+    }
+
+    // return controls.stop();
+  }, [headInView, controls]);
 
   return (
     <WwoWrapper>
-      <IntroHeading>Flavour of love</IntroHeading>
+      <IntroHeading ref={headref} animate={controls}>
+        Flavour of love
+      </IntroHeading>
       <Divider color={"var(--black)"} />
       {datas.map((item, index) => {
         return (

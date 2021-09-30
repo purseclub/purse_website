@@ -72,13 +72,14 @@ export const ParaContainer = styled.div`
 `;
 
 export const Para = styled(motion.p)`
+  opacity: ${(props) => (props.hide ? 0 : 1)};
   display: block;
-  font-family: var(--font-family-main-SemiBold);
+  font-family: var(--font-family-main-Regular);
   font-size: 4vw;
   line-height: 6vw;
   letter-spacing: -0.005em;
   color: var(--black);
-  font-weight: 600;
+  font-weight: 400;
   text-align: ${(props) => props.align};
   text-decoration: ${(props) => (props.show ? "underline" : "none")};
   margin-bottom: ${(props) => (props.add ? "1.5em" : "0")};

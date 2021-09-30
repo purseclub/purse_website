@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const IntroWrapper = styled.section`
@@ -8,7 +9,7 @@ export const IntroWrapper = styled.section`
   }
 `;
 
-export const IntroHeading = styled.h2`
+export const IntroHeading = styled(motion.h2)`
   width: 100%;
   font-family: var(--font-family-main);
   font-size: 11vw;
@@ -17,6 +18,7 @@ export const IntroHeading = styled.h2`
   color: var(--black);
   font-weight: 400;
   text-align: center;
+  opacity: 0;
   /* margin: 0 auto; */
 
   @media all and (min-width: 991px) {

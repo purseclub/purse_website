@@ -1,16 +1,64 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IntroHeading, IntroWrapper } from "../../styles/intro";
 import { Para, ParaContainer } from "../../styles/landing";
 import { Divider } from "../../styles/whatWeOffer";
 import MinimalButton from "../button";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
 
 const Intro = ({ showModal, onCursor }) => {
+  const [headref, headInView] = useInView({
+    threshold: 0.4,
+  });
+  const [paraRef, paraInView] = useInView({
+    threshold: 0.2,
+  });
+  const controls = useAnimation();
+  const paraControls = useAnimation();
+
+  useEffect(() => {
+    if (headInView) {
+      controls.start({
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: "easeIn",
+        },
+      });
+
+      //   return controls.stop();
+    }
+
+    // return controls.stop();
+  }, [headInView, controls]);
+  useEffect(() => {
+    if (paraInView) {
+      paraControls.start({
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: "easeIn",
+        },
+      });
+      //   return paraControls.stop();
+    }
+    // return paraControls.stop();
+  }, [paraInView, paraControls]);
+
   return (
     <IntroWrapper>
-      <IntroHeading>Step into the future.</IntroHeading>
+      <IntroHeading ref={headref} animate={controls}>
+        Step into the future.
+      </IntroHeading>
       <Divider color={"var(--black)"} />
       <ParaContainer>
-        <Para align="center" top={true}>
+        <Para
+          align="center"
+          top={true}
+          hide={true}
+          ref={paraRef}
+          animate={paraControls}
+        >
           trust as a virtue has consistently played an essential role in every
           great human achievement. and consistently, its importance has been
           overlooked. not just by individuals, but by entire societies. we felt
