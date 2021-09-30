@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
 		-webkit-tap-highlight-color: transparent;
 		-webkit-font-smoothing: antialiased;
   		-moz-osx-font-smoothing: grayscale;
+		
     }
 
     a {
@@ -45,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
         --font-family-main-Medium: 'CaustenMedium', sans-serif;
         --font-family-main-SemiBold: 'CaustenSemiBold', sans-serif;
         --font-family-main-Bold: 'CaustenBold', sans-serif;
-        background-color: var(--white);
+       
     }
 `;
 
