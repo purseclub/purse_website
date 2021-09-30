@@ -61,7 +61,7 @@ const paraMotion = {
   },
 };
 
-export const Landing = ({ onCursor, showModal }) => {
+const Landing = ({ onCursor, showModal }) => {
   return (
     <LandingWrapper
       variants={textMotionVariant}
@@ -96,3 +96,5 @@ export const Landing = ({ onCursor, showModal }) => {
     </LandingWrapper>
   );
 };
+
+export default Landing;

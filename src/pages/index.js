@@ -1,11 +1,4 @@
-import React, { useState, useEffect } from "react";
-import NavigationBar from "../components/Navigation/navigationBar";
-import { Landing } from "../components/Landing/Landing";
-import WhatWeOffer from "../components/What_we_offer/WhatWeOffer";
-import Intro from "../components/Intro/Intro";
-import Faq from "../components/Faq/Faq";
-import Discord from "../components/Discord/Discord";
-import Legals from "../components/Legals/Legals";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import Modal from "../components/modal/Modal";
 
 //Context
@@ -15,6 +8,18 @@ import {
 } from "../context/globalContext";
 import Seo from "../components/seo";
 import Layout from "../components/layout";
+
+const NavigationBar = lazy(() =>
+  import("../components/Navigation/navigationBar")
+);
+const Landing = lazy(() => import("../components/Landing/Landing"));
+const WhatWeOffer = lazy(() =>
+  import("../components/What_we_offer/WhatWeOffer")
+);
+const Intro = lazy(() => import("../components/Intro/Intro"));
+const Faq = lazy(() => import("../components/Faq/Faq"));
+const Discord = lazy(() => import("../components/Discord/Discord"));
+const Legals = lazy(() => import("../components/Legals/Legals"));
 
 // markup
 const IndexPage = () => {
@@ -104,13 +109,15 @@ const IndexPage = () => {
             "modern",
           ]}
         />
-        <NavigationBar click={showModal} onCursor={onCursor} />
-        <Landing onCursor={onCursor} showModal={showModal} />
-        <Intro showModal={showModal} onCursor={onCursor} />
-        <WhatWeOffer showModal={showModal} onCursor={onCursor} />
-        <Faq />
-        <Discord />
-        <Legals onCursor={onCursor} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <NavigationBar click={showModal} onCursor={onCursor} />
+          <Landing onCursor={onCursor} showModal={showModal} />
+          <Intro showModal={showModal} onCursor={onCursor} />
+          <WhatWeOffer showModal={showModal} onCursor={onCursor} />
+          <Faq />
+          <Discord />
+          <Legals onCursor={onCursor} />
+        </Suspense>
       </Layout>
     </>
   );
