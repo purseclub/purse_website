@@ -23,7 +23,11 @@ const Intro = ({ showModal, onCursor }) => {
           things planned for you.
         </Para>
       </ParaContainer>
-      <MinimalButton buttonText="Download the app" path="/" />
+      <MinimalButton
+        buttonText="Download the app"
+        click={showModal}
+        onCursor={onCursor}
+      />
     </IntroWrapper>
   );
 };

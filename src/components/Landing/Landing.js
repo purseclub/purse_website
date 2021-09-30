@@ -92,6 +92,7 @@ const Landing = ({ onCursor, showModal }) => {
         buttonText="Experience Now"
         path="/experience/experienceHome"
         variants={paraMotion}
+        onCursor={onCursor}
       />
     </LandingWrapper>
   );

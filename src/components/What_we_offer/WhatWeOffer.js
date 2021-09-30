@@ -53,18 +53,6 @@ const datas = [
   },
 ];
 
-const charVariants = {
-  initial: {
-    x: ["0%", "-103%"],
-  },
-  animate: {
-    x: ["103%", "0%"],
-    transition: {
-      duration: 8,
-    },
-  },
-};
-
 const Splitting = ({ copy, role, controls }) => {
   return (
     <HeadingSpan aria-label={copy} role={role}>
@@ -160,6 +148,8 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
             image={image}
             hoveredEl={hoveredEl}
             setHoveredEl={setHoveredEl}
+            onCursor={onCursor}
+            showModal={showModal}
           />
         );
       })}
@@ -167,15 +157,28 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
   );
 };
 
-const Box = ({ item, image, hoveredEl, setHoveredEl }) => {
+const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
+  const [width, setWidth] = useState(null);
   const isHovered = item.id === hoveredEl;
   const controls = useAnimation();
   const headingControls = useAnimation();
+  const circleControls = useAnimation();
 
   const [isInverted, setIsInverted] = useState(false);
   const ref = useRef(null);
 
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, [width]);
+
   const sequenceForward = async () => {
+    circleControls.start({
+      scale: 1.1,
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    });
     await controls.start({
       x: isInverted ? "103%" : "-103%",
       transition: {
@@ -205,6 +208,13 @@ const Box = ({ item, image, hoveredEl, setHoveredEl }) => {
   };
 
   const sequenceBackward = async () => {
+    circleControls.start({
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    });
     await controls.start({
       x: isInverted ? "-103%" : "103%",
       transition: {
@@ -250,16 +260,19 @@ const Box = ({ item, image, hoveredEl, setHoveredEl }) => {
         </ImgWrp>
         <ItemEnter
           className="unbutton"
-          onMouseEnter={() => {
+          onHoverStart={() => {
+            onCursor("hovered");
             setHoveredEl(item.id);
             sequenceForward();
           }}
-          onMouseLeave={() => {
+          onHoverEnd={() => {
             setHoveredEl(null);
             sequenceBackward();
+            onCursor();
           }}
         >
           <ItemEnterCircle
+            animate={circleControls}
             vectorEffect="non-scaling-stroke"
             width="800"
             height="800"
@@ -277,7 +290,7 @@ const Box = ({ item, image, hoveredEl, setHoveredEl }) => {
           <Splitting copy={item.title} role="title" controls={controls} />
           <Splitting copy={item.subtitle} role="subtitle" controls={controls} />
         </Heading>
-        <ItemMeta className={(item.id + 1) % 2 == 0 ? "invert-meta" : ""}>
+        <ItemMeta className={(item.id + 1) % 2 === 0 ? "invert-meta" : ""}>
           <ItemMetaRow>
             <span>Purse Club Rewards</span>
           </ItemMetaRow>
@@ -285,13 +298,20 @@ const Box = ({ item, image, hoveredEl, setHoveredEl }) => {
         <ItemExcerpt>
           <Para align="left">{item.body}</Para>
           <ItemExcerptLink
+            onClick={showModal}
             onMouseEnter={() => {
-              setHoveredEl(item.id);
-              sequenceForward();
+              if (width > 991) {
+                onCursor("hovered");
+                setHoveredEl(item.id);
+                sequenceForward();
+              }
             }}
             onMouseLeave={() => {
-              setHoveredEl(null);
-              sequenceBackward();
+              if (width > 991) {
+                setHoveredEl(null);
+                sequenceBackward();
+                onCursor();
+              }
             }}
           >
             <span>{item.buttonText}</span>

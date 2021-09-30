@@ -91,19 +91,24 @@ export const Para = styled(motion.p)`
 
 export const Button = styled(motion.div)`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  width: min(15.75rem, 60%);
-  /* gap: 0.5em; */
+  /* width: min(15.75rem, 60%); */
+  gap: 1em;
   margin: 0 auto;
   height: 2.125rem;
 `;
 
 export const ArrowContainer = styled.div`
   padding-top: 0.3em;
-  width: min(3.75rem, 30%);
+  width: min(3.75rem, 15%);
 `;
 
 export const Arrow = styled(motion.svg)`
+  margin-top: 0.5em;
   width: 100%;
+
+  @media all and (min-width: 425px) {
+    margin-top: 0.9em;
+  }
 `;

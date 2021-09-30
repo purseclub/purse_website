@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Modal from "../components/modal/Modal";
 
 //lodable
 import loadable from "@loadable/component";
@@ -9,6 +8,8 @@ import {
   useGlobalDispatchContext,
   useGlobalStateContext,
 } from "../context/globalContext";
+
+//components
 import Seo from "../components/seo";
 import Layout from "../components/layout";
 
@@ -61,45 +62,11 @@ const IndexPage = () => {
       body.setAttribute("style", "");
       window.scrollTo(0, offset);
     }
-
-    // window.addEventListener("resize", () => setWidth(window.innerWidth));
-
-    // return () =>
-    //   window.removeEventListener("resize", () => setWidth(window.innerWidth));
   }, [isActive, offset]);
 
   return (
     <>
-      {/* <GlobalFont />
-      <GlobalStyle />
-      <CustomCursor />
-        <Helmet>
-          <title>The Purse Club</title>
-        </Helmet>
-        <Seo
-          title={"The Purse Club"}
-          description="Modern way of storing and managing you card in wallet aka purse club"
-          keywords={[
-            "purse",
-            "wallet",
-            "card",
-            "management",
-            "storing",
-            "modern",
-          ]}
-        />
-        <SmoothScroll status={isActive}>
-          <NavigationBar click={showModal} onCursor={onCursor} />
-          <Landing onCursor={onCursor} showModal={showModal} />
-          <WhatWeOffer showModal={showModal} onCursor={onCursor} />
-          <Intro showModal={showModal} onCursor={onCursor} />
-          <Faq />
-          <Discord />
-          <Legals onCursor={onCursor} />
-        </SmoothScroll>
-        {isActive ? <Modal hide={hideModal} /> : <></>} */}
-
-      <Layout>
+      <Layout isActive={isActive} hideModal={hideModal}>
         <Seo
           title={"The Purse Club"}
           description="Modern way of storing and managing you card in wallet aka purse club"

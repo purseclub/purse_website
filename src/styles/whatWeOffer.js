@@ -115,7 +115,7 @@ export const ItemEnter = styled(motion.button)`
     justify-content: center;
   }
 `;
-export const ItemEnterCircle = styled.svg`
+export const ItemEnterCircle = styled(motion.svg)`
   fill: none;
   stroke: #000;
   stroke-width: 1px;
@@ -211,7 +211,7 @@ export const ItemExcerptLink = styled.a`
   font-family: var(--font-family-main-SemiBold);
   font-weight: 600;
   margin-top: 1em;
-  font-size: 1.25rem;
+  font-size: clamp(0.875rem, 3vw, 1.25rem);
 
   & > span {
     display: inline-block;
@@ -231,8 +231,10 @@ export const ItemExcerptLink = styled.a`
     transform-origin: 100% 0;
   }
 
-  & > span:hover::after {
-    transform: scale3d(0, 1, 1);
+  @media (hover: hover) {
+    & > span:hover::after {
+      transform: scale3d(0, 1, 1);
+    }
   }
 `;
 

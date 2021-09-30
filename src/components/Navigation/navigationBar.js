@@ -12,7 +12,7 @@ const NavigationBar = ({ click, onCursor }) => {
       <NavContainer>
         <Logo color="black" />
         <NavButton
-          click={click}
+          onClick={click}
           onMouseEnter={() => onCursor("hovered")}
           onMouseLeave={onCursor}
         >

@@ -29,13 +29,14 @@ export const Cursor = styled.div`
   } */
 
   &.hovered {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
     color: var(--white);
-    position: relative;
+    background-color: transparent;
+    border: 1.5px solid var(--black);
   }
 
-  &.hovered::after {
+  /* &.hovered::after {
     content: "yeahh!";
     position: absolute;
     top: 50%;
@@ -44,7 +45,7 @@ export const Cursor = styled.div`
     font-family: var(--font-family-main-SemiBold);
     font-weight: 600;
     color: var(--white);
-  }
+  } */
 
   &.experience {
     width: 80px;
