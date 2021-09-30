@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const DiscordWrapper = styled.section`
   width: 100%;
-  /* padding-bottom: 1.5rem; */
+  margin: 15vh 0;
 
   @media all and (min-width: 991px) {
-    /* padding-bottom: 3rem; */
+    margin: 20vh 0;
   }
 `;
 

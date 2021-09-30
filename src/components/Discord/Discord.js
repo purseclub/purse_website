@@ -1,48 +1,49 @@
 import React from "react";
-import {
-  DiscordContainer,
-  DiscordTitle,
-  DiscordWrapper,
-} from "../../styles/discord";
-import { Strong } from "../../styles/landing";
-import OutlineButton from "../OutlineButton/OutlineButton";
+import { DiscordWrapper } from "../../styles/discord";
+import { IntroHeading } from "../../styles/intro";
+import { TitleTop, TitleTopWrapper } from "../../styles/landing";
+import MinimalButton from "../button";
 
-const transiton = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
-
-const arrowMotion = {
-  initial: {
-    fill: "none",
-    transform: "rotate(15deg)",
+const socialMedias = [
+  {
+    id: 0,
+    buttonText: "Join Discord",
+    link: "#",
   },
-  animate: {
-    fill: "var(--white)",
-    transform: "rotate(60deg)",
-    transition: {
-      ...transiton,
-    },
+  {
+    id: 1,
+    buttonText: "Join Instagram",
+    link: "#",
   },
-};
+  {
+    id: 2,
+    buttonText: "Join Twitter",
+    link: "#",
+  },
+  {
+    id: 3,
+    buttonText: "Join Linkdeln",
+    link: "#",
+  },
+];
 
-const Discord = () => {
+const Discord = ({ onCursor }) => {
   return (
     <DiscordWrapper>
-      <DiscordContainer>
-        <DiscordTitle>
-          You have reached the end, but this should not be the end of our
-          <Strong> relation.</Strong>
-        </DiscordTitle>
-        <OutlineButton
-          arrowStrokeColor={"var(--white)"}
-          buttonText={"Join Discord Community"}
-          bgColor={"var(--darkGreen)"}
-          lineColor={"var(--white)"}
-          textColor={"var(--white)"}
-          variants={arrowMotion}
-          left={0}
-          right={"auto"}
-          widthPercentage={"50%"}
-        />
-      </DiscordContainer>
+      <IntroHeading>Let's make something big together.</IntroHeading>
+      <TitleTopWrapper>
+        <TitleTop>Join our community</TitleTop>
+      </TitleTopWrapper>
+      {socialMedias.map((socialMedia, index) => {
+        return (
+          <MinimalButton
+            key={index}
+            buttonText={socialMedia.buttonText}
+            path={socialMedia.link}
+            onCursor={onCursor}
+          />
+        );
+      })}
     </DiscordWrapper>
   );
 };

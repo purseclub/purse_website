@@ -187,7 +187,7 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
       },
     });
     headingControls.set({
-      x: isInverted ? "20" : "-20%",
+      x: isInverted ? "20%" : "-20%",
       transition: {
         duration: 0.2,
       },

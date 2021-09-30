@@ -211,7 +211,7 @@ export const ItemExcerptLink = styled.a`
   font-family: var(--font-family-main-SemiBold);
   font-weight: 600;
   margin-top: 1em;
-  font-size: clamp(0.875rem, 3vw, 1.25rem);
+  font-size: clamp(0.875rem, 4vw, 1.25rem);
 
   & > span {
     display: inline-block;

@@ -84,8 +84,8 @@ const IndexPage = () => {
         <Landing onCursor={onCursor} showModal={showModal} />
         <Intro showModal={showModal} onCursor={onCursor} />
         <WhatWeOffer showModal={showModal} onCursor={onCursor} />
-        <Faq />
-        <Discord />
+        <Faq onCursor={onCursor} />
+        <Discord onCursor={onCursor} />
         <Legals onCursor={onCursor} />
       </Layout>
     </>

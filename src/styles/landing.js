@@ -81,11 +81,14 @@ export const Para = styled(motion.p)`
   font-weight: 600;
   text-align: ${(props) => props.align};
   text-decoration: ${(props) => (props.show ? "underline" : "none")};
+  margin-bottom: ${(props) => (props.add ? "1.5em" : "0")};
+  margin-top: ${(props) => (props.top ? "10vh" : "0")};
 
   @media all and (min-width: 425px) {
     letter-spacing: -0.015em;
     font-size: min(1.25rem, 4vw);
     line-height: min(1.5rem, 4vw);
+    margin-top: ${(props) => (props.top ? "15vh" : "0")};
   }
 `;
 

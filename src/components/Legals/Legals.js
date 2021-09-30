@@ -1,91 +1,55 @@
 import React from "react";
 import {
   ActionContainer,
-  LegalContainer,
-  LegalHeading,
   LegalWrapper,
-  SmallLinkContainer,
   SocialLink,
-  SocialMedia,
   Trademark,
 } from "../../styles/legals";
-import CircleButton from "../CircleButton/CircleButton";
-import OutlineButton from "../OutlineButton/OutlineButton";
 
-const transiton = { duration: 0.6, ease: [0.25, 1, 0.5, 1] };
-const transitionTwo = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
+const socialLinks = [
+  {
+    id: 0,
 
-const buttonMotion = {
-  initial: {
-    backgroundColor: "var(--blue)",
-    transform: "rotate(-30deg)",
+    link: "Terms & Conditions",
+    path: "/terms_and_condition",
   },
-  animate: {
-    backgroundColor: "var(--darkGreen)",
-    transform: "rotate(0deg)",
-    transition: {
-      ...transiton,
-    },
-  },
-};
+  {
+    id: 1,
 
-const arrowMotion = {
-  initial: {
-    fill: "none",
-    transform: "rotate(15deg)",
+    link: "Privacy Policy",
+    path: "/privacy_policy",
   },
-  animate: {
-    fill: "var(--white)",
-    transform: "rotate(60deg)",
-    transition: {
-      ...transitionTwo,
-    },
-  },
-};
+  {
+    id: 2,
 
-const buttonTexts = ["Terms & Conditions", "Privacy Policy", "Report Bug"];
+    link: "Report Bug",
+    path: "#",
+  },
+  {
+    id: 3,
+    link: "Contact us",
+    path: "mailto:support@thepurse.club",
+  },
+];
 
 const Legals = ({ onCursor }) => {
   return (
     <LegalWrapper>
-      <LegalContainer>
-        <LegalHeading>LEGALS</LegalHeading>
-        <ActionContainer>
-          <CircleButton
-            path={"mailto:support@thepurse.club"}
-            variants={buttonMotion}
-            textColor={"var(--white)"}
-            arrowStrokeColor={"var(--white)"}
-            buttonText={"Contact Us"}
-            left={"30%"}
-            size={"18.25rem"}
-            onCursor={onCursor}
-          />
-          <SmallLinkContainer>
-            {buttonTexts.map((buttonText, index) => {
-              return (
-                <OutlineButton
-                  key={index}
-                  arrowStrokeColor={"var(--white)"}
-                  bgColor={"var(--darkGreen)"}
-                  buttonText={buttonText}
-                  lineColor={"var(--white)"}
-                  textColor={"var(--white)"}
-                  variants={arrowMotion}
-                  left={0}
-                  right={"auto"}
-                />
-              );
-            })}
-            <SocialMedia>
-              <SocialLink>INSTAGRAM</SocialLink>
-              <SocialLink>TWITTER</SocialLink>
-              <SocialLink>LINKDLEN</SocialLink>
-            </SocialMedia>
-          </SmallLinkContainer>
-        </ActionContainer>
-        <Trademark>© Purse Club, LLP. 2021. We love our users!</Trademark>
-      </LegalContainer>
+      <ActionContainer>
+        {socialLinks.map((socialLink, index) => {
+          return (
+            <SocialLink
+              href={socialLink.path}
+              key={index}
+              onMouseEnter={() => onCursor("hovered")}
+              onMouseLeave={onCursor}
+            >
+              {socialLink.link}
+            </SocialLink>
+          );
+        })}
+      </ActionContainer>
+      <Trademark>© Purse Club, LLP. 2021. We love our users!</Trademark>
     </LegalWrapper>
   );
 };
