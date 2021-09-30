@@ -185,6 +185,8 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
   const controls = useAnimation();
   const headingControls = useAnimation();
   const circleControls = useAnimation();
+  const itemControls = useAnimation();
+  const [itemRef, itemInView] = useInView();
 
   const [isInverted, setIsInverted] = useState(false);
   const ref = useRef(null);
@@ -268,8 +270,21 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
     const val = ref.current.className.includes("invert");
     setIsInverted(val);
   }, []);
+
+  useEffect(() => {
+    if (itemInView) {
+      itemControls.start({
+        opacity: 1,
+
+        transition: {
+          duration: 0.8,
+          ease: "easeIn",
+        },
+      });
+    }
+  });
   return (
-    <ContentBox>
+    <ContentBox ref={itemRef} animate={itemControls}>
       <Item ref={ref} className={(item.id + 1) % 2 === 0 ? "invert" : ""}>
         <ImgWrp
           variants={imageWrpMotion}

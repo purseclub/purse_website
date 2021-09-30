@@ -21,6 +21,7 @@ export const FContainer = styled.div`
 `;
 
 export const QuestionContainer = styled(motion.div)`
+  opacity: 0;
   width: 100%;
   position: relative;
   margin-top: 1em;

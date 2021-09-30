@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { Arrow, ArrowContainer, Button } from "../styles/landing";
 import { ItemExcerptLink } from "../styles/whatWeOffer";
@@ -17,7 +18,8 @@ const arrowMotion = {
 
 const MinimalButton = ({ buttonText, path, variants, onCursor, click }) => {
   return (
-    <div
+    <motion.div
+      variants={variants}
       style={{
         display: "flex",
         justifyContent: "center",
@@ -54,7 +56,7 @@ const MinimalButton = ({ buttonText, path, variants, onCursor, click }) => {
           </Arrow>
         </ArrowContainer>
       </Button>
-    </div>
+    </motion.div>
   );
 };
 

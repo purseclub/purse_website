@@ -11,12 +11,13 @@ import {
 } from "../../styles/landing";
 import MinimalButton from "../button";
 
-const transiton = { duration: 0.8, ease: [0.5, 1, 0.89, 1] };
+const transiton = { duration: 0.8, ease: "easeIn" };
 
 const textMotionVariant = {
   animate: {
     transition: {
-      staggerChildren: 0.3,
+      //   delayChildren: 0.8,
+      //   staggerChildren: 0.8,
     },
   },
 };
@@ -28,22 +29,23 @@ const textTopMotion = {
   animate: {
     opacity: 1,
     transition: {
-      ...transiton,
-      duration: 1,
+      delay: 0.6,
+      duration: 0.9,
+      ease: "easeIn",
     },
   },
 };
 
 const textMotion = {
   initial: {
-    y: 100,
     opacity: 0,
   },
   animate: {
-    y: 0,
     opacity: 1,
     transition: {
-      ...transiton,
+      delay: 1.5,
+      duration: 2,
+      ease: "easeIn",
     },
   },
 };
@@ -56,7 +58,8 @@ const paraMotion = {
     opacity: 1,
     transition: {
       ...transiton,
-      duration: 2,
+      delay: 3,
+      // duration: 2,
     },
   },
 };
@@ -89,6 +92,7 @@ const Landing = ({ onCursor, showModal }) => {
         </Para>
       </ParaContainer>
       <MinimalButton
+        variants={paraMotion}
         buttonText="Experience Now"
         path="/experience/experienceHome"
         variants={paraMotion}

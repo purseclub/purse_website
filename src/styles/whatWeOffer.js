@@ -29,6 +29,8 @@ export const Divider = styled.div`
 `;
 
 export const ContentBox = styled(motion.div)`
+  opacity: 0;
+
   width: 100%;
   margin: 15vh 0;
 

@@ -113,8 +113,24 @@ const Faq = ({ onCursor }) => {
 
 const Accordian = ({ data, selectedNo, setSelectedNo, onCursor }) => {
   const isOpen = data.id === selectedNo;
+  const [questionRef, questionInView] = useInView({
+    threshold: 0,
+  });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (questionInView) {
+      controls.start({
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: "easeIn",
+        },
+      });
+    }
+  });
   return (
-    <QuestionContainer>
+    <QuestionContainer ref={questionRef} animate={controls}>
       <QcHead
         onClick={() => setSelectedNo(isOpen ? false : data.id)}
         onMouseEnter={() => onCursor("hovered")}
