@@ -1,5 +1,8 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "../components/modal/Modal";
+
+//lodable
+import loadable from "@loadable/component";
 
 //Context
 import {
@@ -9,17 +12,17 @@ import {
 import Seo from "../components/seo";
 import Layout from "../components/layout";
 
-const NavigationBar = lazy(() =>
+const NavigationBar = loadable(() =>
   import("../components/Navigation/navigationBar")
 );
-const Landing = lazy(() => import("../components/Landing/Landing"));
-const WhatWeOffer = lazy(() =>
+const Landing = loadable(() => import("../components/Landing/Landing"));
+const WhatWeOffer = loadable(() =>
   import("../components/What_we_offer/WhatWeOffer")
 );
-const Intro = lazy(() => import("../components/Intro/Intro"));
-const Faq = lazy(() => import("../components/Faq/Faq"));
-const Discord = lazy(() => import("../components/Discord/Discord"));
-const Legals = lazy(() => import("../components/Legals/Legals"));
+const Intro = loadable(() => import("../components/Intro/Intro"));
+const Faq = loadable(() => import("../components/Faq/Faq"));
+const Discord = loadable(() => import("../components/Discord/Discord"));
+const Legals = loadable(() => import("../components/Legals/Legals"));
 
 // markup
 const IndexPage = () => {
@@ -109,15 +112,14 @@ const IndexPage = () => {
             "modern",
           ]}
         />
-        <Suspense fallback={<div>Loading...</div>}>
-          <NavigationBar click={showModal} onCursor={onCursor} />
-          <Landing onCursor={onCursor} showModal={showModal} />
-          <Intro showModal={showModal} onCursor={onCursor} />
-          <WhatWeOffer showModal={showModal} onCursor={onCursor} />
-          <Faq />
-          <Discord />
-          <Legals onCursor={onCursor} />
-        </Suspense>
+
+        <NavigationBar click={showModal} onCursor={onCursor} />
+        <Landing onCursor={onCursor} showModal={showModal} />
+        <Intro showModal={showModal} onCursor={onCursor} />
+        <WhatWeOffer showModal={showModal} onCursor={onCursor} />
+        <Faq />
+        <Discord />
+        <Legals onCursor={onCursor} />
       </Layout>
     </>
   );
