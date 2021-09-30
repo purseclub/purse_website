@@ -25,13 +25,15 @@ const textMotionVariant = {
 const textTopMotion = {
   initial: {
     opacity: 0,
+    scale: 1,
   },
   animate: {
     opacity: 1,
+    scale: 0.85,
     transition: {
       delay: 0.6,
       duration: 0.9,
-      ease: "easeIn",
+      ease: "easeOut",
     },
   },
 };
@@ -39,12 +41,14 @@ const textTopMotion = {
 const textMotion = {
   initial: {
     opacity: 0,
+    // scale: 0.85,
   },
   animate: {
     opacity: 1,
+    // scale: 1,
     transition: {
-      delay: 1.5,
-      duration: 2,
+      delay: 1.8,
+      duration: 1.8,
       ease: "easeIn",
     },
   },
@@ -58,7 +62,7 @@ const paraMotion = {
     opacity: 1,
     transition: {
       ...transiton,
-      delay: 3,
+      delay: 3.5,
       // duration: 2,
     },
   },

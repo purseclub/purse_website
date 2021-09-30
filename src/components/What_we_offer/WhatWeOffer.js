@@ -132,7 +132,7 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
 
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "texture.png" }) {
+      placeholderImage: file(relativePath: { eq: "001.jpg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }

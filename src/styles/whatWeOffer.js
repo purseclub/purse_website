@@ -136,6 +136,7 @@ export const Heading = styled(motion.h2)`
   font-size: 6vw;
   font-size: clamp(2rem, 6vw, 5rem);
   line-height: 1.1;
+  color: var(--white);
 
   @media all and (min-width: 53em) {
     margin: 0;

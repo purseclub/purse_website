@@ -10,7 +10,7 @@ const NavigationBar = ({ click, onCursor }) => {
   return (
     <MasternNav>
       <NavContainer>
-        <Logo color="black" />
+        <Logo color="white" />
         <NavButton
           onClick={click}
           onMouseEnter={() => onCursor("hovered")}
