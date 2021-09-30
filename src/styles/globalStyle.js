@@ -25,10 +25,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     :root {
-        --black: #dbdddd;
+        --black: #292A2B;
         --darkGreen: #001514;
         --blue: rgba(99, 32, 238, 1);
-        --gray: rgba(219, 221, 221, 1);
+        --gray: rgba(41, 42, 43, 0.5);
 		--white: #EAF2EF;
         --errorColor: #D75059;
         --desktop-margin: 7.5rem;

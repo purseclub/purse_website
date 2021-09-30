@@ -35,7 +35,7 @@ const IndexPage = () => {
   const colorVal = useTransform(
     scrollYProgress,
     [0, 1],
-    ["#818662", "#818662"]
+    ["#F6E5D2", "#F6E5D2"]
   );
 
   console.log("hello");

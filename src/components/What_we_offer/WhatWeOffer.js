@@ -89,15 +89,15 @@ const imageWrpMotion = {
   initial: {
     scale: 1,
     transition: {
-      duration: 0.8,
-      ease: [0.76, 0, 0.24, 1],
+      duration: 0.7,
+      ease: "easeInOut",
     },
   },
   animate: {
     scale: 0.95,
     transition: {
-      duration: 0.8,
-      ease: [0.76, 0, 0.24, 1],
+      duration: 0.7,
+      ease: "easeInOut",
     },
   },
 };
@@ -106,15 +106,15 @@ const imageVariants = {
   initial: {
     scale: 1,
     transition: {
-      duration: 0.8,
-      ease: [0.76, 0, 0.24, 1],
+      duration: 0.7,
+      ease: "easeInOut",
     },
   },
   animate: {
     scale: 1.1,
     transition: {
-      duration: 0.8,
-      ease: [0.76, 0, 0.24, 1],
+      duration: 0.7,
+      ease: "easeInOut",
     },
   },
 };
@@ -132,7 +132,7 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
 
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "001.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "002.jpg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
