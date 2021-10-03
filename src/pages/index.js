@@ -32,11 +32,7 @@ const IndexPage = () => {
   const [offset, setOffset] = useState(0);
 
   const { scrollYProgress } = useViewportScroll();
-  const colorVal = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["#F6E5D2", "#F6E5D2"]
-  );
+  const colorVal = useTransform(scrollYProgress, [0, 1], ["#000", "#F6E5D2"]);
 
   console.log("hello");
 
@@ -75,7 +71,7 @@ const IndexPage = () => {
   return (
     <motion.div
       style={{
-        backgroundColor: colorVal,
+        backgroundColor: "#d8dddd",
       }}
     >
       <Layout isActive={isActive} hideModal={hideModal}>

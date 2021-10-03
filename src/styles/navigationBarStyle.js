@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const MasternNav = styled(motion.header)`
   width: 100%;
-  /* position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 10; */
-  padding: 4em 0;
-  @media all and (min-width: 991px) {
-    padding: 5em 0;
+  z-index: 10;
+  padding: 2em 0;
+  @media all and (min-width: 53em) {
+    padding: 3em 0;
   }
 `;
 

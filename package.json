@@ -15,6 +15,9 @@
   },
   "dependencies": {
     "@loadable/component": "^5.15.0",
+    "@react-spring/three": "^9.2.4",
+    "@react-three/drei": "^7.12.5",
+    "@react-three/fiber": "^7.0.9",
     "babel-plugin-styled-components": "^1.13.2",
     "dotenv": "^8.6.0",
     "firebase": "^9.1.0",
@@ -42,6 +45,7 @@
     "react-is": "^17.0.2",
     "react-lottie": "^1.2.3",
     "resize-observer-polyfill": "^1.5.1",
-    "styled-components": "^5.3.1"
+    "styled-components": "^5.3.1",
+    "three": "^0.133.0"
   }
 }

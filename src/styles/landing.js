@@ -3,15 +3,19 @@ import styled from "styled-components";
 
 export const LandingWrapper = styled(motion.section)`
   width: 100%;
-  margin-top: 10vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 10vh; */
 
   @media all and (min-width: 768px) {
-    margin-top: 5vh;
+    /* margin-top: 12vh; */
   }
 `;
 
 export const LandingContainer = styled.div`
-  max-width: 80%;
+  width: 100%;
   margin: 0 auto;
 `;
 
@@ -40,18 +44,34 @@ export const TitleTop = styled(motion.h2)`
 
 export const TitleWrapper = styled.div`
   /* overflow: hidden; */
-  padding-top: 0.25em;
-  margin-top: -0.2em;
+  /* padding-top: 0.25em; */
+  margin-top: 0em;
+
+  @media all and (min-width: 53em) {
+    margin-top: 0em;
+  }
 `;
 
 export const Title = styled(motion.h2)`
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-secondary);
   font-size: 9vw;
   line-height: 9vw;
-  letter-spacing: 0.01em;
+
   color: var(--black);
   font-weight: 400;
   text-align: center;
+  text-transform: uppercase;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  /* text-decoration: underline;
+  text-decoration-thickness: 5px; */
+
+  @media all and (min-width: 53em) {
+    letter-spacing: -0.01em;
+    font-size: 8vw;
+    line-height: 8vw;
+  }
 `;
 
 export const Strong = styled.span`
