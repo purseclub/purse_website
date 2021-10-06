@@ -57,30 +57,30 @@ export const TitleTop = styled(motion.h2)`
 export const TitleWrapper = styled(motion.div)`
   width: 100%;
 
-  margin-top: -2em;
+  margin-top: -1.5em;
 
   @media all and (min-width: 400px) {
-    margin-top: -2.3em;
+    margin-top: -1.8em;
   }
 
   @media all and (min-width: 551px) {
-    margin-top: -3.5em;
+    margin-top: -2.6em;
   }
 
   @media all and (min-width: 768px) {
-    margin-top: -4.5em;
+    margin-top: -3.6em;
   }
 
   @media all and (min-width: 1024px) {
-    margin-top: -5.9em;
+    margin-top: -4.6em;
   }
 
   @media all and (min-width: 1080px) {
-    margin-top: -6.1em;
+    margin-top: -5.6em;
   }
 
   @media all and (min-width: 1440px) {
-    margin-top: -7.9em;
+    margin-top: -6.6em;
   }
 `;
 
