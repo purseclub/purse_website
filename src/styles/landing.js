@@ -150,6 +150,7 @@ export const Button = styled(motion.button)`
   margin-top: 1em;
   position: relative;
   will-change: transform;
+  width: 100%;
 
   &::after {
     content: "";
