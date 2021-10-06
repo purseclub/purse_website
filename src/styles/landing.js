@@ -25,11 +25,11 @@ export const TitleContainer = styled.div`
   width: 100%;
 
   @media all and (min-width: 1024px) {
-    margin-top: 4em;
+    margin-top: 5em;
   }
 
   @media all and (min-width: 1440px) {
-    margin-top: 6em;
+    margin-top: 10em;
   }
 `;
 
@@ -57,21 +57,22 @@ export const TitleTop = styled(motion.h2)`
 export const TitleWrapper = styled(motion.div)`
   width: 100%;
 
-  margin-top: -1.6em;
+  margin-top: -2em;
 
-  @media all and (min-width: 361px) {
-    margin-top: -1.8em;
-  }
   @media all and (min-width: 400px) {
-    margin-top: -1.9em;
+    margin-top: -2.3em;
   }
 
   @media all and (min-width: 551px) {
-    margin-top: -3.4em;
+    margin-top: -3.5em;
+  }
+
+  @media all and (min-width: 768px) {
+    margin-top: -4.5em;
   }
 
   @media all and (min-width: 1024px) {
-    margin-top: -4.8em;
+    margin-top: -5.9em;
   }
 
   @media all and (min-width: 1080px) {
@@ -79,7 +80,7 @@ export const TitleWrapper = styled(motion.div)`
   }
 
   @media all and (min-width: 1440px) {
-    margin-top: -7em;
+    margin-top: -7.9em;
   }
 `;
 
@@ -90,9 +91,12 @@ export const Title = styled(motion.h1)`
   color: ${(props) => (props.hollow ? "var(--black)" : "var(--white)")};
   text-align: center;
   text-transform: uppercase;
-  -webkit-text-fill-color: ${(props) => (props.hollow ? "black" : "none")};
-  -webkit-text-stroke-width: ${(props) => (props.hollow ? "1.5px" : "none")};
-  -webkit-text-stroke-color: ${(props) => (props.hollow ? "white" : "none")};
+  /* -webkit-text-fill-color: ${(props) => (props.hollow ? "black" : "none")};
+  -webkit-text-stroke-width: ${(props) => (props.hollow ? "1px" : "none")};
+  -webkit-text-stroke-color: ${(props) => (props.hollow ? "white" : "none")}; */
+
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 `;
 
 export const Strong = styled.span`
@@ -198,7 +202,7 @@ export const SideNote = styled.p`
   color: var(--white);
   text-transform: uppercase;
   position: absolute;
-  right: 2px;
+  right: 4px;
   bottom: 0;
   margin-right: ${(props) => `-${props.divWidth / 2}px `};
   margin-bottom: ${(props) => `${(props.divWidth * 2) / 3}px`};
