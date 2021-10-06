@@ -99,21 +99,21 @@ export const Strong = styled.span`
   font-weight: 700;
 `;
 
-export const ParaContainer = styled.div`
+export const ParaContainer = styled(motion.div)`
   width: 100%;
-  flex: 1 1 50%;
+
   overflow: hidden;
 `;
 
 export const Para = styled(motion.p)`
   opacity: ${(props) => (props.hide ? 0 : 1)};
   display: block;
-  font-family: var(--font-family-main-Regular);
-  font-size: clamp(0.75rem, 4vw, 1rem);
+  font-family: var(--font-family-main-SemiBold);
+  font-size: clamp(0.75rem, 4vw, 1.25rem);
   line-height: 1.3;
   letter-spacing: -0.005em;
   color: var(--white);
-  font-weight: 400;
+  font-weight: 600;
   text-align: ${(props) => props.align};
   text-decoration: ${(props) => (props.show ? "underline" : "none")};
   margin-bottom: ${(props) => (props.add ? "1.5em" : "0")};

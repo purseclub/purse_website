@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const IntroWrapper = styled.section`
   width: 100%;
-  height: 100vh;
+  /* height: 80vh; */
   /* background-color: red; */
   display: flex;
   flex-direction: column;
@@ -12,15 +12,13 @@ export const IntroWrapper = styled.section`
 
   @media all and (min-width: 53em) {
     flex-direction: row-reverse;
-    align-items: flex-start;
   }
 `;
 
-export const IllustrationWrapper = styled.div`
+export const IllustrationWrapper = styled(motion.div)`
   width: 100%;
-  flex: 1 1 50%;
 `;
-export const IllustrationSvg = styled.svg`
+export const IllustrationSvg = styled(motion.svg)`
   height: 100%;
   width: 100%;
 `;
