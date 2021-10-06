@@ -8,12 +8,6 @@ export const LandingWrapper = styled(motion.section)`
   justify-content: center;
   align-items: center;
   position: relative;
-
-  /* margin-top: 10vh; */
-
-  @media all and (min-width: 768px) {
-    /* margin-top: 12vh; */
-  }
 `;
 
 export const LandingContainer = styled.div`
@@ -107,21 +101,16 @@ export const Strong = styled.span`
 
 export const ParaContainer = styled.div`
   width: 100%;
-  margin: 1em auto;
-  @media all and (min-width: 768px) {
-    max-width: 70%;
-  }
-  @media all and (min-width: 1024px) {
-    max-width: 40%;
-  }
+  flex: 1 1 50%;
+  overflow: hidden;
 `;
 
 export const Para = styled(motion.p)`
   opacity: ${(props) => (props.hide ? 0 : 1)};
   display: block;
   font-family: var(--font-family-main-Regular);
-  font-size: 4vw;
-  line-height: 6vw;
+  font-size: clamp(0.75rem, 4vw, 1rem);
+  line-height: 1.3;
   letter-spacing: -0.005em;
   color: var(--white);
   font-weight: 400;
@@ -129,13 +118,6 @@ export const Para = styled(motion.p)`
   text-decoration: ${(props) => (props.show ? "underline" : "none")};
   margin-bottom: ${(props) => (props.add ? "1.5em" : "0")};
   margin-top: ${(props) => (props.top ? "10vh" : "0")};
-
-  @media all and (min-width: 425px) {
-    letter-spacing: -0.015em;
-    font-size: min(1.25rem, 4vw);
-    line-height: min(1.5rem, 4vw);
-    margin-top: ${(props) => (props.top ? "15vh" : "0")};
-  }
 `;
 
 export const Button = styled(motion.button)`
@@ -175,11 +157,11 @@ export const Button = styled(motion.button)`
   }
 `;
 
-export const ButtonText = styled.h2`
+export const ButtonText = styled.a`
   font-family: var(--font-family-main);
   font-size: clamp(0.75rem, 3vw, 1.125rem);
   line-height: 1.1;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   color: var(--white);
   text-transform: uppercase;
 `;

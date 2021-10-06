@@ -3,10 +3,26 @@ import styled from "styled-components";
 
 export const IntroWrapper = styled.section`
   width: 100%;
-  margin-top: 20vh;
-  @media all and (min-width: 991px) {
-    margin-top: 25vh;
+  height: 100vh;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media all and (min-width: 53em) {
+    flex-direction: row-reverse;
+    align-items: flex-start;
   }
+`;
+
+export const IllustrationWrapper = styled.div`
+  width: 100%;
+  flex: 1 1 50%;
+`;
+export const IllustrationSvg = styled.svg`
+  height: 100%;
+  width: 100%;
 `;
 
 export const IntroHeading = styled(motion.h2)`
