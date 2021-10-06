@@ -150,7 +150,6 @@ export const Button = styled(motion.button)`
   margin-top: 1em;
   position: relative;
   will-change: transform;
-  width: 100%;
 
   &::after {
     content: "";
@@ -189,6 +188,7 @@ export const ArrowContainer = styled.div`
   height: 100%;
   max-height: 70%;
   margin: auto 0;
+  width: 33px;
 
   @media all and (min-width: 551px) {
     max-height: 100%;
