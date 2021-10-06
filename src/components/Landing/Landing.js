@@ -1,5 +1,4 @@
-import * as THREE from "three";
-import React, { Suspense, useRef, useState } from "react";
+import React from "react";
 import {
   LandingContainer,
   LandingWrapper,
@@ -12,15 +11,6 @@ import {
   TitleWrapper,
 } from "../../styles/landing";
 import MinimalButton from "../button";
-import { Canvas, useFrame } from "@react-three/fiber";
-import {
-  ContactShadows,
-  Environment,
-  MeshDistortMaterial,
-  PerspectiveCamera,
-} from "@react-three/drei";
-import { useSpring } from "@react-spring/core";
-import { a } from "@react-spring/three";
 
 const transiton = { duration: 0.8, ease: "easeIn" };
 
@@ -78,62 +68,6 @@ const paraMotion = {
     },
   },
 };
-const AnimatedMaterial = a(MeshDistortMaterial);
-
-const Box = () => {
-  const sphere = useRef();
-  const [down, setDown] = useState(false);
-  const [hovered, setHovered] = useState(false);
-
-  const [{ wobble }] = useSpring(
-    {
-      wobble: down ? 1.2 : hovered ? 1.05 : 1,
-      config: (n) =>
-        n === "wobble" && hovered && { mass: 2, tension: 1000, friction: 10 },
-    },
-    [hovered, down]
-  );
-
-  return (
-    <>
-      <PerspectiveCamera makeDefault position={[0, 0, 4]} fov={75}>
-        <ambientLight intensity={0.5} />
-        <pointLight position-z={-15} intensity={0.4} color="#F8C069" />
-      </PerspectiveCamera>
-      <Suspense fallback={null}>
-        <a.mesh
-          ref={sphere}
-          scale="0.75"
-          onPointerOver={() => setHovered(true)}
-          onPointerOut={() => setHovered(false)}
-          onPointerDown={() => setDown(true)}
-          onPointerUp={() => {
-            setDown(false);
-          }}
-        >
-          <sphereBufferGeometry args={[1.3, 64, 64]} />
-          <AnimatedMaterial
-            color={"#ffffff"}
-            envMapIntensity={0.4}
-            clearcoat={0.3}
-            clearcoatRoughness={0}
-            metalness={0.1}
-          />
-        </a.mesh>
-        <Environment preset="warehouse" />
-        <ContactShadows
-          rotation={[Math.PI / 2, 0, 0]}
-          position={[0, -1.6, 0]}
-          opacity={0.4}
-          width={15}
-          height={15}
-          blur={2.5}
-          far={1.6}
-        />
-      </Suspense>
-    </>
-  );
-};
 
 const Landing = ({ onCursor, showModal }) => {
   return (
@@ -142,20 +76,6 @@ const Landing = ({ onCursor, showModal }) => {
       initial="initial"
       animate="animate"
     >
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          zIndex: "-1",
-          width: "100%",
-          height: "100vh",
-        }}
-      >
-        <Canvas dpr={[1, 2]}>
-          <Box />
-        </Canvas>
-      </div>
       <LandingContainer>
         <TitleContainer>
           {/* <TitleTopWrapper>

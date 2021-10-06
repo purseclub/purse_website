@@ -12,7 +12,6 @@ import {
 //components
 import Seo from "../components/seo";
 import Layout from "../components/layout";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
 
 const NavigationBar = loadable(() =>
   import("../components/Navigation/navigationBar")
@@ -30,11 +29,6 @@ const Legals = loadable(() => import("../components/Legals/Legals"));
 const IndexPage = () => {
   const [isActive, setIsActive] = useState(false);
   const [offset, setOffset] = useState(0);
-
-  const { scrollYProgress } = useViewportScroll();
-  const colorVal = useTransform(scrollYProgress, [0, 1], ["#000", "#F6E5D2"]);
-
-  console.log("hello");
 
   const dispatch = useGlobalDispatchContext();
   const state = useGlobalStateContext();
@@ -69,11 +63,8 @@ const IndexPage = () => {
   }, [isActive, offset]);
 
   return (
-    <motion.div
-      style={{
-        backgroundColor: "#d8dddd",
-      }}
-    >
+    <>
+      <NavigationBar click={showModal} onCursor={onCursor} />
       <Layout isActive={isActive} hideModal={hideModal}>
         <Seo
           title={"The Purse Club"}
@@ -87,8 +78,6 @@ const IndexPage = () => {
             "modern",
           ]}
         />
-
-        <NavigationBar click={showModal} onCursor={onCursor} />
         <Landing onCursor={onCursor} showModal={showModal} />
         <Intro showModal={showModal} onCursor={onCursor} />
         <WhatWeOffer showModal={showModal} onCursor={onCursor} />
@@ -96,7 +85,7 @@ const IndexPage = () => {
         <Discord onCursor={onCursor} />
         <Legals onCursor={onCursor} />
       </Layout>
-    </motion.div>
+    </>
   );
 };
 

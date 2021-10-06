@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 		-webkit-tap-highlight-color: transparent;
 		-webkit-font-smoothing: antialiased;
   		-moz-osx-font-smoothing: grayscale;
-		
+		background-color: var(--black);
     }
 
     a {
@@ -26,10 +26,11 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
         --black: #000;
+		--offBlack: '#101010';
         --darkGreen: #001514;
         --blue: rgba(99, 32, 238, 1);
         --gray: rgba(255, 255, 255, 0.5);
-		--white: #EAF2EF;
+		--white: #FFF;
         --errorColor: #D75059;
         --desktop-margin: 7.5rem;
         --tablet-margin: 4rem;
