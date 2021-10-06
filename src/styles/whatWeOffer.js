@@ -208,11 +208,10 @@ export const ItemExcerptLink = styled.a`
   display: inline-block;
   position: relative;
   cursor: pointer;
-  color: var(--black);
-  line-height: 1;
+  color: var(--white);
+  line-height: 1.1;
   overflow: hidden;
-  font-family: var(--font-family-main-SemiBold);
-  font-weight: 600;
+  font-family: var(--font-family-main);
   margin-top: 1em;
   font-size: clamp(0.875rem, 4vw, 1.25rem);
 
@@ -229,14 +228,15 @@ export const ItemExcerptLink = styled.a`
     top: calc(100% - 10px);
     position: absolute;
     left: 0;
-    background: var(--black);
+    background: var(--white);
     transition: transform 0.2s;
-    transform-origin: 100% 0;
+    transform-origin: 0 100%;
+    transform: scale3d(0, 1, 1);
   }
 
   @media (hover: hover) {
     & > span:hover::after {
-      transform: scale3d(0, 1, 1);
+      transform: scale3d(1, 1, 1);
     }
   }
 `;

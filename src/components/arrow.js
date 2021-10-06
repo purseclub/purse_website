@@ -3,29 +3,18 @@ import React from "react";
 import styled from "styled-components";
 
 const Svg = styled(motion.svg)`
-  width: 5.08rem;
-  height: 5.17rem;
-  margin-top: -1.5rem;
-
-  @media all and (min-width: 991px) {
-    width: 6.23rem;
-    height: 6.35rem;
-  }
+  width: 100%;
+  height: 100%;
 `;
 
 const ArrowSvg = ({ selectedNo, index, variants }) => {
   return (
-    <Svg
-      variants={variants}
-      initial={selectedNo === index ? "initial" : "animate"}
-      animate={selectedNo === index ? "animate" : "initial"}
-      key="arrow"
-      viewBox="0 0 120 120"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <Svg viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M41.4227 81.4583L29.8927 74.2145L48.465 40.587L29.8927 45.4434L26.8082 34.2038L65.2794 24.144L75.803 62.491L64.5269 65.4395L59.9002 48.5801L41.4227 81.4583Z"
-        stroke={"var(--black)"}
+        d="M7.65225 11.2052L10.7889 8.29447L19.4857 16.667L19.5221 10.6345L23.1847 10.6124L23.1092 23.1083L10.6134 23.1837L10.6355 19.5212L16.1294 19.488L7.65225 11.2052Z"
+        fill="white"
+        stroke="white"
+        strokeWidth="0.314251"
       />
     </Svg>
   );

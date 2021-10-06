@@ -4,11 +4,11 @@ export const Cursor = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   border-radius: 100%;
   transform: translate(-50%, -50%);
-  background-color: var(--black);
+  background-color: var(--white);
   transition: all 0.1s ease-Out;
   will-change: width, height, border, transform;
   transition-property: width, height, border;

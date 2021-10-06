@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const MasternNav = styled.header`
@@ -12,19 +11,14 @@ const MasternNav = styled.header`
   z-index: 10;
   margin: 2em auto;
   background-color: rgba(16, 16, 16, 0.8);
-  /* background-color: red; */
-  @media all and (min-width: 53em) {
-  }
 `;
 
 const NavContainer = styled.div`
-  /* margin: 2rem auto; */
   height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: red; */
 `;
 
 export const LogoWrapper = styled.div`
@@ -75,7 +69,7 @@ export const Timer = styled.div`
   height: 100%;
   gap: 0.25em;
 
-  @media all and (min-width: 26.56em) {
+  @media all and (min-width: 551px) {
     justify-content: flex-end;
     padding-right: 1em;
     flex: 1 1 50%;
@@ -87,7 +81,6 @@ export const Clock = styled.svg`
 `;
 
 export const Time = styled.span`
-  /* display: inline-block; */
   font-family: var(--font-family-main);
   font-size: clamp(0.875rem, 2vw, 1.125rem);
   line-height: 56px;
@@ -96,20 +89,11 @@ export const Time = styled.span`
 `;
 
 const NavButton = styled.button`
-  /* flex: 1 1 10em; */
-  /* width: 100%; */
-
   height: 100%;
   padding-left: 1em;
   background-color: transparent;
-  /* width: 100%; */
   border: none;
   outline: none;
-
-  /* width: 6.5rem;
-  height: 3rem; */
-  /* flex: 1 1 30%; */
-
   color: var(--white);
   font-family: var(--font-family-main);
   font-size: clamp(0.875rem, 2vw, 1.125rem);
@@ -119,7 +103,7 @@ const NavButton = styled.button`
   text-transform: uppercase;
   display: none;
 
-  @media all and (min-width: 425px) {
+  @media all and (min-width: 551px) {
     display: block;
     text-align: end;
   }
@@ -128,10 +112,8 @@ const NavButton = styled.button`
 export const Hamburger = styled.div`
   height: 100%;
   width: 3.5em;
-  /* background-color: blue; */
-
   border: 1px solid var(--black);
-  @media all and (min-width: 425px) {
+  @media all and (min-width: 551px) {
     display: none;
   }
 `;

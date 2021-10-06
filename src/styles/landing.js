@@ -7,6 +7,8 @@ export const LandingWrapper = styled(motion.section)`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
   /* margin-top: 10vh; */
 
   @media all and (min-width: 768px) {
@@ -19,7 +21,17 @@ export const LandingContainer = styled.div`
   margin: 0 auto;
 `;
 
-export const TitleContainer = styled.div``;
+export const TitleContainer = styled.div`
+  width: 100%;
+
+  @media all and (min-width: 1024px) {
+    margin-top: 4em;
+  }
+
+  @media all and (min-width: 1440px) {
+    margin-top: 6em;
+  }
+`;
 
 export const TitleTopWrapper = styled.div`
   /* overflow: hidden; */
@@ -42,36 +54,45 @@ export const TitleTop = styled(motion.h2)`
   }
 `;
 
-export const TitleWrapper = styled.div`
-  /* overflow: hidden; */
-  /* padding-top: 0.25em; */
-  margin-top: 0em;
+export const TitleWrapper = styled(motion.div)`
+  width: 100%;
 
-  @media all and (min-width: 53em) {
-    margin-top: 0em;
+  margin-top: -1.6em;
+
+  @media all and (min-width: 361px) {
+    margin-top: -1.8em;
+  }
+  @media all and (min-width: 400px) {
+    margin-top: -1.9em;
+  }
+
+  @media all and (min-width: 551px) {
+    margin-top: -3.4em;
+  }
+
+  @media all and (min-width: 1024px) {
+    margin-top: -4.8em;
+  }
+
+  @media all and (min-width: 1080px) {
+    margin-top: -6.1em;
+  }
+
+  @media all and (min-width: 1440px) {
+    margin-top: -7em;
   }
 `;
 
-export const Title = styled(motion.h2)`
-  font-family: var(--font-family-secondary);
-  font-size: 9vw;
-  line-height: 9vw;
-
-  color: var(--black);
-  font-weight: 400;
+export const Title = styled(motion.h1)`
+  font-family: var(--font-family-main);
+  font-size: clamp(3rem, 14vw, 13rem);
+  line-height: 1.1;
+  color: ${(props) => (props.hollow ? "var(--black)" : "var(--white)")};
   text-align: center;
   text-transform: uppercase;
-  -webkit-text-fill-color: black;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-  /* text-decoration: underline;
-  text-decoration-thickness: 5px; */
-
-  @media all and (min-width: 53em) {
-    letter-spacing: -0.01em;
-    font-size: 8vw;
-    line-height: 8vw;
-  }
+  -webkit-text-fill-color: ${(props) => (props.hollow ? "black" : "none")};
+  -webkit-text-stroke-width: ${(props) => (props.hollow ? "1.5px" : "none")};
+  -webkit-text-stroke-color: ${(props) => (props.hollow ? "white" : "none")};
 `;
 
 export const Strong = styled.span`
@@ -98,7 +119,7 @@ export const Para = styled(motion.p)`
   font-size: 4vw;
   line-height: 6vw;
   letter-spacing: -0.005em;
-  color: var(--black);
+  color: var(--white);
   font-weight: 400;
   text-align: ${(props) => props.align};
   text-decoration: ${(props) => (props.show ? "underline" : "none")};
@@ -113,26 +134,73 @@ export const Para = styled(motion.p)`
   }
 `;
 
-export const Button = styled(motion.div)`
+export const Button = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: min(15.75rem, 60%); */
-  gap: 1em;
+  gap: 0.1em;
   margin: 0 auto;
-  height: 2.125rem;
+  height: 2.25em;
+  border: none;
+  background-color: transparent;
+  margin-top: 1em;
+  position: relative;
+  will-change: transform;
+
+  &::after {
+    content: "";
+    width: calc(100% - 5px);
+    height: 2px;
+    top: calc(100% - 4px);
+    position: absolute;
+    left: 0;
+    background: var(--white);
+    transform: scale3d(0, 0, 1);
+    transition: transform 0.2s;
+    transform-origin: 0 100%;
+    transform: scale3d(0, 1, 1);
+  }
+
+  @media all and (min-width: 768px) {
+    margin-top: 3em;
+  }
+  @media (hover: hover) {
+    &:hover::after {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+`;
+
+export const ButtonText = styled.h2`
+  font-family: var(--font-family-main);
+  font-size: clamp(0.75rem, 3vw, 1.125rem);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: var(--white);
+  text-transform: uppercase;
 `;
 
 export const ArrowContainer = styled.div`
-  padding-top: 0.3em;
-  width: min(3.75rem, 15%);
+  height: 100%;
+  max-height: 70%;
+  margin: auto 0;
+
+  @media all and (min-width: 551px) {
+    max-height: 100%;
+  }
 `;
 
-export const Arrow = styled(motion.svg)`
-  margin-top: 0.5em;
-  width: 100%;
-
-  @media all and (min-width: 425px) {
-    margin-top: 0.9em;
-  }
+export const SideNote = styled.p`
+  font-family: var(--font-family-main);
+  font-size: clamp(0.625rem, 1vw, 0.75rem);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: var(--white);
+  text-transform: uppercase;
+  position: absolute;
+  right: 2px;
+  bottom: 0;
+  margin-right: ${(props) => `-${props.divWidth / 2}px `};
+  margin-bottom: ${(props) => `${(props.divWidth * 2) / 3}px`};
+  transform: rotate(-90deg);
 `;

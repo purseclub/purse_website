@@ -1,9 +1,14 @@
+import { motion } from "framer-motion";
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
 import {
   LandingContainer,
   LandingWrapper,
   Para,
   ParaContainer,
+  SideNote,
   Title,
   TitleContainer,
   TitleTop,
@@ -12,45 +17,43 @@ import {
 } from "../../styles/landing";
 import MinimalButton from "../button";
 
-const transiton = { duration: 0.8, ease: "easeIn" };
+const transition = { duration: 0.8, ease: "easeIn" };
 
-const textMotionVariant = {
+const parentMotion = {
   animate: {
     transition: {
-      //   delayChildren: 0.8,
-      //   staggerChildren: 0.8,
+      staggerChildren: 0.1,
     },
   },
 };
 
-const textTopMotion = {
+const buttonMotion = {
   initial: {
+    y: "100%",
     opacity: 0,
-    scale: 1,
   },
   animate: {
+    y: "0%",
     opacity: 1,
-    scale: 0.85,
     transition: {
-      delay: 0.6,
-      duration: 0.9,
-      ease: "easeOut",
+      delay: 1.2,
+      duration: 0.8,
+      ease: [0, 0.55, 0.45, 1],
     },
   },
 };
 
 const textMotion = {
   initial: {
+    y: "100%",
     opacity: 0,
-    // scale: 0.85,
   },
   animate: {
+    y: "0%",
     opacity: 1,
-    // scale: 1,
     transition: {
-      delay: 1.8,
-      duration: 1.8,
-      ease: "easeIn",
+      duration: 0.7,
+      ease: [0, 0.55, 0.45, 1],
     },
   },
 };
@@ -62,48 +65,106 @@ const paraMotion = {
   animate: {
     opacity: 1,
     transition: {
-      ...transiton,
+      ...transition,
       delay: 3.5,
       // duration: 2,
     },
   },
 };
 
-const Landing = ({ onCursor, showModal }) => {
+const Splitting = ({ copy, role, variants, hollow }) => {
   return (
-    <LandingWrapper
-      variants={textMotionVariant}
-      initial="initial"
-      animate="animate"
-    >
+    <Title aria-label={copy} role={role} hollow={hollow}>
+      {copy.split("").map(function (char, index) {
+        return (
+          <span
+            aria-hidden="true"
+            key={index}
+            className="char"
+            style={{
+              display: "inline-block",
+              position: "relative",
+              overflow: "hidden",
+              paddingRight: "0.01em",
+              margin: " 0 -0.015em",
+            }}
+          >
+            <motion.span
+              variants={variants}
+              style={{
+                display: "inline-block",
+                willChange: "transform",
+              }}
+            >
+              {char}
+            </motion.span>
+          </span>
+        );
+      })}
+    </Title>
+  );
+};
+
+const datas = [
+  {
+    id: 0,
+    text: "digital",
+    role: "heading-1",
+    hollow: true,
+  },
+  {
+    id: 1,
+    text: "storage",
+    role: "heading-2",
+    hollow: false,
+  },
+];
+
+const Landing = ({ onCursor, showModal }) => {
+  const ref = useRef();
+  const [divWidth, setDivWidth] = useState(null);
+
+  useEffect(() => {
+    setDivWidth(ref.current.offsetWidth);
+  }, []);
+  return (
+    <LandingWrapper>
       <LandingContainer>
         <TitleContainer>
-          {/* <TitleTopWrapper>
-            <TitleTop variants={textTopMotion}> welcome to </TitleTop>
-          </TitleTopWrapper> */}
-          <TitleWrapper>
-            <Title variants={textMotion}>a digital</Title>
-          </TitleWrapper>
-          <TitleWrapper>
-            <Title variants={textMotion}>storage.</Title>
-          </TitleWrapper>
-          {/* <TitleWrapper>
-            <Title variants={textMotion}>your f***ing cards.</Title>
-          </TitleWrapper> */}
+          {datas.map((data, index) => {
+            return (
+              <TitleWrapper
+                key={index}
+                variants={parentMotion}
+                initial="initial"
+                animate="animate"
+              >
+                <Splitting
+                  variants={textMotion}
+                  hollow={data.hollow}
+                  copy={data.text}
+                  role={data.role}
+                />
+              </TitleWrapper>
+            );
+          })}
         </TitleContainer>
-        {/* <ParaContainer>
-          <Para variants={paraMotion} align="center">
-            Experience the app right in the browser. Download when you feel like
-            downloading the app.
-          </Para>
-        </ParaContainer> */}
-        <MinimalButton
-          variants={paraMotion}
-          buttonText="Experience Now"
-          path="/experience/experienceHome"
-          variants={paraMotion}
-          onCursor={onCursor}
-        />
+        <motion.div
+          style={{
+            overflow: "hidden",
+          }}
+        >
+          <MinimalButton
+            variants={buttonMotion}
+            buttonText="Experience the app"
+            path="/experience/experienceHome"
+            onCursor={onCursor}
+          />
+        </motion.div>
+
+        <SideNote ref={ref} divWidth={divWidth}>
+          there's more down below
+        </SideNote>
       </LandingContainer>
     </LandingWrapper>
   );

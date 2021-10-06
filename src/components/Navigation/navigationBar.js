@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../Logo";
 import {
   MasternNav,
@@ -15,6 +15,16 @@ import {
 } from "../../styles/navigationBarStyle";
 
 const NavigationBar = ({ click, onCursor }) => {
+  const [dt, setDt] = useState(Date().toLocaleString("en-US"));
+  const time = dt.split(",")[1];
+
+  useEffect(() => {
+    let secTimer = setInterval(() => {
+      setDt(new Date().toLocaleString("en-US"));
+    }, 1000);
+
+    return () => clearInterval(secTimer);
+  }, []);
   return (
     <MasternNav>
       <NavContainer>
@@ -45,7 +55,7 @@ const NavigationBar = ({ click, onCursor }) => {
                 </g>
               </g>
             </Clock>
-            <Time>02:34:56PM</Time>
+            <Time>{time}</Time>
           </Timer>
           <NavButton
             onClick={click}
@@ -56,7 +66,7 @@ const NavigationBar = ({ click, onCursor }) => {
             Download the app
           </NavButton>
         </LinkWrapper>
-        <Hamburger>
+        <Hamburger onClick={click}>
           <Ham
             viewBox="0 0 56 56"
             fill="none"

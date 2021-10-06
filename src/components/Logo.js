@@ -8,10 +8,7 @@ const Svg = styled.svg`
 const LogoContainer = styled.div`
   padding: 0.5em 0.5em;
   border: 1px solid var(--black);
-  /* flex: 1 1 3.5em; */
   height: 100%;
-  /* background-color: blue; */
-  /* width: min(25%, 3.5em); */
   width: 2.5rem;
 
   @media all and (min-width: 551px) {
