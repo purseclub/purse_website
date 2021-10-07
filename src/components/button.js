@@ -15,6 +15,7 @@ const MinimalButton = ({ buttonText, path, variants, onCursor, click }) => {
       }}
     >
       <Button
+        href={path}
         variants={variants}
         initial="initial"
         animate="animate"
@@ -25,7 +26,7 @@ const MinimalButton = ({ buttonText, path, variants, onCursor, click }) => {
           onCursor();
         }}
       >
-        <ButtonText href={path}>{buttonText}</ButtonText>
+        <ButtonText>{buttonText}</ButtonText>
         <ArrowContainer>
           <ArrowSvg />
         </ArrowContainer>

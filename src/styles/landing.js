@@ -120,15 +120,12 @@ export const Para = styled(motion.p)`
   margin-top: ${(props) => (props.top ? "5vh" : "0")};
 `;
 
-export const Button = styled(motion.button)`
+export const Button = styled(motion.a)`
   display: flex;
   align-items: center;
   gap: 0.1em;
-  width: 14em;
+  /* width: 14em; */
   height: 100%;
-  border: none;
-  background-color: transparent;
-  /* margin-top: 1em; */
   position: relative;
   will-change: transform;
   /* background-color: red; */
@@ -150,7 +147,7 @@ export const Button = styled(motion.button)`
 
   @media all and (min-width: 551px) {
     /* margin-top: 3em; */
-    width: 24em;
+    /* width: 20em; */
   }
   @media (hover: hover) {
     &:hover::after {
@@ -159,14 +156,15 @@ export const Button = styled(motion.button)`
   }
 `;
 
-export const ButtonText = styled.a`
+export const ButtonText = styled.span`
+  display: inline-block;
   font-family: var(--font-family-main);
   font-size: clamp(0.75rem, 3vw, 1.125rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--white);
   text-transform: uppercase;
-  width: 100%;
+  width: 13em;
 `;
 
 export const ArrowContainer = styled.div`
