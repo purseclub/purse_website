@@ -124,13 +124,14 @@ export const Button = styled(motion.button)`
   display: flex;
   align-items: center;
   gap: 0.1em;
-  width: 14em;
+  width: 15em;
   height: 100%;
   border: none;
   background-color: transparent;
   /* margin-top: 1em; */
   position: relative;
   will-change: transform;
+  /* background-color: red; */
 
   &::after {
     content: "";
@@ -149,7 +150,7 @@ export const Button = styled(motion.button)`
 
   @media all and (min-width: 551px) {
     /* margin-top: 3em; */
-    width: 20em;
+    width: 24em;
   }
   @media (hover: hover) {
     &:hover::after {
