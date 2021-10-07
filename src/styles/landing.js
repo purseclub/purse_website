@@ -124,7 +124,7 @@ export const Button = styled(motion.button)`
   display: flex;
   align-items: center;
   gap: 0.1em;
-  width: 15em;
+  width: 14em;
   height: 100%;
   border: none;
   background-color: transparent;
