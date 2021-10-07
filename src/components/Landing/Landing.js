@@ -149,18 +149,14 @@ const Landing = ({ onCursor }) => {
             );
           })}
         </TitleContainer>
-        <motion.div
-          style={{
-            overflow: "hidden",
-          }}
-        >
-          <MinimalButton
-            variants={buttonMotion}
-            buttonText="Experience the app"
-            path="/experience/experienceHome"
-            onCursor={onCursor}
-          />
-        </motion.div>
+
+        <MinimalButton
+          variants={buttonMotion}
+          buttonText="Experience the app"
+          path="/experience/experienceHome"
+          onCursor={onCursor}
+        />
+
         <SideNote ref={ref} divWidth={divWidth}>
           there's more down below
         </SideNote>

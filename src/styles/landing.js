@@ -53,11 +53,11 @@ export const TitleWrapper = styled(motion.div)`
 
   margin-top: -1.5em;
 
-  @media all and (min-width: 400px) {
+  @media all and (min-width: 375px) {
     margin-top: -1.8em;
   }
 
-  @media all and (min-width: 551px) {
+  @media all and (min-width: 425px) {
     margin-top: -2.6em;
   }
 
@@ -122,24 +122,24 @@ export const Para = styled(motion.p)`
 
 export const Button = styled(motion.button)`
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 0.1em;
-  margin: 0 auto;
-  height: 2.25em;
+  width: 14em;
+  height: 100%;
   border: none;
   background-color: transparent;
-  margin-top: 1em;
+  /* margin-top: 1em; */
   position: relative;
   will-change: transform;
 
   &::after {
     content: "";
-    width: calc(100% - 5px);
+    width: 100%;
     height: 2px;
     top: calc(100% - 4px);
     position: absolute;
     left: 0;
+    right: 0;
     background: var(--white);
     transform: scale3d(0, 0, 1);
     transition: transform 0.2s;
@@ -147,8 +147,9 @@ export const Button = styled(motion.button)`
     transform: scale3d(0, 1, 1);
   }
 
-  @media all and (min-width: 768px) {
-    margin-top: 3em;
+  @media all and (min-width: 551px) {
+    /* margin-top: 3em; */
+    width: 20em;
   }
   @media (hover: hover) {
     &:hover::after {
@@ -164,13 +165,14 @@ export const ButtonText = styled.a`
   letter-spacing: -0.01em;
   color: var(--white);
   text-transform: uppercase;
+  width: 100%;
 `;
 
 export const ArrowContainer = styled.div`
   height: 100%;
   max-height: 70%;
   margin: auto 0;
-  width: 33px;
+  width: min(25%, 2rem);
 
   @media all and (min-width: 551px) {
     max-height: 100%;

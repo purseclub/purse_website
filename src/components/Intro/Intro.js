@@ -7,7 +7,6 @@ import {
   IntroWrapper,
 } from "../../styles/intro";
 import { Para, ParaContainer } from "../../styles/landing";
-import MinimalButton from "../button";
 import { useInView } from "react-intersection-observer";
 import {
   motion,
