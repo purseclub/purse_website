@@ -117,7 +117,7 @@ export const Para = styled(motion.p)`
   text-align: ${(props) => props.align};
   text-decoration: ${(props) => (props.show ? "underline" : "none")};
   margin-bottom: ${(props) => (props.add ? "1.5em" : "0")};
-  margin-top: ${(props) => (props.top ? "10vh" : "0")};
+  margin-top: ${(props) => (props.top ? "5vh" : "0")};
 `;
 
 export const Button = styled(motion.button)`

@@ -5,6 +5,10 @@ export const IntroWrapper = styled.section`
   width: 100%;
   /* height: 80vh; */
   /* background-color: red; */
+`;
+
+export const IntroContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,6 +25,21 @@ export const IllustrationWrapper = styled(motion.div)`
 export const IllustrationSvg = styled(motion.svg)`
   height: 100%;
   width: 100%;
+`;
+
+export const DotContainer = styled(motion.div)`
+  width: 100%;
+  margin: 0 auto;
+
+  & > span {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    font-family: var(--font-family-main);
+    color: var(--white);
+    font-size: clamp(1em, 4vw, 2em);
+  }
 `;
 
 export const IntroHeading = styled(motion.h2)`
