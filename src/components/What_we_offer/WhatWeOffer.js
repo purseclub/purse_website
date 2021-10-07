@@ -20,7 +20,13 @@ import {
 import { Para } from "../../styles/landing";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
-import { motion, useAnimation } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useSpring,
+  useTransform,
+  useViewportScroll,
+} from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const datas = [
@@ -134,7 +140,11 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
     query {
       placeholderImage: file(relativePath: { eq: "002.jpg" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+            transformOptions: { grayscale: true }
+          )
         }
       }
     }
@@ -158,10 +168,10 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
 
   return (
     <WwoWrapper>
-      <IntroHeading ref={headref} animate={controls}>
+      {/* <IntroHeading ref={headref} animate={controls}>
         Flavour of love
-      </IntroHeading>
-      <Divider color={"var(--black)"} />
+      </IntroHeading> */}
+
       {datas.map((item, index) => {
         return (
           <Box
@@ -187,6 +197,19 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
   const circleControls = useAnimation();
   const itemControls = useAnimation();
   const [itemRef, itemInView] = useInView();
+
+  const { scrollY } = useViewportScroll();
+  const y1 = useTransform(scrollY, [1000, 4500], [0, -70]);
+  const y2 = useTransform(scrollY, [1000, 4500], [0, -100]);
+
+  const physics = { damping: 15, mass: 0.27, stiffness: 55 };
+
+  const spring1 = useSpring(y1, physics);
+  const spring2 = useSpring(y2, physics);
+
+  scrollY.onChange((x) => {
+    console.log(x);
+  });
 
   const [isInverted, setIsInverted] = useState(false);
   const ref = useRef(null);
@@ -290,6 +313,9 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
           variants={imageWrpMotion}
           animate={isHovered ? "animate" : "initial"}
           initial={isHovered ? "animate" : "initial"}
+          style={{
+            y: spring1,
+          }}
         >
           <ItemImg variants={imageVariants}>
             <ImageComponent image={image} />
@@ -323,16 +349,30 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
             />
           </ItemEnterCircle>
         </ItemEnter>
-        <Heading animate={headingControls}>
+        <Heading
+          animate={headingControls}
+          style={{
+            y: spring2,
+          }}
+        >
           <Splitting copy={item.title} role="title" controls={controls} />
           <Splitting copy={item.subtitle} role="subtitle" controls={controls} />
         </Heading>
-        <ItemMeta className={(item.id + 1) % 2 === 0 ? "invert-meta" : ""}>
+        <ItemMeta
+          className={(item.id + 1) % 2 === 0 ? "invert-meta" : ""}
+          style={{
+            y: spring2,
+          }}
+        >
           <ItemMetaRow>
             <span>Purse Club Rewards</span>
           </ItemMetaRow>
         </ItemMeta>
-        <ItemExcerpt>
+        <ItemExcerpt
+          style={{
+            y: spring2,
+          }}
+        >
           <Para align="left">{item.body}</Para>
           <ItemExcerptLink
             onClick={showModal}

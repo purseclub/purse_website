@@ -2,10 +2,16 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const WwoWrapper = styled.section`
-  width: 100%;
-  margin-top: 20vh;
+  max-width: 90%;
+  margin: 0 auto;
+
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  /* margin-top: 20vh; */
+
+  /* background-color: red; */
   @media all and (min-width: 991px) {
-    margin-top: 25vh;
+    /* margin-top: 25vh; */
   }
 `;
 
@@ -34,13 +40,13 @@ export const ContentBox = styled(motion.div)`
   width: 100%;
   margin: 15vh 0;
 
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     margin: 20vh 0;
   }
 `;
 
 export const Item = styled.article`
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     position: relative;
     display: grid;
     grid-template-areas:
@@ -68,7 +74,7 @@ export const ImgWrp = styled(motion.div)`
   min-height: 200px;
   will-change: transform;
 
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     grid-area: image;
   }
 `;
@@ -82,7 +88,7 @@ export const ItemImg = styled(motion.div)`
   will-change: transform;
   /* background-image: url(${(props) => props.texture}); */
 
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     width: 100%;
     height: 100%;
   }
@@ -104,7 +110,7 @@ export const ItemEnter = styled(motion.button)`
     outline: none;
   }
 
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     align-self: center;
     justify-self: center;
     display: flex;
@@ -119,11 +125,11 @@ export const ItemEnter = styled(motion.button)`
 `;
 export const ItemEnterCircle = styled(motion.svg)`
   fill: none;
-  stroke: #000;
+  stroke: #fff;
   stroke-width: 1px;
   will-change: transform, opacity;
 
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     pointer-events: none;
     cursor: pointer;
     flex: none;
@@ -132,13 +138,13 @@ export const ItemEnterCircle = styled(motion.svg)`
 
 export const Heading = styled(motion.h2)`
   font-family: var(--font-family-main);
-  font-weight: 400;
+  /* font-weight: 400; */
   font-size: 6vw;
-  font-size: clamp(2rem, 6vw, 5rem);
-  line-height: 1.1;
-  color: var(--black);
+  /* font-size: clamp(1rem, 6vw, 5rem);
+  line-height: 1.1; */
+  color: var(--white);
 
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     margin: 0;
     grid-area: 1 / 1 / 2 / 5;
     justify-self: center;
@@ -153,8 +159,8 @@ export const HeadingSpan = styled.span`
   z-index: 100;
 
   :first-child {
-    font-size: 14vw;
-    font-size: clamp(2rem, 14vw, 9rem);
+    /* font-size: 14vw; */
+    font-size: clamp(1.5rem, 11vw, 9rem);
   }
 
   :nth-child(2) {
@@ -162,12 +168,12 @@ export const HeadingSpan = styled.span`
     text-transform: lowercase;
   }
 
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     justify-content: center;
   }
 `;
 
-export const ItemMeta = styled.div`
+export const ItemMeta = styled(motion.div)`
   margin: 0.85rem 0 2rem;
   line-height: 1.3;
   font-size: 0.67rem;
@@ -176,7 +182,7 @@ export const ItemMeta = styled.div`
   font-family: var(--font-family-main-SemiBold);
   font-weight: 600;
 
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     grid-area: meta;
 
     &.invert-meta {
@@ -194,12 +200,13 @@ export const ItemMetaRow = styled.span`
   & > span {
     display: block;
     will-change: transform;
+    color: var(--white);
   }
 `;
 
-export const ItemExcerpt = styled.div`
+export const ItemExcerpt = styled(motion.div)`
   will-change: transform;
-  @media all and (min-width: 53em) {
+  @media all and (min-width: 1080px) {
     grid-area: excerpt;
   }
 `;

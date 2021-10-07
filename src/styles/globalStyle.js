@@ -9,6 +9,9 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
 		/* cursor: none; */
     }
+	html, body {
+		scroll-behavior: smooth;
+	}
 
     body {
        position: relative;

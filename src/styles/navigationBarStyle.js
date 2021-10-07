@@ -91,6 +91,7 @@ export const Time = styled.span`
 const NavButton = styled.button`
   height: 100%;
   padding-left: 1em;
+  padding-right: 0.5em;
   background-color: transparent;
   border: none;
   outline: none;

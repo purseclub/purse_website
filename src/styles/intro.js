@@ -8,7 +8,8 @@ export const IntroWrapper = styled.section`
 `;
 
 export const IntroContainer = styled.div`
-  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,8 +49,7 @@ export const IntroHeading = styled(motion.h2)`
   font-size: 11vw;
   letter-spacing: 0.01em;
   line-height: 11vw;
-  color: var(--black);
-  font-weight: 400;
+  color: var(--white);
   text-align: center;
   opacity: 0;
   /* margin: 0 auto; */
