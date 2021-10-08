@@ -43,11 +43,11 @@ export const DotContainer = styled(motion.div)`
   }
 `;
 
-export const IntroHeading = styled(motion.h2)`
+export const IntroHeading = styled(motion.h1)`
   width: 100%;
   font-family: var(--font-family-main);
   font-size: 11vw;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   line-height: 11vw;
   color: var(--white);
   text-align: center;

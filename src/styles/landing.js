@@ -29,23 +29,16 @@ export const TitleContainer = styled.div`
 
 export const TitleTopWrapper = styled.div`
   /* overflow: hidden; */
-  margin-bottom: 1em;
-  padding-top: 0.5em;
+  margin: 1em 0 2em 0;
 `;
 
 export const TitleTop = styled(motion.h2)`
   font-family: var(--font-family-main);
-  font-size: 9vw;
-  line-height: 9vw;
+  font-size: 3vw;
+  line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--gray);
-  font-weight: 400;
   text-align: center;
-
-  @media all and (min-width: 768px) {
-    font-size: 5vw;
-    line-height: 5vw;
-  }
 `;
 
 export const TitleWrapper = styled(motion.div)`

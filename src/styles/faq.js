@@ -4,19 +4,15 @@ import styled from "styled-components";
 export const FWrapper = styled.section`
   width: 100%;
 
-  @media all and (min-width: 991px) {
+  @media all and (min-width: 1080px) {
     margin-top: 8rem;
   }
 `;
 
-export const FContainer = styled.div`
-  max-width: 80%;
-  margin: 0 auto;
-  padding: 4.5rem 0;
-  transform-origin: 0% 0% 0%;
-
+export const AccordianContainer = styled.div`
+  margin-top: 8vh;
   @media all and (min-width: 991px) {
-    padding: 10rem 0;
+    margin-top: 12vh;
   }
 `;
 
@@ -24,10 +20,7 @@ export const QuestionContainer = styled(motion.div)`
   opacity: 0;
   width: 100%;
   position: relative;
-  margin-top: 1em;
-
-  /* padding-bottom: 1.5rem; */
-  cursor: pointer;
+  margin-bottom: 1em;
 
   ::after {
     content: "";
@@ -36,11 +29,10 @@ export const QuestionContainer = styled(motion.div)`
     left: 0;
     width: 100%;
     height: 1px;
-
-    background-color: var(--black);
+    background-color: var(--white);
   }
 
-  @media all and (min-width: 991px) {
+  @media all and (min-width: 1080px) {
     max-width: 70%;
     margin-left: auto;
   }
@@ -48,50 +40,38 @@ export const QuestionContainer = styled(motion.div)`
 
 export const QcHead = styled.div`
   display: flex;
-
+  /* height: min(15%, 1em); */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding-bottom: 1em;
+  @media all and (min-width: 1080px) {
+    padding-bottom: 0em;
+  }
 `;
 
 export const Question = styled(motion.h2)`
   flex: 1 1 80%;
   font-family: var(--font-family-main);
-  font-weight: 400;
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: clamp(1rem, 2.5vw, 2rem);
   letter-spacing: 0.01em;
-  line-height: 1.5rem;
-  color: var(--black);
-
-  /* @media all and (min-width: 991px) {
-    font-size: 2.5rem;
-
-    line-height: 3rem;
-  } */
+  line-height: 1.1;
+  color: var(--white);
 `;
 
 export const Arrow = styled.div`
-  flex: 1 1 20%;
-  margin-top: 2rem;
+  flex: 1 1 10%;
+  padding: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media all and (min-width: 1080px) {
+    padding: 1.5em;
+  }
 `;
 
 export const AnswerContainer = styled(motion.div)`
   width: 100%;
   overflow: hidden;
-`;
-
-export const Answer = styled(motion.p)`
-  font-family: var(--font-family-main-Regular);
-  font-size: 0.875rem;
-  letter-spacing: 0.03em;
-  line-height: 1.5rem;
-  color: var(--black);
-  margin-bottom: 2.5em;
-  display: block;
-  overflow: hidden;
-
-  @media all and (min-width: 991px) {
-    font-size: 1.5rem;
-    letter-spacing: -0.01em;
-    line-height: 2rem;
-  }
 `;

@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import {
+  AccordianContainer,
   AnswerContainer,
   Arrow,
   FWrapper,
@@ -12,7 +13,6 @@ import {
 } from "../../styles/faq";
 import { IntroHeading } from "../../styles/intro";
 import { Para } from "../../styles/landing";
-import { Divider } from "../../styles/whatWeOffer";
 import ArrowSvg from "../arrow";
 
 const questionAnswers = [
@@ -41,18 +41,17 @@ const transiton = { duration: 0.8, ease: [0.22, 1, 0.36, 1] };
 const arrowVariant = {
   initial: {
     fill: "none",
-    transform: "rotate(15deg)",
-    originX: 0.2,
-    originY: 0.2,
+    stroke: "var(--white)",
+    transform: "rotate(0deg)",
+    transformOrigin: "center",
     transition: {
       ...transiton,
     },
   },
   animate: {
-    originX: 0.2,
-    originY: 0.2,
-    fill: "var(--black)",
-    transform: "rotate(195deg)",
+    fill: "var(--white)",
+    transformOrigin: "center",
+    transform: "rotate(270deg)",
     transition: {
       ...transiton,
     },
@@ -86,14 +85,9 @@ const Faq = ({ onCursor }) => {
     <>
       <FWrapper>
         <IntroHeading ref={headref} animate={controls}>
-          Your Majesty
+          QUESTION ANSWERRR
         </IntroHeading>
-        <Divider color={"var(--black)"} />
-        <div
-          style={{
-            marginTop: "10vh",
-          }}
-        >
+        <AccordianContainer>
           {questionAnswers.map((qa, index) => {
             return (
               <Accordian
@@ -105,7 +99,7 @@ const Faq = ({ onCursor }) => {
               />
             );
           })}
-        </div>
+        </AccordianContainer>
       </FWrapper>
     </>
   );
