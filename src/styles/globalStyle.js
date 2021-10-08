@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-		/* cursor: none; */
+		cursor: none;
     }
 	html, body {
 		scroll-behavior: smooth;

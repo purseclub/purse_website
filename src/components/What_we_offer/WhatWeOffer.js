@@ -200,16 +200,20 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
 
   const { scrollY } = useViewportScroll();
   const y1 = useTransform(scrollY, [1000, 4500], [0, -70]);
-  const y2 = useTransform(scrollY, [1000, 4500], [0, -100]);
+  const y2 = useTransform(scrollY, [1000, 4500], [0, -50]);
 
   const physics = { damping: 15, mass: 0.27, stiffness: 55 };
+
+  //   scrollY.onChange((x) => {
+  //     console.log(x);
+  //   });
 
   const spring1 = useSpring(y1, physics);
   const spring2 = useSpring(y2, physics);
 
-  scrollY.onChange((x) => {
-    console.log(x);
-  });
+  //   scrollY.onChange((x) => {
+  //     console.log(x);
+  //   });
 
   const [isInverted, setIsInverted] = useState(false);
   const ref = useRef(null);
@@ -377,14 +381,14 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
           <ItemExcerptLink
             onClick={showModal}
             onMouseEnter={() => {
-              if (width > 991) {
+              if (width > 1080) {
                 onCursor("hovered");
                 setHoveredEl(item.id);
                 sequenceForward();
               }
             }}
             onMouseLeave={() => {
-              if (width > 991) {
+              if (width > 1080) {
                 setHoveredEl(null);
                 sequenceBackward();
                 onCursor();

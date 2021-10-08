@@ -33,7 +33,7 @@ export const Cursor = styled.div`
     height: 64px;
     color: var(--white);
     background-color: transparent;
-    border: 1.5px solid var(--black);
+    border: 1.5px dashed var(--white);
   }
 
   /* &.hovered::after {
@@ -81,7 +81,7 @@ export const Cursor = styled.div`
     color: var(--blue);
   }
 
-  @media all and (min-width: 991px) {
+  @media all and (min-width: 1080px) {
     display: block;
   }
 `;

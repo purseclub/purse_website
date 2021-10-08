@@ -160,7 +160,7 @@ export const HeadingSpan = styled.span`
 
   :first-child {
     /* font-size: 14vw; */
-    font-size: clamp(1.5rem, 11vw, 9rem);
+    font-size: clamp(1.5rem, 11vw, 7rem);
   }
 
   :nth-child(2) {
@@ -238,12 +238,12 @@ export const ItemExcerptLink = styled.a`
     background: var(--white);
     transition: transform 0.2s;
     transform-origin: 0 100%;
-    transform: scale3d(0, 1, 1);
+    /* transform: scale3d(0, 1, 1); */
   }
 
   @media (hover: hover) {
     & > span:hover::after {
-      transform: scale3d(1, 1, 1);
+      transform: scale3d(0, 1, 1);
     }
   }
 `;
