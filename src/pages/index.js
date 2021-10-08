@@ -23,7 +23,7 @@ const WhatWeOffer = loadable(() =>
 const Intro = loadable(() => import("../components/Intro/Intro"));
 const Faq = loadable(() => import("../components/Faq/Faq"));
 const Discord = loadable(() => import("../components/Discord/Discord"));
-const Legals = loadable(() => import("../components/Legals/Legals"));
+const Footer = loadable(() => import("../components/footer/footer"));
 
 // markup
 const IndexPage = () => {
@@ -81,10 +81,9 @@ const IndexPage = () => {
         <Landing onCursor={onCursor} showModal={showModal} />
         <Intro showModal={showModal} onCursor={onCursor} />
         <WhatWeOffer showModal={showModal} onCursor={onCursor} />
-
         <Faq onCursor={onCursor} />
         <Discord onCursor={onCursor} />
-        <Legals onCursor={onCursor} />
+        <Footer onCursor={onCursor} />
       </Layout>
     </>
   );
