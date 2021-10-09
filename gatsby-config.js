@@ -9,6 +9,7 @@ module.exports = {
     author: "Purse Club",
   },
   plugins: [
+    "gatsby-plugin-preload-fonts",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
