@@ -1,5 +1,4 @@
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   ActionContainer,
   FallingLetter,
@@ -15,70 +14,6 @@ import ArrowSvg from "../arrow";
 
 //matter.js
 import Matter from "matter-js";
-
-const socialLinks = [
-  {
-    id: 0,
-
-    link: "Terms & Conditions",
-    path: "/terms_and_condition",
-  },
-  {
-    id: 1,
-
-    link: "Privacy Policy",
-    path: "/privacy_policy",
-  },
-  {
-    id: 2,
-
-    link: "Report Bug",
-    path: "#",
-  },
-  {
-    id: 3,
-    link: "Contact us",
-    path: "mailto:support@thepurse.club",
-  },
-];
-
-const letters = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-];
 
 const Footer = ({ onCursor }) => {
   const ref = useRef();
@@ -150,6 +85,9 @@ const Footer = ({ onCursor }) => {
           return Bodies.polygon(x, y, sides, Common.random(25, 50), {
             chamfer: chamfer,
           });
+
+        default:
+          return null;
       }
     });
 
@@ -187,21 +125,21 @@ const Footer = ({ onCursor }) => {
       ),
     ]);
 
-    // var mouse = Mouse.create(render.canvas),
-    //   mouseConstraint = MouseConstraint.create(engine, {
-    //     mouse: mouse,
-    //     constraint: {
-    //       stiffness: 0.2,
-    //       render: {
-    //         visible: false,
-    //       },
-    //     },
-    //   });
+    var mouse = Mouse.create(render.canvas),
+      mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+          stiffness: 0.2,
+          render: {
+            visible: false,
+          },
+        },
+      });
 
-    // Composite.add(world, mouseConstraint);
+    Composite.add(world, mouseConstraint);
 
     // keep the mouse in sync with rendering
-    //render.mouse = mouse;
+    render.mouse = mouse;
 
     return {
       engine: engine,
@@ -243,7 +181,11 @@ const Footer = ({ onCursor }) => {
             </div>
           </LegalTextBox>
           <LegalTextBox>
-            <a href="#" target="_blank" rel="noopener">
+            <a
+              href="https://github.com/Abhishekucs/gatsby-purse-website"
+              target="_blank"
+              rel="noreferrer"
+            >
               github
             </a>
             <div>
@@ -254,12 +196,20 @@ const Footer = ({ onCursor }) => {
       </ActionContainer>
       <Links>
         <div>
-          <a href="#" target="_blank" rel="noopener">
+          <a
+            href="mailto:support@thepurse.club"
+            target="_blank"
+            rel="noreferrer"
+          >
             Report Bug
           </a>
         </div>
         <div>
-          <a href="mailto:support@thepurse.club" target="_blank" rel="noopener">
+          <a
+            href="mailto:support@thepurse.club"
+            target="_blank"
+            rel="noreferrer"
+          >
             contact us
           </a>
         </div>
