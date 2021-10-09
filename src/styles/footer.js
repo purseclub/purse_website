@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const FooterWrapper = styled.section`
   width: 100%;
@@ -20,15 +20,40 @@ export const FallingLetter = styled.div`
   grid-column-end: -1;
   grid-row-start: 1;
   grid-row-end: 2;
-  background-color: blue;
+  /* background-color: blue; */
+  position: relative;
+  overflow: hidden;
 
-  height: 3rem;
+  min-height: 176px;
 
   @media all and (min-width: 53em) {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+  }
+`;
+
+export const Playground = styled.div`
+  position: absolute;
+  overflow: hidden;
+  inset: -600px 0px 0px;
+
+  & > span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 36px;
+    width: 31px;
+    display: block;
+    font-family: var(--font-family-main);
+    font-size: 45px;
+    line-height: 1.1;
+    color: var(--white);
+    margin: 6px;
+    /* transform: translate3d(calc(49.7414px - 50%), calc(-376.653px + 50%), 0px)
+      rotate(-2069.88deg); */
+    will-change: transform;
   }
 `;
 
@@ -78,8 +103,8 @@ export const FooterTagLine = styled.h6`
   ${(props) =>
     props.line &&
     css`
-      text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff,
-        -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
+      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+        1px 1px 0 #fff;
     `};
 `;
 
