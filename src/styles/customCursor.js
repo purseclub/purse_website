@@ -14,7 +14,7 @@ export const Cursor = styled.div`
   transition-property: width, height, border;
   pointer-events: none;
   display: none;
-  z-index: 999999;
+  z-index: 99999;
 
   /* ::after {
     content: "";

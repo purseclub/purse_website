@@ -12,6 +12,7 @@ import {
 //components
 import Seo from "../components/seo";
 import Layout from "../components/layout";
+import Loader from "../components/loader/Loader";
 
 const NavigationBar = loadable(() =>
   import("../components/Navigation/navigationBar")
@@ -64,6 +65,7 @@ const IndexPage = () => {
 
   return (
     <>
+      <Loader />
       <NavigationBar click={showModal} onCursor={onCursor} />
       <Layout isActive={isActive} hideModal={hideModal}>
         <Seo
