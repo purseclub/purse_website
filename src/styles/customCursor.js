@@ -4,84 +4,43 @@ export const Cursor = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 100%;
   transform: translate(-50%, -50%);
   background-color: var(--white);
-  transition: all 0.1s ease-Out;
-  will-change: width, height, border, transform;
-  transition-property: width, height, border;
+  transition: all 0.1s ease-in-out;
+
+  transition-property: width, height;
   pointer-events: none;
   display: none;
+  mix-blend-mode: difference;
   z-index: 99999;
-
-  /* ::after {
-    content: "";
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    border: 1px solid var(--black);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 100%;
-  } */
+  will-change: width, height, transform;
 
   &.hovered {
-    width: 64px;
-    height: 64px;
-    color: var(--white);
-    background-color: transparent;
-    border: 1.5px dashed var(--white);
   }
 
-  /* &.hovered::after {
-    content: "yeahh!";
+  &.hovered::after {
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 34px;
+    height: 34px;
     transform: translate(-50%, -50%);
-    font-family: var(--font-family-main-SemiBold);
-    font-weight: 600;
     color: var(--white);
-  } */
-
-  &.experience {
-    width: 80px;
-    height: 80px;
-    color: var(--white);
+    border-radius: 100%;
+    border: 1px solid var(--white);
   }
 
-  &.experience::after {
-    content: "noice!";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-family-main-SemiBold);
-    font-weight: 600;
-    color: var(--white);
+  &.bar {
+    width: 4px;
+    height: 24px;
+    border-radius: 10%;
   }
 
-  &.cool {
-    width: 80px;
-    height: 80px;
-    background-color: var(--white);
-  }
-
-  &.cool::after {
-    content: "cooool!";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-family-main-SemiBold);
-    font-weight: 600;
-    color: var(--blue);
-  }
-
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     display: block;
   }
 `;

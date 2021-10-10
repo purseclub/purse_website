@@ -21,6 +21,7 @@ import MinimalButton from "../button";
 const parentMotion = {
   animate: {
     transition: {
+      delayChildren: 3,
       staggerChildren: 0.1,
     },
   },
@@ -61,7 +62,6 @@ const Splitting = ({ copy, role, variants, hollow, y1, y2 }) => {
   return (
     <Title
       aria-label={copy}
-      role={role}
       hollow={hollow}
       style={{ y: role === "heading-1" ? y1 : y2 }}
     >
@@ -98,13 +98,13 @@ const Splitting = ({ copy, role, variants, hollow, y1, y2 }) => {
 const datas = [
   {
     id: 0,
-    text: "digital",
+    text: "cybernate",
     role: "heading-1",
     hollow: true,
   },
   {
     id: 1,
-    text: "storage",
+    text: "warehouse",
     role: "heading-2",
     hollow: false,
   },
@@ -114,13 +114,15 @@ const Landing = ({ onCursor }) => {
   const ref = useRef();
   const [divWidth, setDivWidth] = useState(null);
   const { scrollY } = useViewportScroll();
-  const y1 = useTransform(scrollY, [0, 600], [0, -70]);
-  const y2 = useTransform(scrollY, [0, 600], [0, -90]);
+  const y1 = useTransform(scrollY, [0, 600], [0, -30]);
+  const y2 = useTransform(scrollY, [0, 600], [0, -50]);
 
   const physics = { damping: 15, mass: 0.27, stiffness: 55 };
 
   const spring1 = useSpring(y1, physics);
   const spring2 = useSpring(y2, physics);
+
+  //scrollY.onChange((x) => console.log(x));
 
   useEffect(() => {
     setDivWidth(ref.current.offsetWidth);
@@ -136,6 +138,7 @@ const Landing = ({ onCursor }) => {
                 variants={parentMotion}
                 initial="initial"
                 animate="animate"
+                idx={index}
               >
                 <Splitting
                   y1={spring1}

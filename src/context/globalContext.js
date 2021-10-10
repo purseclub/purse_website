@@ -23,7 +23,7 @@ const Reducer = (state, action) => {
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, {
     cursorType: false,
-    cursorStyles: ["experience", "hovered", "cool", "ring"],
+    cursorStyles: ["bar", "hovered"],
   });
   return (
     <GlobalDispatchContext.Provider value={dispatch}>

@@ -5,32 +5,24 @@ import ArrowSvg from "./arrow";
 
 const MinimalButton = ({ buttonText, path, variants, onCursor, click }) => {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "2.25rem",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Button
-        variants={variants}
-        initial="initial"
-        animate="animate"
-        onMouseEnter={() => {
-          onCursor("hovered");
-        }}
-        onMouseLeave={() => {
-          onCursor();
-        }}
-      >
-        <ButtonText href={path}>{buttonText}</ButtonText>
+    <>
+      <Button variants={variants} initial="initial" animate="animate">
+        <ButtonText
+          href={path}
+          onMouseEnter={() => {
+            onCursor("hovered");
+          }}
+          onMouseLeave={() => {
+            onCursor();
+          }}
+        >
+          {buttonText}
+        </ButtonText>
         <ArrowContainer>
-          <ArrowSvg />
+          <ArrowSvg fill="none" stroke="var(--white)" />
         </ArrowContainer>
       </Button>
-    </div>
+    </>
   );
 };
 

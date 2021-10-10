@@ -11,6 +11,7 @@ const MasternNav = styled.header`
   z-index: 10;
   margin: 2em auto;
   background-color: rgba(16, 16, 16, 0.8);
+  //background-color: red;
 `;
 
 const NavContainer = styled.div`
@@ -35,7 +36,7 @@ export const LogoWrapper = styled.div`
 export const LogoName = styled.span`
   display: inline-block;
   font-family: var(--font-family-main);
-  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  font-size: clamp(0.875rem, 2vw, 1rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
   text-align: left;
@@ -82,7 +83,7 @@ export const Clock = styled.svg`
 
 export const Time = styled.span`
   font-family: var(--font-family-main);
-  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  font-size: clamp(0.875rem, 2vw, 1rem);
   line-height: 56px;
   letter-spacing: -0.01em;
   color: var(--white);
@@ -97,7 +98,7 @@ const NavButton = styled.button`
   outline: none;
   color: var(--white);
   font-family: var(--font-family-main);
-  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  font-size: clamp(0.875rem, 2vw, 1rem);
   line-height: 56px;
   letter-spacing: -0.01em;
   text-align: center;

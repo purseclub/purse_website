@@ -17,13 +17,14 @@ export const LandingContainer = styled.div`
 
 export const TitleContainer = styled.div`
   width: 100%;
+  position: relative;
 
-  @media all and (min-width: 1024px) {
-    margin-top: 5em;
+  & > :first-child {
+    margin-top: 5.736vw;
   }
 
-  @media all and (min-width: 1440px) {
-    margin-top: 10em;
+  & > :last-child {
+    transform: translateY(-38%);
   }
 `;
 
@@ -43,38 +44,12 @@ export const TitleTop = styled(motion.h2)`
 
 export const TitleWrapper = styled(motion.div)`
   width: 100%;
-
-  margin-top: -1.5em;
-
-  @media all and (min-width: 375px) {
-    margin-top: -1.8em;
-  }
-
-  @media all and (min-width: 425px) {
-    margin-top: -2.6em;
-  }
-
-  @media all and (min-width: 768px) {
-    margin-top: -3.6em;
-  }
-
-  @media all and (min-width: 1024px) {
-    margin-top: -4.6em;
-  }
-
-  @media all and (min-width: 1080px) {
-    margin-top: -5.6em;
-  }
-
-  @media all and (min-width: 1440px) {
-    margin-top: -6.6em;
-  }
 `;
 
 export const Title = styled(motion.h1)`
   font-family: var(--font-family-main);
-  font-size: clamp(3rem, 14vw, 13rem);
-  line-height: 1.1;
+  font-size: max(40px, 11.75vw);
+  line-height: 1;
   color: ${(props) => (props.hollow ? "var(--black)" : "var(--white)")};
   text-align: center;
   text-transform: uppercase;
@@ -122,14 +97,15 @@ export const Button = styled(motion.div)`
   height: 100%;
   position: relative;
   will-change: transform;
-  /* background-color: red; */
-  flex: 0 1 12em;
+  background-color: transparent;
+  border: none;
+  //flex: 0 1 12em;
 
   &::after {
     content: "";
-    width: 100%;
+    width: calc(100% - 10px);
     height: 2px;
-    top: calc(100% - 4px);
+    top: calc(100% - 10px);
     position: absolute;
     left: 0;
     right: 0;
@@ -140,10 +116,11 @@ export const Button = styled(motion.div)`
     transform: scale3d(0, 1, 1);
   }
 
-  @media all and (min-width: 551px) {
+  @media all and (min-width: 86em) {
     /* margin-top: 3em; */
     /* width: 20em; */
-    flex: 0 1 18em;
+    //flex: 0 1 18em;
+    width: 20vw;
   }
   @media (hover: hover) {
     &:hover::after {
@@ -153,26 +130,27 @@ export const Button = styled(motion.div)`
 `;
 
 export const ButtonText = styled.a`
-  display: inline-block;
+  //display: inline-block;
   font-family: var(--font-family-main);
   font-size: clamp(0.75rem, 3vw, 1.125rem);
-  line-height: 1.1;
+  line-height: 1;
   letter-spacing: -0.01em;
   color: var(--white);
   text-transform: uppercase;
-  flex: 1 1 90%;
-  text-align: center;
+  //flex: 1 1 90%;
+  //text-align: center;
 `;
 
 export const ArrowContainer = styled.div`
-  height: 100%;
-  max-height: 70%;
+  /* height: 100%;
+  max-height: 70%; */
   margin: auto 0;
-  width: min(15%, 2rem);
+  width: min(3rem, 8vw);
+  //background-color: red;
 
-  @media all and (min-width: 551px) {
+  /* @media all and (min-width: 551px) {
     max-height: 100%;
-  }
+  } */
 `;
 
 export const SideNote = styled.p`
