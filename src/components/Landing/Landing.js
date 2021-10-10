@@ -67,7 +67,7 @@ const Splitting = ({ copy, role, variants, hollow, y1, y2 }) => {
     >
       {copy.split("").map(function (char, index) {
         return (
-          <span
+          <div
             aria-hidden="true"
             key={index}
             className="char"
@@ -86,7 +86,7 @@ const Splitting = ({ copy, role, variants, hollow, y1, y2 }) => {
             >
               {char}
             </motion.span>
-          </span>
+          </div>
         );
       })}
     </Title>

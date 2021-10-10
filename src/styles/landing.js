@@ -48,7 +48,7 @@ export const TitleWrapper = styled(motion.div)`
 
 export const Title = styled(motion.h1)`
   font-family: var(--font-family-main);
-  font-size: max(38px, 11.75vw);
+  font-size: max(34px, 11.75vw);
   line-height: 1;
   color: ${(props) => (props.hollow ? "var(--black)" : "var(--white)")};
   text-align: center;
