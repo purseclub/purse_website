@@ -36,7 +36,7 @@ const buttonMotion = {
     y: "0%",
     opacity: 1,
     transition: {
-      delay: 1.2,
+      delay: 4,
       duration: 0.8,
       ease: [0, 0.55, 0.45, 1],
     },
@@ -75,8 +75,6 @@ const Splitting = ({ copy, role, variants, hollow, y1, y2 }) => {
               display: "inline-block",
               position: "relative",
               overflow: "hidden",
-              paddingRight: "0.01em",
-              margin: " 0 -0.015em",
             }}
           >
             <motion.span
@@ -160,7 +158,21 @@ const Landing = ({ onCursor }) => {
           onCursor={onCursor}
         />
 
-        <SideNote ref={ref} divWidth={divWidth}>
+        <SideNote
+          ref={ref}
+          divWidth={divWidth}
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+            transition: {
+              delay: 4.5,
+              duration: 0.8,
+              ease: "easeOut",
+            },
+          }}
+        >
           there's more down below
         </SideNote>
       </LandingContainer>

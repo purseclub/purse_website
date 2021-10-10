@@ -26,7 +26,19 @@ const NavigationBar = ({ click, onCursor }) => {
     return () => clearInterval(secTimer);
   }, []);
   return (
-    <MasternNav>
+    <MasternNav
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+        transition: {
+          delay: 4.5,
+          duration: 0.8,
+          ease: "easeOut",
+        },
+      }}
+    >
       <NavContainer>
         <LogoWrapper>
           <Logo />

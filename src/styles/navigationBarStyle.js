@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-const MasternNav = styled.header`
+const MasternNav = styled(motion.header)`
   max-width: 90%;
   height: 56px;
   margin: 0 auto;

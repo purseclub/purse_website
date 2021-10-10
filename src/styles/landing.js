@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const LandingWrapper = styled(motion.section)`
   width: 100%;
@@ -48,7 +48,7 @@ export const TitleWrapper = styled(motion.div)`
 
 export const Title = styled(motion.h1)`
   font-family: var(--font-family-main);
-  font-size: max(40px, 11.75vw);
+  font-size: max(38px, 11.75vw);
   line-height: 1;
   color: ${(props) => (props.hollow ? "var(--black)" : "var(--white)")};
   text-align: center;
@@ -57,8 +57,12 @@ export const Title = styled(motion.h1)`
   -webkit-text-stroke-width: ${(props) => (props.hollow ? "1px" : "none")};
   -webkit-text-stroke-color: ${(props) => (props.hollow ? "white" : "none")}; */
 
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+  ${(props) =>
+    props.hollow &&
+    css`
+      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+    `}
 `;
 
 export const Strong = styled.span`
@@ -153,7 +157,7 @@ export const ArrowContainer = styled.div`
   } */
 `;
 
-export const SideNote = styled.p`
+export const SideNote = styled(motion.p)`
   font-family: var(--font-family-main);
   font-size: clamp(0.625rem, 1vw, 0.75rem);
   line-height: 1.1;
