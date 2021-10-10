@@ -85,7 +85,7 @@ const Faq = ({ onCursor }) => {
     <>
       <FWrapper>
         <IntroHeading ref={headref} animate={controls}>
-          QUESTION ANSWERRR
+          QUESTION ANSWERRR.
         </IntroHeading>
         <AccordianContainer>
           {questionAnswers.map((qa, index) => {
@@ -142,6 +142,8 @@ const Accordian = ({ data, selectedNo, setSelectedNo, onCursor }) => {
         </Arrow>
       </QcHead>
       <AnswerContainer
+        onMouseEnter={() => onCursor("bar")}
+        onMouseLeave={onCursor}
         key="answer"
         animate={{
           height: isOpen ? "100%" : "0",

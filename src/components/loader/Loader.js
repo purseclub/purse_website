@@ -4,21 +4,25 @@ import { LoaderWrapper, Typo, TypoContainer } from "./styles/StyledLoader";
 
 const containerVariant = {
   animate: {
+    scale: 2.7,
+    rotate: "-90deg",
     transition: {
-      staggerChildren: 1,
+      duration: 1.4,
+      ease: "easeInOut",
     },
   },
 };
 
-const typoVariants = {
-  animate: {
-    x: ["20%", "-200%"],
-    opacity: [1, 0],
+const typoVariant = {
+  animate: (i) => ({
+    x: ["0%", "20%", "-200%"],
+    opacity: [0.1, 1, 0],
     transition: {
-      duration: 2.3,
-      ease: "easeOut",
+      delay: i * 0.04,
+      duration: 1.6,
+      ease: "easeInOut",
     },
-  },
+  }),
 };
 
 const Loader = () => {
@@ -27,62 +31,8 @@ const Loader = () => {
 
   useEffect(() => {
     const sequence = async () => {
-      await containerControl
-        .start({
-          scale: 2.7,
-          rotate: "-90deg",
-          transition: {
-            duration: 1.4,
-            ease: "easeInOut",
-          },
-        })
-        .then(
-          await typoControl.start({
-            x: "20%",
-            opacity: 1,
-            transition: {
-              duration: 1,
-              ease: "easeInOut",
-            },
-          })
-        );
-      //   typoControl.set({
-      //     x: "20%",
-      //     opacity: 1,
-      //     transition: {
-      //       staggerChildren: 0.04,
-      //     },
-      //   });
-
-      //   await typoControl.start({
-      //     x: "20%",
-      //     transition: {
-      //       duration: 1,
-      //       ease: "easeInOut",
-      //     },
-      //   });
-      await typoControl.start({
-        x: "-200%",
-        opacity: 0,
-        transition: {
-          duration: 1.5,
-          ease: "easeIn",
-        },
-      });
-      //   await typoControl.start({
-      //     opacity: 1,
-      //     transition: {
-      //       duration: 1,
-      //       ease: "easeIn",
-      //     },
-      //   });
-      //   await typoControl.start({
-      //     opacity: 0,
-      //     transition: {
-      //       duration: 1.5,
-      //       ease: "easeIn",
-      //     },
-      //   });
+      await containerControl.start("animate");
+      typoControl.start("animate");
     };
 
     sequence();
@@ -90,14 +40,18 @@ const Loader = () => {
   return (
     <LoaderWrapper id="preloader" aria-hidden="true">
       <TypoContainer animate={containerControl} variants={containerVariant}>
-        <Typo animate={typoControl}>bonjour bonjour bonjour</Typo>
-        <Typo animate={typoControl}>bonjour bonjour bonjour</Typo>
-        <Typo animate={typoControl}>bonjour bonjour bonjour</Typo>
-        <Typo animate={typoControl}>bonjour bonjour bonjour</Typo>
-        <Typo animate={typoControl}>bonjour bonjour bonjour</Typo>
-        <Typo animate={typoControl}>bonjour bonjour bonjour</Typo>
-        <Typo animate={typoControl}>bonjour bonjour bonjour</Typo>
-        <Typo animate={typoControl}>bonjour bonjour bonjour</Typo>
+        {Array.from({ length: 10 }).map((_, i) => {
+          return (
+            <Typo
+              key={i}
+              animate={typoControl}
+              variants={typoVariant}
+              custom={i}
+            >
+              loading purse club
+            </Typo>
+          );
+        })}
       </TypoContainer>
     </LoaderWrapper>
   );

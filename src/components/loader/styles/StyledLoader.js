@@ -31,10 +31,9 @@ export const TypoContainer = styled(motion.div)`
 
 export const Typo = styled(motion.div)`
   white-space: nowrap;
-  font-size: 12vh;
-  font-size: clamp(7rem, 18.75vh, 15rem);
+  //font-size: 12vw;
+  font-size: min(16.75vw, 5rem);
   line-height: 0.75;
-  font-weight: bold;
   font-family: var(--font-family-main-SemiBold);
   font-weight: 600;
   color: var(--white);

@@ -21,6 +21,7 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: saturate(180%) blur(5px);
 `;
 
 export const LogoWrapper = styled.div`

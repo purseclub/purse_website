@@ -1,8 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
-import { IntroHeading } from "../../styles/intro";
+
 import {
   ContentBox,
-  Divider,
   Heading,
   HeadingSpan,
   ImgWrp,
@@ -131,10 +130,6 @@ const ImageComponent = forwardRef((props, ref) => {
 
 const WhatWeOffer = ({ showModal, onCursor }) => {
   const [hoveredEl, setHoveredEl] = useState(null);
-  const [headref, headInView] = useInView({
-    threshold: 0.4,
-  });
-  const controls = useAnimation();
 
   const data = useStaticQuery(graphql`
     query {
@@ -150,28 +145,9 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
     }
   `);
   const image = getImage(data.placeholderImage.childImageSharp);
-  useEffect(() => {
-    if (headInView) {
-      controls.start({
-        opacity: 1,
-        transition: {
-          duration: 0.8,
-          ease: "easeIn",
-        },
-      });
-
-      //   return controls.stop();
-    }
-
-    // return controls.stop();
-  }, [headInView, controls]);
 
   return (
     <WwoWrapper>
-      {/* <IntroHeading ref={headref} animate={controls}>
-        Flavour of love
-      </IntroHeading> */}
-
       {datas.map((item, index) => {
         return (
           <Box
@@ -326,6 +302,7 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
           </ItemImg>
         </ImgWrp>
         <ItemEnter
+          onClick={showModal}
           className="unbutton"
           onHoverStart={() => {
             onCursor("hovered");
@@ -376,23 +353,25 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
           style={{
             y: spring2,
           }}
+          onMouseEnter={() => {
+            onCursor("bar");
+          }}
+          onMouseLeave={() => {
+            onCursor();
+          }}
         >
           <Para align="left">{item.body}</Para>
           <ItemExcerptLink
             onClick={showModal}
             onMouseEnter={() => {
-              if (width > 1080) {
-                onCursor("hovered");
-                setHoveredEl(item.id);
-                sequenceForward();
-              }
+              onCursor("hovered");
+              setHoveredEl(item.id);
+              sequenceForward();
             }}
             onMouseLeave={() => {
-              if (width > 1080) {
-                setHoveredEl(null);
-                sequenceBackward();
-                onCursor();
-              }
+              setHoveredEl(null);
+              sequenceBackward();
+              onCursor();
             }}
           >
             <span>{item.buttonText}</span>

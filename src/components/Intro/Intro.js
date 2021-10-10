@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   DotContainer,
   IllustrationSvg,
@@ -39,7 +39,7 @@ const illustrationChildMotion = {
   },
 };
 
-const Intro = ({ showModal, onCursor }) => {
+const Intro = ({ onCursor }) => {
   const [illustrationRef, illustrationInView] = useInView({
     threshold: 0.2,
   });
@@ -49,23 +49,17 @@ const Intro = ({ showModal, onCursor }) => {
   const paraControls = useAnimation();
   const illustrationControls = useAnimation();
 
+  const [containerHeight, setContainerHeight] = useState(null);
+
   const { scrollY } = useViewportScroll();
-  const y1 = useTransform(scrollY, [550, 1000], [0, -100]);
-  const y2 = useTransform(scrollY, [550, 1000], [0, -150]);
+  const y2 = useTransform(scrollY, [containerHeight / 2, 2000], [0, -100]);
 
   const physics = { damping: 15, mass: 0.27, stiffness: 55 };
 
-  const spring1 = useSpring(y1, physics);
   const spring2 = useSpring(y2, physics);
 
   useEffect(() => {
-    if (illustrationInView) {
-      illustrationControls.start("animate");
-    }
-    return () => illustrationControls.stop();
-  }, [illustrationInView, illustrationControls]);
-
-  useEffect(() => {
+    setContainerHeight(window.innerHeight);
     if (paraInView) {
       paraControls.start({
         opacity: 1,
@@ -76,18 +70,20 @@ const Intro = ({ showModal, onCursor }) => {
       });
       //   return paraControls.stop();
     }
-    return () => paraControls.stop();
-  }, [paraInView, paraControls]);
+
+    if (illustrationInView) {
+      illustrationControls.start("animate");
+    }
+    return () => {
+      paraControls.stop();
+      illustrationControls.stop();
+    };
+  }, [paraInView, paraControls, illustrationInView, illustrationControls]);
 
   return (
     <IntroWrapper>
       <IntroContainer>
-        <IllustrationWrapper
-          ref={illustrationRef}
-          style={{
-            y: spring1,
-          }}
-        >
+        <IllustrationWrapper ref={illustrationRef}>
           <IllustrationSvg
             variants={illustrationMotion}
             initial="initial"
@@ -117,6 +113,12 @@ const Intro = ({ showModal, onCursor }) => {
           style={{
             y: spring2,
           }}
+          onMouseEnter={() => {
+            onCursor("bar");
+          }}
+          onMouseLeave={() => {
+            onCursor();
+          }}
         >
           <Para
             align="left"
@@ -138,11 +140,7 @@ const Intro = ({ showModal, onCursor }) => {
           </Para>
         </ParaContainer>
       </IntroContainer>
-      <DotContainer
-        style={{
-          y: spring1,
-        }}
-      >
+      <DotContainer>
         <span>***</span>
       </DotContainer>
     </IntroWrapper>

@@ -8,7 +8,6 @@ export const IntroWrapper = styled.section`
 `;
 
 export const IntroContainer = styled.div`
-  max-width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -39,7 +38,7 @@ export const DotContainer = styled(motion.div)`
     display: inline-block;
     font-family: var(--font-family-main);
     color: var(--white);
-    font-size: clamp(1em, 4vw, 2em);
+    font-size: clamp(18px, 2vw, 32px);
   }
 `;
 

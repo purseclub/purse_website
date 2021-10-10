@@ -96,13 +96,13 @@ const Splitting = ({ copy, role, variants, hollow, y1, y2 }) => {
 const datas = [
   {
     id: 0,
-    text: "cybernate",
+    text: "modern",
     role: "heading-1",
     hollow: true,
   },
   {
     id: 1,
-    text: "warehouse",
+    text: "container",
     role: "heading-2",
     hollow: false,
   },

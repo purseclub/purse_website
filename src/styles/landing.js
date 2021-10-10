@@ -48,14 +48,11 @@ export const TitleWrapper = styled(motion.div)`
 
 export const Title = styled(motion.h1)`
   font-family: var(--font-family-main);
-  font-size: max(34px, 11.75vw);
+  font-size: max(40px, 11.75vw);
   line-height: 1;
   color: ${(props) => (props.hollow ? "var(--black)" : "var(--white)")};
   text-align: center;
   text-transform: uppercase;
-  /* -webkit-text-fill-color: ${(props) => (props.hollow ? "black" : "none")};
-  -webkit-text-stroke-width: ${(props) => (props.hollow ? "1px" : "none")};
-  -webkit-text-stroke-color: ${(props) => (props.hollow ? "white" : "none")}; */
 
   ${(props) =>
     props.hollow &&
@@ -80,12 +77,12 @@ export const ParaContainer = styled(motion.div)`
 export const Para = styled(motion.p)`
   opacity: ${(props) => (props.hide ? 0 : 1)};
   display: block;
-  font-family: var(--font-family-main-SemiBold);
+  font-family: var(--font-family-main-Medium);
   font-size: clamp(0.75rem, 4vw, 1.25rem);
   line-height: 1.3;
   letter-spacing: -0.005em;
   color: var(--white);
-  font-weight: 600;
+  font-weight: 500;
   text-align: ${(props) => props.align};
   text-decoration: ${(props) => (props.show ? "underline" : "none")};
   margin-bottom: ${(props) => (props.add ? "1.5em" : "0")};
@@ -138,7 +135,7 @@ export const ButtonText = styled.a`
   font-family: var(--font-family-main);
   font-size: clamp(0.75rem, 3vw, 1.125rem);
   line-height: 1;
-  letter-spacing: -0.01em;
+  //letter-spacing: 0.05em;
   color: var(--white);
   text-transform: uppercase;
   //flex: 1 1 90%;

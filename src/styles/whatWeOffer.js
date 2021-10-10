@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const WwoWrapper = styled.section`
-  max-width: 90%;
+  /* max-width: 90%; */
   margin: 0 auto;
 
   /* height: 100vh; */
@@ -40,13 +40,13 @@ export const ContentBox = styled(motion.div)`
   width: 100%;
   margin: 15vh 0;
 
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     margin: 20vh 0;
   }
 `;
 
 export const Item = styled.article`
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     position: relative;
     display: grid;
     grid-template-areas:
@@ -74,7 +74,7 @@ export const ImgWrp = styled(motion.div)`
   min-height: 200px;
   will-change: transform;
 
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     grid-area: image;
   }
 `;
@@ -88,7 +88,7 @@ export const ItemImg = styled(motion.div)`
   will-change: transform;
   /* background-image: url(${(props) => props.texture}); */
 
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     width: 100%;
     height: 100%;
   }
@@ -110,7 +110,7 @@ export const ItemEnter = styled(motion.button)`
     outline: none;
   }
 
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     align-self: center;
     justify-self: center;
     display: flex;
@@ -129,7 +129,7 @@ export const ItemEnterCircle = styled(motion.svg)`
   stroke-width: 1px;
   will-change: transform, opacity;
 
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     pointer-events: none;
     cursor: pointer;
     flex: none;
@@ -144,7 +144,7 @@ export const Heading = styled(motion.h2)`
   line-height: 1.1; */
   color: var(--white);
 
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     margin: 0;
     grid-area: 1 / 1 / 2 / 5;
     justify-self: center;
@@ -168,7 +168,7 @@ export const HeadingSpan = styled.span`
     text-transform: lowercase;
   }
 
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     justify-content: center;
   }
 `;
@@ -182,7 +182,7 @@ export const ItemMeta = styled(motion.div)`
   font-family: var(--font-family-main-SemiBold);
   font-weight: 600;
 
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     grid-area: meta;
 
     &.invert-meta {
@@ -200,13 +200,13 @@ export const ItemMetaRow = styled.span`
   & > span {
     display: block;
     will-change: transform;
-    color: var(--white);
+    color: var(--gray);
   }
 `;
 
 export const ItemExcerpt = styled(motion.div)`
   will-change: transform;
-  @media all and (min-width: 1080px) {
+  @media all and (min-width: 86em) {
     grid-area: excerpt;
   }
 `;
@@ -221,6 +221,7 @@ export const ItemExcerptLink = styled.a`
   font-family: var(--font-family-main);
   margin-top: 1em;
   font-size: clamp(0.875rem, 4vw, 1.25rem);
+  text-transform: uppercase;
 
   & > span {
     display: inline-block;
