@@ -1,20 +1,30 @@
 import React from "react";
-import Lottie from "react-lottie";
+import lottie from "lottie-web";
 import { AnimationContainer } from "../../styles/modal/circularLoadingStyle";
-import circularLoadingAnimation from "../../Animation/circularLoading.json";
+import circularLoadingAnimation from "../../Animation/loadingIndicator.json";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const CircularLoading = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: circularLoadingAnimation,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  const animationRef = useRef();
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: animationRef.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: circularLoadingAnimation,
+    });
+    return () => anim.destroy(); // optional clean up for unmounting
+  }, []);
   return (
     <AnimationContainer>
-      <Lottie options={defaultOptions} />
+      <div
+        ref={animationRef}
+        style={{
+          height: "100%",
+        }}
+      />
     </AnimationContainer>
   );
 };

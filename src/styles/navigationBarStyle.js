@@ -9,7 +9,7 @@ const MasternNav = styled(motion.header)`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 99999;
   margin: 2em auto;
   background-color: rgba(16, 16, 16, 0.8);
   //background-color: red;

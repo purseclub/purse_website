@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 //scroll-container style
 const ScrollContainer = styled(motion.div)`
-  opacity: ${(props) => (props.status ? "0.4" : "1")};
+  opacity: ${(props) => (props.status ? "0.2" : "1")};
   pointer-events: ${(props) => (props.status ? "none" : "all")};
   position: fixed;
   top: 0;
@@ -18,6 +18,7 @@ const ScrollContainer = styled(motion.div)`
   right: 0;
   max-width: 90%;
   margin: 0 auto;
+  z-index: 999;
   /* width: 100%; */
   overflow: hidden;
   will-change: transform;

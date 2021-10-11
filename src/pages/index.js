@@ -13,6 +13,7 @@ import {
 import Seo from "../components/seo";
 import Layout from "../components/layout";
 import Loader from "../components/loader/Loader";
+import Modal from "../components/modal/Modal";
 
 const NavigationBar = loadable(() =>
   import("../components/Navigation/navigationBar")
@@ -66,6 +67,7 @@ const IndexPage = () => {
   return (
     <>
       <Loader />
+      {isActive ? <Modal hide={hideModal} /> : <></>}
       <NavigationBar click={showModal} onCursor={onCursor} />
       <Layout isActive={isActive} hideModal={hideModal}>
         <Seo

@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     body {
        	position: relative;
         overscroll-behavior-y: none;
-		font-display: swap;
+		
 		-webkit-tap-highlight-color: transparent;
 		background-color: var(--black);
     }
@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
 		--offBlack: '#101010';
         --darkGreen: #001514;
         --blue: rgba(99, 32, 238, 1);
-        --gray: rgba(255, 255, 255, 0.5);
+        --gray: rgba(0, 0, 0, 0.5);
 		--white: #FFF;
         --errorColor: #D75059;
 		--font-family-main: 'Basement', serif;

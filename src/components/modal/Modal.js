@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import {
   CrossContainer,
+  CrossContainerSvg,
   ErrorMsg,
   MobileInput,
   MobileInputContainer,
@@ -74,7 +75,6 @@ const Modal = ({ hide }) => {
           Join our premium waiting list and get a chance to win latest iphone 13
           and macbook pro.
         </ModalSubtitle>
-
         <AnimatePresence>
           {inputValue.length > 0 ? (
             !isEmailValid ? (
@@ -102,7 +102,9 @@ const Modal = ({ hide }) => {
               required
             />
             {isLoading ? (
-              <CircularLoading />
+              <SubmitButtonContainer>
+                <CircularLoading />
+              </SubmitButtonContainer>
             ) : (
               <SubmitButtonContainer onClick={handleSubmit}>
                 <SubmitButton />
@@ -117,9 +119,7 @@ const Modal = ({ hide }) => {
 
 const CrossSvg = () => {
   return (
-    <svg
-      width="40"
-      height="38"
+    <CrossContainerSvg
       viewBox="0 0 40 38"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@ const CrossSvg = () => {
         width="24"
         height="2"
         transform="rotate(45 12 10)"
-        fill="var(--white)"
+        fill="var(--black)"
       />
       <rect
         x="11"
@@ -138,13 +138,9 @@ const CrossSvg = () => {
         width="24"
         height="2"
         transform="rotate(-45 11 26.9998)"
-        fill="var(--white)"
+        fill="var(--black)"
       />
-      <path
-        d="M0 0V-1H-1V0H0ZM40 0H41V-1H40V0ZM40 38V39H41V38H40ZM0 38H-1V39H0V38ZM0 1H40V-1H0V1ZM39 0V38H41V0H39ZM40 37H0V39H40V37ZM1 38V0H-1V38H1Z"
-        fill="var(--darkGreen)"
-      />
-    </svg>
+    </CrossContainerSvg>
   );
 };
 
@@ -155,10 +151,10 @@ const SubmitButton = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="17.5748" cy="17.5748" r="17.5748" fill="#8F8D80" />
+      <circle cx="17.5748" cy="17.5748" r="17.5748" fill="var(--black)" />
       <path
         d="M14.5 11.7109L20.0807 17.2917L14.5 22.8724"
-        stroke="#292A2B"
+        stroke="var(--white)"
         strokeWidth="1.44817"
         strokeLinecap="round"
         strokeLinejoin="round"
