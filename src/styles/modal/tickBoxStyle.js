@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const TickBoxContainer = styled(motion.div)`
   height: 100%;
   width: 100%;
-  display: inline-block;
+
   position: absolute;
   top: 0;
 
@@ -13,4 +13,5 @@ export const TickBoxContainer = styled(motion.div)`
 
 export const TickSvg = styled.svg`
   height: 100%;
+  //width: max(4.5vw, 2.5rem);
 `;

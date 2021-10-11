@@ -4,6 +4,7 @@ import {
   CrossContainer,
   CrossContainerSvg,
   ErrorMsg,
+  LoadingContainer,
   MobileInput,
   MobileInputContainer,
   ModalContainer,
@@ -102,9 +103,9 @@ const Modal = ({ hide }) => {
               required
             />
             {isLoading ? (
-              <SubmitButtonContainer>
+              <LoadingContainer>
                 <CircularLoading />
-              </SubmitButtonContainer>
+              </LoadingContainer>
             ) : (
               <SubmitButtonContainer onClick={handleSubmit}>
                 <SubmitButton />

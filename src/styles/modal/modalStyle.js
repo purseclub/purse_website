@@ -47,7 +47,7 @@ export const CrossContainerSvg = styled.svg`
 
 export const ModalTitle = styled.h3`
   white-space: normal;
-
+  max-width: 90%;
   margin-right: auto;
   font-family: var(--font-family-main-Bold);
   font-weight: 700;
@@ -57,7 +57,7 @@ export const ModalTitle = styled.h3`
   margin-top: 0.5em;
 
   @media (min-width: 26.625em) and (orientation: landscape) {
-    max-width: 90%;
+    //max-width: 90%;
   }
 `;
 
@@ -69,9 +69,10 @@ export const ModalSubtitle = styled.p`
   font-size: clamp(0.75rem, 2vw, 1.125rem);
   letter-spacing: 0.02em;
   line-height: 1.1;
+  max-width: 80%;
 
   @media (min-width: 26.625em) and (orientation: landscape) {
-    max-width: 80%;
+    //max-width: 80%;
     margin-top: 1.5em;
   }
 `;
@@ -142,6 +143,14 @@ export const MobileInput = styled.input`
     color: var(--gray);
     font-weight: 600;
   }
+`;
+
+export const LoadingContainer = styled.div`
+  height: max(4.5vw, 2.5rem);
+  width: max(4.5vw, 2.5rem);
+  position: absolute;
+  right: 0;
+  padding: 0.3em;
 `;
 
 export const SubmitButtonContainer = styled.button`
