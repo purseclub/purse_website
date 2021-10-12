@@ -1,14 +1,10 @@
-import {
-  motion,
-  useSpring,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
+import { useSpring, useTransform, useViewportScroll } from "framer-motion";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
 import {
+  Glitch,
   LandingContainer,
   LandingWrapper,
   SideNote,
@@ -77,15 +73,7 @@ const Splitting = ({ copy, role, variants, hollow, y1, y2 }) => {
               overflow: "hidden",
             }}
           >
-            <motion.span
-              variants={variants}
-              style={{
-                display: "inline-block",
-                willChange: "transform",
-              }}
-            >
-              {char}
-            </motion.span>
+            <Glitch variants={variants}>{char}</Glitch>
           </div>
         );
       })}

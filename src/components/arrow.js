@@ -22,7 +22,7 @@ const ArrowSvg = ({ selectedNo, index, variants, fill, stroke }) => {
           d="M7.65225 11.2052L10.7889 8.29447L19.4857 16.667L19.5221 10.6345L23.1847 10.6124L23.1092 23.1083L10.6134 23.1837L10.6355 19.5212L16.1294 19.488L7.65225 11.2052Z"
           fill={fill}
           stroke={stroke}
-          strokeWidth="0.5"
+          strokeWidth="0.8"
         />
       </motion.g>
     </Svg>

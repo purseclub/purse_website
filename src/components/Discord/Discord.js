@@ -15,6 +15,7 @@ import {
   SpanHeading,
   SocialMediaContainer,
   Cross,
+  FunMessage,
 } from "../../styles/discord";
 import { IntroHeading } from "../../styles/intro";
 import { TitleTop, TitleTopWrapper } from "../../styles/landing";
@@ -85,7 +86,7 @@ const Discord = ({ onCursor }) => {
       <TitleTopWrapper>
         <TitleTop>Join our community</TitleTop>
       </TitleTopWrapper>
-      <SocialContainer style={{ y: spring1 }}>
+      <SocialContainer style={{ y: spring1, x: spring1 }}>
         <SocialBox>
           <div
             style={{
@@ -101,6 +102,7 @@ const Discord = ({ onCursor }) => {
             </Cross>
           </div>
           <Line />
+          <FunMessage> trying our best </FunMessage>
           <SocialMediaContainer>
             <li>
               <a

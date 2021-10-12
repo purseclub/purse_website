@@ -62,10 +62,9 @@ export const Title = styled(motion.h1)`
     `}
 `;
 
-export const Strong = styled.span`
-  font-family: var(--font-family-main-Bold);
-  color: var(--blue);
-  font-weight: 700;
+export const Glitch = styled(motion.span)`
+  display: inline-block;
+  will-change: transform;
 `;
 
 export const ParaContainer = styled(motion.div)`

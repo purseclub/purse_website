@@ -85,13 +85,23 @@ export const Line = styled.div`
   }
 `;
 
+export const FunMessage = styled.span`
+  margin: 1em 0;
+  font-size: clamp(0.875rem, 2vw, 1.5rem);
+  font-family: var(--font-family-main-Medium);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--davysGrey);
+`;
+
 export const SocialMediaContainer = styled.ul`
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   //height: 4rem;
-  margin: 2em 0 1em 0;
+  margin: 4em 0 1em 0;
 
   & > li > a > svg {
     // height: 100%;
