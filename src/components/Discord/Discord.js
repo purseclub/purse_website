@@ -136,7 +136,6 @@ const Discord = ({ onCursor }) => {
           </motion.a>
           <SocialText variants={textVariants}>tweeting..</SocialText>
         </TwitterContainer>
-
         <Divide />
         <LinkdlenContainer
           href="#"
