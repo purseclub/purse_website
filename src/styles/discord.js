@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const DiscordWrapper = styled.section`
   width: 100%;
   margin: 15vh 0;
+  //background-color: red;
 
   @media all and (min-width: 991px) {
     margin: 20vh 0;
@@ -21,118 +22,83 @@ export const Divide = styled.div`
   width: 1px;
 `;
 
-export const SocialContainer = styled.div`
+export const SocialContainer = styled(motion.div)`
+  //background-color: red;
   width: 100%;
-  margin-top: 5em;
-  border: 1px solid var(--white);
-  display: grid;
+  margin-top: 2em;
+  /* display: grid;
   grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(2, auto); */
 
   @media all and (min-width: 991px) {
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 10em;
+    margin-top: 5em;
+  }
+`;
+
+export const SocialBox = styled.div`
+  width: 100%;
+  padding: 1em;
+  margin: 0 auto;
+  border: 1px solid var(--white);
+  @media all and (min-width: 426px) {
+    max-width: max(800px, 31.25vw);
+    padding: 2em;
   }
 `;
 
 export const SocialText = styled(motion.span)`
   font-family: var(--font-family-main);
-  font-size: 4vw;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.5rem, 3vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
   color: var(--white);
-  display: inline-block;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: block;
+  //text-align: center;
+  text-transform: uppercase;
 `;
 
-export const DiscordContainer = styled(motion.a)`
-  color: var(--white);
-  width: 100%;
-  height: 5rem;
-  padding: 1em;
-  border-bottom: 1px solid var(--white);
-  position: relative;
-
-  grid-column: 1 / 2;
-  grid-row: 1/2;
-  /* background-color: red; */
-
-  & > a > svg {
-    width: 100%;
-    height: 100%;
+export const Cross = styled.div`
+  display: flex;
+  & > span {
+    display: inline-block;
+    height: 2em;
+    width: 6px;
+    background-color: var(--white);
+    transform-origin: center;
+  }
+  & > :first-child {
+    transform: rotateZ(45deg);
   }
 
-  @media all and (min-width: 991px) {
-    height: 12rem;
-    padding: 3.5em;
+  & > :last-child {
+    transform: translateX(-5px) rotateZ(-45deg);
   }
 `;
-export const InstaContainer = styled(motion.a)`
-  color: var(--white);
+
+export const Line = styled.div`
+  height: 2px;
   width: 100%;
-  height: 5rem;
-  padding: 1em;
-  border-bottom: 1px solid var(--white);
-  position: relative;
-  /* background-color: red; */
-
-  grid-column: 3 / 4;
-  grid-row: 1/2;
-
-  & > a > svg {
-    width: 100%;
-    height: 100%;
-    fill: var(--white);
-  }
-  @media all and (min-width: 991px) {
-    height: 12rem;
-    padding: 3.5em;
+  background-color: var(--davysGrey);
+  margin-top: 1em;
+  @media all and (min-width: 426px) {
+    margin-top: 2em;
   }
 `;
-export const TwitterContainer = styled(motion.a)`
-  color: var(--white);
+
+export const SocialMediaContainer = styled.ul`
   width: 100%;
-  height: 5rem;
-  padding: 1em;
-  position: relative;
-  /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  //height: 4rem;
+  margin: 2em 0 1em 0;
 
-  grid-column: 1 / 2;
-  grid-row: 2/3;
-
-  & > a > svg {
-    width: 100%;
-    height: 100%;
-    fill: var(--white);
+  & > li > a > svg {
+    // height: 100%;
+    width: min(40px, 8vw);
+    fill: white;
   }
-  @media all and (min-width: 991px) {
-    height: 12rem;
-    padding: 3.5em;
-  }
-`;
-export const LinkdlenContainer = styled(motion.a)`
-  color: var(--white);
-  width: 100%;
-  height: 5rem;
-  padding: 1em;
-  position: relative;
-  /* background-color: red; */
-
-  grid-column: 3 / 4;
-  grid-row: 2/3;
-
-  & > a > svg {
-    width: 100%;
-    height: 100%;
-    fill: var(--white);
-  }
-  @media all and (min-width: 991px) {
-    height: 12rem;
-    padding: 3.5em;
+  @media all and (min-width: 426px) {
+    margin: 5em 0 1em 0;
   }
 `;

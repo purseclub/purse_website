@@ -35,11 +35,11 @@ export const TitleTopWrapper = styled.div`
 
 export const TitleTop = styled(motion.h2)`
   font-family: var(--font-family-main);
-  font-size: 3vw;
+  font-size: clamp(0.875rem, 2vw, 1.5rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
-  color: var(--gray);
-  text-align: center;
+  color: var(--davysGrey);
+  //text-align: center;
 `;
 
 export const TitleWrapper = styled(motion.div)`
