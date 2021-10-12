@@ -2,6 +2,7 @@ import { useAnimation } from "framer-motion";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { questionAnswers } from "../../data/data";
 import {
   AccordianContainer,
   AnswerContainer,
@@ -14,27 +15,6 @@ import {
 import { IntroHeading } from "../../styles/intro";
 import { Para } from "../../styles/landing";
 import ArrowSvg from "../arrow";
-
-const questionAnswers = [
-  {
-    id: 0,
-    question: "What is Purse Club ?",
-    answer:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-  },
-  {
-    id: 1,
-    question: "How can I become a member of Purse Club ?",
-    answer:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-  },
-  {
-    id: 2,
-    question: "How can I become a member of Purse Club ?",
-    answer:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-  },
-];
 
 const transiton = { duration: 0.8, ease: [0.22, 1, 0.36, 1] };
 
@@ -153,7 +133,43 @@ const Accordian = ({ data, selectedNo, setSelectedNo, onCursor }) => {
           ease: [0.16, 1, 0.3, 1],
         }}
       >
-        <Para add={true}>{data.answer}</Para>
+        {data.id !== 2 ? (
+          <Para add={true}>{data.answer}</Para>
+        ) : (
+          <ul>
+            <li
+              style={{
+                marginBottom: "1em",
+              }}
+            >
+              <Para add={false}>{data.answer.description}</Para>
+            </li>
+            <li
+              style={{
+                marginBottom: "0.5em",
+              }}
+            >
+              <Para add={false}>{data.answer.headingOne.heading}</Para>
+            </li>
+            <li
+              style={{
+                marginBottom: "1em",
+              }}
+            >
+              <Para add={false}>- {data.answer.headingOne.description}</Para>
+            </li>
+            <li
+              style={{
+                marginBottom: "0.5em",
+              }}
+            >
+              <Para add={false}>{data.answer.headingTwo.heading}</Para>
+            </li>
+            <li>
+              <Para add={true}>- {data.answer.headingTwo.description}</Para>
+            </li>
+          </ul>
+        )}
       </AnswerContainer>
     </QuestionContainer>
   );

@@ -38,8 +38,49 @@ export const offerDatas = [
     id: 3,
     subtitle: "Security",
     title: "Shepherd",
-    body: "PURSE CLUB ensures that all your personal data and shared data are encrypted, and secured so what’s yours remains only yours..",
+    body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
     buttonText: "Become a member",
     extraText: "purse club security",
+  },
+];
+
+//faq section
+
+export const questionAnswers = [
+  {
+    id: 0,
+    question: "What is Purse Club ?",
+    answer:
+      "PURSE CLUB is a members only card management platform that rewards its members for storing and managing their cards.  PURSE CLUB members get access to exclusive rewards and experiences from premier brands upon storing and managing and sharing their card.",
+  },
+  {
+    id: 1,
+    question: "How can I become a member of Purse Club ?",
+    answer:
+      "Purse Club is free for all users. For signing up, you need to provide your name, and email id only. Later some features are premium for which you need to become an exclusive member by purchasing a member subscription.",
+  },
+  {
+    id: 2,
+    question: "How to earn rewards on PURSE CLUB ?",
+    answer: {
+      description:
+        "PURSE CLUB rewards their user in two ways, PURSE coins & gems.",
+      headingOne: {
+        heading: "PURSE CLUB Coin rewards:",
+        description:
+          "Everytime a card is added to your account, 1000 PURSE  coins are rewarded to you.",
+      },
+      headingTwo: {
+        heading: "PURSE CLUB Gems rewards:",
+        description:
+          "For every person that you refer to PURSE CLUB who add a card, you earn 10 gems.",
+      },
+    },
+  },
+  {
+    id: 3,
+    question: "Is PURSE CLUB secure?",
+    answer:
+      "The story of PURSE CLUB begins with trust. We constantly exercise heavy security measures so that your personal data and shared data remain encrypted. Only you and you are incharge of your data.",
   },
 ];
