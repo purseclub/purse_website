@@ -5,7 +5,7 @@ import {
   DiscordContainer,
   DiscordWrapper,
   Divide,
-  InstagramContainer,
+  InstaContainer,
   LinkdlenContainer,
   SocialContainer,
   SocialText,
@@ -101,7 +101,7 @@ const Discord = ({ onCursor }) => {
           <SocialText variants={textVariants}>oohoooo!!!</SocialText>
         </DiscordContainer>
         <Divide />
-        <InstagramContainer
+        <InstaContainer
           href="https://www.instagram.com/purseclub01/"
           onMouseEnter={() => onCursor("hovered")}
           onMouseLeave={onCursor}
@@ -119,7 +119,7 @@ const Discord = ({ onCursor }) => {
             </svg>
           </motion.a>
           <SocialText variants={textVariants}>click click</SocialText>
-        </InstagramContainer>
+        </InstaContainer>
         <TwitterContainer
           href="https://twitter.com/purseclub/"
           onMouseEnter={() => onCursor("hovered")}

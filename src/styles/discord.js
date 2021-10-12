@@ -72,7 +72,7 @@ export const DiscordContainer = styled(motion.a)`
     padding: 3.5em;
   }
 `;
-export const InstagramContainer = styled(motion.a)`
+export const InstaContainer = styled(motion.a)`
   color: var(--white);
   width: 100%;
   height: 5rem;
