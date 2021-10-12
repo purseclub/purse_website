@@ -9,6 +9,8 @@ export const onInitialClientRender = () => {
   const loader = document.getElementById("preloader");
   //console.log(loader);
   setTimeout(() => {
-    loader.style.display = "none";
+    if (loader != null) {
+      loader.style.display = "none";
+    }
   }, 3000);
 };
