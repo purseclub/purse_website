@@ -10,10 +10,13 @@ import {
 } from "../context/globalContext";
 
 //components
-import Seo from "../components/seo";
-import Layout from "../components/layout";
 import Loader from "../components/loader/Loader";
-import Modal from "../components/modal/Modal";
+import Seo from "../components/seo";
+const Layout = loadable(() =>
+  import(/* webpackPrefetch: true */ "../components/layout")
+);
+
+const Modal = loadable(() => import("../components/modal/Modal"));
 
 const NavigationBar = loadable(() =>
   import("../components/Navigation/navigationBar")
@@ -26,6 +29,11 @@ const Intro = loadable(() => import("../components/Intro/Intro"));
 const Faq = loadable(() => import("../components/Faq/Faq"));
 const Discord = loadable(() => import("../components/Discord/Discord"));
 const Footer = loadable(() => import("../components/footer/footer"));
+
+// //load
+// Seo.load();
+// Layout.load();
+// Loader.load();
 
 // markup
 const IndexPage = () => {
@@ -66,22 +74,22 @@ const IndexPage = () => {
 
   return (
     <>
+      <Seo
+        title={"The Purse Club"}
+        description="Modern way of storing and managing you card in wallet aka purse club"
+        keywords={[
+          "purse",
+          "wallet",
+          "card",
+          "management",
+          "storing",
+          "modern",
+        ]}
+      />
       <Loader />
       {isActive ? <Modal hide={hideModal} /> : <></>}
       <NavigationBar click={showModal} onCursor={onCursor} />
       <Layout isActive={isActive} hideModal={hideModal}>
-        <Seo
-          title={"The Purse Club"}
-          description="Modern way of storing and managing you card in wallet aka purse club"
-          keywords={[
-            "purse",
-            "wallet",
-            "card",
-            "management",
-            "storing",
-            "modern",
-          ]}
-        />
         <Landing onCursor={onCursor} showModal={showModal} />
         <Intro showModal={showModal} onCursor={onCursor} />
         <WhatWeOffer showModal={showModal} onCursor={onCursor} />
