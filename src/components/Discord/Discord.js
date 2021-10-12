@@ -132,7 +132,7 @@ const Discord = ({ onCursor }) => {
           <SocialText variants={textVariants}>tweeting..</SocialText>
         </TwitterContainer>
         <Divide />
-        {/* <LinkdlenContainer
+        <LinkdlenContainer
           href="https://www.linkedin.com/in/purse-club-516118223/"
           onMouseEnter={() => onCursor("hovered")}
           onMouseLeave={onCursor}
@@ -146,7 +146,7 @@ const Discord = ({ onCursor }) => {
             </svg>
           </motion.a>
           <SocialText variants={textVariants}>yo boss!!</SocialText>
-        </LinkdlenContainer> */}
+        </LinkdlenContainer>
       </SocialContainer>
     </DiscordWrapper>
   );

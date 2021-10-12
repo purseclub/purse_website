@@ -57,6 +57,9 @@ export const DiscordContainer = styled(motion.a)`
   padding: 1em;
   border-bottom: 1px solid var(--white);
   position: relative;
+
+  grid-column: 1 / 2;
+  grid-row: 1/2;
   /* background-color: red; */
 
   & > a > svg {
@@ -78,6 +81,9 @@ export const InstagramContainer = styled(motion.a)`
   position: relative;
   /* background-color: red; */
 
+  grid-column: 3 / 4;
+  grid-row: 1/2;
+
   & > a > svg {
     width: 100%;
     height: 100%;
@@ -96,6 +102,9 @@ export const TwitterContainer = styled(motion.a)`
   position: relative;
   /* background-color: red; */
 
+  grid-column: 1 / 2;
+  grid-row: 2/3;
+
   & > a > svg {
     width: 100%;
     height: 100%;
@@ -113,6 +122,9 @@ export const LinkdlenContainer = styled(motion.a)`
   padding: 1em;
   position: relative;
   /* background-color: red; */
+
+  grid-column: 3 / 4;
+  grid-row: 2/3;
 
   & > a > svg {
     width: 100%;
