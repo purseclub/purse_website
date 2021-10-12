@@ -200,7 +200,7 @@ export const ItemMetaRow = styled.span`
   & > span {
     display: block;
     will-change: transform;
-    color: var(--gray);
+    color: var(--davysGrey);
   }
 `;
 

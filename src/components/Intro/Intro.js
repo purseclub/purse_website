@@ -15,6 +15,7 @@ import {
   useTransform,
   useViewportScroll,
 } from "framer-motion";
+import { Introduction } from "../../data/data";
 
 const illustrationMotion = {
   animate: {
@@ -127,16 +128,26 @@ const Intro = ({ onCursor }) => {
             ref={paraRef}
             animate={paraControls}
           >
-            trust as a virtue has consistently played an essential role in every
-            great human achievement. and consistently, its importance has been
-            overlooked. not just by individuals, but by entire societies. we
-            felt it was time someone gave it the spotlight it deserves.
-            especially for the ones who live by this virtue: the trustworthy.{" "}
-            <br /> <br /> so we thought of creating a system that rewards its
-            members for doing good and being trustworthy. this way, trust as a
-            virtue becomes something to aspire to, just the way it should be.
-            then we went one step ahead: we built it. we know we are on the
-            right track because here you are.
+            <strong
+              style={{
+                fontFamily: "var(--font-family-main)",
+                textTransform: "uppercase",
+              }}
+            >
+              {Introduction.paraStart}
+            </strong>
+            {Introduction.paraOne}
+            <strong
+              style={{
+                fontFamily: "var(--font-family-main)",
+                textTransform: "uppercase",
+              }}
+            >
+              {Introduction.paraMiddle}
+            </strong>
+            <br />
+            <br />
+            {Introduction.paraTwo}
           </Para>
         </ParaContainer>
       </IntroContainer>

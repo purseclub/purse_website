@@ -27,37 +27,7 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-const datas = [
-  {
-    id: 0,
-    subtitle: "Reward",
-    title: "Overloaded",
-    body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
-    buttonText: "Explore rewards",
-  },
-  {
-    id: 1,
-    subtitle: "Conni",
-    title: "Personal Card",
-    body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
-    buttonText: "Experience the upgrade",
-  },
-  {
-    id: 2,
-    subtitle: "Share",
-    title: "Smooth",
-    body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
-    buttonText: "Start sharing",
-  },
-  {
-    id: 3,
-    subtitle: "Security",
-    title: "Shepherd",
-    body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
-    buttonText: "Become a member",
-  },
-];
+import { offerDatas } from "../../data/data";
 
 const Splitting = ({ copy, role, controls }) => {
   return (
@@ -148,7 +118,7 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
 
   return (
     <WwoWrapper>
-      {datas.map((item, index) => {
+      {offerDatas.map((item, index) => {
         return (
           <Box
             key={index}
@@ -346,7 +316,7 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
           }}
         >
           <ItemMetaRow>
-            <span>Purse Club Rewards</span>
+            <span>{item.extraText}</span>
           </ItemMetaRow>
         </ItemMeta>
         <ItemExcerpt
