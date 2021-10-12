@@ -115,7 +115,6 @@ export const LinkdlenContainer = styled(motion.a)`
   /* background-color: red; */
 
   & > a > svg {
-    display: inline-block;
     width: 100%;
     height: 100%;
     fill: var(--white);
