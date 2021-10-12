@@ -42,7 +42,7 @@ export const LogoName = styled.span`
   line-height: 1.1;
   letter-spacing: -0.01em;
   text-align: left;
-  color: var(--gray);
+  color: var(--davysGrey);
   display: none;
   /* flex: 1 1 30%; */
 

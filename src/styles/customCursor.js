@@ -9,9 +9,8 @@ export const Cursor = styled.div`
   border-radius: 100%;
   transform: translate(-50%, -50%);
   background-color: var(--white);
-  transition: all 0.1s ease-in-out;
-
-  transition-property: width, height;
+  transition: all 0.2s ease;
+  transition-property: width, height, transform;
   pointer-events: none;
   display: none;
   mix-blend-mode: difference;

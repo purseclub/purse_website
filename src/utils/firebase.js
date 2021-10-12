@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
+import "firebase/compat/auth";
 
 const config = {
   apiKey: process.env.GATSBY_FIREBASE_API_KEY,
@@ -16,5 +17,6 @@ if (!firebase.apps.length) {
 }
 
 const firestore = firebase.firestore();
+const auth = firebase.auth();
 
-export { firestore, firebase };
+export { firestore, firebase, auth };
