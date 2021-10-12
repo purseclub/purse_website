@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: "The Purse Club",
     siteUrl: "https://www.thepurse.club",
-    title: "purse_website",
+    title: "Card Management app",
     author: "Purse Club",
   },
   plugins: [

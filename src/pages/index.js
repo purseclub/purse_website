@@ -12,9 +12,7 @@ import {
 //components
 import Loader from "../components/loader/Loader";
 import Seo from "../components/seo";
-const Layout = loadable(() =>
-  import(/* webpackPrefetch: true */ "../components/layout")
-);
+import Layout from "../components/layout";
 
 const Modal = loadable(() => import("../components/modal/Modal"));
 
