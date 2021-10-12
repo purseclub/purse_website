@@ -50,7 +50,7 @@ export const SocialText = styled(motion.span)`
   transform: translate(-50%, -50%);
 `;
 
-export const DiscordContainer = styled(motion.div)`
+export const DiscordContainer = styled(motion.a)`
   color: var(--white);
   width: 100%;
   height: 5rem;
@@ -69,7 +69,7 @@ export const DiscordContainer = styled(motion.div)`
     padding: 3.5em;
   }
 `;
-export const InstagramContainer = styled(motion.div)`
+export const InstagramContainer = styled(motion.a)`
   color: var(--white);
   width: 100%;
   height: 5rem;
@@ -88,7 +88,7 @@ export const InstagramContainer = styled(motion.div)`
     padding: 3.5em;
   }
 `;
-export const TwitterContainer = styled(motion.div)`
+export const TwitterContainer = styled(motion.a)`
   color: var(--white);
   width: 100%;
   height: 5rem;
@@ -106,7 +106,7 @@ export const TwitterContainer = styled(motion.div)`
     padding: 3.5em;
   }
 `;
-export const LinkdlenContainer = styled(motion.div)`
+export const LinkdlenContainer = styled(motion.a)`
   color: var(--white);
   width: 100%;
   height: 5rem;
@@ -115,6 +115,7 @@ export const LinkdlenContainer = styled(motion.div)`
   /* background-color: red; */
 
   & > a > svg {
+    display: inline-block;
     width: 100%;
     height: 100%;
     fill: var(--white);
