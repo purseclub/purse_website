@@ -138,7 +138,7 @@ const Discord = ({ onCursor }) => {
         </TwitterContainer>
         <Divide />
         <LinkdlenContainer
-          href="#"
+          href="https://www.linkedin.com/in/purse-club-516118223/"
           onMouseEnter={() => onCursor("hovered")}
           onMouseLeave={onCursor}
           whileHover="show"
