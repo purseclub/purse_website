@@ -12,9 +12,17 @@ export const Left = styled.div`
   flex-direction: column;
   justify-content: space-between;
   @media all and (min-width: 768px) {
-    max-width: 380px;
+    max-width: 400px;
     height: initial;
   }
+  /* @media all and (min-width: 991px) {
+    max-width: 480px;
+    height: initial;
+  }
+  @media all and (min-width: 1200px) {
+    max-width: 700px;
+    height: initial;
+  } */
 `;
 
 export const ImageContainer = styled.div`
@@ -81,7 +89,7 @@ export const Title = styled.div`
     white-space: pre-line;
     font-family: var(--font-family-bold);
     font-weight: 700;
-    font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.5rem, 3.6vw, 1.75rem);
     line-height: 1.33;
     letter-spacing: -0.015em;
     font-style: normal;
@@ -115,7 +123,7 @@ export const Form = styled.form`
     border: none;
     font-family: var(--font-family-bold);
     font-weight: 700;
-    font-size: clamp(1.75rem, 2vw, 2.25rem);
+    font-size: clamp(1.75rem, 3.7vw, 2rem);
     line-height: 0.86;
     letter-spacing: -0.01em;
     font-style: normal;
@@ -173,7 +181,10 @@ export const Consent = styled.div`
 
     & > a {
       color: var(--white300);
-      text-decoration: underline dashed var(--white300) 1.2px;
+      text-decoration-line: underline;
+      text-decoration-style: dashed;
+      text-decoration-thickness: 1.2px;
+      text-decoration-color: var(--white300);
       font-family: var(--font-family-bold);
       font-weight: 700;
       cursor: pointer;
