@@ -2,7 +2,13 @@ import React from "react";
 import {
   BlackButton,
   BlackDivider,
+  Bottom,
+  CheckBoxContainer,
+  Consent,
   Form,
+  HomeWrapper,
+  ImageContainer,
+  Left,
   LogoContainer,
   SubTitle,
   Title,
@@ -54,20 +60,44 @@ const Logo = () => (
 const Home = () => {
   return (
     <>
-      <Logo />
-      <Title>
-        <h1>enter your email id</h1>
-      </Title>
-      <SubTitle>
-        <h2>used for creating your account</h2>
-      </SubTitle>
-      <Form>
-        <input placeholder="xyz@gmail.com" />
-      </Form>
-      <BlackDivider />
-      <BlackButton>
-        <span>Agree and Continue</span>
-      </BlackButton>
+      <HomeWrapper>
+        <Left>
+          <div>
+            <Logo />
+            <Title>
+              <h1>enter your email id</h1>
+            </Title>
+            <SubTitle>
+              <h2>used for creating your account</h2>
+            </SubTitle>
+            <Form>
+              <input placeholder="xyz@gmail.com" />
+            </Form>
+          </div>
+          <Bottom>
+            <CheckBoxContainer>
+              <div />
+            </CheckBoxContainer>
+            <Consent>
+              <span>
+                upon aggreing, you are indicating that you have read and agree
+                to our{" "}
+                <a href="#" target="_blank">
+                  terms and conditons
+                </a>{" "}
+                and{" "}
+                <a href="#" target="_blank">
+                  privacy policy
+                </a>
+              </span>
+            </Consent>
+            <BlackButton>
+              <span>Agree and Continue</span>
+            </BlackButton>
+          </Bottom>
+        </Left>
+        <ImageContainer />
+      </HomeWrapper>
     </>
   );
 };

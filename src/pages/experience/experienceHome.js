@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components";
 import ExperienceLayout from "../../components/Experience/ExperienceLayout";
 import Home from "../../components/Experience/Home";
 import GlobalFont from "../../fonts/font";
-import CardImage from "../../images/card-frame.png";
 
 const GlobalStyle = createGlobalStyle`
 	*,
@@ -28,21 +27,13 @@ const GlobalStyle = createGlobalStyle`
 		position: relative;
 		background-color: var(--black);
 		color: var(--white100);
-
-		@media all and (min-width: 992px) {
-		background-image: url(${CardImage});
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center right;
-		image-rendering: -webkit-optimize-contrast;
-  		}
 	}
 
 	:root {
 		--black: rgba(36,39,41,1);
-		--white100: rgba(248,248,248,1);
-		--white200: rgba(140,142,143,1);
-		--white300:rgba(75,78,79,1);
+		--white100: rgba(248,248,248,0.8);
+		--white200: rgba(248,248,248,0.4);
+		--white300:rgba(248,248,248,0.3);
 		--copper400:rgba(249,211,180,1);
 		--copper40040:rgba(249,211,180,0.4);
 		--copper600: rgba(217,137,106,1);
