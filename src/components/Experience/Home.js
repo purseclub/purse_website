@@ -71,7 +71,7 @@ const Home = () => {
               <h2>used for creating your account</h2>
             </SubTitle>
             <Form>
-              <input type="email" required placeholder="xyz@gmail.com" />
+              <input type="email" required placeholder="support@gmail.com" />
             </Form>
           </div>
           <Bottom>
@@ -82,11 +82,11 @@ const Home = () => {
               <span>
                 upon aggreing, you are indicating that you have read and agree
                 to our{" "}
-                <a href="#" target="_blank">
+                <a href="/terms_and_condition" target="_blank">
                   terms &amp; conditons
                 </a>{" "}
                 and{" "}
-                <a href="#" target="_blank">
+                <a href="/privacy_policy" target="_blank">
                   privacy policy
                 </a>
               </span>

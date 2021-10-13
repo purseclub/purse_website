@@ -196,10 +196,11 @@ export const BlackButton = styled.div`
   padding: 1em 1.9375em;
   height: 3rem;
   display: inline-flex;
+  position: relative;
   //margin-top: 10.75em;
   //flex-direction: row;
   //align-items: flex-start;
-  background: linear-gradient(
+  /* background: linear-gradient(
       93.54deg,
       rgba(0, 0, 0, 0.12) 0%,
       rgba(0, 0, 0, 0) 99.82%
@@ -208,9 +209,47 @@ export const BlackButton = styled.div`
   border: 2px solid rgba(255, 255, 255, 0.02);
   box-shadow: -4.97935px -4.97935px 9.9587px rgba(255, 255, 255, 0.04),
     4.97935px 4.97935px 9.9587px rgba(0, 0, 0, 0.16);
-  border-radius: 25px;
+  border-radius: 25px; */
+
+  //padding: 16px 30px;
+  border-radius: 34px;
+
+  ::before {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    inset: 0px;
+    z-index: 0;
+    border-radius: inherit;
+    box-shadow: rgb(255 255 255 / 17%) -8px -8px 28px -9px,
+      rgb(10 10 10 / 45%) 8px 8px 20px -1px;
+    background-image: linear-gradient(
+      315deg,
+      rgb(25, 27, 22) 0%,
+      rgb(41, 41, 41) 100%
+    );
+    filter: blur(1px);
+  }
+
+  ::after {
+    height: 3rem;
+    content: "";
+    position: absolute;
+    inset: 1px 0px 0px 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    z-index: 1;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      rgb(42, 43, 43) 0%,
+      rgb(25, 29, 31) 100%
+    );
+    filter: blur(1px);
+  }
 
   & > span {
+    z-index: 10;
     font-family: var(--font-family-semibold);
     font-weight: 600;
     font-size: clamp(0.9375rem, 1.5vw, 1rem);
