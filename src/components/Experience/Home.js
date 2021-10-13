@@ -1,6 +1,7 @@
 import React from "react";
 import {
   BlackButton,
+  BlackDivider,
   Form,
   LogoContainer,
   SubTitle,
@@ -63,7 +64,7 @@ const Home = () => {
       <Form>
         <input placeholder="xyz@gmail.com" />
       </Form>
-
+      <BlackDivider />
       <BlackButton>
         <span>Agree and Continue</span>
       </BlackButton>
