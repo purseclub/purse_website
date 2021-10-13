@@ -64,7 +64,7 @@ export const Bottom = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-  margin-top: 3.5em;
+  margin-top: 2.5em;
   width: 80px;
   //grid-column: 1/2;
 
@@ -75,15 +75,15 @@ export const LogoContainer = styled.div`
 
 export const Title = styled.div`
   //grid-column: 1/4;
-  margin-top: 4em;
+  margin-top: 3em;
 
   & > h1 {
     white-space: pre-line;
     font-family: var(--font-family-bold);
     font-weight: 700;
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+    line-height: 1.33;
+    letter-spacing: -0.015em;
     font-style: normal;
   }
 `;
@@ -96,7 +96,7 @@ export const SubTitle = styled.div`
   & > h2 {
     font-family: var(--font-family-medium);
     font-weight: 500;
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1;
     letter-spacing: 0.01em;
     font-style: normal;
@@ -105,18 +105,18 @@ export const SubTitle = styled.div`
 `;
 
 export const Form = styled.form`
-  grid-column: 1/-1;
+  //grid-column: 1/-1;
   margin-top: 2.5em;
 
   & > input {
     width: 100%;
-    padding: 0.5em 0.5em 0.5em 0;
+    //padding: 0.5em 0.5em 0.5em 0;
     background: transparent;
     border: none;
     font-family: var(--font-family-bold);
     font-weight: 700;
-    font-size: clamp(1.5rem, 2vw, 2.25rem);
-    line-height: 1.1;
+    font-size: clamp(1.75rem, 2vw, 2.25rem);
+    line-height: 0.86;
     letter-spacing: -0.01em;
     font-style: normal;
     color: var(--white);
@@ -165,15 +165,15 @@ export const Consent = styled.div`
   & > span {
     font-family: var(--font-family-medium);
     font-weight: 500;
-    font-size: 0.75rem;
-    line-height: 1;
+    font-size: 0.8125rem;
+    line-height: 1.23;
     letter-spacing: 0.025em;
     font-style: normal;
     color: var(--white300);
 
     & > a {
       color: var(--white300);
-      text-decoration: underline dashed var(--white300) 1px;
+      text-decoration: underline dashed var(--white300) 1.2px;
       font-family: var(--font-family-bold);
       font-weight: 700;
       cursor: pointer;
@@ -182,7 +182,8 @@ export const Consent = styled.div`
 `;
 
 export const BlackButton = styled.div`
-  padding: 0.8125em 1.425em;
+  padding: 1em 1.9375em;
+  height: 3rem;
   display: inline-flex;
   //margin-top: 10.75em;
   //flex-direction: row;
@@ -199,11 +200,12 @@ export const BlackButton = styled.div`
   border-radius: 25px;
 
   & > span {
-    font-family: var(--font-family-medium);
-    font-weight: 500;
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    line-height: 1;
-    letter-spacing: 0.01em;
+    font-family: var(--font-family-semibold);
+    font-weight: 600;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    line-height: 1.0666666667;
+    letter-spacing: 0.025em;
+    margin-top: -2px;
     font-style: normal;
     color: var(--copper40040);
   }
