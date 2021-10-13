@@ -16,9 +16,9 @@ export const Title = styled.div`
   & > h1 {
     font-family: var(--font-family-bold);
     font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.01em;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
     font-style: normal;
   }
 `;
@@ -30,8 +30,8 @@ export const SubTitle = styled.div`
   & > h2 {
     font-family: var(--font-family-medium);
     font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 1rem;
+    line-height: 1;
     letter-spacing: 0.01em;
     font-style: normal;
     color: var(--white200);
@@ -49,8 +49,8 @@ export const Form = styled.form`
     border: none;
     font-family: var(--font-family-bold);
     font-weight: 700;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: clamp(1.5rem, 2vw, 2.25rem);
+    line-height: 1.1;
     letter-spacing: -0.01em;
     font-style: normal;
     color: var(--white);
@@ -85,8 +85,8 @@ export const BlackButton = styled.div`
     display: inline-block;
     font-family: var(--font-family-medium);
     font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1;
     letter-spacing: 0.01em;
     font-style: normal;
     color: var(--copper40040);
