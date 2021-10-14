@@ -1,15 +1,15 @@
 import React from "react";
+import Detail from "../../components/Experience/Detail";
 import ExperienceLayout from "../../components/Experience/ExperienceLayout";
-import Home from "../../components/Experience/Home";
 
-const ExperienceHome = () => {
+const Details = ({ location }) => {
   return (
     <>
       <ExperienceLayout>
-        <Home />
+        <Detail state={location.state} />
       </ExperienceLayout>
     </>
   );
 };
 
-export default ExperienceHome;
+export default Details;

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import CardImage from "../../images/card-frame.png";
 
-export const HomeWrapper = styled.div`
+export const Wrapper = styled.div`
   height: 100%;
 `;
 
@@ -192,7 +192,7 @@ export const Consent = styled.div`
     line-height: 1.23;
     letter-spacing: 0.025em;
     font-style: normal;
-    color: var(--white300);
+    color: ${(props) => (props.error ? "var(--errormsg)" : "var(--white300)")};
 
     & > a {
       color: var(--white300);
@@ -211,6 +211,8 @@ export const BlackButton = styled.button`
   padding: 1em 2em;
   height: 3rem;
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   border-radius: 34px;
   cursor: pointer;
