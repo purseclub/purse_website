@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     max-width: 960px;
   }
   @media all and (min-width: 1200px) {
-    padding: 50px 0px;
+    padding: 50px 20px;
     max-width: 1140px;
   }
 `;

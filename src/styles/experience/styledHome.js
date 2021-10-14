@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import CardImage from "../../images/card-frame.png";
 
 export const HomeWrapper = styled.div`
@@ -7,7 +7,7 @@ export const HomeWrapper = styled.div`
 
 export const Left = styled.div`
   width: 100%;
-  height: 100%;
+  height: ${(props) => (props.forward ? "initial" : "100%;")};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,8 +46,9 @@ export const ImageContainer = styled.div`
 export const Bottom = styled.div`
   padding-top: 30px;
   padding-bottom: 20px;
-  margin-top: 60px;
+  margin-top: ${(props) => (props.forward ? "8px" : "60px")};
   position: relative;
+
   ::before {
     content: "";
     position: absolute;
@@ -64,6 +65,12 @@ export const Bottom = styled.div`
       rgb(33, 36, 38)
     );
     box-shadow: rgb(0 0 0 / 59%) 0px 2px 5px 0px;
+
+    ${(props) =>
+      props.forward &&
+      css`
+        display: none;
+      `}
 
     @media all and (min-width: 768px) {
       display: none;
@@ -109,6 +116,14 @@ export const SubTitle = styled.div`
     letter-spacing: 0.01em;
     font-style: normal;
     color: var(--white200);
+    display: inline-flex;
+    gap: 0.25em;
+
+    & > span {
+      font-family: var(--font-family-bold);
+      font-weight: 700;
+      color: var(--copper600);
+    }
   }
 `;
 
@@ -192,27 +207,15 @@ export const Consent = styled.div`
   }
 `;
 
-export const BlackButton = styled.div`
-  padding: 1em 1.9375em;
+export const BlackButton = styled.button`
+  padding: 1em 2em;
   height: 3rem;
   display: inline-flex;
   position: relative;
-  //margin-top: 10.75em;
-  //flex-direction: row;
-  //align-items: flex-start;
-  /* background: linear-gradient(
-      93.54deg,
-      rgba(0, 0, 0, 0.12) 0%,
-      rgba(0, 0, 0, 0) 99.82%
-    ),
-    #242729;
-  border: 2px solid rgba(255, 255, 255, 0.02);
-  box-shadow: -4.97935px -4.97935px 9.9587px rgba(255, 255, 255, 0.04),
-    4.97935px 4.97935px 9.9587px rgba(0, 0, 0, 0.16);
-  border-radius: 25px; */
-
-  //padding: 16px 30px;
   border-radius: 34px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 
   ::before {
     content: "";
@@ -255,8 +258,9 @@ export const BlackButton = styled.div`
     font-size: clamp(0.9375rem, 1.5vw, 1rem);
     line-height: 1.0666666667;
     letter-spacing: 0.025em;
-    margin-top: -2px;
+    //margin-top: -2px;
     font-style: normal;
-    color: var(--copper40040);
+    color: ${(props) =>
+      props.valid ? "var(--copper400)" : "var(--copper40040)"};
   }
 `;

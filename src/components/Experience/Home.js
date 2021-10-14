@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BlackButton,
-  BlackDivider,
   Bottom,
   CheckBoxContainer,
   Consent,
@@ -38,8 +37,8 @@ const Logo = () => (
           y2="41.4937"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="#C2C2C2" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="#C2C2C2" />
         </linearGradient>
         <linearGradient
           id="paint1_linear"
@@ -49,8 +48,8 @@ const Logo = () => (
           y2="45.189"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="#C2C2C2" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="#C2C2C2" />
         </linearGradient>
       </defs>
     </svg>
@@ -58,44 +57,221 @@ const Logo = () => (
 );
 
 const Home = () => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  const [isChecked, setIsChecked] = useState(false);
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [forward, setForward] = useState(false);
+
+  //check email format
+  const checkEmailValid = (email) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  };
+
+  //check password format
+  const checkPasswordValid = (password) => {
+    const re =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return re.test(password);
+  };
+
+  //update email input by user
+  const handleEmailChange = (event) => {
+    setData({ ...data, email: event.target.value.trim() });
+    if (checkEmailValid(data.email)) {
+      setIsEmailValid(true);
+    } else {
+      setIsEmailValid(false);
+    }
+  };
+
+  //update password input by user
+  const handlePasswordChange = (event) => {
+    setData({ ...data, password: event.target.value.trim() });
+    if (checkPasswordValid(data.password)) {
+      setIsPasswordValid(true);
+    } else {
+      setIsPasswordValid(false);
+    }
+  };
+
+  //submit email
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (isEmailValid && isChecked) {
+      //alert("A name was submitted: " + data.email);
+      setForward(true);
+    }
+  };
+
+  //submit form
+  const handleForm = (event) => {
+    event.preventDefault();
+    if (isPasswordValid) {
+      alert("cool");
+    }
+  };
+
+  //handle checkbox
+  const handleCheckBox = () => {
+    setIsChecked(!isChecked);
+  };
+
+  useEffect(() => {
+    const handleActive = () => {
+      if (isChecked && isEmailValid) {
+        setIsActive(true);
+      } else {
+        setIsActive(false);
+      }
+    };
+    handleActive();
+  }, [isEmailValid, isChecked]);
+
+  console.log(`isActive : ${isActive}`);
+  console.log(`isChecked : ${isChecked}`);
+  console.log(`isEmailValid : ${isEmailValid}`);
+  console.log(data);
+
   return (
     <>
       <HomeWrapper>
-        <Left>
-          <div>
-            <Logo />
-            <Title>
-              <h1>enter your email id</h1>
-            </Title>
-            <SubTitle>
-              <h2>used for creating your account</h2>
-            </SubTitle>
-            <Form>
-              <input type="email" required placeholder="support@gmail.com" />
-            </Form>
-          </div>
-          <Bottom>
-            <CheckBoxContainer>
-              <div />
-            </CheckBoxContainer>
-            <Consent>
-              <span>
-                upon aggreing, you are indicating that you have read and agree
-                to our{" "}
-                <a href="/terms_and_condition" target="_blank">
-                  terms &amp; conditons
-                </a>{" "}
-                and{" "}
-                <a href="/privacy_policy" target="_blank">
-                  privacy policy
-                </a>
-              </span>
-            </Consent>
-            <BlackButton>
-              <span>Agree &amp; Continue</span>
-            </BlackButton>
-          </Bottom>
-        </Left>
+        {!forward ? (
+          <Left>
+            <div>
+              <Logo />
+              <Title>
+                <h1>enter your email id</h1>
+              </Title>
+              <SubTitle>
+                <h2>used for creating your account</h2>
+              </SubTitle>
+              <Form id="form" onSubmit={handleSubmit}>
+                <input
+                  type="email"
+                  required
+                  placeholder="cool@thepurse.club"
+                  value={data.email}
+                  onChange={handleEmailChange}
+                />
+              </Form>
+            </div>
+            <Bottom>
+              <CheckBoxContainer onClick={handleCheckBox}>
+                <div>
+                  {isChecked && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="10"
+                    >
+                      <defs></defs>
+                      <path
+                        fill="none"
+                        fillRule="evenodd"
+                        stroke="#F8F8F8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2.09663976"
+                        d="M2 5.0034301l3.0513804 3.8334391L12.7436516 2"
+                      ></path>
+                    </svg>
+                  )}
+                </div>
+              </CheckBoxContainer>
+              <Consent>
+                <span>
+                  upon agreeing, you are indicating that you have read and agree
+                  to our{" "}
+                  <a href="/terms_and_condition" target="_blank">
+                    terms &amp; conditons
+                  </a>{" "}
+                  and{" "}
+                  <a href="/privacy_policy" target="_blank">
+                    privacy policy
+                  </a>
+                </span>
+              </Consent>
+              <BlackButton type="submit" form="form" valid={isActive}>
+                <span>Agree &amp; Continue</span>
+              </BlackButton>
+            </Bottom>
+          </Left>
+        ) : (
+          <Left forward>
+            <div>
+              <Logo />
+              <Title>
+                <h1>enter your password</h1>
+              </Title>
+              <SubTitle>
+                <h2>
+                  for <span>{data.email}</span>{" "}
+                  <svg
+                    onClick={() => setForward(false)}
+                    style={{
+                      cursor: "pointer",
+                    }}
+                    width="13"
+                    height="17"
+                    viewBox="0 0 13 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="6.87663"
+                      y1="1.94631"
+                      x2="11.4954"
+                      y2="4.61296"
+                      stroke="#D9896A"
+                      stroke-width="0.666662"
+                    />
+                    <path
+                      d="M6.95535 2.47605C7.59968 1.36004 9.02671 0.977669 10.1427 1.622C11.2587 2.26632 11.6411 3.69336 10.9968 4.80936L6.30326 12.9388L2.26184 10.6055L6.95535 2.47605Z"
+                      stroke="white"
+                      stroke-width="0.666662"
+                    />
+                    <path
+                      d="M5.98648 12.9298L2.61654 14.6576L2.42786 10.8752L5.98648 12.9298Z"
+                      stroke="white"
+                      stroke-width="0.666662"
+                    />
+                  </svg>
+                </h2>
+              </SubTitle>
+              <Form id="form-2" onSubmit={handleForm}>
+                <input
+                  type="password"
+                  required
+                  placeholder="password"
+                  value={data.password}
+                  onChange={handlePasswordChange}
+                />
+              </Form>
+            </div>
+            <Bottom forward>
+              {data.password.length > 1 && (
+                <Consent>
+                  <span>
+                    forgot password ?{" "}
+                    <a onClick={() => console.log("reset password")}>
+                      Reset here
+                    </a>
+                  </span>
+                </Consent>
+              )}
+              <BlackButton type="submit" form="form-2" valid={isPasswordValid}>
+                <span>Continue</span>
+              </BlackButton>
+            </Bottom>
+          </Left>
+        )}
         <ImageContainer />
       </HomeWrapper>
     </>
