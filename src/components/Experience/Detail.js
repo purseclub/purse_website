@@ -1,5 +1,5 @@
 import { navigate } from "gatsby-link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Wrapper } from "../../styles/experience/styledHome";
 import { createNewUser } from "../../utils/database";
 import FirstName from "./FirstName";
@@ -15,20 +15,25 @@ const Detail = ({ state }) => {
   });
   const [forward, setForward] = useState(false);
 
+  const addToDatabase = (userDetails) => {
+    createNewUser(userDetails);
+  };
+
+  useEffect(() => {
+    //add to database
+    const length = Object.keys(wholeUser).length;
+    if (length !== 0) {
+      addToDatabase(wholeUser);
+    }
+  }, [wholeUser]);
+
   //submit last name form
-  const handleLastNameSubmit = async (event) => {
+  const handleLastNameSubmit = (event) => {
     event.preventDefault();
     setWholeUser({
       ...state.user,
       ...userDetails,
     });
-
-    console.log(wholeUser);
-
-    await createNewUser(wholeUser).then(
-      () => console.log("done"),
-      navigate("/experience/dashboard", { state: {} })
-    );
   };
 
   return (

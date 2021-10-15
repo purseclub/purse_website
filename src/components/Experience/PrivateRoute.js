@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Wrapper } from "../../styles/experience/styledHome";
 import {
   BlackRoundButtonContainer,
@@ -18,10 +18,10 @@ import {
 import Logo from "./Logo";
 
 import texture from "../../images/texture.png";
-import { isLoggedIn } from "../../utils/auth";
 import { navigate } from "gatsby-link";
 
 import { auth } from "../../utils/firebase";
+import { getUserDetails } from "../../utils/database";
 
 const BlackRoundButton = ({ handleSignOut }) => {
   return (
@@ -92,11 +92,23 @@ const FlatButton = () => {
   );
 };
 
-const PrivateRoute = ({ location }) => {
-  const handleSignOut = () => {
-    auth
+const PrivateRoute = ({ state }) => {
+  const [detailsFromDatabase, setDetailsFromDatabase] = useState({});
+
+  useEffect(() => {
+    const len = Object.keys(state).length;
+    if (len !== 0) {
+      const userId = state.state.uid;
+      getUserDetails(userId)
+        .then((val) => setDetailsFromDatabase({ ...val }))
+        .catch((e) => console.log(e));
+    }
+  }, [state]);
+
+  const handleSignOut = async () => {
+    await auth
       .signOut()
-      .then(navigate("/experience/experienceHome"))
+      .then(navigate("/experience"))
       .catch((e) => console.log(e));
   };
 
@@ -115,7 +127,8 @@ const PrivateRoute = ({ location }) => {
         </ProfileImageContainer>
         <DetailContainer>
           <span>
-            <span>Aloha,</span> <br /> abhishek kumar
+            <span>Aloha,</span> <br /> {detailsFromDatabase.firstName}{" "}
+            {detailsFromDatabase.lastName}
           </span>
         </DetailContainer>
       </UserDetailContainer>
@@ -226,7 +239,9 @@ const PrivateRoute = ({ location }) => {
             </svg>
           </Card>
           <Info>conni</Info>
-          <Info second>ABHISHEK KUMAR</Info>
+          <Info second>
+            {detailsFromDatabase.firstName} {detailsFromDatabase.lastName}
+          </Info>
         </CardContainer>
       </CardWrapper>
       <BlueButtonContainer>

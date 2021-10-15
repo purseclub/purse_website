@@ -1,23 +1,33 @@
 import { navigate } from "gatsby-link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ExperienceLayout from "../../components/Experience/ExperienceLayout";
 import PrivateRoute from "../../components/Experience/PrivateRoute";
 
 const Dashboard = ({ location }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [state, setState] = useState({});
+
   useEffect(() => {
-    if (
-      !!location.state.uid &&
-      location.pathname === `/experience/experienceHome`
+    //const len = Object.keys(location.state).length;
+    if (location.state !== null) {
+      setIsLoggedIn(true);
+      setState({ ...location });
+    } else if (
+      !isLoggedIn &&
+      location.pathname !== `/experience/experienceHome`
     ) {
       navigate("/experience/experienceHome");
       return null;
     }
-  }, []);
+  }, [isLoggedIn]);
+
   return (
     <>
-      <ExperienceLayout>
-        <PrivateRoute location={location} />
-      </ExperienceLayout>
+      {isLoggedIn && (
+        <ExperienceLayout>
+          <PrivateRoute state={state} />
+        </ExperienceLayout>
+      )}
     </>
   );
 };

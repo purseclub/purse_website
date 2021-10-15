@@ -25,6 +25,7 @@ export const GlobalProvider = ({ children }) => {
     cursorType: false,
     cursorStyles: ["bar", "hovered"],
   });
+
   return (
     <GlobalDispatchContext.Provider value={dispatch}>
       <GlobalStateContext.Provider value={state}>

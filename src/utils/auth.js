@@ -46,7 +46,7 @@ export const isLoggedIn = () => {
   auth.onAuthStateChanged((user) => {
     if (user && isBrowser()) {
       const uid = user.uid;
-      navigate("/experience/dashboard", { state: { uid: uid } });
+      navigate("/experience/dashboard", { state: { uid } });
     } else {
       navigate("/experience/experienceHome");
     }

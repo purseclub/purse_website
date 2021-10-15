@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import card from "../../images/card.png";
 
 export const NavBar = styled.nav`
@@ -267,6 +267,12 @@ export const Info = styled.span`
   letter-spacing: 0.005em;
   line-height: 1;
   z-index: 10;
+
+  ${(props) =>
+    props.second &&
+    css`
+      text-transform: uppercase;
+    `}
 `;
 
 export const BlueButtonContainer = styled.div`
