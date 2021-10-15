@@ -12,7 +12,7 @@ const Dashboard = ({ location }) => {
       navigate("/experience/experienceHome");
       return null;
     }
-  }, [location.pathname, location.state.uid]);
+  }, []);
   return (
     <>
       <ExperienceLayout>
