@@ -14,6 +14,7 @@ const Detail = ({ state }) => {
     lastName: "",
   });
   const [forward, setForward] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const addToDatabase = (userDetails) => {
     createNewUser(userDetails);
@@ -24,12 +25,14 @@ const Detail = ({ state }) => {
     const length = Object.keys(wholeUser).length;
     if (length !== 0) {
       addToDatabase(wholeUser);
+      setIsLoading(false);
     }
   }, [wholeUser]);
 
   //submit last name form
   const handleLastNameSubmit = (event) => {
     event.preventDefault();
+    setIsLoading(true);
     setWholeUser({
       ...state.user,
       ...userDetails,
@@ -53,6 +56,7 @@ const Detail = ({ state }) => {
             userDetails={userDetails}
             handleLastNameSubmit={handleLastNameSubmit}
             setUserDetails={setUserDetails}
+            isLoading={isLoading}
           />
         )}
       </Wrapper>

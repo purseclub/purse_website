@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import ExperienceLayout from "../../components/Experience/ExperienceLayout";
+import Loader from "../../components/Experience/Loader";
 import { isLoggedIn } from "../../utils/auth";
 
 const App = () => {
@@ -8,7 +10,9 @@ const App = () => {
 
   return (
     <>
-      <div>Loading...</div>
+      <ExperienceLayout>
+        <Loader />
+      </ExperienceLayout>
     </>
   );
 };

@@ -9,6 +9,7 @@ import {
   Title,
 } from "../../styles/experience/styledHome";
 import { checkPasswordValid } from "../../utils/home";
+import Loader from "./Loader";
 import Logo from "./Logo";
 import Pencil from "./Pencil";
 
@@ -23,6 +24,7 @@ const Password = ({
   error,
   setErrorMessage,
   isPasswordValid,
+  isLoading,
 }) => {
   //const [errorCode, setErrorCode] = useState("");
 
@@ -80,7 +82,7 @@ const Password = ({
           </Consent>
         )}
         <BlackButton type="submit" form="form-2" valid={isPasswordValid}>
-          <span>Continue</span>
+          {isLoading ? <Loader small /> : <span>Continue</span>}
         </BlackButton>
       </Bottom>
     </Left>

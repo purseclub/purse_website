@@ -16,6 +16,7 @@ const Home = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [resultFromAuth, setResultFromAuth] = useState({});
 
@@ -28,6 +29,7 @@ const Home = () => {
           signInUser({ ...data })
             .then((result) => {
               if (result.userCredential === null) {
+                setIsLoading(false);
                 setErrorMessage(result.message);
                 console.log(`signINcode: ${result.code}`);
               } else {
@@ -36,7 +38,7 @@ const Home = () => {
                 const userEmail = result.userCredential.user.email;
                 navigate("/experience/dashboard", {
                   state: { uid: uid, email: userEmail },
-                });
+                }).then(setIsLoading(false));
               }
             })
             .catch((e) => console.log(e));
@@ -57,6 +59,7 @@ const Home = () => {
             },
           },
         });
+        setIsLoading(false);
       }
     }
   }, [resultFromAuth]);
@@ -65,10 +68,12 @@ const Home = () => {
   const handleForm = async (event) => {
     event.preventDefault();
     if (isPasswordValid) {
+      setIsLoading(true);
       await createUser({
         ...data,
       }).then((res) => setResultFromAuth({ ...res }));
     } else {
+      setIsLoading(false);
       setError(true);
       setErrorMessage(
         "password should be 8 character long and must contain atleast 1 uppercase letter, one lowercase letter, one number and one special character"
@@ -100,6 +105,7 @@ const Home = () => {
             error={error}
             isPasswordValid={isPasswordValid}
             setErrorMessage={setErrorMessage}
+            isLoading={isLoading}
           />
         )}
         <ImageContainer />

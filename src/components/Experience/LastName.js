@@ -7,6 +7,7 @@ import {
   SubTitle,
   Title,
 } from "../../styles/experience/styledHome";
+import Loader from "./Loader";
 import Logo from "./Logo";
 import Pencil from "./Pencil";
 
@@ -16,6 +17,7 @@ const LastName = ({
   setForward,
   handleLastNameSubmit,
   setUserDetails,
+  isLoading,
 }) => {
   //get last name
   const handleLastNameChange = (event) => {
@@ -63,7 +65,7 @@ const LastName = ({
             form="form-2"
             valid={userDetails.lastName.length > 1}
           >
-            <span>Let's go</span>
+            {isLoading ? <Loader small /> : <span>let's go</span>}
           </BlackButton>
         </Bottom>
       </Left>
