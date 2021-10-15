@@ -1,16 +1,18 @@
 import { navigate } from "gatsby-link";
-import React from "react";
+import React, { useEffect } from "react";
 import ExperienceLayout from "../../components/Experience/ExperienceLayout";
 import PrivateRoute from "../../components/Experience/PrivateRoute";
 
 const Dashboard = ({ location }) => {
-  if (
-    !!location.state.uid &&
-    location.pathname == `/experience/experienceHome`
-  ) {
-    navigate("/experience/experienceHome");
-    return null;
-  }
+  useEffect(() => {
+    if (
+      !!location.state.uid &&
+      location.pathname === `/experience/experienceHome`
+    ) {
+      navigate("/experience/experienceHome");
+      return null;
+    }
+  }, [location.pathname, location.state.uid]);
   return (
     <>
       <ExperienceLayout>

@@ -1,4 +1,6 @@
+import { navigate } from "gatsby-link";
 import { auth } from "./firebase";
+export const isBrowser = () => typeof window !== "undefined";
 
 // create user
 export const createUser = async ({ email, password }) => {
@@ -38,4 +40,15 @@ export const signInUser = async ({ email, password }) => {
     //console.log(error.code);
     return { ...returnValue, message: error.message, code: error.code };
   }
+};
+
+export const isLoggedIn = () => {
+  auth.onAuthStateChanged((user) => {
+    if (user && isBrowser()) {
+      const uid = user.uid;
+      navigate("/experience/dashboard", { state: { uid: uid } });
+    } else {
+      navigate("/experience/experienceHome");
+    }
+  });
 };
