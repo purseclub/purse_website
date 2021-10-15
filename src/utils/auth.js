@@ -1,5 +1,6 @@
 import { auth } from "./firebase";
 
+// create user
 export const createUser = async ({ email, password }) => {
   const returnValue = {
     userCredential: null,
@@ -19,6 +20,7 @@ export const createUser = async ({ email, password }) => {
   }
 };
 
+//sign in user
 export const signInUser = async ({ email, password }) => {
   const returnValue = {
     userCredential: null,

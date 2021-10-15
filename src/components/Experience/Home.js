@@ -35,6 +35,7 @@ const Home = () => {
           } else {
             console.log("signed in");
             console.log(result.userCredential);
+            navigate("/experience/dashboard", { state: {} });
           }
         }
       } else {

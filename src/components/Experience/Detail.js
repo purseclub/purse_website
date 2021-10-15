@@ -1,18 +1,9 @@
+import { navigate } from "gatsby-link";
 import React, { useState } from "react";
-import {
-  BlackButton,
-  Bottom,
-  Form,
-  Left,
-  SubTitle,
-  Title,
-  Wrapper,
-} from "../../styles/experience/styledHome";
+import { Wrapper } from "../../styles/experience/styledHome";
 import { createNewUser } from "../../utils/database";
 import FirstName from "./FirstName";
 import LastName from "./LastName";
-import Logo from "./Logo";
-import Pencil from "./Pencil";
 
 const Detail = ({ state }) => {
   //whole user
@@ -34,7 +25,10 @@ const Detail = ({ state }) => {
 
     console.log(wholeUser);
 
-    await createNewUser(wholeUser).then(() => console.log("done"));
+    await createNewUser(wholeUser).then(
+      () => console.log("done"),
+      navigate("/experience/dashboard", { state: {} })
+    );
   };
 
   return (

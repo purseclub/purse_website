@@ -1,7 +1,23 @@
+import { navigate } from "gatsby-link";
 import React from "react";
+import ExperienceLayout from "../../components/Experience/ExperienceLayout";
+import PrivateRoute from "../../components/Experience/PrivateRoute";
 
-const dashboard = () => {
-  return <div>dashboard</div>;
+const Dashboard = ({ location }) => {
+  if (
+    !!location.state.uid &&
+    location.pathname == `/experience/experienceHome`
+  ) {
+    navigate("/experience/experienceHome");
+    return null;
+  }
+  return (
+    <>
+      <ExperienceLayout>
+        <PrivateRoute location={location} />
+      </ExperienceLayout>
+    </>
+  );
 };
 
-export default dashboard;
+export default Dashboard;

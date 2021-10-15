@@ -142,7 +142,7 @@ const Landing = ({ onCursor }) => {
         <MinimalButton
           variants={buttonMotion}
           buttonText="Experience the app"
-          path="/experience/experienceHome"
+          path="/experience"
           onCursor={onCursor}
         />
 
