@@ -1,5 +1,84 @@
 import styled, { css } from "styled-components";
 
+export const ModalWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+`;
+export const ModalContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 30vh;
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 30px 30px 0% 0%;
+  box-shadow: 0px 0px 0px 100vh rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media all and (min-width: 768px) {
+    box-shadow: 0px 0px 0px 100vw rgba(0, 0, 0, 0.6);
+    max-width: 45vw;
+    height: 100%;
+    right: 0;
+    border-radius: 30px 0px 0px 30px;
+    justify-content: flex-start;
+  }
+`;
+
+export const Container = styled.div`
+  //flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;
+
+  & > svg {
+    width: 35px;
+    height: 39px;
+  }
+
+  & > span {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    font-style: normal;
+    white-space: pre-line;
+    color: var(--black);
+  }
+
+  @media all and (min-width: 768px) {
+    & > span {
+      font-size: 1.75rem;
+      letter-spacing: 0.01em;
+      line-height: 1.14;
+    }
+
+    & > svg {
+      width: 70px;
+      height: 80px;
+    }
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+  max-width: 300px;
+
+  @media all and (min-width: 992px) {
+    margin-top: 2em;
+  }
+`;
+
 export const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -51,23 +130,31 @@ export const BlackRoundButtonContainer = styled.button`
 `;
 
 export const FlatButtonWrapper = styled.div`
-  display: none;
+  display: ${(props) => (props.show ? "block" : "none")};
   @media all and (min-width: 768px) {
     display: block;
   }
 `;
 
 export const FlatButtonContainer = styled.div`
-  border: none;
+  border: ${(props) =>
+    props.theme === "white" ? "1px solid var(--black)" : "none"};
   border-radius: 40px;
   width: 137px;
   max-width: 137px;
   padding: 0.6em 2em;
-  background-color: #000;
+  background-color: ${(props) =>
+    props.theme === "white" ? "var(--white)" : "#000"};
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  ${(props) =>
+    props.theme === "white" &&
+    css`
+      height: 58.19px;
+    `};
 
   & > span {
     display: inline-block;
@@ -75,7 +162,8 @@ export const FlatButtonContainer = styled.div`
     font-weight: 500;
     font-style: normal;
     font-size: 1rem;
-    color: var(--white100);
+    color: ${(props) =>
+      props.theme === "white" ? "var(--black)" : "var(--white)"};
     letter-spacing: -0.01em;
     line-height: 1;
     margin: auto 0;

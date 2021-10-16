@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Wrapper } from "../../styles/experience/styledHome";
 import {
   BlackRoundButtonContainer,
-  FlatButtonContainer,
-  FlatButtonWrapper,
   NavBar,
   UserDetailContainer,
   ProfileImageContainer,
@@ -24,16 +21,14 @@ import {
 import Logo from "./Logo";
 
 import texture from "../../images/texture.png";
-import { navigate } from "gatsby-link";
-
-import { auth } from "../../utils/firebase";
 import { getUserDetails } from "../../utils/database";
 
 import code from "../../images/qr_code.png";
+import FlatButton from "./FlatButton";
 
-const BlackRoundButton = ({ handleSignOut }) => {
+const BlackRoundButton = ({ handle }) => {
   return (
-    <BlackRoundButtonContainer onClick={handleSignOut}>
+    <BlackRoundButtonContainer onClick={handle}>
       <svg
         width="35"
         height="39"
@@ -64,43 +59,7 @@ const BlackRoundButton = ({ handleSignOut }) => {
   );
 };
 
-const FlatButton = ({ handleSignOut }) => {
-  return (
-    <FlatButtonWrapper>
-      <FlatButtonContainer onClick={handleSignOut}>
-        <svg
-          width="35"
-          height="39"
-          viewBox="0 0 35 39"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="17.3036"
-            cy="21.1964"
-            r="9.42857"
-            stroke="#8C8E8F"
-            strokeWidth="0.785714"
-          />
-          <rect
-            x="14.7336"
-            y="6.84"
-            width="5.14143"
-            height="16.1414"
-            rx="2.57071"
-            fill="#C4C4C4"
-            stroke="#2F2F2F"
-            strokeWidth="3.57"
-          />
-          <circle cx="17.3036" cy="21.1964" r="3.92857" fill="#FFA46E" />
-        </svg>
-        <span>logout</span>
-      </FlatButtonContainer>
-    </FlatButtonWrapper>
-  );
-};
-
-const PrivateRoute = ({ state }) => {
+const PrivateRoute = ({ state, openModal, handleSignOut }) => {
   const [detailsFromDatabase, setDetailsFromDatabase] = useState({});
 
   useEffect(() => {
@@ -113,19 +72,12 @@ const PrivateRoute = ({ state }) => {
     }
   }, [state]);
 
-  const handleSignOut = async () => {
-    await auth
-      .signOut()
-      .then(navigate("/experience"))
-      .catch((e) => console.log(e));
-  };
-
   return (
     <>
       <NavBar>
         <Logo />
-        <BlackRoundButton handleSignOut={handleSignOut} />
-        <FlatButton handleSignOut={handleSignOut} />
+        <BlackRoundButton handle={openModal} />
+        <FlatButton handle={openModal} show={false} theme="black" />
       </NavBar>
       <InformationContainer>
         <LeftInformationContainer>
