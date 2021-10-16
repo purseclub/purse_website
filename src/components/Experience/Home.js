@@ -4,6 +4,7 @@ import { createUser, signInUser } from "../../utils/auth";
 import Email from "./Email";
 import Password from "./Password";
 import { navigate } from "gatsby-link";
+import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
   const [data, setData] = useState({
@@ -62,7 +63,7 @@ const Home = () => {
         setIsLoading(false);
       }
     }
-  }, [resultFromAuth]);
+  }, [resultFromAuth, data]);
 
   //submit form
   const handleForm = async (event) => {
@@ -82,7 +83,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <AnimatePresence>
       <Wrapper>
         {!forward ? (
           <Email
@@ -110,7 +111,7 @@ const Home = () => {
         )}
         <ImageContainer />
       </Wrapper>
-    </>
+    </AnimatePresence>
   );
 };
 

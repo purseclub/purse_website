@@ -25,6 +25,27 @@ import { getUserDetails } from "../../utils/database";
 
 import code from "../../images/qr_code.png";
 import FlatButton from "./FlatButton";
+import { motion } from "framer-motion";
+
+const leftContainerVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: "easeIn",
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
 
 const BlackRoundButton = ({ handle }) => {
   return (
@@ -73,7 +94,12 @@ const PrivateRoute = ({ state, openModal, handleSignOut }) => {
   }, [state]);
 
   return (
-    <>
+    <motion.div
+      variants={leftContainerVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <NavBar>
         <Logo />
         <BlackRoundButton handle={openModal} />
@@ -240,7 +266,7 @@ const PrivateRoute = ({ state, openModal, handleSignOut }) => {
           <span>Download the app</span>
         </BlueButton>
       </BlueButtonContainer>
-    </>
+    </motion.div>
   );
 };
 

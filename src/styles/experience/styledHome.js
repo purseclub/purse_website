@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import CardImage from "../../images/card-frame.png";
 
@@ -6,7 +7,7 @@ export const Wrapper = styled.div`
   overflow: visible;
 `;
 
-export const Left = styled.div`
+export const Left = styled(motion.div)`
   width: 100%;
   height: ${(props) => (props.forward ? "initial" : "100%;")};
   display: flex;
@@ -16,14 +17,6 @@ export const Left = styled.div`
     max-width: 400px;
     height: initial;
   }
-  /* @media all and (min-width: 991px) {
-    max-width: 480px;
-    height: initial;
-  }
-  @media all and (min-width: 1200px) {
-    max-width: 700px;
-    height: initial;
-  } */
 `;
 
 export const ImageContainer = styled.div`
@@ -183,7 +176,7 @@ export const CheckBoxContainer = styled.div`
   }
 `;
 
-export const Consent = styled.div`
+export const Consent = styled(motion.div)`
   margin-bottom: 3em;
   width: 90%;
   & > span {

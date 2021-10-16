@@ -13,6 +13,46 @@ import Loader from "./Loader";
 import Logo from "./Logo";
 import Pencil from "./Pencil";
 
+const leftContainerVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: "easeIn",
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const consentVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: "easeIn",
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
 const Password = ({
   data,
   setData,
@@ -47,7 +87,13 @@ const Password = ({
   };
 
   return (
-    <Left forward>
+    <Left
+      forward
+      variants={leftContainerVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <div>
         <Logo />
         <Title>
@@ -70,12 +116,23 @@ const Password = ({
       </div>
       <Bottom forward>
         {error && (
-          <Consent error>
+          <Consent
+            error
+            variants={consentVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
             <span>{errorMessage}</span>
           </Consent>
         )}
         {data.password.length > 1 && (
-          <Consent>
+          <Consent
+            variants={consentVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
             <span>
               forgot password ? <a href="#">Reset here</a>
             </span>

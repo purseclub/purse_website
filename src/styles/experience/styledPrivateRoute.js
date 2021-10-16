@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 export const ModalWrapper = styled.div`
@@ -8,7 +9,7 @@ export const ModalWrapper = styled.div`
   bottom: 0;
   z-index: 100;
 `;
-export const ModalContainer = styled.div`
+export const ModalContainer = styled(motion.div)`
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -16,7 +17,7 @@ export const ModalContainer = styled.div`
   background-color: white;
   padding: 40px 30px;
   border-radius: 30px 30px 0% 0%;
-  box-shadow: 0px 0px 0px 100vh rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 0px 100vh rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -13,6 +13,26 @@ import { checkEmailValid } from "../../utils/home";
 import Check from "./Check";
 import Logo from "./Logo";
 
+const leftContainerVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: "easeIn",
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
 const Email = ({ setData, setForward, isChecked, data, setIsChecked }) => {
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -52,7 +72,12 @@ const Email = ({ setData, setForward, isChecked, data, setIsChecked }) => {
     handleActive();
   }, [isEmailValid, isChecked]);
   return (
-    <Left>
+    <Left
+      variants={leftContainerVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <div>
         <Logo />
         <Title>

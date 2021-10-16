@@ -1,19 +1,27 @@
 import { motion } from "framer-motion";
 import React from "react";
-import {
-  LoaderContainer,
-  LoaderWrapper,
-} from "../../styles/experience/styledLoader";
+import { LoaderContainer } from "../../styles/experience/styledLoader";
 
 const loadingContainerVariants = {
   start: {
+    opacity: 0,
     transition: {
       staggerChildren: 0.2,
     },
   },
   end: {
+    opacity: 1,
     transition: {
+      duration: 0.4,
+      ease: "easeIn",
       staggerChildren: 0.2,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
     },
   },
 };
@@ -37,10 +45,11 @@ const Loader = ({ small }) => {
   return (
     <>
       <LoaderContainer
-        small
+        small={small}
         variants={loadingContainerVariants}
         initial="start"
         animate="end"
+        exit="exit"
       >
         <motion.span
           variants={loadingCircleVariants}

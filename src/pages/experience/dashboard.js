@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import { navigate } from "gatsby-link";
 import React, { useEffect, useState } from "react";
 import ExperienceLayout from "../../components/Experience/ExperienceLayout";
@@ -12,10 +13,61 @@ import {
 
 import { auth } from "../../utils/firebase";
 
-const Modal = ({ handleSignOut, closeModal }) => {
+const ContainerVariantsBottom = {
+  initial: {
+    opacity: 0.8,
+    y: "100%",
+  },
+  animate: {
+    opacity: 1,
+    y: "0%",
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+  exit: {
+    opacity: 0.8,
+    y: "100%",
+    transition: {
+      duration: 0.4,
+      ease: "easeIn",
+    },
+  },
+};
+const ContainerVariantsSide = {
+  initial: {
+    opacity: 0.8,
+    x: "100%",
+  },
+  animate: {
+    opacity: 1,
+    x: "0%",
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+  exit: {
+    opacity: 0.8,
+    x: "100%",
+    transition: {
+      duration: 0.4,
+      ease: "easeIn",
+    },
+  },
+};
+
+const Modal = ({ handleSignOut, closeModal, variants }) => {
   return (
     <ModalWrapper>
-      <ModalContainer>
+      <ModalContainer
+        key="modalContainer"
+        variants={variants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
         <Container>
           <svg
             viewBox="0 0 35 39"
@@ -56,6 +108,18 @@ const Dashboard = ({ location }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [state, setState] = useState({});
   const [isOpened, setIsOpened] = useState(false);
+  const [width, setWidth] = useState();
+
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [width]);
+
+  console.log(width);
 
   useEffect(() => {
     const notNull = !!location.state;
@@ -94,9 +158,16 @@ const Dashboard = ({ location }) => {
   return (
     <>
       {isLoggedIn && (
-        <>
+        <AnimatePresence>
           {isOpened && (
-            <Modal handleSignOut={handleSignOut} closeModal={closeModal} />
+            <Modal
+              handleSignOut={handleSignOut}
+              closeModal={closeModal}
+              variants={
+                width >= 768 ? ContainerVariantsSide : ContainerVariantsBottom
+              }
+              key="modal"
+            />
           )}
           <ExperienceLayout>
             <PrivateRoute
@@ -105,7 +176,7 @@ const Dashboard = ({ location }) => {
               handleSignOut={handleSignOut}
             />
           </ExperienceLayout>
-        </>
+        </AnimatePresence>
       )}
     </>
   );

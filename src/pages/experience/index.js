@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import React, { useEffect } from "react";
 import ExperienceLayout from "../../components/Experience/ExperienceLayout";
 import Loader from "../../components/Experience/Loader";
@@ -9,11 +10,11 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <AnimatePresence>
       <ExperienceLayout>
         <Loader />
       </ExperienceLayout>
-    </>
+    </AnimatePresence>
   );
 };
 
