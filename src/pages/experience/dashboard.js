@@ -58,8 +58,16 @@ const Dashboard = ({ location }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   useEffect(() => {
-    //const len = Object.keys(location.state).length;
-    if (location.state !== null) {
+    const notNull = !!location.state;
+    let len = 0;
+    if (notNull) {
+      len = Object.keys(location.state).length;
+    } else {
+      navigate("/experience/experienceHome");
+      return null;
+    }
+
+    if (len > 1 && location.state !== null) {
       console.log(location);
       setIsLoggedIn(true);
       setState({ ...location });
