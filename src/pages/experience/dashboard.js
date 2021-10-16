@@ -60,6 +60,7 @@ const Dashboard = ({ location }) => {
   useEffect(() => {
     //const len = Object.keys(location.state).length;
     if (location.state !== null) {
+      console.log(location);
       setIsLoggedIn(true);
       setState({ ...location });
     } else if (
@@ -67,6 +68,7 @@ const Dashboard = ({ location }) => {
       location.pathname !== `/experience/experienceHome`
     ) {
       navigate("/experience/experienceHome");
+      console.log(location);
       return null;
     }
   }, [isLoggedIn, location]);
