@@ -3,6 +3,7 @@ import CardImage from "../../images/card-frame.png";
 
 export const Wrapper = styled.div`
   height: 100%;
+  overflow: visible;
 `;
 
 export const Left = styled.div`

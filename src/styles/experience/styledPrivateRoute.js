@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import card from "../../images/card.png";
 
 export const NavBar = styled.nav`
   display: flex;
@@ -83,6 +82,81 @@ export const FlatButtonContainer = styled.div`
   }
 `;
 
+export const InformationContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media all and (min-width: 768px) {
+    grid-template-columns: 1fr 2px 1fr;
+    gap: 1em;
+  }
+`;
+
+export const LeftInformationContainer = styled.div`
+  grid-column: 1/2;
+  width: 100%;
+  @media all and (min-width: 768px) {
+    grid-column: 1/2;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+`;
+
+export const RightInformationContainer = styled.div`
+  display: none;
+  position: relative;
+  /* height: 100%;
+  width: 100%; */
+  margin: auto;
+  @media all and (min-width: 768px) {
+    display: block;
+    grid-column: 3/4;
+  }
+`;
+
+export const Line = styled.div`
+  display: none;
+  grid-column: 2/3;
+  width: 2px;
+  height: 100%;
+  opacity: 0.4;
+  background-image: linear-gradient(
+    to top,
+    rgb(17, 16, 18),
+    rgba(199, 126, 100, 0.55),
+    rgb(17, 16, 18)
+  );
+
+  @media all and (min-width: 768px) {
+    display: block;
+  }
+`;
+
+export const CodeContainer = styled.div`
+  position: absolute;
+
+  left: 65%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+
+  & > span {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    font-style: normal;
+    text-align: center;
+    white-space: pre-line;
+    color: var(--white100);
+    margin-bottom: 20px;
+  }
+`;
+export const QrCodeContainer = styled.img`
+  width: 15vw;
+`;
+
 export const UserDetailContainer = styled.div`
   margin-top: 1.5em;
   position: relative;
@@ -124,6 +198,13 @@ export const UserDetailContainer = styled.div`
       rgb(33, 36, 38)
     );
     box-shadow: rgb(0 0 0 / 59%) 0px 2px 5px 0px;
+  }
+
+  @media all and (min-width: 768px) {
+    ::after,
+    ::before {
+      display: none;
+    }
   }
 `;
 
@@ -175,6 +256,7 @@ export const DetailContainer = styled.div`
 
 export const CardWrapper = styled.div`
   margin-top: 2em;
+  text-align: start;
 
   & > span {
     display: inline-block;
@@ -208,7 +290,7 @@ export const CardContainer = styled.div`
     inset: 0px;
     z-index: 0;
     border-radius: inherit;
-    box-shadow: rgb(255 255 255 / 17%) -8px -8px 28px -9px,
+    box-shadow: rgb(255 255 255 / 17%) -2px -8px 28px -9px,
       rgb(10 10 10 / 45%) 8px 8px 20px -1px;
     background-image: linear-gradient(
       315deg,
@@ -233,6 +315,22 @@ export const CardContainer = styled.div`
       rgb(25, 29, 31) 100%
     );
     filter: blur(1px);
+  }
+
+  @media all and (min-width: 768px) and (max-width: 991px) {
+    height: 170px;
+    width: 280px;
+    margin-left: 0;
+  }
+  @media all and (min-width: 992px) and (max-width: 1190px) {
+    height: 210px;
+    width: 355px;
+    margin-left: 0;
+  }
+  @media all and (min-width: 1200px) {
+    height: 242px;
+    width: 409px;
+    margin-left: 0;
   }
 `;
 
@@ -282,6 +380,10 @@ export const BlueButtonContainer = styled.div`
   bottom: 0px;
   padding: 0px 30px 40px 30px;
   background: linear-gradient(rgba(36, 39, 41, 0.4), rgb(36, 39, 41));
+
+  @media all and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const BlueButton = styled.div`
