@@ -155,7 +155,7 @@ const SubmitButton = () => {
       <circle cx="17.5748" cy="17.5748" r="17.5748" fill="var(--black)" />
       <path
         d="M14.5 11.7109L20.0807 17.2917L14.5 22.8724"
-        stroke="var(--white)"
+        stroke="#fff"
         strokeWidth="1.44817"
         strokeLinecap="round"
         strokeLinejoin="round"

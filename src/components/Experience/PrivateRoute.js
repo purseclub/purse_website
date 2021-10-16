@@ -47,6 +47,7 @@ const leftContainerVariants = {
   },
 };
 
+//mobile circle button
 const BlackRoundButton = ({ handle }) => {
   return (
     <BlackRoundButtonContainer onClick={handle}>
@@ -80,7 +81,7 @@ const BlackRoundButton = ({ handle }) => {
   );
 };
 
-const PrivateRoute = ({ state, openModal, handleSignOut }) => {
+const PrivateRoute = ({ state, openModal, showModal }) => {
   const [detailsFromDatabase, setDetailsFromDatabase] = useState({});
 
   useEffect(() => {
@@ -262,7 +263,7 @@ const PrivateRoute = ({ state, openModal, handleSignOut }) => {
         </RightInformationContainer>
       </InformationContainer>
       <BlueButtonContainer>
-        <BlueButton>
+        <BlueButton onClick={showModal}>
           <span>Download the app</span>
         </BlueButton>
       </BlueButtonContainer>

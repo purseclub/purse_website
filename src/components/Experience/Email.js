@@ -84,7 +84,7 @@ const Email = ({ setData, setForward, isChecked, data, setIsChecked }) => {
           <h1>enter your email id</h1>
         </Title>
         <SubTitle>
-          <h2>used for creating your account</h2>
+          <h2>used for creating or logging into your account</h2>
         </SubTitle>
         <Form id="form" onSubmit={handleSubmit}>
           <input

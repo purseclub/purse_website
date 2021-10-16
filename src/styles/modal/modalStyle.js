@@ -18,7 +18,7 @@ export const ModalWrapper = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  background-color: var(--white);
+  background-color: #f8f8f8;
   width: 90%;
   margin: 0 auto;
   padding: 1em;

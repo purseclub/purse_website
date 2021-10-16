@@ -42,6 +42,20 @@ export const signInUser = async ({ email, password }) => {
   }
 };
 
+//password reset
+export const setPasswordReset = async (email) => {
+  let result = "";
+
+  try {
+    await auth.sendPasswordResetEmail(email);
+    result = "done";
+  } catch (e) {
+    console.log(e.code);
+  }
+
+  return result;
+};
+
 export const isLoggedIn = () => {
   auth.onAuthStateChanged((user) => {
     if (user && isBrowser()) {

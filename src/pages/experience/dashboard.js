@@ -4,12 +4,14 @@ import React, { useEffect, useState } from "react";
 import ExperienceLayout from "../../components/Experience/ExperienceLayout";
 import FlatButton from "../../components/Experience/FlatButton";
 import PrivateRoute from "../../components/Experience/PrivateRoute";
+import Modal from "../../components/modal/Modal";
 import {
   ButtonContainer,
   Container,
   ModalContainer,
   ModalWrapper,
 } from "../../styles/experience/styledPrivateRoute";
+import { isBrowser } from "../../utils/auth";
 
 import { auth } from "../../utils/firebase";
 
@@ -58,9 +60,9 @@ const ContainerVariantsSide = {
   },
 };
 
-const Modal = ({ handleSignOut, closeModal, variants }) => {
+const LogoutModal = ({ handleSignOut, closeModal, variants }) => {
   return (
-    <ModalWrapper>
+    <ModalWrapper key="modalWrapper">
       <ModalContainer
         key="modalContainer"
         variants={variants}
@@ -108,18 +110,39 @@ const Dashboard = ({ location }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [state, setState] = useState({});
   const [isOpened, setIsOpened] = useState(false);
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(isBrowser() && window.innerWidth);
+  const [isActive, setIsActive] = useState(false);
+  const [offset, setOffset] = useState(0);
 
   const handleResize = () => {
     setWidth(window.innerWidth);
   };
 
+  //modal open and close
+  const showModal = () => setIsActive(true);
+  const hideModal = () => setIsActive(false);
+
+  useEffect(() => {
+    const body = document.body;
+    const offsetY = window.scrollY;
+
+    if (isActive) {
+      setOffset(offsetY);
+      body.setAttribute(
+        "style",
+        `position: fixed; top: -${offset}px; left:0; right: 0`
+      );
+    }
+    if (!isActive) {
+      body.setAttribute("style", "");
+      window.scrollTo(0, offset);
+    }
+  }, [isActive, offset]);
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [width]);
-
-  console.log(width);
 
   useEffect(() => {
     const notNull = !!location.state;
@@ -132,7 +155,7 @@ const Dashboard = ({ location }) => {
     }
 
     if (len > 1 && location.state !== null) {
-      console.log(location);
+      //console.log(location);
       setIsLoggedIn(true);
       setState({ ...location });
     } else if (
@@ -159,8 +182,9 @@ const Dashboard = ({ location }) => {
     <>
       {isLoggedIn && (
         <AnimatePresence>
+          {isActive && <Modal key="modal" hide={hideModal} />}
           {isOpened && (
-            <Modal
+            <LogoutModal
               handleSignOut={handleSignOut}
               closeModal={closeModal}
               variants={
@@ -173,6 +197,7 @@ const Dashboard = ({ location }) => {
             <PrivateRoute
               state={state}
               openModal={openModal}
+              showModal={showModal}
               handleSignOut={handleSignOut}
             />
           </ExperienceLayout>

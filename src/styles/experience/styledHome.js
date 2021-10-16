@@ -186,9 +186,27 @@ export const Consent = styled(motion.div)`
     line-height: 1.23;
     letter-spacing: 0.025em;
     font-style: normal;
-    color: ${(props) => (props.error ? "var(--errormsg)" : "var(--white300)")};
+    color: ${(props) =>
+      props.error ? "var(--errorColor)" : "var(--white300)"};
+
+    ${(props) =>
+      props.reset &&
+      css`
+        color: green;
+      `};
 
     & > a {
+      color: var(--white300);
+      text-decoration-line: underline;
+      text-decoration-style: dashed;
+      text-decoration-thickness: 1.2px;
+      text-decoration-color: var(--white300);
+      font-family: var(--font-family-bold);
+      font-weight: 700;
+      cursor: pointer;
+    }
+    & > div {
+      display: inline-block;
       color: var(--white300);
       text-decoration-line: underline;
       text-decoration-style: dashed;

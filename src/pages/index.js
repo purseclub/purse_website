@@ -88,7 +88,7 @@ const IndexPage = () => {
       {isActive ? <Modal hide={hideModal} /> : <></>}
       <NavigationBar click={showModal} onCursor={onCursor} />
       <Layout isActive={isActive} hideModal={hideModal}>
-        <Landing onCursor={onCursor} showModal={showModal} />
+        <Landing onCursor={onCursor} />
         <Intro showModal={showModal} onCursor={onCursor} />
         <WhatWeOffer showModal={showModal} onCursor={onCursor} />
         <Faq onCursor={onCursor} />

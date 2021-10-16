@@ -8,6 +8,7 @@ import {
   SubTitle,
   Title,
 } from "../../styles/experience/styledHome";
+import { setPasswordReset } from "../../utils/auth";
 import { checkPasswordValid } from "../../utils/home";
 import Loader from "./Loader";
 import Logo from "./Logo";
@@ -65,9 +66,11 @@ const Password = ({
   setErrorMessage,
   isPasswordValid,
   isLoading,
+  setResultFromAuth,
+  setError,
+  setpasswordResetSend,
+  passwordResetSend,
 }) => {
-  //const [errorCode, setErrorCode] = useState("");
-
   //update password input by user
   const handlePasswordChange = (event) => {
     setData({ ...data, password: event.target.value.trim() });
@@ -78,12 +81,23 @@ const Password = ({
     }
   };
 
+  //handle password reset
+  const handleReset = async () => {
+    setError(false);
+    const { email } = data;
+    const res = await setPasswordReset(email);
+    if (res === "done") {
+      setpasswordResetSend(true);
+    }
+  };
+
   // handle pencil button
   const handleEdit = () => {
     setForward(false);
     setData({ ...data, email: "", password: "" });
     setIsChecked(false);
     setErrorMessage("");
+    setResultFromAuth({});
   };
 
   return (
@@ -115,6 +129,17 @@ const Password = ({
         </Form>
       </div>
       <Bottom forward>
+        {passwordResetSend && (
+          <Consent
+            reset
+            variants={consentVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            <span>password reset link is send to the above email address.</span>
+          </Consent>
+        )}
         {error && (
           <Consent
             error
@@ -134,7 +159,15 @@ const Password = ({
             exit="exit"
           >
             <span>
-              forgot password ? <a href="#">Reset here</a>
+              forgot password ?{" "}
+              <div
+                onClick={handleReset}
+                onKeyDown={handleReset}
+                role="button"
+                tabIndex={0}
+              >
+                Reset here
+              </div>
             </span>
           </Consent>
         )}

@@ -23,6 +23,8 @@ const GlobalStyle = createGlobalStyle`
 		position: relative;
 		background-color: var(--black);
 		color: var(--white100);
+        overscroll-behavior-y: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	:root {
@@ -33,11 +35,17 @@ const GlobalStyle = createGlobalStyle`
 		--copper400:rgba(249,211,180,1);
 		--copper40040:rgba(249,211,180,0.4);
 		--copper600: rgba(217,137,106,1);
-		--errormsg: rgba(215,80,89,1);
+		--errorColor: #D75059;
 		--font-family-regular: 'CaustenRegular';
 		--font-family-medium: 'CaustenMedium';
 		--font-family-bold: 'CaustenBold';
 		--font-family-semibold: 'CaustenSemiBold';
+
+		//backups
+		--font-family-main-Regular: 'CaustenRegular', sans-serif;
+        --font-family-main-Medium: 'CaustenMedium', sans-serif;
+        --font-family-main-SemiBold: 'CaustenSemiBold', sans-serif;
+        --font-family-main-Bold: 'CaustenBold', sans-serif;
 	}
 `;
 

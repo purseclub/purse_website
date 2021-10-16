@@ -21,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
     body {
        	position: relative;
         overscroll-behavior-y: none;
-		
 		-webkit-tap-highlight-color: transparent;
 		background-color: var(--black);
     }

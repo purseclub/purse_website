@@ -5,6 +5,7 @@ import Email from "./Email";
 import Password from "./Password";
 import { navigate } from "gatsby-link";
 import { AnimatePresence } from "framer-motion";
+import { CustomError } from "../../utils/error";
 
 const Home = () => {
   const [data, setData] = useState({
@@ -18,6 +19,7 @@ const Home = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [passwordResetSend, setpasswordResetSend] = useState(false);
 
   const [resultFromAuth, setResultFromAuth] = useState({});
 
@@ -31,21 +33,30 @@ const Home = () => {
             .then((result) => {
               if (result.userCredential === null) {
                 setIsLoading(false);
-                setErrorMessage(result.message);
-                console.log(`signINcode: ${result.code}`);
+                setError(true);
+                setpasswordResetSend(false);
+                //custom error function goes here
+                const errmsg = CustomError(result.code);
+                setErrorMessage(errmsg);
+                //console.log(`signINcode: ${result.code}`);
+                //console.log(`signInMessage: ${result.message}`);
               } else {
-                console.log("signed in");
+                //console.log("signed in");
                 const uid = result.userCredential.user.uid;
                 const userEmail = result.userCredential.user.email;
                 navigate("/experience/dashboard", {
                   state: { uid: uid, email: userEmail },
-                }).then(setIsLoading(false));
+                });
               }
             })
-            .catch((e) => console.log(e));
+            .catch((e) => {
+              setError(true);
+              const errormsg = CustomError(e);
+              setErrorMessage(errormsg);
+            });
         }
       } else {
-        console.log("user created");
+        //console.log("user created");
         //console.log(res.userCredential);
         const User = resultFromAuth.userCredential.user;
         const Uid = User.uid;
@@ -63,7 +74,7 @@ const Home = () => {
         setIsLoading(false);
       }
     }
-  }, [resultFromAuth, data]);
+  }, [resultFromAuth]);
 
   //submit form
   const handleForm = async (event) => {
@@ -106,7 +117,11 @@ const Home = () => {
             error={error}
             isPasswordValid={isPasswordValid}
             setErrorMessage={setErrorMessage}
+            setResultFromAuth={setResultFromAuth}
             isLoading={isLoading}
+            setError={setError}
+            passwordResetSend={passwordResetSend}
+            setpasswordResetSend={setpasswordResetSend}
           />
         )}
         <ImageContainer />
