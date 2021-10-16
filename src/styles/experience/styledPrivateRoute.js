@@ -86,7 +86,7 @@ export const InformationContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
 
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 1200px) {
     grid-template-columns: 1fr 2px 1fr;
     gap: 1em;
   }
@@ -95,7 +95,7 @@ export const InformationContainer = styled.div`
 export const LeftInformationContainer = styled.div`
   grid-column: 1/2;
   width: 100%;
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 1200px) {
     grid-column: 1/2;
     padding-left: 1.5em;
     padding-right: 1.5em;
@@ -108,7 +108,7 @@ export const RightInformationContainer = styled.div`
   /* height: 100%;
   width: 100%; */
   margin: auto;
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 1200px) {
     display: block;
     grid-column: 3/4;
   }
@@ -127,7 +127,7 @@ export const Line = styled.div`
     rgb(17, 16, 18)
   );
 
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 1200px) {
     display: block;
   }
 `;
@@ -318,7 +318,7 @@ export const CardContainer = styled.div`
   }
 
   @media all and (min-width: 768px) and (max-width: 991px) {
-    height: 170px;
+    height: 165px;
     width: 280px;
     margin-left: 0;
   }
@@ -382,6 +382,13 @@ export const BlueButtonContainer = styled.div`
   background: linear-gradient(rgba(36, 39, 41, 0.4), rgb(36, 39, 41));
 
   @media all and (min-width: 768px) {
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 80px;
+  }
+
+  @media all and (min-width: 1200px) {
     display: none;
   }
 `;
