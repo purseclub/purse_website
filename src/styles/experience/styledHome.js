@@ -23,15 +23,15 @@ export const ImageContainer = styled.div`
   display: none;
 
   @media all and (min-width: 768px) {
-    height: 100%;
+    height: 100vh;
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    width: 40%;
+    width: 45%;
     background-image: url(${CardImage});
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center right;
     image-rendering: -webkit-optimize-contrast;
   }
