@@ -14,6 +14,7 @@ import {
 import { isBrowser } from "../../utils/auth";
 
 import { auth } from "../../utils/firebase";
+import Seo from "../../components/seo";
 
 const ContainerVariantsBottom = {
   initial: {
@@ -180,6 +181,14 @@ const Dashboard = ({ location }) => {
 
   return (
     <>
+      <Seo
+        description={
+          "experience purse club, a card management app which rewards you eveytime you manage your cards."
+        }
+        title="PURSE CLUB EXPERIENCE DASHBOARD"
+        meta="Alternative of your pocket purse"
+        lang="en"
+      />
       {isLoggedIn && (
         <AnimatePresence>
           {isActive && <Modal key="modal" hide={hideModal} />}
