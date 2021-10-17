@@ -43,19 +43,35 @@ export const updatePreviousUserData = async (state) => {
         } else {
           const { userName } = snapshot.data();
           const userNameArray = userName.split(" ");
-          const firstName = userNameArray[0];
-          const lastName = userNameArray[1];
-          const userDetails = {
-            ...state,
-            userName: {
-              ...user.userName,
-              firstName: firstName,
-              lastName: lastName,
-            },
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-          };
-          // console.log(userDetails);
-          //createNewUser(userDetails);
+          const length = userNameArray.length;
+          let userDetails = {};
+
+          if (length > 1) {
+            const firstName = userNameArray[0];
+            const lastName = userNameArray[1];
+            userDetails = {
+              ...userDetails,
+              ...state,
+              userName: {
+                ...user.userName,
+                firstName: firstName,
+                lastName: lastName,
+              },
+              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            };
+          } else {
+            const firstName = userNameArray[0];
+            userDetails = {
+              ...userDetails,
+              ...state,
+              userName: {
+                ...user.userName,
+                firstName: firstName,
+                lastName: "",
+              },
+              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            };
+          }
 
           firestore
             .collection("userData")

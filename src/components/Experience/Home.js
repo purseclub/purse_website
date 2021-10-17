@@ -92,7 +92,7 @@ const Home = () => {
         setIsLoading(false);
       }
     }
-  }, [resultFromAuth]);
+  }, [resultFromAuth, state]);
 
   //submit form
   const handleForm = async (event) => {

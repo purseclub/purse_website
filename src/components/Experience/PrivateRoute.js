@@ -85,13 +85,17 @@ const BlackRoundButton = ({ handle }) => {
 const PrivateRoute = ({ state, openModal, showModal }) => {
   const [res, setRes] = useState({});
 
-  const len = Object.keys(res).length;
+  let len = Object.keys(res).length;
 
-  useEffect(() => {
+  const getDetails = async () => {
     const userId = state.uid;
-    getUserDetails(userId).then((result) => {
+    await getUserDetails(userId).then((result) => {
       setRes({ ...res, ...result });
     });
+  };
+
+  useEffect(() => {
+    getDetails();
   }, [len]);
 
   return (
