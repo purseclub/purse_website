@@ -59,7 +59,7 @@ const Home = () => {
                   refreshToken: RefreshToken,
                   email: userEmail,
                 });
-                console.log(state);
+                //console.log(state);
                 updatePreviousUserData(state);
 
                 setTimeout(() => {
@@ -92,7 +92,7 @@ const Home = () => {
         setIsLoading(false);
       }
     }
-  }, [resultFromAuth, state]);
+  }, [resultFromAuth]);
 
   //submit form
   const handleForm = async (event) => {

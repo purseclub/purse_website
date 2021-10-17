@@ -19,7 +19,7 @@ export const createNewUser = async (user) => {
 
 export const getUserDetails = async (userId) => {
   let res = {};
-  console.log(userId);
+  //console.log(userId);
   try {
     const snapshot = await firestore.collection("userData").doc(userId).get();
     res = { ...res, ...snapshot.data() };

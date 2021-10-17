@@ -92,7 +92,7 @@ const PrivateRoute = ({ state, openModal, showModal }) => {
     getUserDetails(userId).then((result) => {
       setRes({ ...res, ...result });
     });
-  }, []);
+  }, [len]);
 
   return (
     <>

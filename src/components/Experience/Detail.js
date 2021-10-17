@@ -20,20 +20,24 @@ const Detail = () => {
   const [forward, setForward] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const addToDatabase = (userDetails) => {
-    createNewUser(userDetails);
+  const addToDatabase = async (userDetails) => {
+    await createNewUser(userDetails);
   };
 
-  //submit last name form
-  const handleLastNameSubmit = (event) => {
-    event.preventDefault();
-    setIsLoading(true);
+  useEffect(() => {
     dispatch({
       type: "USER_NAME_CREATED",
       ...userDetails,
     });
+  }, [userDetails]);
+
+  //submit last name form
+  const handleLastNameSubmit = async (event) => {
+    event.preventDefault();
+    setIsLoading(true);
 
     addToDatabase(state);
+    //setIsLoading(false);
   };
 
   return (
