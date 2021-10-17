@@ -17,7 +17,7 @@ import MinimalButton from "../button";
 const parentMotion = {
   animate: {
     transition: {
-      delayChildren: 3,
+      delayChildren: 2.5,
       staggerChildren: 0.1,
     },
   },
@@ -32,7 +32,7 @@ const buttonMotion = {
     y: "0%",
     opacity: 1,
     transition: {
-      delay: 4,
+      delay: 3.3,
       duration: 0.8,
       ease: [0, 0.55, 0.45, 1],
     },
@@ -155,7 +155,7 @@ const Landing = ({ onCursor }) => {
           animate={{
             opacity: 1,
             transition: {
-              delay: 4.5,
+              delay: 3.5,
               duration: 0.8,
               ease: "easeOut",
             },

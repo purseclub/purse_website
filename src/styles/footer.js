@@ -91,7 +91,7 @@ export const ActionContainer = styled.div`
   }
 `;
 
-export const FooterTagLine = styled.h6`
+export const FooterTagLine = styled.p`
   font-family: var(--font-family-main);
   font-size: clamp(1rem, 4.5vw, 1.8rem);
   letter-spacing: -0.01em;

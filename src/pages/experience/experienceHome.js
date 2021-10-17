@@ -8,9 +8,9 @@ const ExperienceHome = () => {
     <>
       <Seo
         description={
-          "experience purse club, a card management app which rewards you eveytime you manage your cards."
+          "Experience purse club, A card management app which rewards you eveytime you manage your cards."
         }
-        title="PURSE CLUB EXPERIENCE HOME"
+        title="EXPERIENCE HOME"
         meta="Alternative of your pocket purse"
         lang="en"
       />

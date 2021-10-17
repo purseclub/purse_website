@@ -33,7 +33,7 @@ const NavigationBar = ({ click, onCursor }) => {
       animate={{
         opacity: 1,
         transition: {
-          delay: 4.5,
+          delay: 3.5,
           duration: 0.8,
           ease: "easeOut",
         },

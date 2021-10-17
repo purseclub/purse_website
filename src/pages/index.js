@@ -73,7 +73,7 @@ const IndexPage = () => {
   return (
     <>
       <Seo
-        title={"The Purse Club"}
+        title="HOME"
         description="Modern way of storing and managing you card in wallet aka purse club"
         keywords={[
           "purse",

@@ -306,8 +306,12 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
             y: spring2,
           }}
         >
-          <Splitting copy={item.title} role="title" controls={controls} />
-          <Splitting copy={item.subtitle} role="subtitle" controls={controls} />
+          <Splitting copy={item.title} role="description" controls={controls} />
+          <Splitting
+            copy={item.subtitle}
+            role="description"
+            controls={controls}
+          />
         </Heading>
         <ItemMeta
           className={(item.id + 1) % 2 === 0 ? "invert-meta" : ""}

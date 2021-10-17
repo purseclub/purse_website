@@ -3,9 +3,8 @@ require("dotenv").config({
 });
 module.exports = {
   siteMetadata: {
-    title: "The Purse Club",
     siteUrl: "https://www.thepurse.club",
-    title: "Card Management app",
+    title: "THE PURSE CLUB",
     author: "Purse Club",
   },
   plugins: [

@@ -183,9 +183,9 @@ const Dashboard = ({ location }) => {
     <>
       <Seo
         description={
-          "experience purse club, a card management app which rewards you eveytime you manage your cards."
+          "A card management app which rewards you eveytime you manage your cards. Modern way of storing and managing your cards."
         }
-        title="PURSE CLUB EXPERIENCE DASHBOARD"
+        title="EXPERIENCE DASHBOARD"
         meta="Alternative of your pocket purse"
         lang="en"
       />

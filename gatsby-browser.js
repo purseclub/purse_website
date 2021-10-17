@@ -18,5 +18,5 @@ export const onInitialClientRender = () => {
     if (loader != null) {
       loader.style.display = "none";
     }
-  }, 3000);
+  }, 2400);
 };

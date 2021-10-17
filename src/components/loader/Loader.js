@@ -7,7 +7,7 @@ const containerVariant = {
     scale: 2.7,
     rotate: "-90deg",
     transition: {
-      duration: 1.4,
+      duration: 1,
       ease: "easeInOut",
     },
   },
@@ -19,7 +19,7 @@ const typoVariant = {
     opacity: [0.1, 1, 0],
     transition: {
       delay: i * 0.04,
-      duration: 1.6,
+      duration: 1.4,
       ease: "easeInOut",
     },
   }),
