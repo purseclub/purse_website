@@ -1,9 +1,14 @@
 import React from "react";
 
 import { GlobalProvider } from "./src/context/globalContext";
+import { UserDataProvider } from "./src/context/userDataContext";
 
 export const wrapRootElement = ({ element }) => {
-  return <GlobalProvider>{element}</GlobalProvider>;
+  return (
+    <GlobalProvider>
+      <UserDataProvider>{element}</UserDataProvider>
+    </GlobalProvider>
+  );
 };
 
 export const onInitialClientRender = () => {

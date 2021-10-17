@@ -2,11 +2,11 @@ import React from "react";
 import Detail from "../../components/Experience/Detail";
 import ExperienceLayout from "../../components/Experience/ExperienceLayout";
 
-const Details = ({ location }) => {
+const Details = () => {
   return (
     <>
       <ExperienceLayout>
-        <Detail state={location.state} />
+        <Detail />
       </ExperienceLayout>
     </>
   );

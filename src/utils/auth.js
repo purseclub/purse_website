@@ -59,8 +59,7 @@ export const setPasswordReset = async (email) => {
 export const isLoggedIn = () => {
   auth.onAuthStateChanged((user) => {
     if (user && isBrowser()) {
-      const uid = user.uid;
-      navigate("/experience/dashboard", { state: { uid } });
+      navigate("/experience/dashboard", { state: { uid: user.uid } });
     } else {
       navigate("/experience/experienceHome");
     }

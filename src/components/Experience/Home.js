@@ -6,6 +6,11 @@ import Password from "./Password";
 import { navigate } from "gatsby-link";
 import { AnimatePresence } from "framer-motion";
 import { CustomError } from "../../utils/error";
+import {
+  useUserDataDispatchContext,
+  useUserDataStateContext,
+} from "../../context/userDataContext";
+import { updatePreviousUserData } from "../../utils/database";
 
 const Home = () => {
   const [data, setData] = useState({
@@ -21,10 +26,14 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [passwordResetSend, setpasswordResetSend] = useState(false);
 
+  const dispatch = useUserDataDispatchContext();
+  const state = useUserDataStateContext();
+
   const [resultFromAuth, setResultFromAuth] = useState({});
 
   useEffect(() => {
     const len = Object.keys(resultFromAuth).length;
+
     if (len !== 0) {
       if (resultFromAuth.userCredential === null) {
         // setErrorMessage(res.message);
@@ -35,18 +44,29 @@ const Home = () => {
                 setIsLoading(false);
                 setError(true);
                 setpasswordResetSend(false);
-                //custom error function goes here
+
                 const errmsg = CustomError(result.code);
                 setErrorMessage(errmsg);
-                //console.log(`signINcode: ${result.code}`);
-                //console.log(`signInMessage: ${result.message}`);
               } else {
-                //console.log("signed in");
-                const uid = result.userCredential.user.uid;
-                const userEmail = result.userCredential.user.email;
-                navigate("/experience/dashboard", {
-                  state: { uid: uid, email: userEmail },
+                const User = result.userCredential.user;
+                const Uid = User.uid;
+                const RefreshToken = User.refreshToken;
+                const userEmail = User.email;
+
+                dispatch({
+                  type: "USER_CREATED",
+                  uid: Uid,
+                  refreshToken: RefreshToken,
+                  email: userEmail,
                 });
+                console.log(state);
+                updatePreviousUserData(state);
+
+                setTimeout(() => {
+                  navigate("/experience/dashboard", {
+                    state: { uid: result.userCredential.user.uid },
+                  });
+                }, 2000);
               }
             })
             .catch((e) => {
@@ -62,19 +82,17 @@ const Home = () => {
         const Uid = User.uid;
         const RefreshToken = User.refreshToken;
         const userEmail = User.email;
-        navigate("/experience/details", {
-          state: {
-            user: {
-              uid: Uid,
-              refreshToken: RefreshToken,
-              email: userEmail,
-            },
-          },
+        dispatch({
+          type: "USER_CREATED",
+          uid: Uid,
+          refreshToken: RefreshToken,
+          email: userEmail,
         });
+        navigate("/experience/details");
         setIsLoading(false);
       }
     }
-  }, [resultFromAuth]);
+  }, [resultFromAuth, state]);
 
   //submit form
   const handleForm = async (event) => {
@@ -83,7 +101,7 @@ const Home = () => {
       setIsLoading(true);
       await createUser({
         ...data,
-      }).then((res) => setResultFromAuth({ ...res }));
+      }).then((res) => setResultFromAuth({ ...resultFromAuth, ...res }));
     } else {
       setIsLoading(false);
       setError(true);

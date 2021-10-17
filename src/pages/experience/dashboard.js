@@ -157,16 +157,16 @@ const Dashboard = ({ location }) => {
     if (len > 1 && location.state !== null) {
       //console.log(location);
       setIsLoggedIn(true);
-      setState({ ...location });
+      setState({ ...location.state });
     } else if (
       !isLoggedIn &&
       location.pathname !== `/experience/experienceHome`
     ) {
       navigate("/experience/experienceHome");
-      console.log(location);
+
       return null;
     }
-  }, [isLoggedIn, location]);
+  }, [isLoggedIn]);
 
   const openModal = () => setIsOpened(true);
   const closeModal = () => setIsOpened(false);

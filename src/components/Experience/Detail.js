@@ -1,13 +1,17 @@
 import { navigate } from "gatsby-link";
 import React, { useEffect, useState } from "react";
+import {
+  useUserDataDispatchContext,
+  useUserDataStateContext,
+} from "../../context/userDataContext";
 import { Wrapper } from "../../styles/experience/styledHome";
 import { createNewUser } from "../../utils/database";
 import FirstName from "./FirstName";
 import LastName from "./LastName";
 
-const Detail = ({ state }) => {
-  //whole user
-  const [wholeUser, setWholeUser] = useState({});
+const Detail = () => {
+  const state = useUserDataStateContext();
+  const dispatch = useUserDataDispatchContext();
 
   const [userDetails, setUserDetails] = useState({
     firstName: "",
@@ -20,23 +24,16 @@ const Detail = ({ state }) => {
     createNewUser(userDetails);
   };
 
-  useEffect(() => {
-    //add to database
-    const length = Object.keys(wholeUser).length;
-    if (length !== 0) {
-      addToDatabase(wholeUser);
-      setIsLoading(false);
-    }
-  }, [wholeUser]);
-
   //submit last name form
   const handleLastNameSubmit = (event) => {
     event.preventDefault();
     setIsLoading(true);
-    setWholeUser({
-      ...state.user,
+    dispatch({
+      type: "USER_NAME_CREATED",
       ...userDetails,
     });
+
+    addToDatabase(state);
   };
 
   return (
