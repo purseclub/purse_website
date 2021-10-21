@@ -103,18 +103,55 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
 
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "002.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-            transformOptions: { grayscale: true }
-          )
+      offersPhotos: allFile(
+        filter: { relativeDirectory: { eq: "whatWeOffers" } }
+      ) {
+        edges {
+          node {
+            id
+            base
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: BLURRED
+
+                formats: [AUTO, WEBP, AVIF]
+                transformOptions: { grayscale: true }
+              )
+            }
+          }
         }
       }
     }
   `);
-  const image = getImage(data.placeholderImage.childImageSharp);
+
+  const getImages = (idx) => {
+    //const image = data.allFile.edges[0].node.childImageSharp;
+    const imgArr = [];
+    data.offersPhotos.edges.map((image) => {
+      const imageName = image.node.base;
+
+      switch (imageName) {
+        case "reward.png":
+          imgArr.splice(0, 0, image.node.childImageSharp);
+          break;
+        case "conni.png":
+          imgArr.splice(1, 0, image.node.childImageSharp);
+          break;
+        case "share.png":
+          imgArr.splice(2, 0, image.node.childImageSharp);
+          break;
+        case "security.jpg":
+          imgArr.splice(3, 0, image.node.childImageSharp);
+          break;
+        default:
+          break;
+      }
+      return imgArr;
+    });
+
+    return getImage(imgArr[idx]);
+  };
+  //const image = getImage(data.allFile.nodes[].childImageSharp);
 
   return (
     <WwoWrapper>
@@ -123,7 +160,7 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
           <Box
             key={index}
             item={item}
-            image={image}
+            image={getImages(index)}
             hoveredEl={hoveredEl}
             setHoveredEl={setHoveredEl}
             onCursor={onCursor}
@@ -256,6 +293,7 @@ const Box = ({ item, image, hoveredEl, setHoveredEl, onCursor, showModal }) => {
       });
     }
   });
+
   return (
     <ContentBox ref={itemRef} animate={itemControls}>
       <Item ref={ref} className={(item.id + 1) % 2 === 0 ? "invert" : ""}>

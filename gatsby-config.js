@@ -26,6 +26,14 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "whatWeOffers",
+        path: "./src/images/whatWeOffers",
+      },
+      __key: "images",
+    },
     `gatsby-plugin-loadable-components-ssr`,
   ],
 };

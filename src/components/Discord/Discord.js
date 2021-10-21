@@ -55,10 +55,6 @@ const Discord = ({ onCursor }) => {
   const { scrollYProgress } = useViewportScroll();
   const y1 = useTransform(scrollYProgress, [0.92, 1], [0, -30]);
 
-  scrollYProgress.onChange((c) => {
-    console.log(c);
-  });
-
   const physics = { damping: 15, mass: 0.27, stiffness: 55 };
 
   const spring1 = useSpring(y1, physics);
