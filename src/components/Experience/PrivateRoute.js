@@ -23,7 +23,7 @@ import Logo from "./Logo";
 import texture from "../../images/texture.png";
 import { getUserDetails } from "../../utils/database";
 
-import code from "../../images/qr_code.png";
+import code from "../../images/download-app.png";
 import FlatButton from "./FlatButton";
 import { motion } from "framer-motion";
 import Loader from "./Loader";

@@ -13,6 +13,7 @@ import {
 import Loader from "../components/loader/Loader";
 import Seo from "../components/seo";
 import Layout from "../components/layout";
+import { Helmet } from "react-helmet";
 
 const Modal = loadable(() => import("../components/modal/Modal"));
 
@@ -84,6 +85,7 @@ const IndexPage = () => {
           "modern",
         ]}
       />
+
       <Loader />
       {isActive ? <Modal hide={hideModal} /> : <></>}
       <NavigationBar click={showModal} onCursor={onCursor} />
