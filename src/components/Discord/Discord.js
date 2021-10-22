@@ -156,7 +156,7 @@ const Discord = ({ onCursor }) => {
             </li>
             <li>
               <a
-                href="https://github.com/Abhishekucs/gatsby-purse-website"
+                href="https://github.com/purseclub/purse_website"
                 onMouseEnter={() => onCursor("hovered")}
                 onMouseLeave={() => onCursor()}
               >
