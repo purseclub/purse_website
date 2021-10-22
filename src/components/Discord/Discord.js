@@ -20,32 +20,6 @@ import {
 import { IntroHeading } from "../../styles/intro";
 import { TitleTop, TitleTopWrapper } from "../../styles/landing";
 
-// const logoVariants = {
-//   hide: {
-//     opacity: 1,
-//   },
-//   show: {
-//     opacity: 0,
-//     transition: {
-//       duration: 0.6,
-//       ease: [0.22, 1, 0.36, 1],
-//     },
-//   },
-// };
-
-// const textVariants = {
-//   hide: {
-//     opacity: 0,
-//   },
-//   show: {
-//     opacity: 1,
-//     transition: {
-//       duration: 0.1,
-//       ease: [0.64, 0, 0.78, 0],
-//     },
-//   },
-// };
-
 const Discord = ({ onCursor }) => {
   const [headref, headInView] = useInView({
     threshold: 0.2,
