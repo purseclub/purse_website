@@ -1,4 +1,3 @@
-import { navigate } from "gatsby-link";
 import React, { useEffect, useState } from "react";
 import {
   useUserDataDispatchContext,

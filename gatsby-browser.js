@@ -13,7 +13,7 @@ export const wrapRootElement = ({ element }) => {
 
 export const onInitialClientRender = () => {
   const loader = document.getElementById("preloader");
-  //console.log(loader);
+
   setTimeout(() => {
     if (loader != null) {
       loader.style.display = "none";

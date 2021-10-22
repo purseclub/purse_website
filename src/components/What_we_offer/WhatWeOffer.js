@@ -148,7 +148,6 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
       return imgArr;
     });
 
-    console.log(imgArr);
     return getImage(imgArr[idx]);
   };
   //const image = getImage(data.allFile.nodes[].childImageSharp);
