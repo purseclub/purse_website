@@ -19,3 +19,9 @@ So we thought of creating a system that rewards its members for doing good and b
 ### Website preview
 PURSE CLUB website is build using gatsby and styled components. Designing and prototyping done in Figma. Firebase is used as backend.
 <p align="center"><img width="1440" alt="landing page" src="https://user-images.githubusercontent.com/92972006/138425965-d2fe3f64-b297-44ea-9397-0d24e5190674.png"></p>
+
+<p align="center"><img width="1440" alt="social media page" src="https://user-images.githubusercontent.com/92972006/138427004-82380965-9fb0-4e52-b928-e124cd64e82e.png"></p>
+
+## Contributers
+- [@abhishekucs](https://github.com/Abhishekucs)
+
