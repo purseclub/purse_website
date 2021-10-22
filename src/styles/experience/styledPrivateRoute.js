@@ -243,7 +243,7 @@ export const CodeContainer = styled.div`
   }
 `;
 export const QrCodeContainer = styled.img`
-  width: 15vw;
+  width: 240px;
 `;
 
 export const UserDetailContainer = styled.div`
