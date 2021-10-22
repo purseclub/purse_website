@@ -16,5 +16,6 @@ PURSE CLUB AKA WE like to think we are an eternal scrappy startup. We build prod
 
 So we thought of creating a system that rewards its members for doing good and being trustworthy. This way, trust as a virtue becomes something to aspire to, just the way it should be. Then we went one step ahead: we built it. Our workflow is not standard, and neither are we.
 
-### website preview
-<p align="center"><img src="https://github.com/flutter/website/blob/main/src/assets/images/docs/homepage/reflectly-hero-600px.png?raw=true" alt="Reflectly hero image"></p>
+### Website preview
+PURSE CLUB website is build using gatsby and styled components. Designing and prototyping done in Figma. Firebase is used as backend.
+<p align="center"><img width="1440" alt="landing page" src="https://user-images.githubusercontent.com/92972006/138425965-d2fe3f64-b297-44ea-9397-0d24e5190674.png"></p>
