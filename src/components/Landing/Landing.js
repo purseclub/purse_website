@@ -138,14 +138,19 @@ const Landing = ({ onCursor }) => {
             );
           })}
         </TitleContainer>
-
-        <MinimalButton
-          variants={buttonMotion}
-          buttonText="Experience the app"
-          path="/experience"
-          onCursor={onCursor}
-        />
-
+        <div
+          style={{
+            maxWidth: "300px",
+            margin: "0 auto",
+          }}
+        >
+          <MinimalButton
+            variants={buttonMotion}
+            buttonText="Experience the app"
+            path="/experience"
+            onCursor={onCursor}
+          />
+        </div>
         <SideNote
           ref={ref}
           divWidth={divWidth}

@@ -115,7 +115,6 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
                 placeholder: BLURRED
 
                 formats: [AUTO, WEBP, AVIF]
-                transformOptions: { grayscale: true }
               )
             }
           }
@@ -140,7 +139,7 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
         case "share.png":
           imgArr.splice(2, 0, image.node.childImageSharp);
           break;
-        case "security.jpg":
+        case "security.png":
           imgArr.splice(3, 0, image.node.childImageSharp);
           break;
         default:
@@ -149,6 +148,7 @@ const WhatWeOffer = ({ showModal, onCursor }) => {
       return imgArr;
     });
 
+    console.log(imgArr);
     return getImage(imgArr[idx]);
   };
   //const image = getImage(data.allFile.nodes[].childImageSharp);
