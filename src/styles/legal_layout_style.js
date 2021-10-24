@@ -137,6 +137,21 @@ export const LegalSubtitle = styled.h2`
   }
 `;
 
+export const LegalSmallSubtitle = styled.h3`
+  font-family: var(--font-family-main-Bold);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.01em;
+  margin: 2em 0;
+
+  @media all and (min-width: 991px) {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+`;
+
 export const LegalList = styled.ol`
   margin-top: 1em;
   & > li {
