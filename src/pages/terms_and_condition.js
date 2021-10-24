@@ -110,10 +110,9 @@ const TermsAndCondition = () => {
             <strong>“PURSE CLUB Website”</strong>, means{" "}
             <a
               href="https://thepurse.club"
-              target="_blank"
               style={{
                 textDecoration: "underline",
-                color: "var(--black)",
+                color: "var(--white)",
               }}
             >
               https://thepurse.club
