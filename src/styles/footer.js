@@ -3,7 +3,12 @@ import styled, { css } from "styled-components";
 export const FooterWrapper = styled.section`
   width: 100%;
   margin-bottom: 5vh;
-  /* background-color: red; */
+  ${(props) =>
+    props.background &&
+    css`
+      background-color: var(--black);
+      margin-bottom: 0;
+    `}
   border: 1px solid var(--white);
   display: grid;
   grid-template-columns: 100%;
