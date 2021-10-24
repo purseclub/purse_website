@@ -16,7 +16,7 @@ import ArrowSvg from "../arrow";
 import Matter from "matter-js";
 import { useInView } from "react-intersection-observer";
 
-const Footer = ({ onCursor }) => {
+const Footer = ({ onCursor, background }) => {
   const [containerRef, InViewContainer] = useInView({
     threshold: 0.3,
   });
@@ -191,7 +191,7 @@ const Footer = ({ onCursor }) => {
   }, [scene, constraints]);
 
   return (
-    <FooterWrapper ref={containerRef}>
+    <FooterWrapper ref={containerRef} background={background}>
       <FallingLetter>
         <Playground ref={boxRef}></Playground>
       </FallingLetter>
