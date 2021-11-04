@@ -38,7 +38,7 @@ export const offerDatas = [
     id: 3,
     subtitle: "Security",
     title: "Shepherd",
-    body: "Purse Club focused on storing your important cards at one place which can be accessed anytime, anywhere. Get rewards for managing your important cards.",
+    body: "PURSE CLUB ensures that all your personal data are encrypted, and secured so what’s yours remains only yours. there’s no room for mistakes because we didn’t leave any.",
     buttonText: "Become a member",
     extraText: "purse club security",
   },
@@ -57,7 +57,7 @@ export const questionAnswers = [
     id: 1,
     question: "How can I become a member of Purse Club ?",
     answer:
-      "Purse Club is free for all users. For signing up, you need to provide your name, and email id only. Later some features are premium for which you need to become an exclusive member by purchasing a member subscription.",
+      "PURSE CLUB is free for all users. For signing up, you need to provide your name, and email id only. Later some features are premium for which you need to become an exclusive member by purchasing a member subscription.",
   },
   {
     id: 2,
