@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 
 export const FooterWrapper = styled.section`
   width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
   margin-bottom: 5vh;
   ${(props) =>
     props.background &&

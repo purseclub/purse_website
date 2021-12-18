@@ -13,7 +13,7 @@ import {
 import Loader from "../components/loader/Loader";
 import Seo from "../components/seo";
 import Layout from "../components/layout";
-import { Helmet } from "react-helmet";
+import Banner from "../components/banner";
 
 const Modal = loadable(() => import("../components/modal/Modal"));
 
@@ -89,7 +89,9 @@ const IndexPage = () => {
       <Loader />
       {isActive ? <Modal hide={hideModal} /> : <></>}
       <NavigationBar click={showModal} onCursor={onCursor} />
+
       <Layout isActive={isActive} hideModal={hideModal}>
+        <Banner onCursor={onCursor} click={showModal} />
         <Landing onCursor={onCursor} />
         <Intro showModal={showModal} onCursor={onCursor} />
         <WhatWeOffer showModal={showModal} onCursor={onCursor} />

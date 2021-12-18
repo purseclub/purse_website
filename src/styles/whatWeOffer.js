@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const WwoWrapper = styled.section`
-  /* max-width: 90%; */
+  max-width: 90%;
   margin: 0 auto;
 
   /* height: 100vh; */

@@ -3,11 +3,14 @@ import styled from "styled-components";
 
 export const DiscordWrapper = styled.section`
   width: 100%;
-  margin: 15vh 0;
+  max-width: 90%;
+  margin: 0 auto;
+  //margin: 15vh 0;
+  margin-bottom: 15vh;
   //background-color: red;
 
   @media all and (min-width: 991px) {
-    margin: 20vh 0;
+    //margin-bottom: 20vh;
   }
 `;
 

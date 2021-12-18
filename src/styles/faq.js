@@ -3,9 +3,13 @@ import styled from "styled-components";
 
 export const FWrapper = styled.section`
   width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 15vh;
 
   @media all and (min-width: 1080px) {
     margin-top: 8rem;
+    margin-bottom: 20vh;
   }
 `;
 
